@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bigdata on Kubedge&#39;s Blog</title>
+    <link>/tags/bigdata/</link>
+    <description>Recent content in Bigdata on Kubedge&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 28 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/bigdata/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploy Cassandra on Raspberry-PI 3</title>
+      <link>/post/2018-07-28-a/</link>
+      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-28-a/</guid>
+      <description>Goal  The main goal is to use statefulset and local persistency volume. The arm32v7 image are not available on kubernetes example repository The arm32v7 images are not available either on the docker hub, probably because Cassandra advises to use 64 bits when PI 3 are still mainly 32 bits OS and that the amount of memory available is limited to 1Gbi.  Build Cassandra for PI 3 Cassandra 1 Based on various Cassandra running on RPI projects</description>
+    </item>
+    
+  </channel>
+</rss>

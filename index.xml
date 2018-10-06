@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubedge&#39;s Blog</title>
+    <link>/</link>
+    <description>Recent content on Kubedge&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Upgrade RPI Kubernetes cluster to 1.12</title>
+      <link>/post/2018-09-28-a/</link>
+      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-09-28-a/</guid>
+      <description>Goal The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12 using kubeadm 1.12
+Master node upgrade using kubeadm # apt-mark unhold kubeadm &amp;amp;&amp;amp; \ &amp;gt; apt-get update &amp;amp;&amp;amp; apt-get install -y kubeadm &amp;amp;&amp;amp; \ &amp;gt; apt-mark hold kubeadm kubeadm was already not hold. Hit:2 http://raspbian.raspberrypi.org/raspbian stretch InRelease Hit:3 https://download.docker.com/linux/raspbian stretch InRelease Hit:1 https://packages.cloud.google.com/apt kubernetes-xenial InRelease Hit:5 http://archive.raspberrypi.org/debian stretch InRelease Hit:4 https://packagecloud.io/Hypriot/rpi/debian stretch InRelease Reading package lists.</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
+      <link>/post/2018-08-01-a/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-08-01-a/</guid>
+      <description> Goal Vault is aiming at improving security of the containers by rotating token and credential much more often than usual. Looks like it is especially effectiv to help rotate passwords used to access internal databases.
+Key Aspects  Compile and deploy the vault code in vault  Deploy  WIP  Conclusion  WIP  Reference Links  Official HashiCorp Code  </description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Istio</title>
+      <link>/post/2018-07-31-a/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-31-a/</guid>
+      <description> Goal Istio is aiming at improving security of the containers. One of the key aspects is the end to end encryption of the commnucation, the role of citadel to ensure the management of the certificates, the renewal of the certificates. As always, the goal of this post is to study that new tool and figure out I can leverage it in my day to day work.
+Key Aspects  Compile and deploy the istio code in istio  Deploy  WIP  Conclusion  WIP  Reference Links  Official istio Code  </description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes test-infra</title>
+      <link>/post/2018-07-30-a/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-30-a/</guid>
+      <description> Goal test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is to fetch the code, compile and deploy it on a Kubernetes cluster.
+Key Aspects  Compile and deploy the test-infra code in test-infra  Deploy  WIP  Conclusion  WIP  Reference Links  Official test-infra Code  </description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Kustomize</title>
+      <link>/post/2018-07-29-a/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-29-a/</guid>
+      <description> Goal kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t
+Key Aspects  Compile and deploy the Kustomize code in Kustomize  Deploy  WIP  Conclusion  WIP  Reference Links  Kustomize Description Official Kustomize Code  </description>
+    </item>
+    
+    <item>
+      <title>Deploy Cassandra on Raspberry-PI 3</title>
+      <link>/post/2018-07-28-a/</link>
+      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-28-a/</guid>
+      <description>Goal  The main goal is to use statefulset and local persistency volume. The arm32v7 image are not available on kubernetes example repository The arm32v7 images are not available either on the docker hub, probably because Cassandra advises to use 64 bits when PI 3 are still mainly 32 bits OS and that the amount of memory available is limited to 1Gbi.  Build Cassandra for PI 3 Cassandra 1 Based on various Cassandra running on RPI projects</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy MachineLearning Kubeflow Framework</title>
+      <link>/post/2018-07-19-a/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-19-a/</guid>
+      <description> Goal Kubeflow is a process that allows you to deploy machine learning infrastructure on top of a Kubernetes cluster. The goal here is to deploy Kubeflow first on a local simple Kubernetes cluster running in a VM and then deploy it in the Kubernetes PI Cluster
+Key Aspects  WIP  Deploy  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
+    </item>
+    
+    <item>
+      <title>Compile and Test Portieris</title>
+      <link>/post/2018-07-18-a/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-18-a/</guid>
+      <description>Goal One of the biggest security risks related to Kubernetes are often linked to the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are deployed in your Kubernetes cluster. The goal here is to leverage Notary and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.
+Key Aspects  Rebuild the Notary Rebuild and Deploy Portieris using Helm  Build Notary Clone go get github.com/theupdateframework/notary go install -tags pkcs11 github.</description>
+    </item>
+    
+    <item>
+      <title>Rebuild Calico for AMD64 ad ARM32V7</title>
+      <link>/post/2018-07-17-a/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-17-a/</guid>
+      <description> Goal Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI. The attempt here is to cross-compile the calico containers and use them on the PI cluster.
+Key Aspects  Rebuild the Calico  Build Kubernetes executables for AMD64 and ARM  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
+    </item>
+    
+    <item>
+      <title>Rebuild Hyperkube images</title>
+      <link>/post/2018-07-16-a/</link>
+      <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-16-a/</guid>
+      <description> Goal This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.
+Key Aspects  Rebuild Hyperkube images for amd64 and arm32v7 Rebuild the individual images deployed by kubeadm  Build Kubernetes executables for AMD64 and ARM  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
+    </item>
+    
+    <item>
+      <title>Recompile Kubernetes components for Raspberry PI</title>
+      <link>/post/2018-07-15-a/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-15-a/</guid>
+      <description>Goal During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.
+Key Aspects  The bug had been fixed by the Kubernetes kube-controller-manager - panic: runtime error: index out of range has been fixed and will be built as part of 1.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Flannel in Raspberry PI cluster</title>
+      <link>/post/2018-07-14-a/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-14-a/</guid>
+      <description>Goal In order to get the nodes and pods interface with each other accross the cluster. This post describes how I deployed Flannel acounting with the fact that some of the nodes have multiple interfaces (wlan0 and eth0).
+Key Aspects  Flannel seems to deploy ok. Looks like in trouble when multiple interfaces available Calico in not compiled by default for Rapsberry PI  Flannel Setup through kubectl $ mkdir -p $HOME/kube-deployments/flannel $ cd $HOME/kube-deployments/flannel $ curl -sSL https://rawgit.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Helm and Tiller on Rasberry PI Cluster</title>
+      <link>/post/2018-07-13-a/</link>
+      <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-13-a/</guid>
+      <description>Goal The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.
+Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Having the golang, glide&amp;hellip;and related libraries setup in a PI for compilation is kind of complicated. I started but encounter too many issues (even small), had to install too many compilation related packages on my PI system, hence decided to use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller.</description>
+    </item>
+    
+    <item>
+      <title>Enable docker remote API</title>
+      <link>/post/2018-07-12-a/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-12-a/</guid>
+      <description>Goal In order to build image for Raspberry PI, it is sometimes usefull to be able to leverate infrastruture from a remote VM. For instance you can cross-build golang executable for ARM32v7 and transfer it to build an image on the remote PI. (used for Tiller docker image)
+Generating the server certs In the case this Kubernetes cluster, the master is running on master-pi with IP address 192.168.1.95
+as root</description>
+    </item>
+    
+    <item>
+      <title>Use github repo as helm chart repository</title>
+      <link>/post/2018-07-11-a/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-11-a/</guid>
+      <description>Goal In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository. The goal of this post is to transform a github repo into a helm repo.
+Key Aspects  Save the helm charts on github mainly for the RPI Kubernetes cluster Figure out a way to access them  Build the chart and upload it to the helm repo For that purpose I used by kubeplay repo where I had helm charts and container ready</description>
+    </item>
+    
+    <item>
+      <title>Add Persistency Volume to PI Clusters</title>
+      <link>/post/2018-07-08-a/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-08-a/</guid>
+      <description> Goal In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes
+Procedures  WIP  Results    Reference Links  TBD  </description>
+    </item>
+    
+    <item>
+      <title>Using Ansible to manage Raspberry PI cluster</title>
+      <link>/post/2018-07-07-a/</link>
+      <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-07-a/</guid>
+      <description>Goal Even if the ultimate goal is to manage completly the cluster using Kubernetes, the ability to use Ansible during debug process is very usefull. The goal here is to setup ansible inventory, basic playbooks.
+Ansible Installation on the master node Let&amp;rsquo;s install ansible using apt-get. A lot of python related depedencies are also installed.
+sudo apt-get install ansible Reading package lists... Done Building dependency tree Reading state information... Done The following additional packages will be installed: ieee-data libyaml-0-2 python-cffi-backend python-crypto python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress python-jinja2 python-kerberos python-markupsafe python-netaddr python-paramiko python-pkg-resources python-pyasn1 python-selinux python-setuptools python-six python-xmltodict python-yaml Suggested packages: cowsay sshpass python-crypto-dbg python-crypto-doc python-cryptography-doc python-cryptography-vectors python-enum34-doc python-jinja2-doc ipython python-netaddr-docs python-gssapi doc-base python-setuptools-doc Recommended packages: python-winrm The following NEW packages will be installed: ansible ieee-data libyaml-0-2 python-cffi-backend python-crypto python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress python-jinja2 python-kerberos python-markupsafe python-netaddr python-paramiko python-pkg-resources python-pyasn1 python-selinux python-setuptools python-six python-xmltodict python-yaml 0 upgraded, 22 newly installed, 0 to remove and 6 not upgraded.</description>
+    </item>
+    
+    <item>
+      <title>ZWave/ZigBee network and Linear HUSBZB‑1</title>
+      <link>/post/2018-07-06-a/</link>
+      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-06-a/</guid>
+      <description>Goal In order to transforme a PI into a home automation controller, it is necessary to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities of the PI.
+Key  Transform Raspberry-PI + Dongle into a SUC ZWave controller Try to use with OpenHAB or HomeAssistant  Testing on the OpenHAB Container The OpenHAB architecture is Java based.
+Testing on the HomeAssistant Container HomeAssistant is Python based and relies on OpenZWave.</description>
+    </item>
+    
+    <item>
+      <title>Install OpenHAB on docker &#43; Raspberry PI3</title>
+      <link>/post/2018-07-05-a/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-05-a/</guid>
+      <description>Goal OpenHAB running on Raspberry PI is one of way where you don&amp;rsquo;t have to rely on outside services to orchestrate your IOT. Then comes the issues of high availability of the software if only running on one PI. By dockerizing the software first, this open the doors to leverage a kubernetes cluster to ensure HA of the software
+Key Aspects  Use the 3 nodes Raspeberry Cluster Access the WIFI, ZWave and Zigbee network Leverage the Nortek HUSBZB-1 Zwave and Zigbee dongle.</description>
+    </item>
+    
+    <item>
+      <title>Install HomeAssistant on docker &#43; Raspberry PI3</title>
+      <link>/post/2018-07-04-a/</link>
+      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-04-a/</guid>
+      <description>Goal HomeAssistant running on Raspberry PI is one of way where you don&amp;rsquo;t have to rely on outside services to orchestrate your IOT. Then comes the issues of high availability of the software if only running on one PI. By dockerizing the software first, this open the doors to leverage a kubernetes cluster to ensure HA of the software
+Key Aspects  Use the 3 nodes Raspeberry Cluster Access the WIFI, ZWave and Zigbee network Leverage the Nortek HUSBZB-1 Zwave and Zigbee dongle.</description>
+    </item>
+    
+    <item>
+      <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
+      <link>/post/2018-07-03-a/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-03-a/</guid>
+      <description>Goal Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
+Key Aspects  Build a Raspberry 3B+ Cluster Deploy Kubernetes on that Cluster  Hardware Reference Links  Video  Procedure  Kind of followed the video Used a premade rack instead. Adapt to Raspberry 3B+ (1Gb card instead of 100Mb card)  Result Cluster 1: 5 nodes cluster Cluster 2: 3 nodes cluster OS Reference Links  Video HypriotOS  Procedure  Use HypriotOS because the quickest to set up.</description>
+    </item>
+    
+    <item>
+      <title>Compile and Test SONOBUOY</title>
+      <link>/post/2018-07-02-a/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-02-a/</guid>
+      <description>Goal Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster
+Key Aspects  Fork Sonobuoy Compile the tools Test it  Clone and Compile mkdir -p $HOME/src/github.com/heptio cd $HOME/src/github.com/heptio git clone git@github.com:jbrette/sonobuoy.git  export GOPATH=$HOME go version go version go1.10.1 linux/amd64  go get -u -v github.com/heptio/sonobuoy  sonobuoy run sonobuoy status  kubectl get all -n heptio-sonobuoy NAME READY STATUS RESTARTS AGE pod/sonobuoy 1/1 Running 0 14m pod/sonobuoy-e2e-job-5fff584d11364ca1 2/2 Running 0 12m pod/sonobuoy-systemd-logs-daemon-set-1c53f31cf14246ca-mhztp 2/2 Running 0 12m NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/sonobuoy-master ClusterIP 10.</description>
+    </item>
+    
+    <item>
+      <title>Creating simple Python server container</title>
+      <link>/post/2018-07-01-a/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-01-a/</guid>
+      <description>Goal As we did for Go and Java, where is was possible to create an Dockerfile starting from &amp;ldquo;scratch&amp;rdquo;, the goal of this post is to create a python base server container with a minimum about of packages (debian and python) to reduce the security exposure of the container as well as the image size.
+Key Aspects  Use SCRATCH has base image to keep size minimum Simple HelloWorld Python web server Create associated HELM chart for Kubernetes deployment Provide deployment for both amd64 and arm32v7  Simple Python Server The pythonhttpserver repo showcases: - How to create a simple Python3 server - How to leverage Travis to compile for amd64 and arm32v7.</description>
+    </item>
+    
+    <item>
+      <title>Update Kubernetes to 1.11 on Ubuntu</title>
+      <link>/post/2018-06-30-a/</link>
+      <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-30-a/</guid>
+      <description>Goal Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.
+Initial set up Kubernetes 1.10.4 is installed
+cat /etc/apt/sources.list.d/kubernetes.list deb http://apt.kubernetes.io/ kubernetes-xenial main  sudo dpkg -l kubeadm Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description +++-======================================-========================-========================-================================================================================= ii kubeadm 1.10.4-00 amd64 Kubernetes Cluster Bootstrapping Tool  sudo dpkg -l kubelet Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description +++-======================================-========================-========================-================================================================================= ii kubelet 1.</description>
+    </item>
+    
+    <item>
+      <title>Creating simple GO server container</title>
+      <link>/post/2018-06-29-a/</link>
+      <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-29-a/</guid>
+      <description>Goal  Use SCRATCH has base image to keep size minimum Simple HelloWorld GO web server Create associated HELM chart for Kubernetes deployment Provide deployment for both amd64 and arm32v7  Simple GO Server compilation The gohttpserver repo showcases: - How to compile a GO process - How to leverage Travis to compile for amd64 and arm32v7. - Branch amd64 is for normal PC and HP server. - Branch arm32v7 produces software usable on Raspberry PI 3B+</description>
+    </item>
+    
+    <item>
+      <title>Creating simple Java 10 server container</title>
+      <link>/post/2018-06-28-a/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-28-a/</guid>
+      <description>Goal Very often people associated Java to quite bulky and difficult to use in the microservice context, unless you have very large image containing the JRE. But since Java 9, Java did kind of catchup with golang on the subject. Where you can obtain a standalone executable when we running go build, java is now proposing jlink which always you to acheive a very similar result. The goal of this post is to build a container image as small as possible running Java.</description>
+    </item>
+    
+    <item>
+      <title>Manual Update of CoreOS</title>
+      <link>/post/2018-06-27-a/</link>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-27-a/</guid>
+      <description>Goal To create kubernetes multi nodes environments on Windows, one of the option is to create a cluster using CoreOS since the foot print is quite reduced.
+Setup of the cluster TBD
+Update of the cluster I found the following link
+sudo bash -c &#39;mkdir -p /etc/systemd/system/docker.service.d/; cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/systemd/system/docker.service.d/50-insecure-registry.conf [Service] Environment=&amp;quot;DOCKER_OPTS=--insecure-registry 10.0.0.0/8 --insecure-registry 172.16.0.0/12 --insecure-registry 192.168.0.0/16&amp;quot; EOF &#39;  sudo bash -ec &#39;uname -a &amp;amp;&amp;amp; cat /etc/lsb-release &amp;amp;&amp;amp; \ echo GROUP=stable &amp;gt; /etc/coreos/update.</description>
+    </item>
+    
+    <item>
+      <title>Zuul</title>
+      <link>/post/2018-06-26-a/</link>
+      <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-26-a/</guid>
+      <description> Goal OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks. This post is the collection of notes and tips used during the couple of update I did to some openstack projects.
+Understanding Zuul  WIP  Usefull Links  WIP  </description>
+    </item>
+    
+    <item>
+      <title>Setup github/gerrit behind a corporate http proxy</title>
+      <link>/post/2018-06-25-a/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-25-a/</guid>
+      <description>Goal This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.
+Access GitHub/Gerrit from behind a corporate http proxy TBD
+Links TBD</description>
+    </item>
+    
+    <item>
+      <title>docker.io versus docker-ce</title>
+      <link>/post/2018-06-24-a/</link>
+      <pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-24-a/</guid>
+      <description>Goal Wondering why you have a strange error such as &amp;lsquo;from &amp;hellip;&amp;rsquo; when running docker build. The reason is linked to an older version of docker installed.
+Remove the current docker.io You need to remove the current docker.io.
+sudo apt-cache policy docker.io curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;quot; sudo apt-get update sudo apt-cache policy docker-ce sudo apt-get remove docker docker-engine docker.</description>
+    </item>
+    
+    <item>
+      <title>Setup multiple GitHub account on a single machine</title>
+      <link>/post/2018-06-23-a/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-23-a/</guid>
+      <description> Goal In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to be able to conigure your .ssh directory.
+Setup multiple GitHub account TBD
+Usefull Links  Link1  </description>
+    </item>
+    
+    <item>
+      <title>Setup your GOLANG environment</title>
+      <link>/post/2018-06-22-a/</link>
+      <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-22-a/</guid>
+      <description>Goal A lot of the opensource projects evolvoving around Kubernetes are written in go. It is very usefull to be able to rebuild so projects using go get or go build.
+Installing the right version of GO If you have strange errors, when running go get &amp;hellip;., chances are that your version of GO is old. On Ubuntu, it is actually quite simple to address the issue.
+If you are still running Ubuntu 16.</description>
+    </item>
+    
+    <item>
+      <title>Setup SingleNode Kubernetes Cluster using kubeadm</title>
+      <link>/post/2018-06-21-a/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-21-a/</guid>
+      <description>Goal Setup simple kubernetes cluster for test purposes.
+Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
+sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;amp;version.</description>
+    </item>
+    
+    <item>
+      <title>Create a Rapsberry PI Rescue Dongle</title>
+      <link>/post/2018-06-20-a/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-20-a/</guid>
+      <description>Goal I encountered multiple issues trying to repartition my SD on my PI. Because the / directory is mounted, it never really worked safely for me to use fdisk. Morevoer some of the powerfull tools such as gparted need X11 installed, which I don&amp;rsquo;t have by default.
+Hopefully the new PI3 B and B+ are able to boot from USB, hence the idea of creating a Rescue Dongle
+Consideration regarding USB boot.</description>
+    </item>
+    
+    <item>
+      <title>Add Raspberry PI node to Kubernetes Cluster in 10 min</title>
+      <link>/post/2018-06-19-a/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-19-a/</guid>
+      <description>Goal During some of the manipulation of the partition table of my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup. Moreover if your SD card is 32G, it takes around 30 minute to restore from backup. Hence the idea to come up with a way to build more resiliency in the cluster. Recreating a node from scratch should not take more than 10 mn.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Hugo!</title>
+      <link>/news/2018-01-02-a/</link>
+      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/news/2018-01-02-a/</guid>
+      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</description>
+    </item>
+    
+    <item>
+      <title>About the author</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Work in progress
+Thanks for reading!</description>
+    </item>
+    
+    <item>
+      <title>Welcome to Jekyll!</title>
+      <link>/news/2018-01-01-a/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/news/2018-01-01-a/</guid>
+      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
+To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.</description>
+    </item>
+    
+  </channel>
+</rss>

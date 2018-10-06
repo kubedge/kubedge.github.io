@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on Kubedge&#39;s Blog</title>
+    <link>/tags/github/</link>
+    <description>Recent content in Github on Kubedge&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Use github repo as helm chart repository</title>
+      <link>/post/2018-07-11-a/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-11-a/</guid>
+      <description>Goal In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository. The goal of this post is to transform a github repo into a helm repo.
+Key Aspects  Save the helm charts on github mainly for the RPI Kubernetes cluster Figure out a way to access them  Build the chart and upload it to the helm repo For that purpose I used by kubeplay repo where I had helm charts and container ready</description>
+    </item>
+    
+    <item>
+      <title>Setup github/gerrit behind a corporate http proxy</title>
+      <link>/post/2018-06-25-a/</link>
+      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-25-a/</guid>
+      <description>Goal This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.
+Access GitHub/Gerrit from behind a corporate http proxy TBD
+Links TBD</description>
+    </item>
+    
+    <item>
+      <title>Setup multiple GitHub account on a single machine</title>
+      <link>/post/2018-06-23-a/</link>
+      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-06-23-a/</guid>
+      <description> Goal In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to be able to conigure your .ssh directory.
+Setup multiple GitHub account TBD
+Usefull Links  Link1  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Calico on Kubedge&#39;s Blog</title>
+    <link>/tags/calico/</link>
+    <description>Recent content in Calico on Kubedge&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/calico/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Rebuild Calico for AMD64 ad ARM32V7</title>
+      <link>/post/2018-07-17-a/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-17-a/</guid>
+      <description> Goal Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI. The attempt here is to cross-compile the calico containers and use them on the PI cluster.
+Key Aspects  Rebuild the Calico  Build Kubernetes executables for AMD64 and ARM  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
+    </item>
+    
+  </channel>
+</rss>

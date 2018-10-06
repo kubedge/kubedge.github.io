@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Testing on Kubedge&#39;s Blog</title>
+    <link>/tags/testing/</link>
+    <description>Recent content in Testing on Kubedge&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build and Deploy Kubernetes test-infra</title>
+      <link>/post/2018-07-30-a/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-30-a/</guid>
+      <description> Goal test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is to fetch the code, compile and deploy it on a Kubernetes cluster.
+Key Aspects  Compile and deploy the test-infra code in test-infra  Deploy  WIP  Conclusion  WIP  Reference Links  Official test-infra Code  </description>
+    </item>
+    
+    <item>
+      <title>Compile and Test SONOBUOY</title>
+      <link>/post/2018-07-02-a/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2018-07-02-a/</guid>
+      <description>Goal Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster
+Key Aspects  Fork Sonobuoy Compile the tools Test it  Clone and Compile mkdir -p $HOME/src/github.com/heptio cd $HOME/src/github.com/heptio git clone git@github.com:jbrette/sonobuoy.git  export GOPATH=$HOME go version go version go1.10.1 linux/amd64  go get -u -v github.com/heptio/sonobuoy  sonobuoy run sonobuoy status  kubectl get all -n heptio-sonobuoy NAME READY STATUS RESTARTS AGE pod/sonobuoy 1/1 Running 0 14m pod/sonobuoy-e2e-job-5fff584d11364ca1 2/2 Running 0 12m pod/sonobuoy-systemd-logs-daemon-set-1c53f31cf14246ca-mhztp 2/2 Running 0 12m NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/sonobuoy-master ClusterIP 10.</description>
+    </item>
+    
+  </channel>
+</rss>
