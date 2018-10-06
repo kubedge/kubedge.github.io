@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kustomize on Jerome Brette&#39;s Blog</title>
+    <title>Kustomize on KubEdge&#39;s Blog</title>
     <link>/tags/kustomize/</link>
-    <description>Recent content in Kustomize on Jerome Brette&#39;s Blog</description>
+    <description>Recent content in Kustomize on KubEdge&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Jul 2018 00:00:00 +0000</lastBuildDate>
