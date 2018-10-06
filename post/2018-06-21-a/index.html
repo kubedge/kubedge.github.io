@@ -1,0 +1,1549 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "Setup SingleNode Kubernetes Cluster using kubeadm",
+        "headline" : "Setup SingleNode Kubernetes Cluster using kubeadm",
+        "description" : "Goal Setup simple kubernetes cluster for test purposes.
+Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
+sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;version.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-06-21 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-06-21 00:00:00 &#43;0000 UTC",
+        "url" : "/post/2018-06-21-a/",
+        "wordCount" : "1020",
+        "keywords" : [ "kubernetes","kubeadm","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Setup SingleNode Kubernetes Cluster using kubeadm</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Jerome Brette&#39;s Blog">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Setup SingleNode Kubernetes Cluster using kubeadm"/>
+<meta name="twitter:description" content="Goal Setup simple kubernetes cluster for test purposes.
+Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
+sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;version."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="Setup SingleNode Kubernetes Cluster using kubeadm" />
+<meta property="og:description" content="Goal Setup simple kubernetes cluster for test purposes.
+Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
+sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;version." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-06-21-a/" />
+
+
+
+<meta property="article:published_time" content="2018-06-21T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-06-21T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Setup SingleNode Kubernetes Cluster using kubeadm">
+<meta itemprop="description" content="Goal Setup simple kubernetes cluster for test purposes.
+Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
+sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;version.">
+
+
+<meta itemprop="datePublished" content="2018-06-21T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-06-21T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1020">
+
+
+
+<meta itemprop="keywords" content="kubernetes,kubeadm," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123357787-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">post</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-list">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-29'>
+                                    September 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-28'>
+                                    July 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-19'>
+                                    July 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-18-a/">Compile and Test Portieris</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-17'>
+                                    July 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-16'>
+                                    July 16, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-06-21-a%2f&amp;text=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-06-21-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-06-21-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-06-21-a%2f&amp;title=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-06-21-a%2f&amp;title=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-06-21-a%2f&amp;title=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-06-21-a%2f&amp;description=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-06-21-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/2018-06-21-a/">Setup SingleNode Kubernetes Cluster using kubeadm</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-06-21'>
+            June 21, 2018</time>
+        <span class="author"></span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-06-21-a%2f&amp;text=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-06-21-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-06-21-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-06-21-a%2f&amp;title=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-06-21-a%2f&amp;title=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-06-21-a%2f&amp;title=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-06-21-a%2f&amp;description=Setup%20SingleNode%20Kubernetes%20Cluster%20using%20kubeadm" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-06-21-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="goal">Goal</h1>
+
+<p>Setup simple kubernetes cluster for test purposes.</p>
+
+<h2 id="add-kubernetes-apt-repo">Add Kubernetes APT Repo</h2>
+
+<p>If you are still running Ubuntu 16.04 LTS</p>
+
+<pre><code>sudo xxx 
+sudo apt-get update
+sudo apt-get install kubeadm kubelet kubectl
+</code></pre>
+
+<pre><code>sudo docker version
+Client:
+ Version:      1.13.1
+ API version:  1.26
+ Go version:   go1.6.2
+ Git commit:   092cba3
+ Built:        Thu Nov  2 20:40:23 2017
+ OS/Arch:      linux/amd64
+
+Server:
+ Version:      1.13.1
+ API version:  1.26 (minimum version 1.12)
+ Go version:   go1.6.2
+ Git commit:   092cba3
+ Built:        Thu Nov  2 20:40:23 2017
+ OS/Arch:      linux/amd64
+ Experimental: false
+</code></pre>
+
+<pre><code>sudo kubeadm version
+
+kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;11&quot;, GitVersion:&quot;v1.11.0&quot;, GitCommit:&quot;91e7b4fd31fcd3d5f436da26c980becec37ceefe&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-06-27T20:14:41Z&quot;, GoVersion:&quot;go1.10.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre>
+
+<h2 id="run-kubeadm">Run Kubeadm</h2>
+
+<p>First command needs to use sudo</p>
+
+<pre><code>sudo kubeadm config images pull
+sudo kubeadm init
+</code></pre>
+
+<p>Let copy the .kube config into current user home directoru</p>
+
+<pre><code>mkdir -p $HOME/.kube
+sudo cp /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl get all --all-namespaces
+</code></pre>
+
+<p>From that point don&rsquo;t really need sudo anymore</p>
+
+<h2 id="add-calico">Add Calico</h2>
+
+<p>At that point most of the node will stay in mode &ldquo;NotReady&rdquo;</p>
+
+<pre><code>kubectl get nodes
+
+NAME       STATUS     ROLES     AGE       VERSION
+allinone   NotReady   master    1m        v1.11.0
+</code></pre>
+
+<p>To install Calico</p>
+
+<pre><code>kubectl apply -f https://docs.projectcalico.org/v3.1/getting-started/kubernetes/installation/hosted/kubeadm/1.7/calico.yaml
+
+configmap/calico-config created
+daemonset.extensions/calico-etcd created
+service/calico-etcd created
+daemonset.extensions/calico-node created
+deployment.extensions/calico-kube-controllers created
+clusterrolebinding.rbac.authorization.k8s.io/calico-cni-plugin created
+clusterrole.rbac.authorization.k8s.io/calico-cni-plugin created
+serviceaccount/calico-cni-plugin created
+clusterrolebinding.rbac.authorization.k8s.io/calico-kube-controllers created
+clusterrole.rbac.authorization.k8s.io/calico-kube-controllers created
+serviceaccount/calico-kube-controllers created
+</code></pre>
+
+<p>Check again</p>
+
+<pre><code>kubectl get nodes
+
+NAME       STATUS    ROLES     AGE       VERSION
+allinone   Ready     master    2m        v1.11.0
+</code></pre>
+
+<h2 id="allow-payload-on-master-node">Allow payload on master node</h2>
+
+<pre><code>kubectl get all --all-namespaces
+
+NAMESPACE     NAME                                           READY     STATUS    RESTARTS   AGE
+kube-system   pod/calico-etcd-d6gn7                          1/1       Running   0          1m
+kube-system   pod/calico-kube-controllers-84fd4db7cd-ctctz   1/1       Running   0          1m
+kube-system   pod/calico-node-bg4w8                          2/2       Running   0          1m
+kube-system   pod/coredns-78fcdf6894-7d5mf                   1/1       Running   0          2m
+kube-system   pod/coredns-78fcdf6894-xv9lm                   1/1       Running   0          2m
+kube-system   pod/etcd-allinone                              1/1       Running   0          1m
+kube-system   pod/kube-apiserver-allinone                    1/1       Running   0          1m
+kube-system   pod/kube-controller-manager-allinone           1/1       Running   0          1m
+kube-system   pod/kube-proxy-zz9t9                           1/1       Running   0          2m
+kube-system   pod/kube-scheduler-allinone                    1/1       Running   0          1m
+
+NAMESPACE     NAME                  TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+default       service/kubernetes    ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP         2m
+kube-system   service/calico-etcd   ClusterIP   10.96.232.136   &lt;none&gt;        6666/TCP        1m
+kube-system   service/kube-dns      ClusterIP   10.96.0.10      &lt;none&gt;        53/UDP,53/TCP   2m
+
+NAMESPACE     NAME                         DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                     AGE
+kube-system   daemonset.apps/calico-etcd   1         1         1         1            1           node-role.kubernetes.io/master=   1m
+kube-system   daemonset.apps/calico-node   1         1         1         1            1           &lt;none&gt;                            1m
+kube-system   daemonset.apps/kube-proxy    1         1         1         1            1           beta.kubernetes.io/arch=amd64     2m
+
+NAMESPACE     NAME                                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+kube-system   deployment.apps/calico-kube-controllers   1         1         1            1           1m
+kube-system   deployment.apps/coredns                   2         2         2            2           2m
+
+NAMESPACE     NAME                                                 DESIRED   CURRENT   READY     AGE
+kube-system   replicaset.apps/calico-kube-controllers-84fd4db7cd   1         1         1         1m
+kube-system   replicaset.apps/coredns-78fcdf6894 
+</code></pre>
+
+<p>To remove the taint:</p>
+
+<pre><code>kubectl taint node allinone node-role.kubernetes.io/master:NoSchedule-
+</code></pre>
+
+<h2 id="install-helm">Install Helm</h2>
+
+<p>Create the service account</p>
+
+<pre><code>kubectl create serviceaccount tiller --namespace kube-system
+serviceaccount/tiller created
+</code></pre>
+
+<pre><code>kubectl replace -f rbac-config.yaml
+serviceaccount/tiller replaced
+clusterrolebinding.rbac.authorization.k8s.io/tiller replaced
+</code></pre>
+
+<p>Init Tiller</p>
+
+<pre><code>helm init --service-account tiller
+
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster
+</code></pre>
+
+<pre><code>kubectl get all -n kube-system
+
+NAME                                           READY     STATUS    RESTARTS   AGE
+pod/calico-etcd-d6gn7                          1/1       Running   0          4m
+pod/calico-kube-controllers-84fd4db7cd-ctctz   1/1       Running   0          4m
+pod/calico-node-bg4w8                          2/2       Running   0          4m
+pod/coredns-78fcdf6894-7d5mf                   1/1       Running   0          5m
+pod/coredns-78fcdf6894-xv9lm                   1/1       Running   0          5m
+pod/etcd-allinone                              1/1       Running   0          5m
+pod/kube-apiserver-allinone                    1/1       Running   0          4m
+pod/kube-controller-manager-allinone           1/1       Running   0          5m
+pod/kube-proxy-zz9t9                           1/1       Running   0          5m
+pod/kube-scheduler-allinone                    1/1       Running   0          4m
+pod/tiller-deploy-759cb9df9-wrznl              1/1       Running   0          46s
+
+NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+service/calico-etcd     ClusterIP   10.96.232.136   &lt;none&gt;        6666/TCP        4m
+service/kube-dns        ClusterIP   10.96.0.10      &lt;none&gt;        53/UDP,53/TCP   6m
+service/tiller-deploy   ClusterIP   10.103.151.9    &lt;none&gt;        44134/TCP       46s
+
+NAME                         DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                     AGE
+daemonset.apps/calico-etcd   1         1         1         1            1           node-role.kubernetes.io/master=   4m
+daemonset.apps/calico-node   1         1         1         1            1           &lt;none&gt;                            4m
+daemonset.apps/kube-proxy    1         1         1         1            1           beta.kubernetes.io/arch=amd64     6m
+
+NAME                                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/calico-kube-controllers   1         1         1            1           4m
+deployment.apps/coredns                   2         2         2            2           6m
+deployment.apps/tiller-deploy             1         1         1            1           46s
+
+NAME                                                 DESIRED   CURRENT   READY     AGE
+replicaset.apps/calico-kube-controllers-84fd4db7cd   1         1         1         4m
+replicaset.apps/coredns-78fcdf6894                   2         2         2         5m
+replicaset.apps/tiller-deploy-759cb9df9              1         1         1         46s
+</code></pre>
+
+<p>Update the repo</p>
+
+<pre><code>helm repo add stable https://kubernetes-charts.storage.googleapis.com
+
+&quot;stable&quot; has been added to your repositories
+</code></pre>
+
+<p>Install and remove nginx</p>
+
+<pre><code>helm install stable/nginx-ingress
+
+NAME:   messy-snake
+LAST DEPLOYED: Sat Jun 30 18:05:58 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==&gt; v1beta1/ClusterRoleBinding
+NAME                       AGE
+messy-snake-nginx-ingress  1s
+
+==&gt; v1beta1/Role
+NAME                       AGE
+messy-snake-nginx-ingress  1s
+
+==&gt; v1/ServiceAccount
+NAME                       SECRETS  AGE
+messy-snake-nginx-ingress  1        1s
+
+==&gt; v1beta1/ClusterRole
+NAME                       AGE
+messy-snake-nginx-ingress  1s
+
+==&gt; v1/Service
+NAME                                       TYPE          CLUSTER-IP     EXTERNAL-IP  PORT(S)                     AGE
+messy-snake-nginx-ingress-controller       LoadBalancer  10.98.107.113  &lt;pending&gt;    80:31098/TCP,443:32158/TCP  1s
+messy-snake-nginx-ingress-default-backend  ClusterIP     10.105.239.60  &lt;none&gt;       80/TCP                      1s
+
+==&gt; v1beta1/Deployment
+NAME                                       DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+messy-snake-nginx-ingress-controller       1        1        1           0          1s
+messy-snake-nginx-ingress-default-backend  1        1        1           0          1s
+
+==&gt; v1beta1/PodDisruptionBudget
+NAME                                       MIN AVAILABLE  MAX UNAVAILABLE  ALLOWED DISRUPTIONS  AGE
+messy-snake-nginx-ingress-controller       1              N/A              0                    1s
+messy-snake-nginx-ingress-default-backend  1              N/A              0                    1s
+
+==&gt; v1/Pod(related)
+NAME                                                        READY  STATUS             RESTARTS  AGE
+messy-snake-nginx-ingress-controller-5db5f96774-ql6nf       0/1    ContainerCreating  0         1s
+messy-snake-nginx-ingress-default-backend-7f877996b6-zzp82  0/1    ContainerCreating  0         1s
+
+==&gt; v1/ConfigMap
+NAME                                  DATA  AGE
+messy-snake-nginx-ingress-controller  1     1s
+
+==&gt; v1beta1/RoleBinding
+NAME                       AGE
+messy-snake-nginx-ingress  1s
+
+
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace default get services -o wide -w messy-snake-nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: &lt;base64 encoded cert&gt;
+    tls.key: &lt;base64 encoded key&gt;
+  type: kubernetes.io/tls
+</code></pre>
+
+<pre><code>helm ls
+NAME            REVISION        UPDATED                         STATUS          CHART                   NAMESPACE
+messy-snake     1               Sat Jun 30 18:05:58 2018        DEPLOYED        nginx-ingress-0.22.0    default
+</code></pre>
+
+<pre><code>kubectl get all
+
+NAME                                                             READY     STATUS    RESTARTS   AGE
+pod/messy-snake-nginx-ingress-controller-5db5f96774-ql6nf        1/1       Running   0          1m
+pod/messy-snake-nginx-ingress-default-backend-7f877996b6-zzp82   1/1       Running   0          1m
+
+NAME                                                TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+service/kubernetes                                  ClusterIP      10.96.0.1       &lt;none&gt;        443/TCP                      9m
+service/messy-snake-nginx-ingress-controller        LoadBalancer   10.98.107.113   &lt;pending&gt;     80:31098/TCP,443:32158/TCP   1m
+service/messy-snake-nginx-ingress-default-backend   ClusterIP      10.105.239.60   &lt;none&gt;        80/TCP                       1m
+
+NAME                                                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/messy-snake-nginx-ingress-controller        1         1         1            1           1m
+deployment.apps/messy-snake-nginx-ingress-default-backend   1         1         1            1           1m
+
+NAME                                                                   DESIRED   CURRENT   READY     AGE
+replicaset.apps/messy-snake-nginx-ingress-controller-5db5f96774        1         1         1         1m
+replicaset.apps/messy-snake-nginx-ingress-default-backend-7f877996b6   1         1         1         1m
+</code></pre>
+
+<p>Remove the test chart</p>
+
+<pre><code>helm delete messy-snake
+release &quot;messy-snake&quot; deleted
+</code></pre>
+
+<h2 id="use-kubeadm-to-remove-everything">Use kubeadm to remove everything</h2>
+
+<pre><code>sudo kubeadm reset
+sudo docker rm $(sudo docker ps -qa)
+sudo docker image rm -f $(sudo docker image list -qa)
+</code></pre>
+
+<h2 id="references">References</h2>
+
+<ul>
+<li>TBD</li>
+</ul>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="categories/wiki">wiki</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="tags/kubernetes">kubernetes</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/kubeadm">kubeadm</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jbrette" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/2018-06-20-a/"
+                class="button big previous">Create a Rapsberry PI Rescue Dongle</a></li>
+    
+
+    
+        <li><a href="/post/2018-06-22-a/"
+                class="button big next">Setup your GOLANG environment</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo.png" class="intro-circle" width="" alt="avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Jerome&#39;s Blog</h2>
+        <p>Building my edge cloud using Raspberry PI, keep learning from the opensource community</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-29'>
+                September 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-28'>
+                July 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-19'>
+                July 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-18-a/">Compile and Test Portieris</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-18'>
+                July 18, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-17'>
+                July 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-16'>
+                July 16, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wiki/">wiki</a>
+                <span style="float:right;">35</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wip/">wip</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/news/">news</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>About the author</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Jerome Brette&#39;s Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/bash.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/golang.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

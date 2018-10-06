@@ -1,0 +1,1427 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "ZWave/ZigBee network and Linear HUSBZB‑1",
+        "headline" : "ZWave/ZigBee network and Linear HUSBZB‑1",
+        "description" : "Goal In order to transforme a PI into a home automation controller, it is necessary to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities of the PI.
+Key  Transform Raspberry-PI + Dongle into a SUC ZWave controller Try to use with OpenHAB or HomeAssistant  Testing on the OpenHAB Container The OpenHAB architecture is Java based.
+Testing on the HomeAssistant Container HomeAssistant is Python based and relies on OpenZWave.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-07-06 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-07-06 00:00:00 &#43;0000 UTC",
+        "url" : "/post/2018-07-06-a/",
+        "wordCount" : "1407",
+        "keywords" : [ "homeautomation","wifi","zigbee","zwave","rpi","Blog" ]
+    }
+    </script>
+        
+            
+                <title>ZWave/ZigBee network and Linear HUSBZB‑1</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Jerome Brette&#39;s Blog">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ZWave/ZigBee network and Linear HUSBZB‑1"/>
+<meta name="twitter:description" content="Goal In order to transforme a PI into a home automation controller, it is necessary to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities of the PI.
+Key  Transform Raspberry-PI &#43; Dongle into a SUC ZWave controller Try to use with OpenHAB or HomeAssistant  Testing on the OpenHAB Container The OpenHAB architecture is Java based.
+Testing on the HomeAssistant Container HomeAssistant is Python based and relies on OpenZWave."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="ZWave/ZigBee network and Linear HUSBZB‑1" />
+<meta property="og:description" content="Goal In order to transforme a PI into a home automation controller, it is necessary to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities of the PI.
+Key  Transform Raspberry-PI &#43; Dongle into a SUC ZWave controller Try to use with OpenHAB or HomeAssistant  Testing on the OpenHAB Container The OpenHAB architecture is Java based.
+Testing on the HomeAssistant Container HomeAssistant is Python based and relies on OpenZWave." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-07-06-a/" />
+
+
+
+<meta property="article:published_time" content="2018-07-06T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-06T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="ZWave/ZigBee network and Linear HUSBZB‑1">
+<meta itemprop="description" content="Goal In order to transforme a PI into a home automation controller, it is necessary to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities of the PI.
+Key  Transform Raspberry-PI &#43; Dongle into a SUC ZWave controller Try to use with OpenHAB or HomeAssistant  Testing on the OpenHAB Container The OpenHAB architecture is Java based.
+Testing on the HomeAssistant Container HomeAssistant is Python based and relies on OpenZWave.">
+
+
+<meta itemprop="datePublished" content="2018-07-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1407">
+
+
+
+<meta itemprop="keywords" content="homeautomation,wifi,zigbee,zwave,rpi," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123357787-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">post</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-list">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-29'>
+                                    September 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-28'>
+                                    July 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-19'>
+                                    July 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-18-a/">Compile and Test Portieris</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-17'>
+                                    July 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-16'>
+                                    July 16, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-06-a%2f&amp;text=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-06-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-06-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-06-a%2f&amp;title=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-06-a%2f&amp;title=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-06-a%2f&amp;title=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-06-a%2f&amp;description=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-06-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/2018-07-06-a/">ZWave/ZigBee network and Linear HUSBZB‑1</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-07-06'>
+            July 6, 2018</time>
+        <span class="author"></span>
+        
+            <p>7 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-06-a%2f&amp;text=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-06-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-06-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-06-a%2f&amp;title=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-06-a%2f&amp;title=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-06-a%2f&amp;title=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-06-a%2f&amp;description=ZWave%2fZigBee%20network%20and%20Linear%20HUSBZB%e2%80%911" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-06-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="goal">Goal</h1>
+
+<p>In order to transforme a PI into a home automation controller, it is necessary
+to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities
+of the PI.</p>
+
+<h2 id="key">Key</h2>
+
+<ul>
+<li>Transform Raspberry-PI + Dongle into a SUC ZWave controller</li>
+<li>Try to use with OpenHAB or HomeAssistant</li>
+</ul>
+
+<h2 id="testing-on-the-openhab-container">Testing on the OpenHAB Container</h2>
+
+<p>The OpenHAB architecture is Java based.</p>
+
+<h2 id="testing-on-the-homeassistant-container">Testing on the HomeAssistant Container</h2>
+
+<p>HomeAssistant is Python based and relies on OpenZWave. Some of the data
+is also saved in SQLite. In both cases developping small Python scripts
+to investigate the setup seems to be the easiest way.</p>
+
+<h3 id="commands">Commands</h3>
+
+<p>HomeAssistant seems to intialize ZWave support through the following code</p>
+
+<pre><code>/usr/lib/python3.6/site-packages/homeassistant/components/zwave/__init__.py
+</code></pre>
+
+<p>In the docker container itself.</p>
+
+<pre><code>pyozw_check -d /dev/ttyUSB0
+
+-------------------------------------------------------------------------------
+Import libs
+Try to import libopenzwave
+Try to import libopenzwave.PyLogLevels
+Try to get options
+Try to get manager
+Try to get python_openzwave version
+0.4.3
+Try to get python_openzwave full version
+python_openzwave version 0.4.3 (embed-cython / Jul  4 2018 - 18:58:22)
+Try to get openzwave version
+1.4.2926
+Try to get default config path
+/usr/lib/python3.6/site-packages/python_openzwave/ozw_config
+Try to destroy manager
+Try to destroy options
+Try to import openzwave (API)
+</code></pre>
+
+<h3 id="logs">Logs</h3>
+
+<p>OpenZWave.txt</p>
+
+<p>~~~~
+2018-07-07 05:11:04.866 Always, OpenZwave Version 1.4.2926 Starting Up
+2018-07-07 05:11:20.242 Info, Setting Up Provided Network Key for Secure Communications
+2018-07-07 05:11:20.242 Warning, Failed - Network Key Not Set
+2018-07-07 05:11:20.243 Info, mgr,     Added driver for controller /dev/ttyUSB0
+2018-07-07 05:11:20.243 Info,   Opening controller /dev/ttyUSB0
+2018-07-07 05:11:20.243 Info, Trying to open serial port /dev/ttyUSB0 (attempt 1)
+2018-07-07 05:11:20.245 Info, Serial port /dev/ttyUSB0 opened (attempt 1)
+2018-07-07 05:11:20.245 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_VERSION: 0x01, 0x03, 0x00, 0x15, 0xe9
+2018-07-07 05:11:20.245 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_MEMORY_GET_ID: 0x01, 0x03, 0x00, 0x20, 0xdc
+2018-07-07 05:11:20.246 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_CONTROLLER_CAPABILITIES: 0x01, 0x03, 0x00, 0x05, 0xf9
+2018-07-07 05:11:20.246 Detail, contrlr, Queuing (Command) FUNC_ID_SERIAL_API_GET_CAPABILITIES: 0x01, 0x03, 0x00, 0x07, 0xfb
+2018-07-07 05:11:20.246 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_SUC_NODE_ID: 0x01, 0x03, 0x00, 0x56, 0xaa
+2018-07-07 05:11:20.246 Detail,
+2018-07-07 05:11:20.246 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x15) - FUNC_ID_ZW_GET_VERSION: 0x01, 0x03, 0x00, 0x15, 0xe9
+2018-07-07 05:11:20.250 Detail, contrlr,   Received: 0x01, 0x10, 0x01, 0x15, 0x5a, 0x2d, 0x57, 0x61, 0x76, 0x65, 0x20, 0x34, 0x2e, 0x30, 0x35, 0x00, 0x01, 0x97
+2018-07-07 05:11:20.250 Detail,
+2018-07-07 05:11:20.250 Info, contrlr, Received reply to FUNC_ID_ZW_GET_VERSION:
+2018-07-07 05:11:20.250 Info, contrlr,     Static Controller library, version Z-Wave 4.05
+2018-07-07 05:11:20.250 Detail, Node045,   Expected reply was received
+2018-07-07 05:11:20.250 Detail, Node045,   Message transaction complete
+2018-07-07 05:11:20.250 Detail,
+2018-07-07 05:11:20.250 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.251 Detail,
+2018-07-07 05:11:20.251 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x20) - FUNC_ID_ZW_MEMORY_GET_ID: 0x01, 0x03, 0x00, 0x20, 0xdc
+2018-07-07 05:11:20.254 Detail, contrlr,   Received: 0x01, 0x08, 0x01, 0x20, 0xec, 0x5a, 0x75, 0x19, 0x01, 0x0d
+2018-07-07 05:11:20.254 Detail,
+2018-07-07 05:11:20.254 Info, contrlr, Received reply to FUNC_ID_ZW_MEMORY_GET_ID. Home ID = 0xec5a7519.  Our node ID = 1
+2018-07-07 05:11:20.254 Detail, Node090,   Expected reply was received
+2018-07-07 05:11:20.254 Detail, Node090,   Message transaction complete
+2018-07-07 05:11:20.254 Detail,
+2018-07-07 05:11:20.254 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.254 Detail,
+2018-07-07 05:11:20.254 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x05) - FUNC_ID_ZW_GET_CONTROLLER_CAPABILITIES: 0x01, 0x03, 0x00, 0x05, 0xf9
+2018-07-07 05:11:20.257 Detail, contrlr,   Received: 0x01, 0x04, 0x01, 0x05, 0x28, 0xd7
+2018-07-07 05:11:20.257 Detail,
+2018-07-07 05:11:20.257 Info, contrlr, Received reply to FUNC_ID_ZW_GET_CONTROLLER_CAPABILITIES:
+2018-07-07 05:11:20.257 Info, contrlr,     There is no SUC ID Server (SIS) in this network.
+2018-07-07 05:11:20.257 Info, contrlr,     The PC controller is a primary controller.
+2018-07-07 05:11:20.257 Detail, Node215,   Expected reply was received
+2018-07-07 05:11:20.257 Detail, Node215,   Message transaction complete
+2018-07-07 05:11:20.257 Detail,
+2018-07-07 05:11:20.257 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.257 Detail,
+2018-07-07 05:11:20.257 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x07) - FUNC_ID_SERIAL_API_GET_CAPABILITIES: 0x01, 0x03, 0x00, 0x07, 0xfb
+2018-07-07 05:11:20.263 Detail, contrlr,   Received: 0x01, 0x2b, 0x01, 0x07, 0x04, 0x20, 0x00, 0x00, 0x00, 0x01, 0x00, 0x01, 0xfe, 0x81, 0xff, 0x88, 0xcf, 0x1f, 0x00, 0x00, 0xfb, 0x9f, 0x7d,
+2018-07-07 05:11:20.263 Detail,
+2018-07-07 05:11:20.263 Info, contrlr,  Received reply to FUNC_ID_SERIAL_API_GET_CAPABILITIES
+2018-07-07 05:11:20.264 Info, contrlr,     Serial API Version:   4.32
+2018-07-07 05:11:20.264 Info, contrlr,     Manufacturer ID:      0x0000
+2018-07-07 05:11:20.264 Info, contrlr,     Product Type:         0x0001
+2018-07-07 05:11:20.264 Info, contrlr,     Product ID:           0x0001
+2018-07-07 05:11:20.264 Detail, contrlr, Queuing (Command) FUNC_ID_ZW_GET_RANDOM: 0x01, 0x04, 0x00, 0x1c, 0x20, 0xc7
+2018-07-07 05:11:20.264 Detail, contrlr, Queuing (Command) FUNC_ID_SERIAL_API_GET_INIT_DATA: 0x01, 0x03, 0x00, 0x02, 0xfe
+2018-07-07 05:11:20.264 Detail, contrlr, Queuing (Command) FUNC_ID_SERIAL_API_SET_TIMEOUTS: 0x01, 0x05, 0x00, 0x06, 0x64, 0x0f, 0x97
+2018-07-07 05:11:20.264 Detail, contrlr, Queuing (Command) FUNC_ID_SERIAL_API_APPL_NODE_INFORMATION: 0x01, 0x07, 0x00, 0x03, 0x01, 0x02, 0x01, 0x00, 0xf9
+2018-07-07 05:11:20.264 Detail, Node032,   Expected reply was received
+2018-07-07 05:11:20.264 Detail, Node032,   Message transaction complete
+2018-07-07 05:11:20.264 Detail,
+2018-07-07 05:11:20.264 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.264 Detail,
+2018-07-07 05:11:20.264 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x56) - FUNC_ID_ZW_GET_SUC_NODE_ID: 0x01, 0x03, 0x00, 0x56, 0xaa
+2018-07-07 05:11:20.267 Detail, contrlr,   Received: 0x01, 0x04, 0x01, 0x56, 0x00, 0xac
+2018-07-07 05:11:20.280 Detail,
+2018-07-07 05:11:20.280 Info, contrlr, Received reply to GET_SUC_NODE_ID.  Node ID = 0
+2018-07-07 05:11:20.280 Info, Controller Does not Support SUC - Cannot Setup Controller as SUC Node
+2018-07-07 05:11:20.280 Detail, Node172,   Expected reply was received
+2018-07-07 05:11:20.281 Detail, Node172,   Message transaction complete
+2018-07-07 05:11:20.281 Detail,
+2018-07-07 05:11:20.281 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.281 Detail,
+2018-07-07 05:11:20.281 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x1c) - FUNC_ID_ZW_GET_RANDOM: 0x01, 0x04, 0x00, 0x1c, 0x20, 0xc7
+2018-07-07 05:11:20.335 Detail, contrlr,   Received: 0x01, 0x25, 0x01, 0x1c, 0x01, 0x20, 0x05, 0xee, 0x89, 0xf8, 0xcc, 0xfc, 0x39, 0xec, 0xc6, 0xe2, 0xe8, 0x96, 0x54, 0xe1, 0x49, 0x4f, 0x2b,
+2018-07-07 05:11:20.335 Detail,
+2018-07-07 05:11:20.335 Info, contrlr, Received reply to FUNC_ID_ZW_GET_RANDOM: true
+2018-07-07 05:11:20.335 Detail, Node032,   Expected reply was received
+2018-07-07 05:11:20.335 Detail, Node032,   Message transaction complete
+2018-07-07 05:11:20.335 Detail,
+2018-07-07 05:11:20.335 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.335 Detail,
+2018-07-07 05:11:20.335 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x02) - FUNC_ID_SERIAL_API_GET_INIT_DATA: 0x01, 0x03, 0x00, 0x02, 0xfe
+2018-07-07 05:11:20.393 Detail, contrlr,   Received: 0x01, 0x25, 0x01, 0x02, 0x05, 0x00, 0x1d, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+2018-07-07 05:11:20.393 Detail,
+2018-07-07 05:11:20.393 Info, mgr,     Driver with Home ID of 0xec5a7519 is now ready.
+2018-07-07 05:11:20.393 Info,
+2018-07-07 05:11:20.394 Info, contrlr, Received reply to FUNC_ID_SERIAL_API_GET_INIT_DATA:
+2018-07-07 05:11:20.394 Info, contrlr,     Node 001 - Known
+2018-07-07 05:11:20.394 Detail, Node001, AdvanceQueries queryPending=0 queryRetries=0 queryStage=CacheLoad live=1
+2018-07-07 05:11:20.394 Detail, Node001, QueryStage_CacheLoad
+2018-07-07 05:11:20.394 Info, Node001, Node Identity Codes: 0000:0001:0001
+2018-07-07 05:11:20.394 Detail, Node001, QueryStage_Associations
+2018-07-07 05:11:20.394 Detail, Node001, QueryStage_Neighbors
+2018-07-07 05:11:20.394 Detail, contrlr, Requesting routing info (neighbor list) for Node 1
+2018-07-07 05:11:20.394 Detail, Node001, Queuing (Command) Get Routing Info (Node=1): 0x01, 0x07, 0x00, 0x80, 0x01, 0x00, 0x00, 0x03, 0x7a
+2018-07-07 05:11:20.394 Detail, Node001, Queuing (Query) Query Stage Complete (Neighbors)
+2018-07-07 05:11:20.394 Detail,   Expected reply was received
+2018-07-07 05:11:20.394 Detail,   Message transaction complete
+2018-07-07 05:11:20.394 Detail,
+2018-07-07 05:11:20.394 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.395 Detail, Node001, Notification: DriverReady
+2018-07-07 05:11:20.402 Detail, Node001, Notification: NodeAdded
+2018-07-07 05:11:20.430 Detail, Node001, Notification: NodeProtocolInfo
+2018-07-07 05:11:20.432 Detail, Node001, Notification: EssentialNodeQueriesComplete
+2018-07-07 05:11:20.432 Detail, Node001, Notification: ValueAdded
+2018-07-07 05:11:20.433 Detail,
+2018-07-07 05:11:20.434 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x06) - FUNC_ID_SERIAL_API_SET_TIMEOUTS: 0x01, 0x05, 0x00, 0x06, 0x64, 0x0f, 0x97
+2018-07-07 05:11:20.436 Detail, contrlr,   Received: 0x01, 0x05, 0x01, 0x06, 0x64, 0x0f, 0x96
+2018-07-07 05:11:20.437 Detail,
+2018-07-07 05:11:20.437 Info, contrlr, Received reply to FUNC_ID_SERIAL_API_SET_TIMEOUTS
+2018-07-07 05:11:20.437 Detail, Node015,   Expected reply was received
+2018-07-07 05:11:20.437 Detail, Node015,   Message transaction complete
+2018-07-07 05:11:20.437 Detail,
+2018-07-07 05:11:20.437 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.437 Detail,
+2018-07-07 05:11:20.437 Info, contrlr, Sending (Command) message (Callback ID=0x00, Expected Reply=0x00) - FUNC_ID_SERIAL_API_APPL_NODE_INFORMATION: 0x01, 0x07, 0x00, 0x03, 0x01, 0x02, 0x01,
+2018-07-07 05:11:20.439 Detail, contrlr, Removing current message
+2018-07-07 05:11:20.439 Detail,
+2018-07-07 05:11:20.439 Info, Node001, Sending (Command) message (Callback ID=0x00, Expected Reply=0x80) - Get Routing Info (Node=1): 0x01, 0x07, 0x00, 0x80, 0x01, 0x00, 0x00, 0x03, 0x7a
+2018-07-07 05:11:20.446 Detail, Node001,   Received: 0x01, 0x20, 0x01, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+2018-07-07 05:11:20.466 Detail,
+2018-07-07 05:11:20.466 Info, Node001, Received reply to FUNC_ID_ZW_GET_ROUTING_INFO
+2018-07-07 05:11:20.466 Info, Node001,     Neighbors of this node are:
+2018-07-07 05:11:20.466 Info, Node001,  (none reported)
+2018-07-07 05:11:20.466 Detail,   Expected reply was received
+2018-07-07 05:11:20.466 Detail,   Message transaction complete
+2018-07-07 05:11:20.466 Detail,
+2018-07-07 05:11:20.466 Detail, Node001, Removing current message
+2018-07-07 05:11:20.466 Detail, Node001, Query Stage Complete (Neighbors)
+2018-07-07 05:11:20.466 Detail, Node001, AdvanceQueries queryPending=0 queryRetries=0 queryStage=Session live=1
+2018-07-07 05:11:20.467 Detail, Node001, QueryStage_Session
+2018-07-07 05:11:20.467 Detail, Node001, QueryStage_Dynamic
+2018-07-07 05:11:20.467 Detail, Node001, QueryStage_Configuration
+2018-07-07 05:11:20.467 Detail, Node001, QueryStage_Complete
+2018-07-07 05:11:20.467 Warning, CheckCompletedNodeQueries m_allNodesQueried=0 m_awakeNodesQueried=0
+2018-07-07 05:11:20.467 Warning, CheckCompletedNodeQueries all=1, deadFound=0 sleepingOnly=1
+2018-07-07 05:11:20.467 Info,          Node query processing complete.
+2018-07-07 05:11:20.467 Detail, Node001, Notification: NodeQueriesComplete
+2018-07-07 05:11:20.469 Detail, contrlr, Notification: AllNodesQueried
+~~~</p>
+
+<h3 id="reference-links">Reference Links</h3>
+
+<ul>
+<li><a href="https://github.com/OpenZWave/python-openzwave">Link2</a></li>
+</ul>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="categories/wiki">wiki</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="tags/homeautomation">homeautomation</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/wifi">wifi</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/zigbee">zigbee</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/zwave">zwave</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/rpi">rpi</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jbrette" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/2018-07-05-a/"
+                class="button big previous">Install OpenHAB on docker &#43; Raspberry PI3</a></li>
+    
+
+    
+        <li><a href="/post/2018-07-07-a/"
+                class="button big next">Using Ansible to manage Raspberry PI cluster</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo.png" class="intro-circle" width="" alt="avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Jerome&#39;s Blog</h2>
+        <p>Building my edge cloud using Raspberry PI, keep learning from the opensource community</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-29'>
+                September 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-28'>
+                July 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-19'>
+                July 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-18-a/">Compile and Test Portieris</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-18'>
+                July 18, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-17'>
+                July 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-16'>
+                July 16, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wiki/">wiki</a>
+                <span style="float:right;">35</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wip/">wip</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/news/">news</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>About the author</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Jerome Brette&#39;s Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/bash.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/golang.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

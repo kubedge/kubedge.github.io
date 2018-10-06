@@ -1,0 +1,1530 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "Creating a Raspberry 3 B&#43; Kubernetes Cluster",
+        "headline" : "Creating a Raspberry 3 B&#43; Kubernetes Cluster",
+        "description" : "Goal Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
+Key Aspects  Build a Raspberry 3B+ Cluster Deploy Kubernetes on that Cluster  Hardware Reference Links  Video  Procedure  Kind of followed the video Used a premade rack instead. Adapt to Raspberry 3B+ (1Gb card instead of 100Mb card)  Result Cluster 1: 5 nodes cluster Cluster 2: 3 nodes cluster OS Reference Links  Video HypriotOS  Procedure  Use HypriotOS because the quickest to set up.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-07-03 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-07-03 00:00:00 &#43;0000 UTC",
+        "url" : "/post/2018-07-03-a/",
+        "wordCount" : "1455",
+        "keywords" : [ "kubernetes","rpi","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Jerome Brette&#39;s Blog">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating a Raspberry 3 B&#43; Kubernetes Cluster"/>
+<meta name="twitter:description" content="Goal Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
+Key Aspects  Build a Raspberry 3B&#43; Cluster Deploy Kubernetes on that Cluster  Hardware Reference Links  Video  Procedure  Kind of followed the video Used a premade rack instead. Adapt to Raspberry 3B&#43; (1Gb card instead of 100Mb card)  Result Cluster 1: 5 nodes cluster Cluster 2: 3 nodes cluster OS Reference Links  Video HypriotOS  Procedure  Use HypriotOS because the quickest to set up."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="Creating a Raspberry 3 B&#43; Kubernetes Cluster" />
+<meta property="og:description" content="Goal Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
+Key Aspects  Build a Raspberry 3B&#43; Cluster Deploy Kubernetes on that Cluster  Hardware Reference Links  Video  Procedure  Kind of followed the video Used a premade rack instead. Adapt to Raspberry 3B&#43; (1Gb card instead of 100Mb card)  Result Cluster 1: 5 nodes cluster Cluster 2: 3 nodes cluster OS Reference Links  Video HypriotOS  Procedure  Use HypriotOS because the quickest to set up." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-07-03-a/" />
+
+
+
+<meta property="article:published_time" content="2018-07-03T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-03T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Creating a Raspberry 3 B&#43; Kubernetes Cluster">
+<meta itemprop="description" content="Goal Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.
+Key Aspects  Build a Raspberry 3B&#43; Cluster Deploy Kubernetes on that Cluster  Hardware Reference Links  Video  Procedure  Kind of followed the video Used a premade rack instead. Adapt to Raspberry 3B&#43; (1Gb card instead of 100Mb card)  Result Cluster 1: 5 nodes cluster Cluster 2: 3 nodes cluster OS Reference Links  Video HypriotOS  Procedure  Use HypriotOS because the quickest to set up.">
+
+
+<meta itemprop="datePublished" content="2018-07-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1455">
+
+
+
+<meta itemprop="keywords" content="kubernetes,rpi," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123357787-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">post</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-list">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-29'>
+                                    September 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-28'>
+                                    July 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-19'>
+                                    July 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-18-a/">Compile and Test Portieris</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-17'>
+                                    July 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-16'>
+                                    July 16, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-03-a%2f&amp;text=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-03-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-03-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-03-a%2f&amp;title=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-03-a%2f&amp;title=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-03-a%2f&amp;title=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-03-a%2f&amp;description=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-03-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/2018-07-03-a/">Creating a Raspberry 3 B&#43; Kubernetes Cluster</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-07-03'>
+            July 3, 2018</time>
+        <span class="author"></span>
+        
+            <p>7 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-03-a%2f&amp;text=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-03-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-03-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-03-a%2f&amp;title=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-03-a%2f&amp;title=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-03-a%2f&amp;title=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-03-a%2f&amp;description=Creating%20a%20Raspberry%203%20B%2b%20Kubernetes%20Cluster" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-03-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="goal">Goal</h1>
+
+<p>Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning,
+from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.</p>
+
+<h2 id="key-aspects">Key Aspects</h2>
+
+<ul>
+<li>Build a Raspberry 3B+ Cluster</li>
+<li>Deploy Kubernetes on that Cluster</li>
+</ul>
+
+<h2 id="hardware">Hardware</h2>
+
+<h3 id="reference-links">Reference Links</h3>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=KJKhRLKXr-Q">Video</a></li>
+</ul>
+
+<h3 id="procedure">Procedure</h3>
+
+<ul>
+<li>Kind of followed the video</li>
+<li>Used a premade rack instead.</li>
+<li>Adapt to Raspberry 3B+ (1Gb card instead of 100Mb card)</li>
+</ul>
+
+<h3 id="result">Result</h3>
+
+<h4 id="cluster-1-5-nodes-cluster"><strong>Cluster 1</strong>: 5 nodes cluster</h4>
+
+<p><img src="/images/raspberrypi/IMG_0339.JPG" alt="" /></p>
+
+<h4 id="cluster-2-3-nodes-cluster"><strong>Cluster 2</strong>: 3 nodes cluster</h4>
+
+<p><img src="/images/raspberrypi/IMG_0344.JPG" alt="" /></p>
+
+<h2 id="os">OS</h2>
+
+<h3 id="reference-links-1">Reference Links</h3>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=eZ5uX-JJbyY">Video</a></li>
+<li><a href="https://github.com/hypriot/image-builder-rpi/releases">HypriotOS</a></li>
+</ul>
+
+<h3 id="procedure-1">Procedure</h3>
+
+<ul>
+<li>Use HypriotOS because the quickest to set up. SSH and Docker supported by default</li>
+<li>Ubuntu Core was not ready for Raspberry 3B +</li>
+<li>Even if processor is 64bits, OS is still 32bits. (Memory is small anyway).</li>
+<li>Resion.io OS is not supporting docker anymore but balena instead. It would not work with Kubernetes.</li>
+<li>Video had a couple of typo in DHCP installation</li>
+<li>Removed cloud-init once the site was up.</li>
+<li>TBD</li>
+</ul>
+
+<h2 id="kubernetes">Kubernetes</h2>
+
+<h3 id="reference-links-2">Reference Links</h3>
+
+<ul>
+<li><a href="https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/">kubeadm1</a></li>
+<li><a href="https://kubecloud.io/setup-a-kubernetes-1-9-0-raspberry-pi-cluster-on-raspbian-using-kubeadm-f8b3b85bc2d1">kubeadm2</a></li>
+</ul>
+
+<h3 id="procedure-for-cluster-2">Procedure for Cluster 2</h3>
+
+<ul>
+<li>Issue at first with 10.04. Kubelet not starting. Downgraded with Kubernetes 1.9.8 (Cluster 1)</li>
+<li>Issue had been fixed with Kubernetes 1.11 (Cluster 2)</li>
+</ul>
+
+<pre><code>sudo -i
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo &quot;deb http://apt.kubernetes.io/ kubernetes-xenial main&quot; &gt; /etc/apt/sources.list.d/kubernetes.list
+apt-get update &amp;&amp; apt-get install -y kubeadm
+</code></pre>
+
+<pre><code># kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 192.168.1.95
+I0706 00:35:34.429323   14024 feature_gate.go:230] feature gates: &amp;{map[]}
+[init] using Kubernetes version: v1.11.0
+[preflight] running pre-flight checks
+I0706 00:35:34.656171   14024 kernel_validator.go:81] Validating kernel version
+I0706 00:35:34.657051   14024 kernel_validator.go:96] Validating kernel config
+        [WARNING SystemVerification]: docker version is greater than the most recently validated version. Docker version: 18.05.0-ce. Max validated version: 17.03
+[preflight/images] Pulling images required for setting up a Kubernetes cluster
+[preflight/images] This might take a minute or two, depending on the speed of your internet connection
+[preflight/images] You can also perform this action in beforehand using 'kubeadm config images pull'
+
+
+[kubelet] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
+[kubelet] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
+[preflight] Activating the kubelet service
+[certificates] Generated ca certificate and key.
+[certificates] Generated apiserver certificate and key.
+[certificates] apiserver serving cert is signed for DNS names [master-pi kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.95]
+[certificates] Generated apiserver-kubelet-client certificate and key.
+[certificates] Generated sa key and public key.
+[certificates] Generated front-proxy-ca certificate and key.
+[certificates] Generated front-proxy-client certificate and key.
+[certificates] Generated etcd/ca certificate and key.
+[certificates] Generated etcd/server certificate and key.
+[certificates] etcd/server serving cert is signed for DNS names [master-pi localhost] and IPs [127.0.0.1 ::1]
+[certificates] Generated etcd/peer certificate and key.
+[certificates] etcd/peer serving cert is signed for DNS names [master-pi localhost] and IPs [192.168.1.95 127.0.0.1 ::1]
+[certificates] Generated etcd/healthcheck-client certificate and key.
+[certificates] Generated apiserver-etcd-client certificate and key.
+[certificates] valid certificates and keys now exist in &quot;/etc/kubernetes/pki&quot;
+[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/admin.conf&quot;
+[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/kubelet.conf&quot;
+[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/controller-manager.conf&quot;
+[kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/scheduler.conf&quot;
+[controlplane] wrote Static Pod manifest for component kube-apiserver to &quot;/etc/kubernetes/manifests/kube-apiserver.yaml&quot;
+[controlplane] wrote Static Pod manifest for component kube-controller-manager to &quot;/etc/kubernetes/manifests/kube-controller-manager.yaml&quot;
+[controlplane] wrote Static Pod manifest for component kube-scheduler to &quot;/etc/kubernetes/manifests/kube-scheduler.yaml&quot;
+[etcd] Wrote Static Pod manifest for a local etcd instance to &quot;/etc/kubernetes/manifests/etcd.yaml&quot;
+[init] waiting for the kubelet to boot up the control plane as Static Pods from directory &quot;/etc/kubernetes/manifests&quot;
+[init] this might take a minute or longer if the control plane images have to be pulled
+[apiclient] All control plane components are healthy after 77.506994 seconds
+[uploadconfig] storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace
+[kubelet] Creating a ConfigMap &quot;kubelet-config-1.11&quot; in namespace kube-system with the configuration for the kubelets in the cluster
+[markmaster] Marking the node master-pi as master by adding the label &quot;node-role.kubernetes.io/master=''&quot;
+[markmaster] Marking the node master-pi as master by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[patchnode] Uploading the CRI Socket information &quot;/var/run/dockershim.sock&quot; to the Node API object &quot;master-pi&quot; as an annotation
+[bootstraptoken] using token: 120d6b.yyyyyyy
+[bootstraptoken] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstraptoken] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstraptoken] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstraptoken] creating the &quot;cluster-info&quot; ConfigMap in the &quot;kube-public&quot; namespace
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join 192.168.1.95:6443 --token 120d6b.yyyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
+</code></pre>
+
+<p>on master</p>
+
+<pre><code>mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+kubectl get nodes
+</code></pre>
+
+<pre><code>curl -sSL https://rawgit.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml | sed &quot;s/amd64/arm/g&quot; | kubectl create -f -
+</code></pre>
+
+<p>on first node</p>
+
+<pre><code>kubeadm join 192.168.1.95:6443 --token 120d6b.yyyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
+</code></pre>
+
+<p>on second node</p>
+
+<pre><code>kubeadm join 192.168.1.95:6443 --token 120d6b.yyyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
+</code></pre>
+
+<h3 id="kubernetes-1">Kubernetes</h3>
+
+<h4 id="cluster-1-5-node-clusters"><strong>Cluster 1</strong>: 5 node clusters</h4>
+
+<pre><code>kubectl get nodes
+
+NAME            STATUS    ROLES     AGE       VERSION
+kube-node01     Ready     &lt;none&gt;    23d       v1.9.8
+kube-node02     Ready     &lt;none&gt;    23d       v1.9.8
+kube-node03     Ready     &lt;none&gt;    23d       v1.9.8
+kube-node04     Ready     &lt;none&gt;    23d       v1.9.8
+kubemaster-pi   Ready     master    23d       v1.9.8
+</code></pre>
+
+<pre><code>kubectl get all --all-namespaces
+
+NAMESPACE     NAME                                        READY     STATUS    RESTARTS   AGE
+default       pod/hypriot-587768b4f5-7bqpz                1/1       Running   0          23d
+default       pod/hypriot-587768b4f5-b8xjq                1/1       Running   0          23d
+default       pod/hypriot-587768b4f5-s2mzt                1/1       Running   0          23d
+kube-system   pod/etcd-kubemaster-pi                      1/1       Running   0          23d
+kube-system   pod/kube-apiserver-kubemaster-pi            1/1       Running   0          23d
+kube-system   pod/kube-controller-manager-kubemaster-pi   1/1       Running   0          23d
+kube-system   pod/kube-dns-7b6ff86f69-l7lf6               3/3       Running   0          23d
+kube-system   pod/kube-flannel-ds-8xbx4                   1/1       Running   0          23d
+kube-system   pod/kube-flannel-ds-9cz9f                   1/1       Running   0          23d
+kube-system   pod/kube-flannel-ds-rgpcq                   1/1       Running   0          23d
+kube-system   pod/kube-flannel-ds-xnjtz                   1/1       Running   0          23d
+kube-system   pod/kube-flannel-ds-xxdf6                   1/1       Running   0          23d
+kube-system   pod/kube-proxy-5m95q                        1/1       Running   0          23d
+kube-system   pod/kube-proxy-7sh7m                        1/1       Running   0          23d
+kube-system   pod/kube-proxy-f7t9r                        1/1       Running   0          23d
+kube-system   pod/kube-proxy-pkqvd                        1/1       Running   0          23d
+kube-system   pod/kube-proxy-shrdr                        1/1       Running   0          23d
+kube-system   pod/kube-scheduler-kubemaster-pi            1/1       Running   0          23d
+kube-system   pod/kubernetes-dashboard-7fcc5cb979-8vbmp   1/1       Running   0          23d
+
+NAMESPACE     NAME                           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)         AGE
+default       service/hypriot                ClusterIP   10.110.24.241    &lt;none&gt;        80/TCP          23d
+default       service/kubernetes             ClusterIP   10.96.0.1        &lt;none&gt;        443/TCP         23d
+kube-system   service/kube-dns               ClusterIP   10.96.0.10       &lt;none&gt;        53/UDP,53/TCP   23d
+kube-system   service/kubernetes-dashboard   NodePort    10.102.144.189   &lt;none&gt;        443:30383/TCP   23d
+
+NAMESPACE     NAME                                   DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
+kube-system   daemonset.extensions/kube-flannel-ds   5         5         5         5            5           beta.kubernetes.io/arch=arm   23d
+kube-system   daemonset.extensions/kube-proxy        5         5         5         5            5           &lt;none&gt;                        23d
+
+NAMESPACE     NAME                                         DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+default       deployment.extensions/hypriot                3         3         3            3           23d
+kube-system   deployment.extensions/kube-dns               1         1         1            1           23d
+kube-system   deployment.extensions/kubernetes-dashboard   1         1         1            1           23d
+
+NAMESPACE     NAME                                                    DESIRED   CURRENT   READY     AGE
+default       replicaset.extensions/hypriot-587768b4f5                3         3         3         23d
+kube-system   replicaset.extensions/kube-dns-7b6ff86f69               1         1         1         23d
+kube-system   replicaset.extensions/kubernetes-dashboard-7fcc5cb979   1         1         1         23d
+
+NAMESPACE     NAME                             DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
+kube-system   daemonset.apps/kube-flannel-ds   5         5         5         5            5           beta.kubernetes.io/arch=arm   23d
+kube-system   daemonset.apps/kube-proxy        5         5         5         5            5           &lt;none&gt;                        23d
+
+NAMESPACE     NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+default       deployment.apps/hypriot                3         3         3            3           23d
+kube-system   deployment.apps/kube-dns               1         1         1            1           23d
+kube-system   deployment.apps/kubernetes-dashboard   1         1         1            1           23d
+
+NAMESPACE     NAME                                              DESIRED   CURRENT   READY     AGE
+default       replicaset.apps/hypriot-587768b4f5                3         3         3         23d
+kube-system   replicaset.apps/kube-dns-7b6ff86f69               1         1         1         23d
+kube-system   replicaset.apps/kubernetes-dashboard-7fcc5cb979   1         1         1         23d
+</code></pre>
+
+<h4 id="cluster-2-3-node-clusters"><strong>Cluster 2</strong>: 3 node clusters</h4>
+
+<pre><code>kubectl get nodes
+
+NAME        STATUS    ROLES     AGE       VERSION
+home-pi     Ready     &lt;none&gt;    56m       v1.11.0
+master-pi   Ready     master    1h        v1.11.0
+nas-pi      Ready     &lt;none&gt;    5m        v1.11.0
+</code></pre>
+
+<pre><code>kubectl get all --all-namespaces
+
+NAMESPACE     NAME                                    READY     STATUS    RESTARTS   AGE
+kube-system   pod/coredns-78fcdf6894-cw5p8            1/1       Running   0          59m
+kube-system   pod/coredns-78fcdf6894-czjcj            1/1       Running   0          1h
+kube-system   pod/etcd-master-pi                      1/1       Running   0          1h
+kube-system   pod/kube-apiserver-master-pi            1/1       Running   0          59m
+kube-system   pod/kube-controller-manager-master-pi   1/1       Running   12         1h
+kube-system   pod/kube-flannel-ds-bhllh               1/1       Running   2          3m
+kube-system   pod/kube-flannel-ds-q7cp2               1/1       Running   0          22m
+kube-system   pod/kube-flannel-ds-wqxsz               1/1       Running   0          22m
+kube-system   pod/kube-proxy-4chwh                    1/1       Running   0          45m
+kube-system   pod/kube-proxy-6r5mn                    1/1       Running   0          3m
+kube-system   pod/kube-proxy-vvj6j                    1/1       Running   0          1h
+kube-system   pod/kube-scheduler-master-pi            1/1       Running   0          59m
+
+NAMESPACE     NAME                 TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)         AGE
+default       service/kubernetes   ClusterIP   10.96.0.1    &lt;none&gt;        443/TCP         1h
+kube-system   service/kube-dns     ClusterIP   10.96.0.10   &lt;none&gt;        53/UDP,53/TCP   1h
+
+NAMESPACE     NAME                             DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
+kube-system   daemonset.apps/kube-flannel-ds   3         3         3         3            3           beta.kubernetes.io/arch=arm   53m
+kube-system   daemonset.apps/kube-proxy        3         3         3         3            3           beta.kubernetes.io/arch=arm   1h
+
+NAMESPACE     NAME                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+kube-system   deployment.apps/coredns   2         2         2            2           1h
+
+NAMESPACE     NAME                                 DESIRED   CURRENT   READY     AGE
+kube-system   replicaset.apps/coredns-78fcdf6894   2         2         2         1h
+</code></pre>
+
+<h3 id="kubernetes-dashboard">Kubernetes Dashboard</h3>
+
+<h4 id="cluster-1-5-node-clusters-1"><strong>Cluster 1</strong>: 5 node clusters</h4>
+
+<p>List of the nodes in Cluster 1</p>
+
+<p><img src="/images/kubernetes/cluster1_nodes.png" alt="" /></p>
+
+<p>Kubernetes kube-system overview of Cluster 1</p>
+
+<p><img src="/images/kubernetes/cluster1_overview.png" alt="" /></p>
+
+<h4 id="cluster-2-3-node-clusters-1"><strong>Cluster 2</strong>: 3 node clusters</h4>
+
+<p>List of the nodes in Cluster 2</p>
+
+<p><img src="/images/kubernetes/cluster2_nodes.png" alt="" /></p>
+
+<p>Kubernetes kube-system overview of Cluster 2</p>
+
+<p><img src="/images/kubernetes/cluster2_overview.png" alt="" /></p>
+
+<h3 id="cleanup">Cleanup</h3>
+
+<p>cleanup</p>
+
+<pre><code>sudo kubeadm reset
+sudo docker rm $(sudo docker ps -qa)
+sudo docker image rm $(sudo docker image list -qa)
+sudo apt-get upgrade
+</code></pre>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="categories/wiki">wiki</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="tags/kubernetes">kubernetes</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/rpi">rpi</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jbrette" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/2018-07-02-a/"
+                class="button big previous">Compile and Test SONOBUOY</a></li>
+    
+
+    
+        <li><a href="/post/2018-07-04-a/"
+                class="button big next">Install HomeAssistant on docker &#43; Raspberry PI3</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo.png" class="intro-circle" width="" alt="avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Jerome&#39;s Blog</h2>
+        <p>Building my edge cloud using Raspberry PI, keep learning from the opensource community</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-29'>
+                September 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-28'>
+                July 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-19'>
+                July 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-18-a/">Compile and Test Portieris</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-18'>
+                July 18, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-17'>
+                July 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-16'>
+                July 16, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wiki/">wiki</a>
+                <span style="float:right;">35</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wip/">wip</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/news/">news</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>About the author</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Jerome Brette&#39;s Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/bash.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/golang.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

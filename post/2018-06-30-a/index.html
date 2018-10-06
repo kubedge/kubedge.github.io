@@ -1,0 +1,1452 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "Update Kubernetes to 1.11 on Ubuntu",
+        "headline" : "Update Kubernetes to 1.11 on Ubuntu",
+        "description" : "Goal Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.
+Initial set up Kubernetes 1.10.4 is installed
+cat /etc/apt/sources.list.d/kubernetes.list deb http://apt.kubernetes.io/ kubernetes-xenial main  sudo dpkg -l kubeadm Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description +++-======================================-========================-========================-================================================================================= ii kubeadm 1.10.4-00 amd64 Kubernetes Cluster Bootstrapping Tool  sudo dpkg -l kubelet Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description +++-======================================-========================-========================-================================================================================= ii kubelet 1.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-06-30 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-06-30 00:00:00 &#43;0000 UTC",
+        "url" : "/post/2018-06-30-a/",
+        "wordCount" : "1010",
+        "keywords" : [ "kubernetes","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Update Kubernetes to 1.11 on Ubuntu</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Jerome Brette&#39;s Blog">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Update Kubernetes to 1.11 on Ubuntu"/>
+<meta name="twitter:description" content="Goal Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.
+Initial set up Kubernetes 1.10.4 is installed
+cat /etc/apt/sources.list.d/kubernetes.list deb http://apt.kubernetes.io/ kubernetes-xenial main  sudo dpkg -l kubeadm Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description &#43;&#43;&#43;-======================================-========================-========================-================================================================================= ii kubeadm 1.10.4-00 amd64 Kubernetes Cluster Bootstrapping Tool  sudo dpkg -l kubelet Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description &#43;&#43;&#43;-======================================-========================-========================-================================================================================= ii kubelet 1."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="Update Kubernetes to 1.11 on Ubuntu" />
+<meta property="og:description" content="Goal Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.
+Initial set up Kubernetes 1.10.4 is installed
+cat /etc/apt/sources.list.d/kubernetes.list deb http://apt.kubernetes.io/ kubernetes-xenial main  sudo dpkg -l kubeadm Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description &#43;&#43;&#43;-======================================-========================-========================-================================================================================= ii kubeadm 1.10.4-00 amd64 Kubernetes Cluster Bootstrapping Tool  sudo dpkg -l kubelet Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description &#43;&#43;&#43;-======================================-========================-========================-================================================================================= ii kubelet 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-06-30-a/" />
+
+
+
+<meta property="article:published_time" content="2018-06-30T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-06-30T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Update Kubernetes to 1.11 on Ubuntu">
+<meta itemprop="description" content="Goal Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.
+Initial set up Kubernetes 1.10.4 is installed
+cat /etc/apt/sources.list.d/kubernetes.list deb http://apt.kubernetes.io/ kubernetes-xenial main  sudo dpkg -l kubeadm Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description &#43;&#43;&#43;-======================================-========================-========================-================================================================================= ii kubeadm 1.10.4-00 amd64 Kubernetes Cluster Bootstrapping Tool  sudo dpkg -l kubelet Desired=Unknown/Install/Remove/Purge/Hold | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend |/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad) ||/ Name Version Architecture Description &#43;&#43;&#43;-======================================-========================-========================-================================================================================= ii kubelet 1.">
+
+
+<meta itemprop="datePublished" content="2018-06-30T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-06-30T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1010">
+
+
+
+<meta itemprop="keywords" content="kubernetes," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123357787-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">post</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-list">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-29'>
+                                    September 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-28'>
+                                    July 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-19'>
+                                    July 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-18-a/">Compile and Test Portieris</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-17'>
+                                    July 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-16'>
+                                    July 16, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-06-30-a%2f&amp;text=Update%20Kubernetes%20to%201.11%20on%20Ubuntu&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-06-30-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-06-30-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-06-30-a%2f&amp;title=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-06-30-a%2f&amp;title=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-06-30-a%2f&amp;title=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-06-30-a%2f&amp;description=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-06-30-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/2018-06-30-a/">Update Kubernetes to 1.11 on Ubuntu</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-06-30'>
+            June 30, 2018</time>
+        <span class="author"></span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-06-30-a%2f&amp;text=Update%20Kubernetes%20to%201.11%20on%20Ubuntu&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-06-30-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-06-30-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-06-30-a%2f&amp;title=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-06-30-a%2f&amp;title=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-06-30-a%2f&amp;title=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-06-30-a%2f&amp;description=Update%20Kubernetes%20to%201.11%20on%20Ubuntu" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-06-30-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="goal">Goal</h1>
+
+<p>Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.</p>
+
+<h2 id="initial-set-up">Initial set up</h2>
+
+<p>Kubernetes 1.10.4 is installed</p>
+
+<pre><code>cat /etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+</code></pre>
+
+<pre><code>sudo dpkg -l kubeadm
+
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-=================================================================================
+ii  kubeadm                                1.10.4-00                amd64                    Kubernetes Cluster Bootstrapping Tool
+</code></pre>
+
+<pre><code>sudo dpkg -l kubelet
+
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-=================================================================================
+ii  kubelet                                1.10.4-00                amd64                    Kubernetes Node Agent
+</code></pre>
+
+<pre><code>sudo dpkg -l kubectl
+
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-=================================================================================
+ii  kubectl                                1.10.4-00                amd64                    Kubernetes Command Line Tool
+</code></pre>
+
+<pre><code>kubectl version
+
+Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;10&quot;, GitVersion:&quot;v1.10.4&quot;, GitCommit:&quot;5ca598b4ba5abb89bb773071ce452e33fb66339d&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-06-06T08:13:03Z&quot;, GoVersion:&quot;go1.9.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;10&quot;, GitVersion:&quot;v1.10.4&quot;, GitCommit:&quot;5ca598b4ba5abb89bb773071ce452e33fb66339d&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-06-06T08:00:59Z&quot;, GoVersion:&quot;go1.9.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre>
+
+<h2 id="update-kubelet-and-kubectl">Update kubelet and kubectl</h2>
+
+<p>Update aptitude</p>
+
+<pre><code>sudo apt-get update
+
+Hit:2 http://ppa.launchpad.net/longsleep/golang-backports/ubuntu xenial InRelease
+Get:3 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+Get:4 http://security.ubuntu.com/ubuntu xenial-security/main amd64 Packages [511 kB]
+Get:5 http://security.ubuntu.com/ubuntu xenial-security/main i386 Packages [452 kB]
+Get:6 http://security.ubuntu.com/ubuntu xenial-security/main amd64 DEP-11 Metadata [67.7 kB]
+Get:7 http://security.ubuntu.com/ubuntu xenial-security/main DEP-11 64x64 Icons [68.0 kB]
+Get:8 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 Packages [355 kB]
+Get:9 http://security.ubuntu.com/ubuntu xenial-security/universe i386 Packages [303 kB]
+Get:10 http://security.ubuntu.com/ubuntu xenial-security/universe Translation-en [133 kB]
+Get:11 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 DEP-11 Metadata [107 kB]
+Get:12 http://security.ubuntu.com/ubuntu xenial-security/universe DEP-11 64x64 Icons [147 kB]
+Hit:13 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+Get:15 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 Packages [796 kB]
+Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/main i386 Packages [728 kB]
+Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/main Translation-en [329 kB]
+Get:19 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 DEP-11 Metadata [318 kB]
+Get:20 http://us.archive.ubuntu.com/ubuntu xenial-updates/main DEP-11 64x64 Icons [228 kB]
+Get:21 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 Packages [640 kB]
+Get:1 https://packages.cloud.google.com/apt kubernetes-xenial InRelease [8,993 B]
+Get:22 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe i386 Packages [585 kB]
+Get:23 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 Packages [17.9 kB]
+Get:24 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe Translation-en [257 kB]
+Get:25 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 DEP-11 Metadata [246 kB]
+Get:26 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe DEP-11 64x64 Icons [331 kB]
+Get:27 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 DEP-11 Metadata [5,964 B]
+Get:28 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 Packages [6,740 B]
+Get:29 http://us.archive.ubuntu.com/ubuntu xenial-backports/main i386 Packages [6,732 B]
+Get:30 http://us.archive.ubuntu.com/ubuntu xenial-backports/main Translation-en [4,180 B]
+Get:31 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 DEP-11 Metadata [3,328 B]
+Get:32 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 Packages [7,412 B]
+Get:33 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe i386 Packages [7,104 B]
+Get:34 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 DEP-11 Metadata [5,100 B]
+Get:35 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe DEP-11 64x64 Icons [1,789 B]
+Fetched 7,000 kB in 9s (757 kB/s)
+</code></pre>
+
+<p>Run the <code>apt-get upgrade</code> command. Notice how the <code>kubeadm</code> is &ldquo;kept back&rdquo;</p>
+
+<pre><code>sudo apt-get upgrade
+
+
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  linux-headers-4.13.0-26 linux-headers-4.13.0-26-generic linux-image-4.13.0-26-generic linux-image-extra-4.13.0-26-generic
+Use 'sudo apt autoremove' to remove them.
+The following packages have been kept back:
+  kubeadm
+The following packages will be upgraded:
+  amd64-microcode console-setup console-setup-linux cpp-5 desktop-file-utils ebtables g++-5 gcc-5 gcc-5-base gir1.2-javascriptcoregtk-4.0 gir1.2-webkit2-4.0 gnome-software
+  gnome-software-common keyboard-configuration kubectl kubelet libasan2 libatomic1 libcc1-0 libcilkrts5 libgcc-5-dev libgcrypt20 libgomp1 libitm1 libjasper1
+  libjavascriptcoregtk-4.0-18 libldap-2.4-2 liblsan0 libmpx0 libplymouth4 libquadmath0 libssl-dev libssl1.0.0 libstdc++-5-dev libstdc++6 libtsan0 libubsan0
+  libwebkit2gtk-4.0-37 libwebkit2gtk-4.0-37-gtk2 linux-firmware openssl plymouth plymouth-label plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text rfkill snapd
+  ubuntu-core-launcher ubuntu-software update-notifier update-notifier-common wireless-regdb
+52 upgraded, 0 newly installed, 0 to remove and 1 not upgraded.
+</code></pre>
+
+<pre><code>sudo apt-get upgrade
+</code></pre>
+
+<pre><code>sudo apt-get autoremove
+</code></pre>
+
+<pre><code>sudo reboot
+</code></pre>
+
+<pre><code>sudo dpkg -l kubectl
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-=================================================================================
+ii  kubectl                                1.11.0-00                amd64                    Kubernetes Command Line Tool
+</code></pre>
+
+<pre><code>sudo dpkg -l kubeadm
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-=================================================================================
+ii  kubeadm                                1.10.4-00                amd64                    Kubernetes Cluster Bootstrapping Tool
+</code></pre>
+
+<pre><code>sudo dpkg -l kubelet
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                                   Version                  Architecture             Description
++++-======================================-========================-========================-=================================================================================
+ii  kubelet                                1.11.0-00                amd64                    Kubernetes Node Agent
+</code></pre>
+
+<pre><code>kubectl version
+Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;11&quot;, GitVersion:&quot;v1.11.0&quot;, GitCommit:&quot;91e7b4fd31fcd3d5f436da26c980becec37ceefe&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-06-27T20:17:28Z&quot;, GoVersion:&quot;go1.10.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;10&quot;, GitVersion:&quot;v1.10.4&quot;, GitCommit:&quot;5ca598b4ba5abb89bb773071ce452e33fb66339d&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-06-06T08:00:59Z&quot;, GoVersion:&quot;go1.9.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre>
+
+<h2 id="upgrading-kubeadm">Upgrading kubeadm</h2>
+
+<p>Install new kubeadm and associated new cri-tools</p>
+
+<pre><code>sudo apt-get install kubeadm
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+The following additional packages will be installed:
+  cri-tools
+The following NEW packages will be installed:
+  cri-tools
+The following packages will be upgraded:
+  kubeadm
+1 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 14.7 MB of archives.
+After this operation, 70.9 MB disk space will be freed.
+Do you want to continue? [Y/n] y
+Get:1 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 cri-tools amd64 1.11.0-00 [5,309 kB]
+Get:2 https://packages.cloud.google.com/apt kubernetes-xenial/main amd64 kubeadm amd64 1.11.0-00 [9,422 kB]
+Fetched 14.7 MB in 5s (2,780 kB/s)
+Selecting previously unselected package cri-tools.
+(Reading database ... 225649 files and directories currently installed.)
+Preparing to unpack .../cri-tools_1.11.0-00_amd64.deb ...
+Unpacking cri-tools (1.11.0-00) ...
+Preparing to unpack .../kubeadm_1.11.0-00_amd64.deb ...
+Unpacking kubeadm (1.11.0-00) over (1.10.4-00) ...
+Setting up cri-tools (1.11.0-00) ...
+Setting up kubeadm (1.11.0-00) ...
+Installing new version of config file /etc/systemd/system/kubelet.service.d/10-kubeadm.conf ...
+</code></pre>
+
+<pre><code>kubeadm version
+
+kubeadm version: &amp;version.Info{Major:&quot;1&quot;, Minor:&quot;11&quot;, GitVersion:&quot;v1.11.0&quot;, GitCommit:&quot;91e7b4fd31fcd3d5f436da26c980becec37ceefe&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-06-27T20:14:41Z&quot;, GoVersion:&quot;go1.10.2&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+</code></pre>
+
+<h2 id="upgrading-your-kubernetes-cluster">Upgrading your Kubernetes cluster</h2>
+
+<p>Cluster does not seems be in such a great shape</p>
+
+<pre><code>NAME                                           READY     STATUS    RESTARTS   AGE
+pod/calico-etcd-j8zqp                          1/1       Running   22         11d
+pod/calico-kube-controllers-679568f47c-wgz7n   1/1       Running   27         11d
+pod/calico-node-knstj                          2/2       Running   39         11d
+pod/etcd-xxxxxxx                               0/1       Pending   0          1h
+pod/kube-apiserver-xxxxxxx                     0/1       Pending   0          1h
+pod/kube-controller-manager-xxxxxxx            0/1       Pending   0          1h
+pod/kube-dns-86f4d74b45-fs7bq                  3/3       Running   66         11d
+pod/kube-proxy-mpbf7                           1/1       Running   22         11d
+pod/kube-scheduler-xxxxxxx                     0/1       Pending   0          1h
+pod/tiller-deploy-5c688d5f9b-6cl5n             1/1       Running   23         11d
+
+NAME                    TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)         AGE
+service/calico-etcd     ClusterIP   10.96.232.136   &lt;none&gt;        6666/TCP        11d
+service/kube-dns        ClusterIP   10.96.0.10      &lt;none&gt;        53/UDP,53/TCP   11d
+service/tiller-deploy   ClusterIP   10.97.44.240    &lt;none&gt;        44134/TCP       11d
+
+NAME                         DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR                     AGE
+daemonset.apps/calico-etcd   1         1         0         1            0           node-role.kubernetes.io/master=   11d
+daemonset.apps/calico-node   1         1         0         1            0           &lt;none&gt;                            11d
+daemonset.apps/kube-proxy    1         1         0         1            0           &lt;none&gt;                            11d
+
+NAME                                      DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/calico-kube-controllers   1         1         1            0           11d
+deployment.apps/kube-dns                  1         1         1            0           11d
+deployment.apps/tiller-deploy             1         1         1            0           11d
+
+NAME                                                 DESIRED   CURRENT   READY     AGE
+replicaset.apps/calico-kube-controllers-679568f47c   1         1         0         11d
+replicaset.apps/kube-dns-86f4d74b45                  1         1         0         11d
+replicaset.apps/tiller-deploy-5c688d5f9b             1         1         0         11d
+</code></pre>
+
+<pre><code>sudo kubeadm upgrade apply --dry-run 1.11.0 &gt; /tmp/traces
+[upgrade/health] FATAL: [preflight] Some fatal errors occurred:
+        [ERROR MasterNodesReady]: there are NotReady masters in the cluster: [xxxxxxx]
+[preflight] If you know what you are doing, you can make a check non-fatal with `--ignore-preflight-errors=...`
+</code></pre>
+
+<h2 id="usefull-links">Usefull Links</h2>
+
+<p>TBD</p>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="categories/wiki">wiki</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="tags/kubernetes">kubernetes</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jbrette" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/2018-06-29-a/"
+                class="button big previous">Creating simple GO server container</a></li>
+    
+
+    
+        <li><a href="/post/2018-07-01-a/"
+                class="button big next">Creating simple Python server container</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo.png" class="intro-circle" width="" alt="avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Jerome&#39;s Blog</h2>
+        <p>Building my edge cloud using Raspberry PI, keep learning from the opensource community</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-29'>
+                September 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-28'>
+                July 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-19'>
+                July 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-18-a/">Compile and Test Portieris</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-18'>
+                July 18, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-17'>
+                July 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-16'>
+                July 16, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wiki/">wiki</a>
+                <span style="float:right;">35</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wip/">wip</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/news/">news</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>About the author</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Jerome Brette&#39;s Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/bash.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/golang.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

@@ -1,0 +1,1541 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "Recompile Kubernetes components for Raspberry PI",
+        "headline" : "Recompile Kubernetes components for Raspberry PI",
+        "description" : "Goal During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.
+Key Aspects  The bug had been fixed by the Kubernetes kube-controller-manager - panic: runtime error: index out of range has been fixed and will be built as part of 1.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-07-15 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-07-15 00:00:00 &#43;0000 UTC",
+        "url" : "/post/2018-07-15-a/",
+        "wordCount" : "1226",
+        "keywords" : [ "kubernetes","rpi","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Recompile Kubernetes components for Raspberry PI</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Jerome Brette&#39;s Blog">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Recompile Kubernetes components for Raspberry PI"/>
+<meta name="twitter:description" content="Goal During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.
+Key Aspects  The bug had been fixed by the Kubernetes kube-controller-manager - panic: runtime error: index out of range has been fixed and will be built as part of 1."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="Recompile Kubernetes components for Raspberry PI" />
+<meta property="og:description" content="Goal During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.
+Key Aspects  The bug had been fixed by the Kubernetes kube-controller-manager - panic: runtime error: index out of range has been fixed and will be built as part of 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-07-15-a/" />
+
+
+
+<meta property="article:published_time" content="2018-07-15T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-15T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Recompile Kubernetes components for Raspberry PI">
+<meta itemprop="description" content="Goal During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.
+Key Aspects  The bug had been fixed by the Kubernetes kube-controller-manager - panic: runtime error: index out of range has been fixed and will be built as part of 1.">
+
+
+<meta itemprop="datePublished" content="2018-07-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1226">
+
+
+
+<meta itemprop="keywords" content="kubernetes,rpi," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123357787-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">post</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-list">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-29'>
+                                    September 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-28'>
+                                    July 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-19'>
+                                    July 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-18-a/">Compile and Test Portieris</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-17'>
+                                    July 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-16'>
+                                    July 16, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-15-a%2f&amp;text=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-15-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-15-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-15-a%2f&amp;title=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-15-a%2f&amp;title=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-15-a%2f&amp;title=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-15-a%2f&amp;description=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-15-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/2018-07-15-a/">Recompile Kubernetes components for Raspberry PI</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-07-15'>
+            July 15, 2018</time>
+        <span class="author"></span>
+        
+            <p>6 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-15-a%2f&amp;text=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-15-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-15-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-15-a%2f&amp;title=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-15-a%2f&amp;title=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-15-a%2f&amp;title=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-15-a%2f&amp;description=Recompile%20Kubernetes%20components%20for%20Raspberry%20PI" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-15-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="goal">Goal</h1>
+
+<p>During the installation of official Kubernetes 1.11.0 on RPI Cluster 1,
+encountered a bug on the controller manager preventing the controller-manager from starting.
+The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.</p>
+
+<h2 id="key-aspects">Key Aspects</h2>
+
+<ul>
+<li>The bug had been fixed by the Kubernetes <a href="https://github.com/kubernetes/kubernetes/issues/65674">kube-controller-manager - panic: runtime error: index out of range</a>
+has been fixed and will be built as part of 1.11.1</li>
+<li>The goal is to learn how to recompile Kubernetes from the source to be able to contribute when possible and address problems as soon as possible</li>
+</ul>
+
+<h2 id="build-kubernetes-executables-for-amd64-and-arm">Build Kubernetes executables for AMD64 and ARM</h2>
+
+<h3 id="cross-compiling-from-ubuntu-machine">Cross Compiling from Ubuntu Machine</h3>
+
+<p>First check the go setup. Fetch the code</p>
+
+<p>Let&rsquo;s check the go environment. See <a href="https://jbrette.github.io/jekyll/update/2018/06/22/a.html">Setup GOLANG environment</a></p>
+
+<pre><code>$ which go
+
+/usr/bin/go
+</code></pre>
+
+<pre><code>$ go version
+
+go version go1.10.1 linux/amd64
+</code></pre>
+
+<p>Clone the code</p>
+
+<pre><code class="language-bash">$ export GOPATH=$HOME/src
+$ mkdir -p src/k8s.io
+$ cd src/k8s.io
+$ git clone -b release-1.11 git@github.com:kubernetes/kubernetes.git
+$ cd kubernertes
+</code></pre>
+
+<p>To save time, I removed platforms I had not use of and only kept amd64 and arm on linux</p>
+
+<pre><code class="language-bash">$ cat hack/lib/golang.sh
+</code></pre>
+
+<pre><code class="language-bash">  # The server platform we are building on.
+  readonly KUBE_SERVER_PLATFORMS=(
+    linux/amd64
+    linux/arm
+  )
+
+  # The node platforms we build for
+  readonly KUBE_NODE_PLATFORMS=(
+    linux/amd64
+    linux/arm
+  )
+
+  # If we update this we should also update the set of platforms whose standard library is precompiled for in build/build-image/cross/Dockerfile
+  readonly KUBE_CLIENT_PLATFORMS=(
+    linux/amd64
+    linux/arm
+  )
+
+  # Which platforms we should compile test targets for. Not all client platforms need these tests
+  readonly KUBE_TEST_PLATFORMS=(
+    linux/amd64
+    linux/arm
+  )
+
+</code></pre>
+
+<p>Double check your Docker setup is correct</p>
+
+<pre><code class="language-bash">$ docker run hello-world
+</code></pre>
+
+<p>Clean the directory</p>
+
+<pre><code class="language-bash">$ ./build/make-clean.sh
+</code></pre>
+
+<p>Rebuild the amd64 and arm executable</p>
+
+<pre><code class="language-bash">$ ./build/run.sh make cross
+</code></pre>
+
+<p>Check the executables transfered from the docker build container to your vm by rsync</p>
+
+<pre><code class="language-bash">$ cd _output/dockerized/bin/linux
+</code></pre>
+
+<p>Check the amd64 executables</p>
+
+<pre><code class="language-bash">ls -lt amd64
+
+total 2322696
+-rwxr-xr-x 1 xxxxxx yyyyyy 209961168 Jul 16 01:57 e2e_node.test
+-rwxr-xr-x 1 xxxxxx yyyyyy  10645252 Jul 16 01:57 ginkgo
+-rwxr-xr-x 1 xxxxxx yyyyyy 160051600 Jul 16 01:57 kubemark
+-rwxr-xr-x 1 xxxxxx yyyyyy 231997872 Jul 16 01:55 genman
+-rwxr-xr-x 1 xxxxxx yyyyyy  54099081 Jul 16 01:55 gendocs
+-rwxr-xr-x 1 xxxxxx yyyyyy  54039865 Jul 16 01:55 genyaml
+-rwxr-xr-x 1 xxxxxx yyyyyy   6694536 Jul 16 01:55 linkcheck
+-rwxr-xr-x 1 xxxxxx yyyyyy   5481582 Jul 16 01:55 genswaggertypedocs
+-rwxr-xr-x 1 xxxxxx yyyyyy 226061456 Jul 16 01:55 genkubedocs
+-rwxr-xr-x 1 xxxxxx yyyyyy 173411368 Jul 16 01:55 e2e.test
+-rwxr-xr-x 1 xxxxxx yyyyyy  55241186 Jul 16 01:52 kubectl
+-rwxr-xr-x 1 xxxxxx yyyyyy  51912114 Jul 16 01:52 kube-proxy
+-rwxr-xr-x 1 xxxxxx yyyyyy  57246829 Jul 16 01:51 kubeadm
+-rwxr-xr-x 1 xxxxxx yyyyyy 162716256 Jul 16 01:51 kubelet
+-rwxr-xr-x 1 xxxxxx yyyyyy  57908740 Jul 16 01:50 kube-aggregator
+-rwxr-xr-x 1 xxxxxx yyyyyy 185152632 Jul 16 01:50 kube-apiserver
+-rwxr-xr-x 1 xxxxxx yyyyyy   2330265 Jul 16 01:50 mounter
+-rwxr-xr-x 1 xxxxxx yyyyyy 138048783 Jul 16 01:50 cloud-controller-manager
+-rwxr-xr-x 1 xxxxxx yyyyyy 153798994 Jul 16 01:50 kube-controller-manager
+-rwxr-xr-x 1 xxxxxx yyyyyy 227283184 Jul 16 01:50 hyperkube
+-rwxr-xr-x 1 xxxxxx yyyyyy  59296776 Jul 16 01:50 apiextensions-apiserver
+-rwxr-xr-x 1 xxxxxx yyyyyy  55471235 Jul 16 01:50 kube-scheduler
+-rwxr-xr-x 1 xxxxxx yyyyyy   2835466 Jul 16 01:40 go-bindata
+-rwxr-xr-x 1 xxxxxx yyyyyy  13630237 Jul 16 01:40 openapi-gen
+-rwxr-xr-x 1 xxxxxx yyyyyy   7699847 Jul 16 01:40 conversion-gen
+-rwxr-xr-x 1 xxxxxx yyyyyy   7669238 Jul 16 01:39 defaulter-gen
+-rwxr-xr-x 1 xxxxxx yyyyyy   7695690 Jul 16 01:39 deepcopy-gen
+</code></pre>
+
+<p>Check the RPI executables</p>
+
+<pre><code class="language-bash">$ ls -lt arm
+
+total 2089216
+-rwxr-xr-x 1 xxxxxx yyyyyy 191189688 Jul 16 01:58 e2e_node.test
+-rwxr-xr-x 1 xxxxxx yyyyyy   9286102 Jul 16 01:58 ginkgo
+-rwxr-xr-x 1 xxxxxx yyyyyy 142111524 Jul 16 01:58 kubemark
+-rwxr-xr-x 1 xxxxxx yyyyyy 210989712 Jul 16 01:55 genman
+-rwxr-xr-x 1 xxxxxx yyyyyy  48169969 Jul 16 01:55 gendocs
+-rwxr-xr-x 1 xxxxxx yyyyyy  48102745 Jul 16 01:55 genyaml
+-rwxr-xr-x 1 xxxxxx yyyyyy   5847821 Jul 16 01:55 linkcheck
+-rwxr-xr-x 1 xxxxxx yyyyyy   4927730 Jul 16 01:55 genswaggertypedocs
+-rwxr-xr-x 1 xxxxxx yyyyyy 205458748 Jul 16 01:55 genkubedocs
+-rwxr-xr-x 1 xxxxxx yyyyyy 155653412 Jul 16 01:55 e2e.test
+-rwxr-xr-x 1 xxxxxx yyyyyy  49252169 Jul 16 01:52 kubectl
+-rwxr-xr-x 1 xxxxxx yyyyyy  46156229 Jul 16 01:52 kube-proxy
+-rwxr-xr-x 1 xxxxxx yyyyyy  50989514 Jul 16 01:52 kubeadm
+-rwxr-xr-x 1 xxxxxx yyyyyy 144291264 Jul 16 01:52 kubelet
+-rwxr-xr-x 1 xxxxxx yyyyyy  52024300 Jul 16 01:50 kube-aggregator
+-rwxr-xr-x 1 xxxxxx yyyyyy 168751462 Jul 16 01:50 kube-apiserver
+-rwxr-xr-x 1 xxxxxx yyyyyy   2231154 Jul 16 01:50 mounter
+-rwxr-xr-x 1 xxxxxx yyyyyy 122701327 Jul 16 01:50 cloud-controller-manager
+-rwxr-xr-x 1 xxxxxx yyyyyy 136828051 Jul 16 01:50 kube-controller-manager
+-rwxr-xr-x 1 xxxxxx yyyyyy 206769888 Jul 16 01:50 hyperkube
+-rwxr-xr-x 1 xxxxxx yyyyyy  53220784 Jul 16 01:50 apiextensions-apiserver
+-rwxr-xr-x 1 xxxxxx yyyyyy  49501810 Jul 16 01:50 kube-scheduler
+-rwxr-xr-x 1 xxxxxx yyyyyy   2649635 Jul 16 01:40 go-bindata
+-rwxr-xr-x 1 xxxxxx yyyyyy  11885551 Jul 16 01:40 openapi-gen
+-rwxr-xr-x 1 xxxxxx yyyyyy   6770458 Jul 16 01:40 conversion-gen
+-rwxr-xr-x 1 xxxxxx yyyyyy   6764729 Jul 16 01:39 defaulter-gen
+-rwxr-xr-x 1 xxxxxx yyyyyy   6770309 Jul 16 01:39 deepcopy-gen
+</code></pre>
+
+<p>Transfer the binaries to RPI machine</p>
+
+<pre><code class="language-bash">scp -r arm  rpiuser@192.168.1.94:/home/rpiuser/kubernetes_binaries
+</code></pre>
+
+<h2 id="build-the-docker-image">Build the docker image</h2>
+
+<pre><code class="language-bash">$ mkdir -p images/kube-controller-manager
+$ cd images/kube-controller-manager
+$ cp $HOME/kubernetes_binaries/kube-controller-manager
+</code></pre>
+
+<p>Create a simple Dockerfile to update the executable</p>
+
+<pre><code class="language-bash">$ cat Dockerfile
+</code></pre>
+
+<pre><code>FROM k8s.gcr.io/kube-controller-manager-arm:v1.11.0
+
+COPY kube-controller-manager /usr/local/bin/kube-controller-manager
+</code></pre>
+
+<p>Build the image</p>
+
+<pre><code class="language-bash">$ docker build -t jbrette/kube-controller-manager-arm:v1.11.1
+</code></pre>
+
+<p>Because of the brute force approach the image is twice as big since the executable (130MB) is
+contained in two layers of the container image</p>
+
+<pre><code>$ docker image list
+
+REPOSITORY                               TAG                 IMAGE ID            CREATED             SIZE
+jbrette/kube-controller-manager-arm      v1.11.1             b7023eef8fdf        8 hours ago         275MB
+k8s.gcr.io/kube-apiserver-arm            v1.11.0             383bd2c4314e        2 weeks ago         170MB
+k8s.gcr.io/kube-controller-manager-arm   v1.11.0             5b25f8a97aec        2 weeks ago         138MB
+k8s.gcr.io/kube-scheduler-arm            v1.11.0             555ee860fa3c        2 weeks ago         50.5MB
+k8s.gcr.io/kube-proxy-arm                v1.11.0             d7ebe361fe95        2 weeks ago         89.1MB
+k8s.gcr.io/coredns                       1.1.3               7ceeb40862fb        7 weeks ago         31.3MB
+k8s.gcr.io/etcd-arm                      3.2.18              ae02bf7047c8        3 months ago        221MB
+quay.io/coreos/flannel                   v0.10.0-arm         c663d02f7966        5 months ago        39.9MB
+k8s.gcr.io/pause-arm                     3.1                 e11a8cbeda86        6 months ago        374kB
+k8s.gcr.io/pause                         3.1                 e11a8cbeda86        6 months ago        374kB
+</code></pre>
+
+<p>First push the controller-manager docker image to the repo</p>
+
+<pre><code class="language-bash">$ docker login
+
+$ docker push jbrette/kube-controller-manager-arm:v1.11.1
+</code></pre>
+
+<h2 id="updating-kubeadm-and-kubernetes-configuration-to-use-the-patched-images">Updating Kubeadm and Kubernetes configuration to use the patched images</h2>
+
+<p>Because I only rebuild one image, I can not use the kubeadm feature which
+allows to point to a different repo. Have to edit manually the configuration.</p>
+
+<pre><code class="language-bash">$ more kube-controller-manager.yaml
+</code></pre>
+
+<pre><code class="language-yaml">apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    scheduler.alpha.kubernetes.io/critical-pod: &quot;&quot;
+  creationTimestamp: null
+  labels:
+    component: kube-controller-manager
+    tier: control-plane
+  name: kube-controller-manager
+  namespace: kube-system
+spec:
+  containers:
+  - command:
+    - kube-controller-manager
+    - --address=127.0.0.1
+    - --allocate-node-cidrs=true
+    - --cluster-cidr=10.244.0.0/16
+    - --cluster-signing-cert-file=/etc/kubernetes/pki/ca.crt
+    - --cluster-signing-key-file=/etc/kubernetes/pki/ca.key
+    - --controllers=*,bootstrapsigner,tokencleaner
+    - --kubeconfig=/etc/kubernetes/controller-manager.conf
+    - --leader-elect=true
+    - --node-cidr-mask-size=24
+    - --root-ca-file=/etc/kubernetes/pki/ca.crt
+    - --service-account-private-key-file=/etc/kubernetes/pki/sa.key
+    - --use-service-account-credentials=true
+    image: jbrette/kube-controller-manager-arm:v1.11.1
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+      failureThreshold: 8
+      httpGet:
+        host: 127.0.0.1
+        path: /healthz
+        port: 10252
+        scheme: HTTP
+      initialDelaySeconds: 15
+      timeoutSeconds: 15
+    name: kube-controller-manager
+    resources:
+      requests:
+        cpu: 200m
+    volumeMounts:
+    - mountPath: /etc/ssl/certs
+      name: ca-certs
+      readOnly: true
+    - mountPath: /etc/kubernetes/controller-manager.conf
+      name: kubeconfig
+      readOnly: true
+    - mountPath: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
+      name: flexvolume-dir
+    - mountPath: /usr/share/ca-certificates
+      name: usr-share-ca-certificates
+      readOnly: true
+    - mountPath: /usr/local/share/ca-certificates
+      name: usr-local-share-ca-certificates
+      readOnly: true
+    - mountPath: /etc/ca-certificates
+      name: etc-ca-certificates
+      readOnly: true
+    - mountPath: /etc/kubernetes/pki
+      name: k8s-certs
+      readOnly: true
+  hostNetwork: true
+  priorityClassName: system-cluster-critical
+  volumes:
+  - hostPath:
+      path: /etc/kubernetes/pki
+      type: DirectoryOrCreate
+    name: k8s-certs
+  - hostPath:
+      path: /etc/ssl/certs
+      type: DirectoryOrCreate
+    name: ca-certs
+  - hostPath:
+      path: /etc/kubernetes/controller-manager.conf
+      type: FileOrCreate
+    name: kubeconfig
+  - hostPath:
+      path: /usr/libexec/kubernetes/kubelet-plugins/volume/exec
+      type: DirectoryOrCreate
+    name: flexvolume-dir
+  - hostPath:
+      path: /usr/share/ca-certificates
+      type: DirectoryOrCreate
+    name: usr-share-ca-certificates
+  - hostPath:
+      path: /usr/local/share/ca-certificates
+      type: DirectoryOrCreate
+    name: usr-local-share-ca-certificates
+  - hostPath:
+      path: /etc/ca-certificates
+      type: DirectoryOrCreate
+    name: etc-ca-certificates
+status: {}
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<ul>
+<li>Need to streamline the build process</li>
+<li>Need to streamline the image patching processed</li>
+</ul>
+
+<h2 id="reference-links">Reference Links</h2>
+
+<ul>
+<li>[Kubernetes cross build]()</li>
+</ul>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="categories/wiki">wiki</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="tags/kubernetes">kubernetes</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/rpi">rpi</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jbrette" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/2018-07-14-a/"
+                class="button big previous">Deploy Flannel in Raspberry PI cluster</a></li>
+    
+
+    
+        <li><a href="/post/2018-07-16-a/"
+                class="button big next">Rebuild Hyperkube images</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo.png" class="intro-circle" width="" alt="avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Jerome&#39;s Blog</h2>
+        <p>Building my edge cloud using Raspberry PI, keep learning from the opensource community</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-29'>
+                September 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-28'>
+                July 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-19'>
+                July 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-18-a/">Compile and Test Portieris</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-18'>
+                July 18, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-17'>
+                July 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-16'>
+                July 16, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wiki/">wiki</a>
+                <span style="float:right;">35</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wip/">wip</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/news/">news</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>About the author</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Jerome Brette&#39;s Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/bash.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/golang.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+

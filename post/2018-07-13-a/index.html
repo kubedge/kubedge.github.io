@@ -1,0 +1,1776 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": ""
+        },
+        "articleSection" : "post",
+        "name" : "Deploy Helm and Tiller on Rasberry PI Cluster",
+        "headline" : "Deploy Helm and Tiller on Rasberry PI Cluster",
+        "description" : "Goal The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.
+Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Having the golang, glide&hellip;and related libraries setup in a PI for compilation is kind of complicated. I started but encounter too many issues (even small), had to install too many compilation related packages on my PI system, hence decided to use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2018",
+        "datePublished": "2018-07-13 00:00:00 &#43;0000 UTC",
+        "dateModified" : "2018-07-13 00:00:00 &#43;0000 UTC",
+        "url" : "/post/2018-07-13-a/",
+        "wordCount" : "1887",
+        "keywords" : [ "kubernetes","helm","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Deploy Helm and Tiller on Rasberry PI Cluster</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.46" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="Jerome Brette&#39;s Blog">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Deploy Helm and Tiller on Rasberry PI Cluster"/>
+<meta name="twitter:description" content="Goal The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.
+Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Having the golang, glide&hellip;and related libraries setup in a PI for compilation is kind of complicated. I started but encounter too many issues (even small), had to install too many compilation related packages on my PI system, hence decided to use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller."/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="Deploy Helm and Tiller on Rasberry PI Cluster" />
+<meta property="og:description" content="Goal The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.
+Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Having the golang, glide&hellip;and related libraries setup in a PI for compilation is kind of complicated. I started but encounter too many issues (even small), had to install too many compilation related packages on my PI system, hence decided to use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/post/2018-07-13-a/" />
+
+
+
+<meta property="article:published_time" content="2018-07-13T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-07-13T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Deploy Helm and Tiller on Rasberry PI Cluster">
+<meta itemprop="description" content="Goal The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.
+Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Having the golang, glide&hellip;and related libraries setup in a PI for compilation is kind of complicated. I started but encounter too many issues (even small), had to install too many compilation related packages on my PI system, hence decided to use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller.">
+
+
+<meta itemprop="datePublished" content="2018-07-13T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-07-13T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1887">
+
+
+
+<meta itemprop="keywords" content="kubernetes,helm," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-123357787-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">post</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/tags/">
+                            <i class="fa fa-list">&nbsp;</i>Tags
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Tags
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-09-29'>
+                                    September 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-08-01'>
+                                    August 1, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-31'>
+                                    July 31, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-30'>
+                                    July 30, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-29'>
+                                    July 29, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-28'>
+                                    July 28, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-19'>
+                                    July 19, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-18-a/">Compile and Test Portieris</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-18'>
+                                    July 18, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-17'>
+                                    July 17, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2018-07-16'>
+                                    July 16, 2018</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /post/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-13-a%2f&amp;text=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-13-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-13-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-13-a%2f&amp;title=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-13-a%2f&amp;title=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-13-a%2f&amp;title=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-13-a%2f&amp;description=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-13-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/2018-07-13-a/">Deploy Helm and Tiller on Rasberry PI Cluster</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-07-13'>
+            July 13, 2018</time>
+        <span class="author"></span>
+        
+            <p>9 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fpost%2f2018-07-13-a%2f&amp;text=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fpost%2f2018-07-13-a%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fpost%2f2018-07-13-a%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fpost%2f2018-07-13-a%2f&amp;title=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fpost%2f2018-07-13-a%2f&amp;title=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fpost%2f2018-07-13-a%2f&amp;title=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fpost%2f2018-07-13-a%2f&amp;description=Deploy%20Helm%20and%20Tiller%20on%20Rasberry%20PI%20Cluster" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=%2fpost%2f2018-07-13-a%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+
+  <div id="content">
+    
+
+<h1 id="goal">Goal</h1>
+
+<p>The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.</p>
+
+<h2 id="key-aspects">Key Aspects</h2>
+
+<ul>
+<li>The goal is to setup helm and tiller on the Raspberry PI cluster</li>
+<li>Having the golang, glide&hellip;and related libraries setup in a PI for compilation
+is kind of complicated. I started but encounter too many issues (even small), had
+to install too many compilation related packages on my PI system, hence decided to
+use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller.
+This will be usefull to setup CI/CD pipeline with Travis-CI.</li>
+</ul>
+
+<h2 id="build-tiller-executable-and-docker-image">Build Tiller executable and Docker image</h2>
+
+<h3 id="cross-compiling-from-ubuntu-machine">Cross Compiling from Ubuntu Machine</h3>
+
+<p>First check the go setup. Fetch the code</p>
+
+<p>Let&rsquo;s check the go environment. See <a href="https://jbrette.github.io/jekyll/update/2018/06/22/a.html">Setup GOLANG environment</a></p>
+
+<pre><code>which go
+
+/usr/bin/go
+</code></pre>
+
+<pre><code>go version
+
+go version go1.10.1 linux/amd64
+</code></pre>
+
+<pre><code>export GOPATH=$HOME/src
+mkdir -p src/k8s.io
+cd src/k8s.io
+
+git clone -b release-2.9 git@github.com:kubernetes/helm.git
+</code></pre>
+
+<pre><code>cd $HOME/src/k8s.io/helm
+make clean bootstrap build-cross dist APP=helm VERSION=2.9 TARGETS=linux/arm
+
+...
+
+go build -o bin/protoc-gen-go ./vendor/github.com/golang/protobuf/protoc-gen-go
+CGO_ENABLED=0 gox -parallel=3 -output=&quot;_dist/{{.OS}}-{{.Arch}}/{{.Dir}}&quot; -osarch='linux/arm'  -tags '' -ldflags '-w -s -X k8s.io/helm/pkg/version.Version=2.9 -X k8s.io/helm/pkg/version.BuildMetadata= -X k8s.io/helm/pkg/version.GitCommit=20adb27c7c5868466912eebdf6664e7390ebe710 -X k8s.io/helm/pkg/version.GitTreeState=clean -extldflags &quot;-static&quot;' k8s.io/helm/cmd/helm
+Number of parallel builds: 3
+
+--&gt;       linux/arm: k8s.io/helm/cmd/helm
+( \
+        cd _dist &amp;&amp; \
+        find * -type d -exec cp ../LICENSE {} \; &amp;&amp; \
+        find * -type d -exec cp ../README.md {} \; &amp;&amp; \
+        find * -type d -exec tar -zcf helm-2.9-{}.tar.gz {} \; &amp;&amp; \
+        find * -type d -exec zip -r helm-2.9-{}.zip {} \; \
+)
+  adding: linux-arm/ (stored 0%)
+  adding: linux-arm/LICENSE (deflated 65%)
+  adding: linux-arm/README.md (deflated 59%)
+  adding: linux-arm/helm (deflated 67%)
+</code></pre>
+
+<p>Let&rsquo;s transfer the helm binarie to RPI</p>
+
+<pre><code>scp -r _dist/linux-arm/ rpiuser@192.168.1.95:/home/rpiuser/helm_binaries
+</code></pre>
+
+<h3 id="cross-compiling-and-image-cration-from-travis-ci">Cross Compiling and Image cration from Travis-CI</h3>
+
+<ul>
+<li>WIP</li>
+</ul>
+
+<h2 id="helm">Helm</h2>
+
+<h3 id="cross-compiling-from-ubuntu-machine-1">Cross Compiling from Ubuntu Machine</h3>
+
+<p>Let&rsquo;s assume we cloned the code for helm already.</p>
+
+<pre><code>make clean bootstrap build-cross dist APP=tiller VERSION=2.9 TARGETS=linux/arm
+
+...
+go build -o bin/protoc-gen-go ./vendor/github.com/golang/protobuf/protoc-gen-go
+CGO_ENABLED=0 gox -parallel=3 -output=&quot;_dist/{{.OS}}-{{.Arch}}/{{.Dir}}&quot; -osarch='linux/arm'  -tags '' -ldflags '-w -s -X k8s.io/helm/pkg/version.Version=2.9 -X k8s.io/helm/pkg/version.BuildMetadata= -X k8s.io/helm/pkg/version.GitCommit=20adb27c7c5868466912eebdf6664e7390ebe710 -X k8s.io/helm/pkg/version.GitTreeState=clean -extldflags &quot;-static&quot;' k8s.io/helm/cmd/tiller
+Number of parallel builds: 3
+
+--&gt;       linux/arm: k8s.io/helm/cmd/tiller
+( \
+        cd _dist &amp;&amp; \
+        find * -type d -exec cp ../LICENSE {} \; &amp;&amp; \
+        find * -type d -exec cp ../README.md {} \; &amp;&amp; \
+        find * -type d -exec tar -zcf helm-2.9-{}.tar.gz {} \; &amp;&amp; \
+        find * -type d -exec zip -r helm-2.9-{}.zip {} \; \
+)
+  adding: linux-arm/ (stored 0%)
+  adding: linux-arm/LICENSE (deflated 65%)
+  adding: linux-arm/README.md (deflated 59%)
+  adding: linux-arm/tiller (deflated 67%)
+</code></pre>
+
+<h3 id="build-the-docker-image-on-the-remote-pi">Build the docker image on the remote PI</h3>
+
+<p>Create a Dockerfile called rootfs/Dockerfile.arm32v7</p>
+
+<pre><code>FROM debian:jessie-slim
+
+RUN apt-get update \
+    &amp;&amp; apt-get install -y --no-install-recommends ca-certificates \
+    &amp;&amp; rm -rf /var/lib/apt/lists/*
+
+ENV HOME /tmp
+
+COPY _dist/linux-arm /
+
+EXPOSE 44134
+
+CMD [&quot;/tiller&quot;]
+</code></pre>
+
+<pre><code>export DHUBREPO=jbrette/tiller-arm32v7
+export VERSION=2.9
+docker build -t $DHUBREPO:$VERSION -f rootfs/Dockerfile.arm32v7 .
+
+Sending build context to Docker daemon  284.1MB
+Step 1/6 : FROM debian:jessie-slim
+ ---&gt; d273fca45b31
+Step 2/6 : RUN apt-get update     &amp;&amp; apt-get install -y --no-install-recommends ca-certificates     &amp;&amp; rm -rf /var/lib/apt/lists/*
+ ---&gt; Running in e51ea5c31ad7
+Get:1 http://security.debian.org jessie/updates InRelease [44.9 kB]
+Ign http://deb.debian.org jessie InRelease
+Get:2 http://deb.debian.org jessie-updates InRelease [145 kB]
+Get:3 http://deb.debian.org jessie Release.gpg [2420 B]
+Get:4 http://deb.debian.org jessie Release [148 kB]
+Get:5 http://security.debian.org jessie/updates/main armel Packages [576 kB]
+Get:6 http://deb.debian.org jessie-updates/main armel Packages [23.7 kB]
+Get:7 http://deb.debian.org jessie/main armel Packages [8902 kB]
+Fetched 9843 kB in 49s (199 kB/s)
+Reading package lists...
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following extra packages will be installed:
+  libssl1.0.0 openssl
+The following NEW packages will be installed:
+  ca-certificates libssl1.0.0 openssl
+0 upgraded, 3 newly installed, 0 to remove and 1 not upgraded.
+Need to get 1692 kB of archives.
+After this operation, 3770 kB of additional disk space will be used.
+Get:1 http://security.debian.org/debian-security/ jessie/updates/main ca-certificates all 20141019+deb8u4 [185 kB]
+Get:2 http://deb.debian.org/debian/ jessie/main libssl1.0.0 armel 1.0.1t-1+deb8u8 [852 kB]
+Get:3 http://deb.debian.org/debian/ jessie/main openssl armel 1.0.1t-1+deb8u8 [655 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 1692 kB in 7s (235 kB/s)
+Selecting previously unselected package libssl1.0.0:armel.
+(Reading database ... 7451 files and directories currently installed.)
+Preparing to unpack .../libssl1.0.0_1.0.1t-1+deb8u8_armel.deb ...
+Unpacking libssl1.0.0:armel (1.0.1t-1+deb8u8) ...
+Selecting previously unselected package openssl.
+Preparing to unpack .../openssl_1.0.1t-1+deb8u8_armel.deb ...
+Unpacking openssl (1.0.1t-1+deb8u8) ...
+Selecting previously unselected package ca-certificates.
+Preparing to unpack .../ca-certificates_20141019+deb8u4_all.deb ...
+Unpacking ca-certificates (20141019+deb8u4) ...
+Setting up libssl1.0.0:armel (1.0.1t-1+deb8u8) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/arm-linux-gnueabi/perl/5.20.2 /usr/local/share/perl/5.20.2 /usr/lib/arm-linux-gnueabi/perl5/5.20 /usr/share/perl5 /usr/lib/arm-linux-gnueabi/perl/5.20 /usr/share/perl/5.20 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Setting up openssl (1.0.1t-1+deb8u8) ...
+Setting up ca-certificates (20141019+deb8u4) ...
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (you may need to install the Term::ReadLine module) (@INC contains: /etc/perl /usr/local/lib/arm-linux-gnueabi/perl/5.20.2 /usr/local/share/perl/5.20.2 /usr/lib/arm-linux-gnueabi/perl5/5.20 /usr/share/perl5 /usr/lib/arm-linux-gnueabi/perl/5.20 /usr/share/perl/5.20 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+Updating certificates in /etc/ssl/certs... 152 added, 0 removed; done.
+Processing triggers for libc-bin (2.19-18+deb8u10) ...
+Processing triggers for ca-certificates (20141019+deb8u4) ...
+Updating certificates in /etc/ssl/certs... 0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....done.
+Removing intermediate container e51ea5c31ad7
+ ---&gt; 1dccf46769e7
+Step 3/6 : ENV HOME /tmp
+ ---&gt; Running in 45de8c047bd3
+Removing intermediate container 45de8c047bd3
+ ---&gt; baa6d8b15164
+Step 4/6 : COPY _dist/linux-arm /
+ ---&gt; 59a6cc8bfdbe
+Step 5/6 : EXPOSE 44134
+ ---&gt; Running in d2c6d9b3a3bc
+Removing intermediate container d2c6d9b3a3bc
+ ---&gt; 28a331217c52
+Step 6/6 : CMD [&quot;/tiller&quot;]
+ ---&gt; Running in 9760ea4dc6c5
+Removing intermediate container 9760ea4dc6c5
+ ---&gt; 9384b4f39ab3
+Successfully built 9384b4f39ab3
+Successfully tagged jbrette/tiller-arm32v7:2.9
+</code></pre>
+
+<h3 id="cross-compiling-and-image-cration-from-travis-ci-1">Cross Compiling and Image cration from Travis-CI</h3>
+
+<ul>
+<li>WIP</li>
+</ul>
+
+<h2 id="install-tiller-and-helm-on-rpi">Install Tiller and Helm on RPI</h2>
+
+<h3 id="install-helm-on-pi">Install helm on PI</h3>
+
+<pre><code>ssh rpiuser@192.168.1.95
+sudo cp /home/rpiuser/helm_binaries/helm /usr/bin/helm
+</code></pre>
+
+<h3 id="deploy-tiller-pod">Deploy Tiller POD</h3>
+
+<p>First push the tiller docker image to the repo</p>
+
+<pre><code>docker login
+
+docker push jbrette/tiller-arm32v7:2.9
+</code></pre>
+
+<p>Prepare the POD deployment files</p>
+
+<pre><code>mkdir -p ~/kube-deployments/tiller
+cd  ~/kube-deployments/tiller
+</code></pre>
+
+<p>Create the kubectl file for tiller service account</p>
+
+<pre><code class="language-sh">cat tiller-serviceaccount.yaml
+</code></pre>
+
+<pre><code class="language-yaml">---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+...
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
+...
+</code></pre>
+
+<p>Create the tiller service account</p>
+
+<pre><code>kubectl create -f tiller-serviceaccount.yaml
+
+serviceaccount/tiller created
+clusterrolebinding.rbac.authorization.k8s.io/tiller created
+</code></pre>
+
+<p>Create manually the tiller deployment file and leverage the tiller service account</p>
+
+<pre><code>helm init --service-account tiller --output yaml &gt; tiller.yaml
+</code></pre>
+
+<p>Edit the image and replace <code>gcr.io/kubernetes-helm/tiller:2.9</code> by <code>jbrette/tiller-arm32v7:2.9</code></p>
+
+<pre><code class="language-yaml">apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: helm
+    name: tiller
+  name: tiller-deploy
+  namespace: kube-system
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: helm
+        name: tiller
+    spec:
+      containers:
+      - env:
+        - name: TILLER_NAMESPACE
+          value: kube-system
+        - name: TILLER_HISTORY_MAX
+          value: &quot;0&quot;
+        image: gcr.io/kubernetes-helm/tiller:2.9
+        imagePullPolicy: IfNotPresent
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 44135
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+        name: tiller
+        ports:
+        - containerPort: 44134
+          name: tiller
+        - containerPort: 44135
+          name: http
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 44135
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+        resources: {}
+      serviceAccountName: tiller
+status: {}
+</code></pre>
+
+<p>Deploy tiller in the kubernetes cluster</p>
+
+<pre><code>kubectl create -f tiller.yaml
+</code></pre>
+
+<p>Check the deployment state</p>
+
+<pre><code>kubectl get all -n kube-system
+
+NAME                                        READY     STATUS             RESTARTS   AGE
+pod/tiller-deploy-b59fcc885-66l7s           1/1       Running            0          5m
+
+NAME                                   DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/tiller-deploy          1         1         1            1           5m
+
+NAME                                              DESIRED   CURRENT   READY     AGE
+replicaset.apps/tiller-deploy-b59fcc885           1         1         1         5m
+</code></pre>
+
+<p>Check the logs</p>
+
+<pre><code>kubectl logs pod/tiller-deploy-b59fcc885-66l7s -n kube-system
+
+[main] 2018/07/15 18:08:10 Starting Tiller 2.9 (tls=false)
+[main] 2018/07/15 18:08:10 GRPC listening on :44134
+[main] 2018/07/15 18:08:10 Probes listening on :44135
+[main] 2018/07/15 18:08:10 Storage driver is ConfigMap
+[main] 2018/07/15 18:08:10 Max history per release is 0
+</code></pre>
+
+<h3 id="init-the-helm-client-side">Init the Helm client side</h3>
+
+<pre><code>helm init --client-only
+
+Creating /home/rpiuser/.helm
+Creating /home/rpiuser/.helm/repository
+Creating /home/rpiuser/.helm/repository/cache
+Creating /home/rpiuser/.helm/repository/local
+Creating /home/rpiuser/.helm/plugins
+Creating /home/rpiuser/.helm/starters
+Creating /home/rpiuser/.helm/cache/archive
+Creating /home/rpiuser/.helm/repository/repositories.yaml
+Adding stable repo with URL: https://kubernetes-charts.storage.googleapis.com
+Adding local repo with URL: http://127.0.0.1:8879/charts
+$HELM_HOME has been configured at /home/rpiuser/.helm.
+Not installing Tiller due to 'client-only' flag having been set
+Happy Helming!
+</code></pre>
+
+<p>Check helm commands are working properly</p>
+
+<pre><code>helm ls
+helm search stable/nginx-ingress
+helm inspect stable/nginx-ingress
+</code></pre>
+
+<h2 id="use-helm-on-rpi">Use helm on RPI</h2>
+
+<p>Let&rsquo;s access the simple helm repo designed for</p>
+
+<pre><code>helm repo add kubeplay 'https://raw.githubusercontent.com/jbrette/kubeplay/arm32v7/helmrepo/'
+</code></pre>
+
+<pre><code>helm repo list
+
+NAME            URL
+stable          https://kubernetes-charts.storage.googleapis.com
+local           http://127.0.0.1:8879/charts
+kubeplay        https://raw.githubusercontent.com/jbrette/kubeplay/arm32v7/helmrepo/
+</code></pre>
+
+<pre><code>helm search kubeplay
+
+NAME                            CHART VERSION   APP VERSION     DESCRIPTION
+kubeplay/kubeplay-arm32v7       0.1.0           0.1.0           A Helm chart for Kubernetes
+</code></pre>
+
+<p>Install simple hello world helm chart from kubeplay</p>
+
+<pre><code>helm install kubeplay/kubeplay-arm32v7 --name helm-rpi
+
+NAME:   helm-rpi
+LAST DEPLOYED: Sun Jul 15 19:23:58 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==&gt; v1/Service
+NAME                       TYPE      CLUSTER-IP     EXTERNAL-IP  PORT(S)         AGE
+helm-rpi-kubeplay-arm32v7  NodePort  10.96.168.184  &lt;none&gt;       8005:31439/TCP  2s
+
+==&gt; v1beta1/Deployment
+NAME                       DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+helm-rpi-kubeplay-arm32v7  1        0        0           0          2s
+</code></pre>
+
+<p>Check the installation</p>
+
+<pre><code>helm ls
+
+NAME            REVISION        UPDATED                         STATUS          CHART                   NAMESPACE
+helm-rpi        1               Sun Jul 15 19:23:58 2018        DEPLOYED        kubeplay-arm32v7-0.1.0  default
+</code></pre>
+
+<p>Check with kubectl if the POD is ready</p>
+
+<pre><code>kubectl get all -n default
+
+NAME                                             READY     STATUS    RESTARTS   AGE
+pod/helm-rpi-kubeplay-arm32v7-58567c4756-fj968   0/1       Running   4          4m
+
+NAME                                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/helm-rpi-kubeplay-arm32v7   NodePort    10.96.168.184   &lt;none&gt;        8005:31439/TCP   4m
+service/kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP          9d
+
+NAME                                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/helm-rpi-kubeplay-arm32v7   1         1         1            0           4m
+
+NAME                                                   DESIRED   CURRENT   READY     AGE
+replicaset.apps/helm-rpi-kubeplay-arm32v7-58567c4756   1         1         0         4m
+</code></pre>
+
+<p>Helm chart is not really consistent. Current image hardcoded to listen on port 80
+Let&rsquo;s use helm upgrade to change the value</p>
+
+<pre><code>helm upgrade --set service.internalPort=80 helm-rpi kubeplay/kubeplay-arm32v7
+
+Release &quot;helm-rpi&quot; has been upgraded. Happy Helming!
+LAST DEPLOYED: Sun Jul 15 20:39:17 2018
+NAMESPACE: default
+STATUS: DEPLOYED
+
+RESOURCES:
+==&gt; v1beta1/Deployment
+NAME                       DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
+helm-rpi-kubeplay-arm32v7  1        1        0           0          1h
+
+==&gt; v1/Pod(related)
+NAME                                        READY  STATUS       RESTARTS  AGE
+helm-rpi-kubeplay-arm32v7-58567c4756-fj968  0/1    Terminating  25        1h
+helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m  0/1    Pending      0         0s
+
+==&gt; v1/Service
+NAME                       TYPE      CLUSTER-IP     EXTERNAL-IP  PORT(S)         AGE
+helm-rpi-kubeplay-arm32v7  NodePort  10.96.168.184  &lt;none&gt;       8005:31439/TCP  1h
+</code></pre>
+
+<p>The pod seems to now be running properly.</p>
+
+<pre><code>kubectl get all -n default
+
+NAME                                             READY     STATUS    RESTARTS   AGE
+pod/helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m   1/1       Running   0          3m
+
+NAME                                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
+service/helm-rpi-kubeplay-arm32v7   NodePort    10.96.168.184   &lt;none&gt;        8005:31439/TCP   1h
+service/kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP          9d
+
+NAME                                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/helm-rpi-kubeplay-arm32v7   1         1         1            1           1h
+
+NAME                                                   DESIRED   CURRENT   READY     AGE
+replicaset.apps/helm-rpi-kubeplay-arm32v7-58567c4756   0         0         0         1h
+replicaset.apps/helm-rpi-kubeplay-arm32v7-6cb66496c6   1         1         1         3m
+</code></pre>
+
+<p>Check the POD</p>
+
+<pre><code>$ kubectl describe pod/helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m
+Name:           helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m
+Namespace:      default
+Node:           nas-pi/192.168.1.93
+Start Time:     Sun, 15 Jul 2018 20:39:18 +0000
+Labels:         app=kubeplay-arm32v7
+                pod-template-hash=2762205272
+                release=helm-rpi
+Annotations:    &lt;none&gt;
+Status:         Running
+IP:             10.244.2.6
+Controlled By:  ReplicaSet/helm-rpi-kubeplay-arm32v7-6cb66496c6
+Containers:
+  kubeplay-arm32v7:
+    Container ID:   docker://737cd78bebb982c782dae2c07f4604ba71f45bc112e91aa20652e29b25bf5d63
+    Image:          jbrette/kubeplay-arm32v7:0.1.0
+    Image ID:       docker-pullable://jbrette/kubeplay-arm32v7@sha256:86441999035e35514fc647ff9af90bdfc152299636b48b9d3dba9107574f3957
+    Port:           80/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Sun, 15 Jul 2018 20:39:23 +0000
+    Ready:          True
+    Restart Count:  0
+    Liveness:       http-get http://:80/ delay=0s timeout=1s period=10s #success=1 #failure=3
+    Readiness:      http-get http://:80/ delay=0s timeout=1s period=10s #success=1 #failure=3
+    Environment:    &lt;none&gt;
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-c5v7s (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  default-token-c5v7s:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-c5v7s
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  &lt;none&gt;
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From               Message
+  ----    ------     ----  ----               -------
+  Normal  Scheduled  10m   default-scheduler  Successfully assigned default/helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m to nas-pi
+  Normal  Pulling    10m   kubelet, nas-pi    pulling image &quot;jbrette/kubeplay-arm32v7:0.1.0&quot;
+  Normal  Pulled     10m   kubelet, nas-pi    Successfully pulled image &quot;jbrette/kubeplay-arm32v7:0.1.0&quot;
+  Normal  Created    10m   kubelet, nas-pi    Created container
+  Normal  Started    10m   kubelet, nas-pi    Started container
+</code></pre>
+
+<p>Let&rsquo;s open a browser towards the URL:</p>
+
+<p><img src="/images/kubeplay/kubeplay_arm32v7.png" alt="" />
+<img src="/images/kubeplay/dashboard.png" alt="" /></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<ul>
+<li>Need to cleanup the helm chart and docker image to ensure consistency of the internal</li>
+<li>Need to improve the NodePort/ClusterIP/LoadBalancer handling.</li>
+</ul>
+
+<h2 id="reference-links">Reference Links</h2>
+
+<ul>
+<li><a href="https://github.com/jonaseck2/rpi-helm">Usage of remote API</a></li>
+</ul>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="categories/wiki">wiki</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="tags/kubernetes">kubernetes</a></li>
+                
+                
+                <li><a class="article-category-link" href="tags/helm">helm</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "jbrette" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/2018-07-12-a/"
+                class="button big previous">Enable docker remote API</a></li>
+    
+
+    
+        <li><a href="/post/2018-07-14-a/"
+                class="button big next">Deploy Flannel in Raspberry PI cluster</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo.png" class="intro-circle" width="" alt="avatar" /></a>
+      
+    
+    
+      <header>
+        <h2>Jerome&#39;s Blog</h2>
+        <p>Building my edge cloud using Raspberry PI, keep learning from the opensource community</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-09-28-a/">Upgrade RPI Kubernetes cluster to 1.12</a>
+              </h3>
+              
+              <time class="published" datetime='2018-09-29'>
+                September 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-08-01-a/">Build and Deploy Kubernetes Hashicorp Vault</a>
+              </h3>
+              
+              <time class="published" datetime='2018-08-01'>
+                August 1, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-31-a/">Build and Deploy Kubernetes Istio</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-31'>
+                July 31, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-30-a/">Build and Deploy Kubernetes test-infra</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-30'>
+                July 30, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-29-a/">Build and Deploy Kubernetes Kustomize</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-29'>
+                July 29, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-28-a/">Deploy Cassandra on Raspberry-PI 3</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-28'>
+                July 28, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-19-a/">Build and Deploy MachineLearning Kubeflow Framework</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-19'>
+                July 19, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-18-a/">Compile and Test Portieris</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-18'>
+                July 18, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-17-a/">Rebuild Calico for AMD64 ad ARM32V7</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-17'>
+                July 17, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/2018-07-16-a/">Rebuild Hyperkube images</a>
+              </h3>
+              
+              <time class="published" datetime='2018-07-16'>
+                July 16, 2018
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /post/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wiki/">wiki</a>
+                <span style="float:right;">35</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/wip/">wip</a>
+                <span style="float:right;">13</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/news/">news</a>
+                <span style="float:right;">2</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>About the author</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jbrette" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/jerome-brette-109b8711" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2018
+        
+          Jerome Brette&#39;s Blog
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/bash.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/golang.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
