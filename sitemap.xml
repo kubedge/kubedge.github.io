@@ -28,16 +28,6 @@
   </url>
   
   <url>
-    <loc>/post/2018-07-28-a/</loc>
-    <lastmod>2018-07-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-07-19-a/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/post/2018-07-18-a/</loc>
     <lastmod>2018-07-18T00:00:00+00:00</lastmod>
   </url>
@@ -85,21 +75,6 @@
   <url>
     <loc>/post/2018-07-07-a/</loc>
     <lastmod>2018-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-07-06-a/</loc>
-    <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-07-05-a/</loc>
-    <lastmod>2018-07-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/2018-07-04-a/</loc>
-    <lastmod>2018-07-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -225,12 +200,6 @@
   </url>
   
   <url>
-    <loc>/tags/bigdata/</loc>
-    <lastmod>2018-07-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/calico/</loc>
     <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -273,12 +242,6 @@
   </url>
   
   <url>
-    <loc>/tags/homeautomation/</loc>
-    <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/istio/</loc>
     <lastmod>2018-07-31T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -305,12 +268,6 @@
   <url>
     <loc>/tags/kustomize/</loc>
     <lastmod>2018-07-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/machinelearning/</loc>
-    <lastmod>2018-07-19T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -369,12 +326,6 @@
   </url>
   
   <url>
-    <loc>/tags/wifi/</loc>
-    <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/wiki/</loc>
     <lastmod>2018-09-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -387,20 +338,8 @@
   </url>
   
   <url>
-    <loc>/tags/zigbee/</loc>
-    <lastmod>2018-07-06T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/tags/zuul/</loc>
     <lastmod>2018-06-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/zwave/</loc>
-    <lastmod>2018-07-06T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

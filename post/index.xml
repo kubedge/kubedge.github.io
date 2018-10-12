@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jerome Brette&#39;s Blog</title>
+    <title>KUBEDGE&#39;s Blog</title>
     <link>/post/</link>
-    <description>Recent content on Jerome Brette&#39;s Blog</description>
+    <description>Recent content on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
@@ -59,25 +59,6 @@ Key Aspects  Compile and deploy the test-infra code in test-infra  Deploy  WIP  
       <guid>/post/2018-07-29-a/</guid>
       <description> Goal kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t
 Key Aspects  Compile and deploy the Kustomize code in Kustomize  Deploy  WIP  Conclusion  WIP  Reference Links  Kustomize Description Official Kustomize Code  </description>
-    </item>
-    
-    <item>
-      <title>Deploy Cassandra on Raspberry-PI 3</title>
-      <link>/post/2018-07-28-a/</link>
-      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-28-a/</guid>
-      <description>Goal  The main goal is to use statefulset and local persistency volume. The arm32v7 image are not available on kubernetes example repository The arm32v7 images are not available either on the docker hub, probably because Cassandra advises to use 64 bits when PI 3 are still mainly 32 bits OS and that the amount of memory available is limited to 1Gbi.  Build Cassandra for PI 3 Cassandra 1 Based on various Cassandra running on RPI projects</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy MachineLearning Kubeflow Framework</title>
-      <link>/post/2018-07-19-a/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-19-a/</guid>
-      <description> Goal Kubeflow is a process that allows you to deploy machine learning infrastructure on top of a Kubernetes cluster. The goal here is to deploy Kubeflow first on a local simple Kubernetes cluster running in a VM and then deploy it in the Kubernetes PI Cluster
-Key Aspects  WIP  Deploy  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
     </item>
     
     <item>
@@ -180,37 +161,6 @@ Procedures  WIP  Results    Reference Links  TBD  </description>
       <description>Goal Even if the ultimate goal is to manage completly the cluster using Kubernetes, the ability to use Ansible during debug process is very usefull. The goal here is to setup ansible inventory, basic playbooks.
 Ansible Installation on the master node Let&amp;rsquo;s install ansible using apt-get. A lot of python related depedencies are also installed.
 sudo apt-get install ansible Reading package lists... Done Building dependency tree Reading state information... Done The following additional packages will be installed: ieee-data libyaml-0-2 python-cffi-backend python-crypto python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress python-jinja2 python-kerberos python-markupsafe python-netaddr python-paramiko python-pkg-resources python-pyasn1 python-selinux python-setuptools python-six python-xmltodict python-yaml Suggested packages: cowsay sshpass python-crypto-dbg python-crypto-doc python-cryptography-doc python-cryptography-vectors python-enum34-doc python-jinja2-doc ipython python-netaddr-docs python-gssapi doc-base python-setuptools-doc Recommended packages: python-winrm The following NEW packages will be installed: ansible ieee-data libyaml-0-2 python-cffi-backend python-crypto python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress python-jinja2 python-kerberos python-markupsafe python-netaddr python-paramiko python-pkg-resources python-pyasn1 python-selinux python-setuptools python-six python-xmltodict python-yaml 0 upgraded, 22 newly installed, 0 to remove and 6 not upgraded.</description>
-    </item>
-    
-    <item>
-      <title>ZWave/ZigBee network and Linear HUSBZB‑1</title>
-      <link>/post/2018-07-06-a/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-06-a/</guid>
-      <description>Goal In order to transforme a PI into a home automation controller, it is necessary to add Zwave and ZigBee capabilities to the the Wifi and Bluetooth capabilities of the PI.
-Key  Transform Raspberry-PI + Dongle into a SUC ZWave controller Try to use with OpenHAB or HomeAssistant  Testing on the OpenHAB Container The OpenHAB architecture is Java based.
-Testing on the HomeAssistant Container HomeAssistant is Python based and relies on OpenZWave.</description>
-    </item>
-    
-    <item>
-      <title>Install OpenHAB on docker &#43; Raspberry PI3</title>
-      <link>/post/2018-07-05-a/</link>
-      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-05-a/</guid>
-      <description>Goal OpenHAB running on Raspberry PI is one of way where you don&amp;rsquo;t have to rely on outside services to orchestrate your IOT. Then comes the issues of high availability of the software if only running on one PI. By dockerizing the software first, this open the doors to leverage a kubernetes cluster to ensure HA of the software
-Key Aspects  Use the 3 nodes Raspeberry Cluster Access the WIFI, ZWave and Zigbee network Leverage the Nortek HUSBZB-1 Zwave and Zigbee dongle.</description>
-    </item>
-    
-    <item>
-      <title>Install HomeAssistant on docker &#43; Raspberry PI3</title>
-      <link>/post/2018-07-04-a/</link>
-      <pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-04-a/</guid>
-      <description>Goal HomeAssistant running on Raspberry PI is one of way where you don&amp;rsquo;t have to rely on outside services to orchestrate your IOT. Then comes the issues of high availability of the software if only running on one PI. By dockerizing the software first, this open the doors to leverage a kubernetes cluster to ensure HA of the software
-Key Aspects  Use the 3 nodes Raspeberry Cluster Access the WIFI, ZWave and Zigbee network Leverage the Nortek HUSBZB-1 Zwave and Zigbee dongle.</description>
     </item>
     
     <item>

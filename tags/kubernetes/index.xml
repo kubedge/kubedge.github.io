@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kubernetes on Jerome Brette&#39;s Blog</title>
+    <title>kubernetes on KUBEDGE&#39;s Blog</title>
     <link>/tags/kubernetes/</link>
-    <description>Recent content in kubernetes on Jerome Brette&#39;s Blog</description>
+    <description>Recent content in kubernetes on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
@@ -59,25 +59,6 @@ Key Aspects  Compile and deploy the test-infra code in test-infra  Deploy  WIP  
       <guid>/post/2018-07-29-a/</guid>
       <description> Goal kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t
 Key Aspects  Compile and deploy the Kustomize code in Kustomize  Deploy  WIP  Conclusion  WIP  Reference Links  Kustomize Description Official Kustomize Code  </description>
-    </item>
-    
-    <item>
-      <title>Deploy Cassandra on Raspberry-PI 3</title>
-      <link>/post/2018-07-28-a/</link>
-      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-28-a/</guid>
-      <description>Goal  The main goal is to use statefulset and local persistency volume. The arm32v7 image are not available on kubernetes example repository The arm32v7 images are not available either on the docker hub, probably because Cassandra advises to use 64 bits when PI 3 are still mainly 32 bits OS and that the amount of memory available is limited to 1Gbi.  Build Cassandra for PI 3 Cassandra 1 Based on various Cassandra running on RPI projects</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy MachineLearning Kubeflow Framework</title>
-      <link>/post/2018-07-19-a/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-19-a/</guid>
-      <description> Goal Kubeflow is a process that allows you to deploy machine learning infrastructure on top of a Kubernetes cluster. The goal here is to deploy Kubeflow first on a local simple Kubernetes cluster running in a VM and then deploy it in the Kubernetes PI Cluster
-Key Aspects  WIP  Deploy  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
     </item>
     
     <item>

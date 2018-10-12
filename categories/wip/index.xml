@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>wip on Jerome Brette&#39;s Blog</title>
+    <title>wip on KUBEDGE&#39;s Blog</title>
     <link>/categories/wip/</link>
-    <description>Recent content in wip on Jerome Brette&#39;s Blog</description>
+    <description>Recent content in wip on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
@@ -59,16 +59,6 @@ Key Aspects  Compile and deploy the test-infra code in test-infra  Deploy  WIP  
       <guid>/post/2018-07-29-a/</guid>
       <description> Goal kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t
 Key Aspects  Compile and deploy the Kustomize code in Kustomize  Deploy  WIP  Conclusion  WIP  Reference Links  Kustomize Description Official Kustomize Code  </description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy MachineLearning Kubeflow Framework</title>
-      <link>/post/2018-07-19-a/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2018-07-19-a/</guid>
-      <description> Goal Kubeflow is a process that allows you to deploy machine learning infrastructure on top of a Kubernetes cluster. The goal here is to deploy Kubeflow first on a local simple Kubernetes cluster running in a VM and then deploy it in the Kubernetes PI Cluster
-Key Aspects  WIP  Deploy  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
     </item>
     
     <item>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Jerome Brette&#39;s Blog</title>
+    <title>Tags on KUBEDGE&#39;s Blog</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on Jerome Brette&#39;s Blog</description>
+    <description>Recent content in Tags on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
@@ -16,15 +16,6 @@
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/ansible/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bigdata</title>
-      <link>/tags/bigdata/</link>
-      <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/bigdata/</guid>
       <description></description>
     </item>
     
@@ -92,15 +83,6 @@
     </item>
     
     <item>
-      <title>homeautomation</title>
-      <link>/tags/homeautomation/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/homeautomation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>istio</title>
       <link>/tags/istio/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
@@ -142,15 +124,6 @@
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/kustomize/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>machinelearning</title>
-      <link>/tags/machinelearning/</link>
-      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/machinelearning/</guid>
       <description></description>
     </item>
     
@@ -227,38 +200,11 @@
     </item>
     
     <item>
-      <title>wifi</title>
-      <link>/tags/wifi/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/wifi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>zigbee</title>
-      <link>/tags/zigbee/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/zigbee/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>zuul</title>
       <link>/tags/zuul/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/zuul/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>zwave</title>
-      <link>/tags/zwave/</link>
-      <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/zwave/</guid>
       <description></description>
     </item>
     
