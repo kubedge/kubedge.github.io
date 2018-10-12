@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on KubEdge&#39;s Blog</title>
+    <title>Tags on Jerome Brette&#39;s Blog</title>
     <link>/tags/</link>
-    <description>Recent content in Tags on KubEdge&#39;s Blog</description>
+    <description>Recent content in Tags on Jerome Brette&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ansible</title>
+      <title>ansible</title>
       <link>/tags/ansible/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -21,7 +20,7 @@
     </item>
     
     <item>
-      <title>Bigdata</title>
+      <title>bigdata</title>
       <link>/tags/bigdata/</link>
       <pubDate>Sat, 28 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -30,7 +29,7 @@
     </item>
     
     <item>
-      <title>Calico</title>
+      <title>calico</title>
       <link>/tags/calico/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -39,7 +38,7 @@
     </item>
     
     <item>
-      <title>Cni</title>
+      <title>cni</title>
       <link>/tags/cni/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -48,7 +47,7 @@
     </item>
     
     <item>
-      <title>Coreos</title>
+      <title>coreos</title>
       <link>/tags/coreos/</link>
       <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -57,7 +56,7 @@
     </item>
     
     <item>
-      <title>Docker</title>
+      <title>docker</title>
       <link>/tags/docker/</link>
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -66,7 +65,7 @@
     </item>
     
     <item>
-      <title>Github</title>
+      <title>github</title>
       <link>/tags/github/</link>
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -75,7 +74,7 @@
     </item>
     
     <item>
-      <title>Golang</title>
+      <title>golang</title>
       <link>/tags/golang/</link>
       <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -84,7 +83,7 @@
     </item>
     
     <item>
-      <title>Helm</title>
+      <title>helm</title>
       <link>/tags/helm/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -93,7 +92,7 @@
     </item>
     
     <item>
-      <title>Homeautomation</title>
+      <title>homeautomation</title>
       <link>/tags/homeautomation/</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -102,7 +101,7 @@
     </item>
     
     <item>
-      <title>Istio</title>
+      <title>istio</title>
       <link>/tags/istio/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -111,7 +110,7 @@
     </item>
     
     <item>
-      <title>Java</title>
+      <title>java</title>
       <link>/tags/java/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -120,7 +119,7 @@
     </item>
     
     <item>
-      <title>Kubeadm</title>
+      <title>kubeadm</title>
       <link>/tags/kubeadm/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -129,7 +128,7 @@
     </item>
     
     <item>
-      <title>Kubernetes</title>
+      <title>kubernetes</title>
       <link>/tags/kubernetes/</link>
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -138,7 +137,7 @@
     </item>
     
     <item>
-      <title>Kustomize</title>
+      <title>kustomize</title>
       <link>/tags/kustomize/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -147,7 +146,7 @@
     </item>
     
     <item>
-      <title>Machinelearning</title>
+      <title>machinelearning</title>
       <link>/tags/machinelearning/</link>
       <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -156,7 +155,7 @@
     </item>
     
     <item>
-      <title>Portieris</title>
+      <title>portieris</title>
       <link>/tags/portieris/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -165,7 +164,7 @@
     </item>
     
     <item>
-      <title>Python</title>
+      <title>python</title>
       <link>/tags/python/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -174,7 +173,7 @@
     </item>
     
     <item>
-      <title>Rpi</title>
+      <title>rpi</title>
       <link>/tags/rpi/</link>
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -183,7 +182,7 @@
     </item>
     
     <item>
-      <title>Security</title>
+      <title>security</title>
       <link>/tags/security/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
@@ -192,7 +191,7 @@
     </item>
     
     <item>
-      <title>Sonobuoy</title>
+      <title>sonobuoy</title>
       <link>/tags/sonobuoy/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -201,7 +200,7 @@
     </item>
     
     <item>
-      <title>Test-infra</title>
+      <title>test-infra</title>
       <link>/tags/test-infra/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -210,7 +209,7 @@
     </item>
     
     <item>
-      <title>Testing</title>
+      <title>testing</title>
       <link>/tags/testing/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -219,7 +218,7 @@
     </item>
     
     <item>
-      <title>Vault</title>
+      <title>vault</title>
       <link>/tags/vault/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
@@ -228,7 +227,7 @@
     </item>
     
     <item>
-      <title>Wifi</title>
+      <title>wifi</title>
       <link>/tags/wifi/</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -237,7 +236,7 @@
     </item>
     
     <item>
-      <title>Zigbee</title>
+      <title>zigbee</title>
       <link>/tags/zigbee/</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -246,7 +245,7 @@
     </item>
     
     <item>
-      <title>Zuul</title>
+      <title>zuul</title>
       <link>/tags/zuul/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
       
@@ -255,7 +254,7 @@
     </item>
     
     <item>
-      <title>Zwave</title>
+      <title>zwave</title>
       <link>/tags/zwave/</link>
       <pubDate>Fri, 06 Jul 2018 00:00:00 +0000</pubDate>
       
