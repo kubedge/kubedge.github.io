@@ -279,10 +279,10 @@ Usefull Links  Link1  </description>
     
     <item>
       <title>Setup your GOLANG environment</title>
-      <link>/post/2018-06-22-a/</link>
+      <link>/pi_cluster/microservices/children/2018-06-22-a/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-22-a/</guid>
+      <guid>/pi_cluster/microservices/children/2018-06-22-a/</guid>
       <description>Goal A lot of the opensource projects evolvoving around Kubernetes are written in go. It is very usefull to be able to rebuild so projects using go get or go build.
 Installing the right version of GO If you have strange errors, when running go get &amp;hellip;., chances are that your version of GO is old. On Ubuntu, it is actually quite simple to address the issue.
 If you are still running Ubuntu 16.</description>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Archetypes</title>
-      <link>/cont/archetypes/</link>
+      <link>/devops/hugo_githubpages/hugo/cont/archetypes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/cont/archetypes/</guid>
+      <guid>/devops/hugo_githubpages/hugo/cont/archetypes/</guid>
       <description>Using the command: hugo new [relative new content path], you can start a content file with the date and title automatically set. While this is a welcome feature, active writers need more : archetypes.
 It is pre-configured skeleton pages with default front matter. Please refer to the documentation for types of page to understand the differences.
 Chapter To create a Chapter page, run the following commands
@@ -25,10 +25,10 @@ hugo new --kind chapter &amp;lt;name&amp;gt;/_index.</description>
     
     <item>
       <title>Markdown syntax</title>
-      <link>/cont/markdown/</link>
+      <link>/devops/hugo_githubpages/hugo/cont/markdown/</link>
       <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
       
-      <guid>/cont/markdown/</guid>
+      <guid>/devops/hugo_githubpages/hugo/cont/markdown/</guid>
       <description>This page is a shameful copy of the great Grav original page. Only difference is information about image customization (resizing, add CSS classes&amp;hellip;)
  Let&amp;rsquo;s face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
 Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it.</description>
@@ -36,10 +36,10 @@ Markdown is a better way to write HTML, without all the complexities and uglines
     
     <item>
       <title>Menu extra shortcuts</title>
-      <link>/cont/menushortcuts/</link>
+      <link>/devops/hugo_githubpages/hugo/cont/menushortcuts/</link>
       <pubDate>Sat, 09 Apr 2016 16:50:16 +0200</pubDate>
       
-      <guid>/cont/menushortcuts/</guid>
+      <guid>/devops/hugo_githubpages/hugo/cont/menushortcuts/</guid>
       <description>You can define additional menu entries or shortcuts in the navigation menu without any link to content.
 Basic configuration Edit the website configuration config.toml and add a [[menu.shortcuts]] entry for each link your want to add.
 Example from the current website:
@@ -48,10 +48,10 @@ Example from the current website:
     
     <item>
       <title>Icons and logos</title>
-      <link>/cont/icons/</link>
+      <link>/devops/hugo_githubpages/hugo/cont/icons/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/cont/icons/</guid>
+      <guid>/devops/hugo_githubpages/hugo/cont/icons/</guid>
       <description>The Learn theme for Hugo loads the Font Awesome library, allowing you to easily display any icon or logo available in the Font Awesome free collection.
 Finding an icon Browse through the available icons in the Font Awesome Gallery. Notice that the free filter is enabled, as only the free icons are available by default.
 Once on the Font Awesome page for a specific icon, for example the page for the heart, copy the HTML reference and paste into the markdown content.</description>
@@ -325,10 +325,10 @@ Usefull Links  Link1  </description>
     
     <item>
       <title>Setup your GOLANG environment</title>
-      <link>/post/2018-06-22-a/</link>
+      <link>/pi_cluster/microservices/children/2018-06-22-a/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-22-a/</guid>
+      <guid>/pi_cluster/microservices/children/2018-06-22-a/</guid>
       <description>Goal A lot of the opensource projects evolvoving around Kubernetes are written in go. It is very usefull to be able to rebuild so projects using go get or go build.
 Installing the right version of GO If you have strange errors, when running go get &amp;hellip;., chances are that your version of GO is old. On Ubuntu, it is actually quite simple to address the issue.
 If you are still running Ubuntu 16.</description>
@@ -366,30 +366,11 @@ Consideration regarding USB boot.</description>
     </item>
     
     <item>
-      <title>Welcome to Hugo!</title>
-      <link>/news/2018-01-02-a/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/news/2018-01-02-a/</guid>
-      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</description>
-    </item>
-    
-    <item>
-      <title>Welcome to Jekyll!</title>
-      <link>/news/2018-01-01-a/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/news/2018-01-01-a/</guid>
-      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
-To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.</description>
-    </item>
-    
-    <item>
       <title>Attachments</title>
-      <link>/shortcodes/attachments/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/attachments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/attachments/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/attachments/</guid>
       <description>The Attachments shortcode displays a list of files attached to a page.
   Attachments   BachGavotteShort.mp3  (357 ko)   Carroll_AliceAuPaysDesMerveilles.pdf  (175 ko)   adivorciarsetoca00cape.pdf  (361 ko)   hugo.png  (17 ko)   movieselectricsheep-flock-244-32500-2.mp4  (340 ko)    Usage The shortcurt lists files found in a specific folder. Currently, it support two implementations for pages
  If your page is a markdown file, attachements must be place in a folder named like your page and ending with .</description>
@@ -397,30 +378,30 @@ To add new posts, simply add a file in the _posts directory that follows the con
     
     <item>
       <title>Button</title>
-      <link>/shortcodes/button/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/button/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/button/</guid>
       <description>A button is a just a clickable button with optional icon.
 {{% button href=&amp;quot;https://getgrav.org/&amp;quot; %}}Get Grav{{% /button %}} {{% button href=&amp;quot;https://getgrav.org/&amp;quot; icon=&amp;quot;fas fa-download&amp;quot; %}}Get Grav with icon{{% /button %}} {{% button href=&amp;quot;https://getgrav.org/&amp;quot; icon=&amp;quot;fas fa-download&amp;quot; icon-position=&amp;quot;right&amp;quot; %}}Get Grav with icon right{{% /button %}}  Get Grav   Get Grav with icon  Get Grav with icon right   </description>
     </item>
     
     <item>
       <title>Expand</title>
-      <link>/shortcodes/expand/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/expand/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/expand/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/expand/</guid>
       <description>The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example
   Expand me...   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</description>
     </item>
     
     <item>
       <title>Mermaid</title>
-      <link>/shortcodes/mermaid/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/mermaid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/mermaid/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/mermaid/</guid>
       <description>Mermaid is a library helping you to generate diagram and flowcharts from text, in a similar manner as Markdown.
 Just insert your mermaid code in the mermaid shortcode and that&amp;rsquo;s it.
 Flowchart example {{&amp;lt;mermaid align=&amp;quot;left&amp;quot;&amp;gt;}} graph LR; A[Hard edge] --&amp;gt;|Link text| B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two] {{&amp;lt; /mermaid &amp;gt;}}  renders as
@@ -429,10 +410,10 @@ graph LR; A[Hard edge] --|Link text| B(Round edge) B -- C{Decision} C --|One| D[
     
     <item>
       <title>Notice</title>
-      <link>/shortcodes/notice/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/notice/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/notice/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/notice/</guid>
       <description>The notice shortcode shows 4 types of disclaimers to help you structure your page.
 Note {{% notice note %}} A notice disclaimer {{% /notice %}}  renders as
 A notice disclaimer
@@ -445,10 +426,10 @@ A tip disclaimer
     
     <item>
       <title>Site param</title>
-      <link>/shortcodes/siteparam/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/siteparam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/siteparam/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/siteparam/</guid>
       <description>siteparam shortcode is used to help you print values of site params.
 For instance, in this current site, the editURL variable is used in config.toml
 [params] editURL = &amp;quot;https://github.com/matcornic/hugo-theme-learn/edit/master/exampleSite/content/&amp;quot;  Use the siteparam shortcode to display its value.
@@ -458,19 +439,19 @@ editURL Value : </description>
     
     <item>
       <title>page test</title>
-      <link>/shortcodes/children/test/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/children/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/children/test/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/children/test/</guid>
       <description>This is a test demo child page</description>
     </item>
     
     <item>
       <title>page test 3</title>
-      <link>/shortcodes/children/children-2/test3/</link>
+      <link>/devops/hugo_githubpages/hugo/shortcodes/children/children-2/test3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/shortcodes/children/children-2/test3/</guid>
+      <guid>/devops/hugo_githubpages/hugo/shortcodes/children/children-2/test3/</guid>
       <description>This is a test 3 demo child page</description>
     </item>
     

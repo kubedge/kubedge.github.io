@@ -192,24 +192,5 @@ sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo 
       <description>Goal During some of the manipulation of the partition table of my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup. Moreover if your SD card is 32G, it takes around 30 minute to restore from backup. Hence the idea to come up with a way to build more resiliency in the cluster. Recreating a node from scratch should not take more than 10 mn.</description>
     </item>
     
-    <item>
-      <title>Welcome to Hugo!</title>
-      <link>/news/2018-01-02-a/</link>
-      <pubDate>Tue, 02 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/news/2018-01-02-a/</guid>
-      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</description>
-    </item>
-    
-    <item>
-      <title>Welcome to Jekyll!</title>
-      <link>/news/2018-01-01-a/</link>
-      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/news/2018-01-01-a/</guid>
-      <description>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
-To add new posts, simply add a file in the _posts directory that follows the convention YYYY-MM-DD-name-of-post.</description>
-    </item>
-    
   </channel>
 </rss>

@@ -3,13 +3,131 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/cont/pages/</loc>
+    <loc>/post/</loc>
+    <lastmod>2018-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/cont/pages/</loc>
     <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2018-09-29T00:00:00+00:00</lastmod>
+    <loc>/devops/</loc>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/lte_and_5g_core_simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>/nfv/fd_io_and_opnfv/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/git_gerrit/</loc>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/os_installation/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/cont/archetypes/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/container_images/</loc>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/docker_kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/lte_and_5g_ran_simulation/</loc>
+  </url>
+  
+  <url>
+    <loc>/nfv/onap/</loc>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/basics/requirements/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/cont/markdown/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/akraino/</loc>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/maintenance/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/basics/installation/</loc>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/</loc>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/rpi_wifi_bluetooth/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/basics/configuration/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/automation/</loc>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/microservices/</loc>
+    <lastmod>2018-06-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/</loc>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/nsa_and_sa/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/cont/menushortcuts/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/basics/style-customization/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/cont/icons/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/cont/i18n/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
   <url>
@@ -17,62 +135,11 @@
   </url>
   
   <url>
-    <loc>/news/</loc>
-    <lastmod>2018-01-02T00:00:00+00:00</lastmod>
+    <loc>/devops/hugo_githubpages/hugo/basics/</loc>
   </url>
   
   <url>
-    <loc>/cont/archetypes/</loc>
-  </url>
-  
-  <url>
-    <loc>/basics/</loc>
-  </url>
-  
-  <url>
-    <loc>/basics/requirements/</loc>
-  </url>
-  
-  <url>
-    <loc>/cont/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/cont/markdown/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/shortcodes/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/basics/installation/</loc>
-  </url>
-  
-  <url>
-    <loc>/basics/configuration/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/cont/menushortcuts/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/basics/style-customization/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/cont/icons/</loc>
-  </url>
-  
-  <url>
-    <loc>/cont/i18n/</loc>
+    <loc>/devops/hugo_githubpages/hugo/cont/</loc>
     <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
@@ -207,7 +274,7 @@
   </url>
   
   <url>
-    <loc>/post/2018-06-22-a/</loc>
+    <loc>/pi_cluster/microservices/children/2018-06-22-a/</loc>
     <lastmod>2018-06-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -227,21 +294,16 @@
   </url>
   
   <url>
-    <loc>/news/2018-01-02-a/</loc>
-    <lastmod>2018-01-02T00:00:00+00:00</lastmod>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
   <url>
-    <loc>/news/2018-01-01-a/</loc>
-    <lastmod>2018-01-01T00:00:00+00:00</lastmod>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/attachments/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/attachments/</loc>
-  </url>
-  
-  <url>
-    <loc>/shortcodes/button/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/button/</loc>
   </url>
   
   <url>
@@ -250,11 +312,11 @@
   </url>
   
   <url>
-    <loc>/shortcodes/children/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/expand/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/expand/</loc>
   </url>
   
   <url>
@@ -263,15 +325,19 @@
   </url>
   
   <url>
-    <loc>/shortcodes/mermaid/</loc>
+    <loc>/devops/hugo_githubpages/hugo/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/notice/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/mermaid/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/siteparam/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/notice/</loc>
+  </url>
+  
+  <url>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/siteparam/</loc>
   </url>
   
   <url>
@@ -358,49 +424,43 @@
   </url>
   
   <url>
-    <loc>/categories/news/</loc>
-    <lastmod>2018-01-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-1/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-1/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-1/children-1-1/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-1/children-1-1/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-1/children-1-1/children-1-1-1/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-1/children-1-1/children-1-1-1/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-2/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-2/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-3/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-3/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-4/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/children-4/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/test/</loc>
   </url>
   
   <url>
-    <loc>/shortcodes/children/test/</loc>
-  </url>
-  
-  <url>
-    <loc>/shortcodes/children/children-2/test3/</loc>
+    <loc>/devops/hugo_githubpages/hugo/shortcodes/children/children-2/test3/</loc>
   </url>
   
   <url>
