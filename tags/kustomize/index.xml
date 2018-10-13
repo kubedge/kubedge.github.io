@@ -13,10 +13,10 @@
     
     <item>
       <title>Build and Deploy Kubernetes Kustomize</title>
-      <link>/post/2018-07-29-a/</link>
+      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-07-29-a/</guid>
+      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
       <description> Goal kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t
 Key Aspects  Compile and deploy the Kustomize code in Kustomize  Deploy  WIP  Conclusion  WIP  Reference Links  Kustomize Description Official Kustomize Code  </description>
     </item>

@@ -13,10 +13,10 @@
     
     <item>
       <title>Zuul</title>
-      <link>/post/2018-06-26-a/</link>
+      <link>/devops/advanced/children/2018-06-26-a/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-26-a/</guid>
+      <guid>/devops/advanced/children/2018-06-26-a/</guid>
       <description> Goal OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks. This post is the collection of notes and tips used during the couple of update I did to some openstack projects.
 Understanding Zuul  WIP  Usefull Links  WIP  </description>
     </item>

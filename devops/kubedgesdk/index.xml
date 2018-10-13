@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubedge SDK on KUBEDGE&#39;s Blog</title>
+    <link>/devops/kubedgesdk/</link>
+    <description>Recent content in Kubedge SDK on KUBEDGE&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 15 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/devops/kubedgesdk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Recompile Kubernetes components for Raspberry PI</title>
+      <link>/devops/kubedgesdk/children/2018-07-15-a/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/devops/kubedgesdk/children/2018-07-15-a/</guid>
+      <description>Goal During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.
+Key Aspects  The bug had been fixed by the Kubernetes kube-controller-manager - panic: runtime error: index out of range has been fixed and will be built as part of 1.</description>
+    </item>
+    
+    <item>
+      <title>Setup SingleNode Kubernetes Cluster using kubeadm</title>
+      <link>/devops/kubedgesdk/children/2018-06-21-a/</link>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/devops/kubedgesdk/children/2018-06-21-a/</guid>
+      <description>Goal Setup simple kubernetes cluster for test purposes.
+Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
+sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;amp;version.</description>
+    </item>
+    
+  </channel>
+</rss>

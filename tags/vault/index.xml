@@ -13,10 +13,10 @@
     
     <item>
       <title>Build and Deploy Kubernetes Hashicorp Vault</title>
-      <link>/post/2018-08-01-a/</link>
+      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-08-01-a/</guid>
+      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
       <description> Goal Vault is aiming at improving security of the containers by rotating token and credential much more often than usual. Looks like it is especially effectiv to help rotate passwords used to access internal databases.
 Key Aspects  Compile and deploy the vault code in vault  Deploy  WIP  Conclusion  WIP  Reference Links  Official HashiCorp Code  </description>
     </item>

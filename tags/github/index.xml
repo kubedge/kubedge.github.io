@@ -13,20 +13,20 @@
     
     <item>
       <title>Use github repo as helm chart repository</title>
-      <link>/post/2018-07-11-a/</link>
+      <link>/pi_cluster/maintenance/children/2018-07-11-a/</link>
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-07-11-a/</guid>
+      <guid>/pi_cluster/maintenance/children/2018-07-11-a/</guid>
       <description>Goal In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository. The goal of this post is to transform a github repo into a helm repo.
 Key Aspects  Save the helm charts on github mainly for the RPI Kubernetes cluster Figure out a way to access them  Build the chart and upload it to the helm repo For that purpose I used by kubeplay repo where I had helm charts and container ready</description>
     </item>
     
     <item>
       <title>Setup github/gerrit behind a corporate http proxy</title>
-      <link>/post/2018-06-25-a/</link>
+      <link>/devops/git_gerrit/children/2018-06-25-a/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-25-a/</guid>
+      <guid>/devops/git_gerrit/children/2018-06-25-a/</guid>
       <description>Goal This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.
 Access GitHub/Gerrit from behind a corporate http proxy TBD
 Links TBD</description>
@@ -34,10 +34,10 @@ Links TBD</description>
     
     <item>
       <title>Setup multiple GitHub account on a single machine</title>
-      <link>/post/2018-06-23-a/</link>
+      <link>/devops/git_gerrit/children/2018-06-23-a/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-23-a/</guid>
+      <guid>/devops/git_gerrit/children/2018-06-23-a/</guid>
       <description> Goal In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to be able to conigure your .ssh directory.
 Setup multiple GitHub account TBD
 Usefull Links  Link1  </description>

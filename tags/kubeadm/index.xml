@@ -13,10 +13,10 @@
     
     <item>
       <title>Setup SingleNode Kubernetes Cluster using kubeadm</title>
-      <link>/post/2018-06-21-a/</link>
+      <link>/devops/kubedgesdk/children/2018-06-21-a/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-06-21-a/</guid>
+      <guid>/devops/kubedgesdk/children/2018-06-21-a/</guid>
       <description>Goal Setup simple kubernetes cluster for test purposes.
 Add Kubernetes APT Repo If you are still running Ubuntu 16.04 LTS
 sudo xxx sudo apt-get update sudo apt-get install kubeadm kubelet kubectl  sudo docker version Client: Version: 1.13.1 API version: 1.26 Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Server: Version: 1.13.1 API version: 1.26 (minimum version 1.12) Go version: go1.6.2 Git commit: 092cba3 Built: Thu Nov 2 20:40:23 2017 OS/Arch: linux/amd64 Experimental: false  sudo kubeadm version kubeadm version: &amp;amp;version.</description>

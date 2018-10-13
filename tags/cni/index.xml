@@ -13,20 +13,20 @@
     
     <item>
       <title>Rebuild Calico for AMD64 ad ARM32V7</title>
-      <link>/post/2018-07-17-a/</link>
+      <link>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-07-17-a/</guid>
+      <guid>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</guid>
       <description> Goal Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI. The attempt here is to cross-compile the calico containers and use them on the PI cluster.
 Key Aspects  Rebuild the Calico  Build Kubernetes executables for AMD64 and ARM  WIP  Conclusion  WIP  Reference Links  [Kubernetes cross build]()  </description>
     </item>
     
     <item>
       <title>Deploy Flannel in Raspberry PI cluster</title>
-      <link>/post/2018-07-14-a/</link>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/2018-07-14-a/</guid>
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</guid>
       <description>Goal In order to get the nodes and pods interface with each other accross the cluster. This post describes how I deployed Flannel acounting with the fact that some of the nodes have multiple interfaces (wlan0 and eth0).
 Key Aspects  Flannel seems to deploy ok. Looks like in trouble when multiple interfaces available Calico in not compiled by default for Rapsberry PI  Flannel Setup through kubectl $ mkdir -p $HOME/kube-deployments/flannel $ cd $HOME/kube-deployments/flannel $ curl -sSL https://rawgit.</description>
     </item>
