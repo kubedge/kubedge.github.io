@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kubedge! Edge cluster built on Kubernetes with RPi on KUBEDGE&#39;s Blog</title>
+    <title>Kubedge on KUBEDGE&#39;s Blog</title>
     <link>/</link>
-    <description>Recent content in Kubedge! Edge cluster built on Kubernetes with RPi on KUBEDGE&#39;s Blog</description>
+    <description>Recent content in Kubedge on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 09 Apr 2016 16:50:16 +0200</lastBuildDate>
@@ -298,26 +298,6 @@ Links TBD</description>
       <description>Goal Wondering why you have a strange error such as &amp;lsquo;from &amp;hellip;&amp;rsquo; when running docker build. The reason is linked to an older version of docker installed.
 Remove the current docker.io You need to remove the current docker.io.
 sudo apt-cache policy docker.io curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository &amp;quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&amp;quot; sudo apt-get update sudo apt-cache policy docker-ce sudo apt-get remove docker docker-engine docker.</description>
-    </item>
-    
-    <item>
-      <title>Setup Hugo</title>
-      <link>/devops/cicd/children/setup_submodules/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/cicd/children/setup_submodules/</guid>
-      <description> Goal ##
-git rm -fr themes/hugo-theme-learn/ git submodule add https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn  </description>
-    </item>
-    
-    <item>
-      <title>Setup Hugo</title>
-      <link>/devops/hugo_githubpages/children/setup_hugo/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/hugo_githubpages/children/setup_hugo/</guid>
-      <description> Goal ##
-git rm -fr themes/hugo-theme-learn/ git submodule add https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn  </description>
     </item>
     
     <item>

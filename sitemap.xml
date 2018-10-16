@@ -40,7 +40,6 @@
   
   <url>
     <loc>/devops/cicd/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -80,7 +79,6 @@
   
   <url>
     <loc>/devops/hugo_githubpages/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -286,16 +284,6 @@
   <url>
     <loc>/pi_cluster/docker_kubernetes/children/2018-06-24-a/</loc>
     <lastmod>2018-06-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/devops/cicd/children/setup_submodules/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/devops/hugo_githubpages/children/setup_hugo/</loc>
-    <lastmod>2018-06-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>

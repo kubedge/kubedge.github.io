@@ -33,26 +33,6 @@ Links TBD</description>
     </item>
     
     <item>
-      <title>Setup Hugo</title>
-      <link>/devops/cicd/children/setup_submodules/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/cicd/children/setup_submodules/</guid>
-      <description> Goal ##
-git rm -fr themes/hugo-theme-learn/ git submodule add https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn  </description>
-    </item>
-    
-    <item>
-      <title>Setup Hugo</title>
-      <link>/devops/hugo_githubpages/children/setup_hugo/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/hugo_githubpages/children/setup_hugo/</guid>
-      <description> Goal ##
-git rm -fr themes/hugo-theme-learn/ git submodule add https://github.com/matcornic/hugo-theme-learn.git themes/hugo-theme-learn  </description>
-    </item>
-    
-    <item>
       <title>Setup multiple GitHub account on a single machine</title>
       <link>/devops/git_gerrit/children/2018-06-23-a/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
