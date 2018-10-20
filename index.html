@@ -12,17 +12,17 @@
     <title>Kubedge :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1539991978" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1539991978" rel="stylesheet">
-    <link href="/css/hybrid.css?1539991978" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1539991978" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1539991978" rel="stylesheet">
-    <link href="/css/auto-complete.css?1539991978" rel="stylesheet">
-    <link href="/css/theme.css?1539991978" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1539991978" rel="stylesheet">
+    <link href="/css/nucleus.css?1540074311" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1540074311" rel="stylesheet">
+    <link href="/css/hybrid.css?1540074311" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1540074311" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1540074311" rel="stylesheet">
+    <link href="/css/auto-complete.css?1540074311" rel="stylesheet">
+    <link href="/css/theme.css?1540074311" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1540074311" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1539991978"></script>
+    <script src="/js/jquery-2.x.min.js?1540074311"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1539991978"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1539991978"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1540074311"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1540074311"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1539991978"></script>
+<script type="text/javascript" src="/js/search.js?1540074311"></script>
 
     
   </div>
@@ -496,8 +496,27 @@
  
   
     
-      <li data-nav-id="/pi_cluster/os_installation/children/2018-07-07-a/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
-        <a href="/pi_cluster/os_installation/children/2018-07-07-a/">
+      <li data-nav-id="/pi_cluster/os_installation/children/cluster_assembly/" title="Raspberry PI cluster Assembly" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/cluster_assembly/">
+        Raspberry PI cluster Assembly
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/ansible/">
         Using Ansible to manage Raspberry PI cluster
         
         </a>
@@ -515,8 +534,8 @@
  
   
     
-      <li data-nav-id="/pi_cluster/os_installation/2018-06-20-a/" title="Create a Rapsberry PI Rescue Dongle" class="dd-item ">
-        <a href="/pi_cluster/os_installation/2018-06-20-a/">
+      <li data-nav-id="/pi_cluster/os_installation/children/dongle/" title="Create a Rapsberry PI Rescue Dongle" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/dongle/">
         Create a Rapsberry PI Rescue Dongle
         
         </a>
@@ -1421,7 +1440,89 @@
 
 <h2 id="associated-git-repos">Associated GIT Repos</h2>
 
-<p>TBD</p>
+<p>master branch is mainly used for dev.
+arm32v7 branch contains stable code for Rasberry PI.
+amd64 branch contains stable code for AMD64 cluster</p>
+
+<p>SIMULATOR REPOS:
+- <a href="https://github.com/kubedge/kubesim_base">kubesim_base</a>
+- <a href="https://github.com/kubedge/kubesim_5gc">kubesim_5gc</a>
+- <a href="https://github.com/kubedge/kubesim_elte">kubesim_elte</a>
+- <a href="https://github.com/kubedge/kubesim_epc">kubesim_epc</a>
+- <a href="https://github.com/kubedge/kubesim_lte">kubesim_lte</a>
+- <a href="https://github.com/kubedge/kubesim_nr">kubesim_nr</a></p>
+
+<p>TUTORIAL REPOS:
+- <a href="https://github.com/kubedge/kubedge">kubedge</a>
+- <a href="https://github.com/kubedge/kubeplay">kubeplay</a></p>
+
+<h2 id="infrastructure-repos">Infrastructure Repos</h2>
+
+<p>INFRASTRUCTURE REPOS:
+- <a href="https://github.com/kubedge/kube-rpi">kube-rpi</a>
+- <a href="https://github.com/kubedge/ansible-kube-rpi">ansible-kube-rpi</a></p>
+
+<h2 id="docker-imagesi-for-pi">Docker imagesi for PI</h2>
+
+<p>SIMULATOR DOCKER IMAGES FOR PI:
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_base-arm32v7">kubesim_base</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_5gc-arm32v7">kubesim_5gc</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_elte-arm32v7">kubesim_elte</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_epc-arm32v7">kubesim_epc</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_lte-arm32v7">kubesim_lte</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_nr-arm32v7">kubesim_nr</a></p>
+
+<p>TUTORIAL REPOS FOR PI:
+- <a href="https://hub.docker.com/r/kubedge1/kubedge-arm32v7">kubedge</a>
+- <a href="https://hub.docker.com/r/kubedge1/kubeplay-arm32v7">kubeplay</a></p>
+
+<h2 id="docker-images-for-amd64">Docker images for AMD64</h2>
+
+<p>SIMULATOR DOCKER IMAGES FOR AMD64:
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_base-amd64">kubesim_base</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_5gc-amd64">kubesim_5gc</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_elte-amd64">kubesim_elte</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_epc-amd64">kubesim_epc</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_lte-amd64">kubesim_lte</a>
+- <a href="https://hub.docker.com/r/hack4easy/kubesim_nr-amd64">kubesim_nr</a></p>
+
+<p>TUTORIAL REPOS FOR AMD64:
+- <a href="https://hub.docker.com/r/kubedge1/kubedge-amd64">kubedge</a>
+- <a href="https://hub.docker.com/r/kubedge1/kubeplay-amd64">kubeplay</a></p>
+
+<h2 id="helm-repos">HELM REPOS</h2>
+
+<ul>
+<li><a href="https://github.com/kubedge/helmrepos">helmrepos</a></li>
+</ul>
+
+<h2 id="gerrit-review">Gerrit Review</h2>
+
+<p>SIMULATOR REPOS:
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_base">kubesim_base</a>
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_5gc">kubesim_5gc</a>
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_elte">kubesim_elte</a>
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_epc">kubesim_epc</a>
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_lte">kubesim_lte</a>
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubesim_nr">kubesim_nr</a></p>
+
+<p>TUTORIAL REPOS:
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubedge">kubedge</a>
+- <a href="https://review.gerrithub.io/#/admin/projects/kubedge/kubeplay">kubeplay</a></p>
+
+<h2 id="automatic-build-review">Automatic Build Review</h2>
+
+<p>SIMULATOR REPOS:
+- <a href="https://travis-ci.com/kubedge/kubesim_base">kubesim_base</a>
+- <a href="https://travis-ci.com/kubedge/kubesim_5gc">kubesim_5gc</a>
+- <a href="https://travis-ci.com/kubedge/kubesim_elte">kubesim_elte</a>
+- <a href="https://travis-ci.com/kubedge/kubesim_epc">kubesim_epc</a>
+- <a href="https://travis-ci.com/kubedge/kubesim_lte">kubesim_lte</a>
+- <a href="https://travis-ci.com/kubedge/kubesim_nr">kubesim_nr</a></p>
+
+<p>TUTORIAL REPOS:
+- <a href="https://travis-ci.com/kubedge/kubedge">kubedge</a>
+- <a href="https://travis-ci.com/kubedge/kubeplay">kubeplay</a></p>
 	
   
         
@@ -1713,6 +1814,22 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -2349,20 +2466,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1539991978"></script>
-    <script src="/js/perfect-scrollbar.min.js?1539991978"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1539991978"></script>
-    <script src="/js/jquery.sticky.js?1539991978"></script>
-    <script src="/js/featherlight.min.js?1539991978"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1539991978"></script>
-    <script src="/js/highlight.pack.js?1539991978"></script>
+    <script src="/js/clipboard.min.js?1540074311"></script>
+    <script src="/js/perfect-scrollbar.min.js?1540074311"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1540074311"></script>
+    <script src="/js/jquery.sticky.js?1540074311"></script>
+    <script src="/js/featherlight.min.js?1540074311"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1540074311"></script>
+    <script src="/js/highlight.pack.js?1540074311"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1539991978"></script>
-    <script src="/js/learn.js?1539991978"></script>
-    <script src="/js/hugo-learn.js?1539991978"></script>
+    <script src="/js/modernizr.custom.71422.js?1540074311"></script>
+    <script src="/js/learn.js?1540074311"></script>
+    <script src="/js/hugo-learn.js?1540074311"></script>
 
-    <link href="/mermaid/mermaid.css?1539991978" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1539991978"></script>
+    <link href="/mermaid/mermaid.css?1540074311" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1540074311"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

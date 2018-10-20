@@ -237,7 +237,12 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/os_installation/children/2018-07-07-a/</loc>
+    <loc>/pi_cluster/os_installation/children/cluster_assembly/</loc>
+    <lastmod>2018-07-07T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/os_installation/children/ansible/</loc>
     <lastmod>2018-07-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -302,7 +307,7 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/os_installation/2018-06-20-a/</loc>
+    <loc>/pi_cluster/os_installation/children/dongle/</loc>
     <lastmod>2018-06-20T00:00:00+00:00</lastmod>
   </url>
   
