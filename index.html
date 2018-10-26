@@ -12,17 +12,17 @@
     <title>Kubedge :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1540075309" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1540075309" rel="stylesheet">
-    <link href="/css/hybrid.css?1540075309" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1540075309" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1540075309" rel="stylesheet">
-    <link href="/css/auto-complete.css?1540075309" rel="stylesheet">
-    <link href="/css/theme.css?1540075309" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1540075309" rel="stylesheet">
+    <link href="/css/nucleus.css?1540535881" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1540535881" rel="stylesheet">
+    <link href="/css/hybrid.css?1540535881" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1540535881" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1540535881" rel="stylesheet">
+    <link href="/css/auto-complete.css?1540535881" rel="stylesheet">
+    <link href="/css/theme.css?1540535881" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1540535881" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1540075309"></script>
+    <script src="/js/jquery-2.x.min.js?1540535881"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -67,14 +67,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1540075309"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1540075309"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1540535881"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1540535881"></script>
 <script type="text/javascript">
     
         var baseurl = '\/';
     
 </script>
-<script type="text/javascript" src="/js/search.js?1540075309"></script>
+<script type="text/javascript" src="/js/search.js?1540535881"></script>
 
     
   </div>
@@ -1433,21 +1433,105 @@
 
 <h1 id="kubedge">Kubedge</h1>
 
-<p><strong><em>Kubernetes, Local and Compact Learning Edge Cloud</em></strong></p>
+<p>Note: This page and web site is still work in progress.</p>
 
-<p>Kubedge local lab allows you to learn about:</p>
-
-<ul>
-<li>Devops, GIT, Gerrit, CICD, Docker.</li>
-<li>Kubernetes, MicroServices, Go, RPI, Ansible.</li>
-<li>LTE and 5G majors components.</li>
-<li>NFv/SDN Network Slicing.</li>
-</ul>
-
-<h2 id="main-features">Main features</h2>
+<h2 id="personal-portable-edge-network-and-lab">Personal, Portable Edge Network and Lab.</h2>
 
 <p><img src="/images/raspberrypi/IMG_0339.JPG" alt="" />
-<img src="/images/raspberrypi/IMG_0344.JPG" alt="" /></p>
+<img src="/images/raspberrypi/DSC08310.JPG" alt="" /></p>
+
+<p>Kubedge is personal and portable edge cloud. The
+key concept is to leverage the three
+network interfaces available on each PI:</p>
+
+<ul>
+<li>1 GB Ethernet</li>
+<li>Wifi</li>
+<li>Bluetooth.</li>
+</ul>
+
+<p>The PI are interconnected together using the local
+switch. The top/master PI is acting as a NAT/Router
+for the rest of the PI. This main advantage that
+when you move your lab from home to work, all the IPs
+of the cluster stay identical.</p>
+
+<h3 id="devops-training">DevOps Training</h3>
+
+<p>Since each PI acts a cloud node, you need to be able
+to install, manage, test and share the software.
+Kubedge leverages GitHub and GerritHub to share and review code,
+Travis-CI for continuous integration. One key aspect is to be able
+to build executables and docker image that can run on the broadcom processor
+of the PI. The docker images are available to download on dockerhub.</p>
+
+<p>In order to build the present website, we had to understand how to use
+github pages and well as for instance the Hugo framework to convert the
+markdown documents into HTML.</p>
+
+<p>Finally some of the operations are easier to run on your laptop, for
+instance the development of the software. Kubedge team did create an Ubuntu base
+virtual machine using an SDK.</p>
+
+<h3 id="kubernetes-training-lab">Kubernetes Training Lab</h3>
+
+<p>The assembly of the cluster itself brings its set of lessons. What to
+be carreful of when you purchase your power supply, the length of your
+ethernet cables or power supply cables.
+Differences between the PI 3B+ vs PI 3B (<em>1Gb</em> ethernet instead of 100Mb) have
+to be accounted when you pick up your switch. Account for having 1 additonal port available
+on your switch to be able to plug your PC to cluster using Ethernet.</p>
+
+<p>Next step is to install the OS. Immediatly you will realize that it is unpracticle
+to plug each node one after the other to an HDMI screen, USB mouse and keyboard in
+order to perform the first initalization. Some of the OS such HyperiotOS have the
+great idea to preconfigure the node with SSH enabled, docker. This makes every plug
+and play: Flush your SD card, connect the PI to your home router and voila you just
+have to SSH.</p>
+
+<p>Then you will have to learn how to create a NAT and DHCP server on your master node.</p>
+
+<p>The bigger your cluster the quicker you will realize that some of the operations
+are repetitiv, hence the need for automation. The easiet one to learn is ansible.
+Put if you install everything on the OS directly, then start the issue of maintaining the OS.
+Because HyperiotOS comes by default with docker, which brings us back to lesson 1: Have everything
+has a container.</p>
+
+<p>The defacto tools to manage a multi node docker cluster is currently kubernetes. By using
+kubeadm the installation is quite simple as long as you pay attention that the images pulled
+by kubernetes are actually the one for PI and not the one for your usual cloud.</p>
+
+<p>For people with Kubernetes experience (for instance on GCP), this is where the real lessons start:
+- A lot of the software is not available by default on PI. How do you recompile calico, tiller&hellip;for the PI.
+- It is much easier to install components using the Kubernetes HELM but a lot of the helm charts are pulling the AMD64 version of the ARM image.
+- Finally, how do you create your own helm chart repository using github so that you can run a clean helm add repo and helm install commands.</p>
+
+<p>And mainly, you will started to appreciate go and the new Java 9 modules to actually create true microservices
+Because both langugage have the ability to create standalone executables, which in turn allow to create containers starting from &ldquo;scratch&rdquo;.
+Compare it with a python container and you will understand very quickly why it is beneficial. The PI only has 1G of RAM&hellip;which helps to understand
+the interest of having slim true microservices.</p>
+
+<h3 id="lte-and-5g-simulator">LTE and 5G Simulator</h3>
+
+<ul>
+<li>The upstream wifi network from the master PI acts as the core network. You connect to the internet.</li>
+<li>The master PI is running the LTE EPC and the 5G CORE components. Some of those of components such
+as SGW Gateway are running on the Master PI.</li>
+<li>Some secondary PIs are used to simulate the LTE eNODEb and 5G NR nodes.
+5G NR nodes (leveraging the Wifi spectrum).</li>
+<li>The Ethernet cables act as the backhaul network between the EPC and eNodeB/5G NR.</li>
+<li>a PI enabling its WIFI access point acts 5G NR nodes and spectrum.</li>
+<li>a PI enabling its Bluetooth as an Personal Area Network acts an LTE or eLTE eNodeB (and spectrum)</li>
+</ul>
+
+<h3 id="nfv-sdn-network-slicing-simulator">NFV/SDN Network Slicing Simulator</h3>
+
+<p>Finally currently when the traffic is following through WIFI to ETH0 on the 5G NR node and from ETH0 to WIFI on the EPC node, the routing of the
+traffic is done using Linux Kernel mainly.
+The goal here is to build an NFV able to throttle for instance the traffic wifi network (simulating 5G) in order to create a simulation of
+network slicing. At that point the traffic on the 5G NR node will not go through the kernel but will go from WIFI through the NFV back to ETH0.</p>
+
+<p>WIP.</p>
 
 <h2 id="associated-git-repos">Associated GIT Repos</h2>
 
@@ -2510,20 +2594,20 @@ amd64 branch contains stable code for AMD64 cluster</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1540075309"></script>
-    <script src="/js/perfect-scrollbar.min.js?1540075309"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1540075309"></script>
-    <script src="/js/jquery.sticky.js?1540075309"></script>
-    <script src="/js/featherlight.min.js?1540075309"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1540075309"></script>
-    <script src="/js/highlight.pack.js?1540075309"></script>
+    <script src="/js/clipboard.min.js?1540535881"></script>
+    <script src="/js/perfect-scrollbar.min.js?1540535881"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1540535881"></script>
+    <script src="/js/jquery.sticky.js?1540535881"></script>
+    <script src="/js/featherlight.min.js?1540535881"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1540535881"></script>
+    <script src="/js/highlight.pack.js?1540535881"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1540075309"></script>
-    <script src="/js/learn.js?1540075309"></script>
-    <script src="/js/hugo-learn.js?1540075309"></script>
+    <script src="/js/modernizr.custom.71422.js?1540535881"></script>
+    <script src="/js/learn.js?1540535881"></script>
+    <script src="/js/hugo-learn.js?1540535881"></script>
 
-    <link href="/mermaid/mermaid.css?1540075309" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1540075309"></script>
+    <link href="/mermaid/mermaid.css?1540535881" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1540535881"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
