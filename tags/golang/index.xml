@@ -20,15 +20,6 @@
       <description>&lt;p&gt;GO is perfectly adapted to microservices since it can
 build standalone executable.&lt;/p&gt;
 
-&lt;h2 id=&#34;key-aspects&#34;&gt;Key Aspects&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use SCRATCH has base image to keep size minimum&lt;/li&gt;
-&lt;li&gt;Simple HelloWorld GO web server&lt;/li&gt;
-&lt;li&gt;Create associated HELM chart for Kubernetes deployment&lt;/li&gt;
-&lt;li&gt;Provide deployment for both amd64 and arm32v7&lt;/li&gt;
-&lt;/ul&gt;
-
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     

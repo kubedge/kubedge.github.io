@@ -24,7 +24,7 @@ The attempt here is to cross-compile the calico containers and use them on the P
     </item>
     
     <item>
-      <title>Deploy Flannel in Raspberry PI cluster</title>
+      <title>Deploy Flannel in PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       

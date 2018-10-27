@@ -52,11 +52,11 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/microservices/children/2018-07-30-a/</link>
+      <title>test-infra</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/microservices/children/2018-07-30-a/</guid>
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</guid>
       <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
 to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
@@ -114,7 +114,7 @@ The attempt here is to cross-compile the calico containers and use them on the P
     </item>
     
     <item>
-      <title>Add Persistency Volume to PI Clusters</title>
+      <title>Add Persistency Volume to PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       

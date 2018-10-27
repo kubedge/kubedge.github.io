@@ -52,11 +52,11 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/microservices/children/2018-07-30-a/</link>
+      <title>test-infra</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/microservices/children/2018-07-30-a/</guid>
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</guid>
       <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
 to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
@@ -127,7 +127,7 @@ The problem here was to be able to cross compiled the latest version of Kubernet
     </item>
     
     <item>
-      <title>Deploy Flannel in Raspberry PI cluster</title>
+      <title>Deploy Flannel in PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -140,7 +140,7 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
     </item>
     
     <item>
-      <title>Deploy Helm and Tiller on Rasberry PI Cluster</title>
+      <title>Deply Helm and Tiller on PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -151,7 +151,7 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
     </item>
     
     <item>
-      <title>Enable docker remote API</title>
+      <title>Enable docker Remote API</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-12-a/</link>
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -176,7 +176,7 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Add Persistency Volume to PI Clusters</title>
+      <title>Add Persistency Volume to PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -234,7 +234,7 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     </item>
     
     <item>
-      <title>Creating simple Python server container</title>
+      <title>Python</title>
       <link>/pi_cluster/microservices/children/2018-07-01-a/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -265,15 +265,6 @@ the goal of this post is to create a python base server container with a minimum
       <guid>/pi_cluster/microservices/children/2018-06-29-a/</guid>
       <description>&lt;p&gt;GO is perfectly adapted to microservices since it can
 build standalone executable.&lt;/p&gt;
-
-&lt;h2 id=&#34;key-aspects&#34;&gt;Key Aspects&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Use SCRATCH has base image to keep size minimum&lt;/li&gt;
-&lt;li&gt;Simple HelloWorld GO web server&lt;/li&gt;
-&lt;li&gt;Create associated HELM chart for Kubernetes deployment&lt;/li&gt;
-&lt;li&gt;Provide deployment for both amd64 and arm32v7&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

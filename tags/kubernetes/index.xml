@@ -52,11 +52,11 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/microservices/children/2018-07-30-a/</link>
+      <title>test-infra</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/microservices/children/2018-07-30-a/</guid>
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</guid>
       <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
 to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
@@ -127,7 +127,7 @@ The problem here was to be able to cross compiled the latest version of Kubernet
     </item>
     
     <item>
-      <title>Deploy Flannel in Raspberry PI cluster</title>
+      <title>Deploy Flannel in PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -140,7 +140,7 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
     </item>
     
     <item>
-      <title>Deploy Helm and Tiller on Rasberry PI Cluster</title>
+      <title>Deply Helm and Tiller on PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -163,7 +163,7 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Add Persistency Volume to PI Clusters</title>
+      <title>Add Persistency Volume to PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
