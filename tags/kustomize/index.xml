@@ -17,8 +17,11 @@
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
-      <description> Goal kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t
-Key Aspects  Compile and deploy the Kustomize code in Kustomize  Deploy  WIP  Conclusion  WIP  Reference Links  Kustomize Description Official Kustomize Code  </description>
+      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
+and still keeping the configuration file has plain yaml instead of the template like it
+is often the case with t&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

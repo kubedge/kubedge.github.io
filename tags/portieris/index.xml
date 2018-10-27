@@ -17,8 +17,12 @@
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
-      <description>Goal One of the biggest security risks related to Kubernetes are often linked to the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are deployed in your Kubernetes cluster. The goal here is to leverage Notary and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.
-Key Aspects  Rebuild the Notary Rebuild and Deploy Portieris using Helm  Build Notary Clone go get github.com/theupdateframework/notary go install -tags pkcs11 github.</description>
+      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
+the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
+deployed in your Kubernetes cluster. The goal here is to leverage Notary
+and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

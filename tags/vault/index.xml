@@ -17,8 +17,11 @@
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
-      <description> Goal Vault is aiming at improving security of the containers by rotating token and credential much more often than usual. Looks like it is especially effectiv to help rotate passwords used to access internal databases.
-Key Aspects  Compile and deploy the vault code in vault  Deploy  WIP  Conclusion  WIP  Reference Links  Official HashiCorp Code  </description>
+      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
+much more often than usual. Looks like it is especially effectiv to help rotate passwords
+used to access internal databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

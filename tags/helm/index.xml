@@ -17,8 +17,9 @@
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</guid>
-      <description>Goal The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.
-Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Having the golang, glide&amp;hellip;and related libraries setup in a PI for compilation is kind of complicated. I started but encounter too many issues (even small), had to install too many compilation related packages on my PI system, hence decided to use an Ubuntu VM to compile and prepare the binaries for image for helm and tiller.</description>
+      <description>&lt;p&gt;The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,8 +28,10 @@ Key Aspects  The goal is to setup helm and tiller on the Raspberry PI cluster Ha
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/maintenance/children/2018-07-11-a/</guid>
-      <description>Goal In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository. The goal of this post is to transform a github repo into a helm repo.
-Key Aspects  Save the helm charts on github mainly for the RPI Kubernetes cluster Figure out a way to access them  Build the chart and upload it to the helm repo For that purpose I used by kubeplay repo where I had helm charts and container ready</description>
+      <description>&lt;p&gt;In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository.
+The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

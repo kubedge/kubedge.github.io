@@ -17,8 +17,10 @@
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
-      <description>Goal The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12 using kubeadm 1.12
-Master node upgrade using kubeadm # apt-mark unhold kubeadm &amp;amp;&amp;amp; \ &amp;gt; apt-get update &amp;amp;&amp;amp; apt-get install -y kubeadm &amp;amp;&amp;amp; \ &amp;gt; apt-mark hold kubeadm kubeadm was already not hold. Hit:2 http://raspbian.raspberrypi.org/raspbian stretch InRelease Hit:3 https://download.docker.com/linux/raspbian stretch InRelease Hit:1 https://packages.cloud.google.com/apt kubernetes-xenial InRelease Hit:5 http://archive.raspberrypi.org/debian stretch InRelease Hit:4 https://packagecloud.io/Hypriot/rpi/debian stretch InRelease Reading package lists.</description>
+      <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
+using kubeadm 1.12&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,8 +29,10 @@ Master node upgrade using kubeadm # apt-mark unhold kubeadm &amp;amp;&amp;amp; \
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/maintenance/children/2018-07-11-a/</guid>
-      <description>Goal In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository. The goal of this post is to transform a github repo into a helm repo.
-Key Aspects  Save the helm charts on github mainly for the RPI Kubernetes cluster Figure out a way to access them  Build the chart and upload it to the helm repo For that purpose I used by kubeplay repo where I had helm charts and container ready</description>
+      <description>&lt;p&gt;In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository.
+The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +41,9 @@ Key Aspects  Save the helm charts on github mainly for the RPI Kubernetes cluste
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/maintenance/children/2018-07-02-a/</guid>
-      <description>Goal Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster
-Key Aspects  Fork Sonobuoy Compile the tools Test it  Clone and Compile mkdir -p $HOME/src/github.com/heptio cd $HOME/src/github.com/heptio git clone git@github.com:jbrette/sonobuoy.git  export GOPATH=$HOME go version go version go1.10.1 linux/amd64  go get -u -v github.com/heptio/sonobuoy  sonobuoy run sonobuoy status  kubectl get all -n heptio-sonobuoy NAME READY STATUS RESTARTS AGE pod/sonobuoy 1/1 Running 0 14m pod/sonobuoy-e2e-job-5fff584d11364ca1 2/2 Running 0 12m pod/sonobuoy-systemd-logs-daemon-set-1c53f31cf14246ca-mhztp 2/2 Running 0 12m NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE service/sonobuoy-master ClusterIP 10.</description>
+      <description>&lt;p&gt;Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -12,19 +12,19 @@
     <title>Add Raspberry PI node to Kubernetes Cluster in 10 min :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1540660265" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1540660265" rel="stylesheet">
-    <link href="/css/hybrid.css?1540660265" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1540660265" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1540660265" rel="stylesheet">
-    <link href="/css/auto-complete.css?1540660265" rel="stylesheet">
-    <link href="/css/theme.css?1540660265" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1540660265" rel="stylesheet">
+    <link href="/css/nucleus.css?1540662959" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1540662959" rel="stylesheet">
+    <link href="/css/hybrid.css?1540662959" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1540662959" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1540662959" rel="stylesheet">
+    <link href="/css/auto-complete.css?1540662959" rel="stylesheet">
+    <link href="/css/theme.css?1540662959" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1540662959" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1540660265" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1540662959" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1540660265"></script>
+    <script src="/js/jquery-2.x.min.js?1540662959"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -69,14 +69,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1540660265"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1540660265"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1540662959"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1540662959"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1540660265"></script>
+<script type="text/javascript" src="/js/search.js?1540662959"></script>
 
     
   </div>
@@ -1464,7 +1464,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
 <ul>
-<li><a href="#goal">Goal</a>
+<li>
 <ul>
 <li><a href="#base-os">Base OS</a></li>
 <li><a href="#connect-to-pi-through-lan">Connect to PI through LAN</a></li>
@@ -1493,10 +1493,6 @@
         
 
 
-
-
-<h1 id="goal">Goal</h1>
-
 <p>During some of the manipulation of the partition table of
 my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup.
 Moreover if your SD card is 32G, it takes around 30 minute to restore from backup.
@@ -1504,6 +1500,8 @@ Hence the idea to come up with a way to build more resiliency in the cluster.
 Recreating a node from scratch should not take more than 10 mn. The propose procedure
 is still rather long because I did not push enough yet what the HypriotOS team, aka
 build a default SD image where cloud-init does 100% of the initialization work.</p>
+
+<p></p>
 
 <h2 id="base-os">Base OS</h2>
 
@@ -1585,7 +1583,6 @@ kubeadm join 192.168.1.95:6443 --token yyyyyy.xxxxxxxxxxxxxxxx --discovery-token
 <li>Will have to come back later and use cloud-init, create a clean &amp; small SD image for Win32DiskImage</li>
 <li>Will have to create more advanced partition on the SD card.</li>
 </ul>
-
 
 <footer class=" footline" >
 	
@@ -2547,20 +2544,20 @@ kubeadm join 192.168.1.95:6443 --token yyyyyy.xxxxxxxxxxxxxxxx --discovery-token
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1540660265"></script>
-    <script src="/js/perfect-scrollbar.min.js?1540660265"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1540660265"></script>
-    <script src="/js/jquery.sticky.js?1540660265"></script>
-    <script src="/js/featherlight.min.js?1540660265"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1540660265"></script>
-    <script src="/js/highlight.pack.js?1540660265"></script>
+    <script src="/js/clipboard.min.js?1540662959"></script>
+    <script src="/js/perfect-scrollbar.min.js?1540662959"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1540662959"></script>
+    <script src="/js/jquery.sticky.js?1540662959"></script>
+    <script src="/js/featherlight.min.js?1540662959"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1540662959"></script>
+    <script src="/js/highlight.pack.js?1540662959"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1540660265"></script>
-    <script src="/js/learn.js?1540660265"></script>
-    <script src="/js/hugo-learn.js?1540660265"></script>
+    <script src="/js/modernizr.custom.71422.js?1540662959"></script>
+    <script src="/js/learn.js?1540662959"></script>
+    <script src="/js/hugo-learn.js?1540662959"></script>
 
-    <link href="/mermaid/mermaid.css?1540660265" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1540660265"></script>
+    <link href="/mermaid/mermaid.css?1540662959" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1540662959"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

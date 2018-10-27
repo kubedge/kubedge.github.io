@@ -17,7 +17,9 @@
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/os_installation/children/cluster_assembly/</guid>
-      <description> Goal Links  PI Rack PI Heat Sink SD Cards Power Supply Power Supply Power Cable for PI Power Cable for Switch Cat 6 Cables Switch  Reference Links  Video1 Video2  </description>
+      <description>&lt;p&gt;This page contains examples of harware to use in order to build a cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,9 +28,11 @@
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/os_installation/children/ansible/</guid>
-      <description>Goal Even if the ultimate goal is to manage completly the cluster using Kubernetes, the ability to use Ansible during debug process is very usefull. The goal here is to setup ansible inventory, basic playbooks.
-Ansible Installation on the master node Let&amp;rsquo;s install ansible using apt-get. A lot of python related depedencies are also installed.
-sudo apt-get install ansible Reading package lists... Done Building dependency tree Reading state information... Done The following additional packages will be installed: ieee-data libyaml-0-2 python-cffi-backend python-crypto python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress python-jinja2 python-kerberos python-markupsafe python-netaddr python-paramiko python-pkg-resources python-pyasn1 python-selinux python-setuptools python-six python-xmltodict python-yaml Suggested packages: cowsay sshpass python-crypto-dbg python-crypto-doc python-cryptography-doc python-cryptography-vectors python-enum34-doc python-jinja2-doc ipython python-netaddr-docs python-gssapi doc-base python-setuptools-doc Recommended packages: python-winrm The following NEW packages will be installed: ansible ieee-data libyaml-0-2 python-cffi-backend python-crypto python-cryptography python-enum34 python-httplib2 python-idna python-ipaddress python-jinja2 python-kerberos python-markupsafe python-netaddr python-paramiko python-pkg-resources python-pyasn1 python-selinux python-setuptools python-six python-xmltodict python-yaml 0 upgraded, 22 newly installed, 0 to remove and 6 not upgraded.</description>
+      <description>&lt;p&gt;Even if the ultimate goal is to manage completly the cluster using Kubernetes,
+the ability to use Ansible during debug process is very usefull.
+The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
