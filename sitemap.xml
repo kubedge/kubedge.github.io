@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/</loc>
+    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/post/</loc>
   </url>
   
@@ -21,7 +26,6 @@
   
   <url>
     <loc>/nfv/fd_io_and_opnfv/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -137,6 +141,7 @@
   
   <url>
     <loc>/nfv/advanced/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -197,7 +202,7 @@
   </url>
   
   <url>
-    <loc>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</loc>
+    <loc>/nfv/advanced/children/2018-07-17-a/</loc>
     <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -262,7 +267,7 @@
   </url>
   
   <url>
-    <loc>/devops/advanced/children/2018-06-30-a/</loc>
+    <loc>/pi_cluster/maintenance/children/2018-06-30-a/</loc>
     <lastmod>2018-06-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -340,11 +345,6 @@
   
   <url>
     <loc>/devops/hugo_githubpages/hugo/shortcodes/expand/</loc>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2016-04-09T16:50:16+02:00</lastmod>
   </url>
   
   <url>

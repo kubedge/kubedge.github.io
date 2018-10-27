@@ -23,17 +23,6 @@
     </item>
     
     <item>
-      <title>Update Kubernetes to 1.11 on Ubuntu</title>
-      <link>/devops/advanced/children/2018-06-30-a/</link>
-      <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/advanced/children/2018-06-30-a/</guid>
-      <description>&lt;p&gt;Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Zuul</title>
       <link>/devops/advanced/children/2018-06-26-a/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>

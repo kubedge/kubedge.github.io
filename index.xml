@@ -98,7 +98,7 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>test-infra</title>
+      <title>Build and Deploy Kubernetes test-infra</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
@@ -138,10 +138,10 @@ and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&g
     
     <item>
       <title>Rebuild Calico for AMD64 ad ARM32V7</title>
-      <link>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</link>
+      <link>/nfv/advanced/children/2018-07-17-a/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</guid>
+      <guid>/nfv/advanced/children/2018-07-17-a/</guid>
       <description>&lt;p&gt;Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI.
 The attempt here is to cross-compile the calico containers and use them on the PI cluster.&lt;/p&gt;
 
@@ -294,10 +294,10 @@ the goal of this post is to create a python base server container with a minimum
     
     <item>
       <title>Update Kubernetes to 1.11 on Ubuntu</title>
-      <link>/devops/advanced/children/2018-06-30-a/</link>
+      <link>/pi_cluster/maintenance/children/2018-06-30-a/</link>
       <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-30-a/</guid>
+      <guid>/pi_cluster/maintenance/children/2018-06-30-a/</guid>
       <description>&lt;p&gt;Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

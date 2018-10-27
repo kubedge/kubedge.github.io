@@ -13,10 +13,10 @@
     
     <item>
       <title>Rebuild Calico for AMD64 ad ARM32V7</title>
-      <link>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</link>
+      <link>/nfv/advanced/children/2018-07-17-a/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/fd_io_and_opnfv/children/2018-07-17-a/</guid>
+      <guid>/nfv/advanced/children/2018-07-17-a/</guid>
       <description>&lt;p&gt;Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI.
 The attempt here is to cross-compile the calico containers and use them on the PI cluster.&lt;/p&gt;
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Helm and Maintenace on KUBEDGE&#39;s Blog</title>
+    <title>Helm &amp; Maintenance on KUBEDGE&#39;s Blog</title>
     <link>/pi_cluster/maintenance/</link>
-    <description>Recent content in Helm and Maintenace on KUBEDGE&#39;s Blog</description>
+    <description>Recent content in Helm &amp; Maintenance on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
@@ -42,6 +42,17 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
       
       <guid>/pi_cluster/maintenance/children/2018-07-02-a/</guid>
       <description>&lt;p&gt;Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Update Kubernetes to 1.11 on Ubuntu</title>
+      <link>/pi_cluster/maintenance/children/2018-06-30-a/</link>
+      <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/maintenance/children/2018-06-30-a/</guid>
+      <description>&lt;p&gt;Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
