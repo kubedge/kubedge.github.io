@@ -18,35 +18,35 @@
 	"title": "DevOps",
 	"tags": [],
 	"description": "This is devops tutorial page",
-	"content": " DevOps This is a devops tutorial page\n"
+	"content": " DevOps  Git/Gerrit  This is devops/git_gerrit tutorial page\n CI/CD  This is devops/cicd tutorial page\n Hugo/GitHubPages  This is devops/hugo_githubpages tutorial page\n Kubedge SDK  This is devops/kubedgesdk tutorial page\n Advanced \u0026amp; WIP  Advanced tutorials and Work In Progress\n "
 },
 {
 	"uri": "/lte_to_5g/lte_and_5g_core_simulation/",
 	"title": "EPC and 5GC",
 	"tags": [],
 	"description": "This is lte_to_5g/lte_and_5g_core_simulation tutorial page",
-	"content": " LTE and 5G Core This is a lte_to_5g/lte_and_5g_core_simulation tutorial page\n"
+	"content": " LTE and 5G Core  "
 },
 {
 	"uri": "/nfv/fd_io_and_opnfv/",
 	"title": "FD.io &amp; OPNFV",
 	"tags": [],
 	"description": "This is nfv/fd_io_and_opnfv tutorial page",
-	"content": " FD.io and OPNFV This is a nfv/fd_io_and_opnfv tutorial page\n"
+	"content": " FD.io and OPNFV  Rebuild Calico for AMD64 ad ARM32V7  Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI. The attempt here is to cross-compile the calico containers and use them on the PI cluster.\n\n "
 },
 {
 	"uri": "/devops/git_gerrit/",
 	"title": "Git/Gerrit",
 	"tags": [],
 	"description": "This is devops/git_gerrit tutorial page",
-	"content": " GIT/GERRIT This is a devops/git_gerrit tutorial page\n"
+	"content": " GIT/GERRIT  Setup github/gerrit behind a corporate http proxy  This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.\n\n Setup multiple GitHub account on a single machine  In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to be able to conigure your .ssh directory.\n\n "
 },
 {
 	"uri": "/pi_cluster/os_installation/",
 	"title": "Operating System",
 	"tags": [],
 	"description": "This is pi_cluster/os_installation tutorial page",
-	"content": " OS Installation This is a pi_cluster/os_installation tutorial page\n"
+	"content": " OS Installation  Raspberry PI cluster Assembly  This page contains examples of harware to use in order to build a cluster\n\n Using Ansible to manage Raspberry PI cluster  Even if the ultimate goal is to manage completly the cluster using Kubernetes, the ability to use Ansible during debug process is very usefull. The goal here is to setup ansible inventory, basic playbooks.\n\n Create a Rapsberry PI Rescue Dongle  I encountered multiple issues trying to repartition my SD on my PI. Because the / directory is mounted, it never really worked safely for me to use fdisk. Morevoer some of the powerfull tools such as gparted need X11 installed, which I don\u0026rsquo;t have by default.\nHopefully the new PI3 B and B+ are able to boot from USB, hence the idea of creating a Rescue Dongle\n\n "
 },
 {
 	"uri": "/devops/hugo_githubpages/hugo/cont/archetypes/",
@@ -60,35 +60,35 @@
 	"title": "CI/CD",
 	"tags": [],
 	"description": "This is devops/cicd tutorial page",
-	"content": " CI/CD This is a devops/cicd tutorial page\n"
+	"content": " CI/CD  "
 },
 {
 	"uri": "/pi_cluster/docker_kubernetes/",
 	"title": "Kubernetes",
 	"tags": [],
 	"description": "This is pi_cluster/docker_kubernetes tutorial page",
-	"content": " Docker and Kubernetes This is a pi_cluster/docker_kubernetes tutorial page\n"
+	"content": " Docker and Kubernetes  Deploy Flannel in Raspberry PI cluster  In order to get the nodes and pods interface with each other accross the cluster. This post describes how I deployed Flannel acounting with the fact that some of the nodes have multiple interfaces (wlan0 and eth0).\n\n Deploy Helm and Tiller on Rasberry PI Cluster  The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.\n\n Enable docker remote API  In order to build image for Raspberry PI, it is sometimes usefull to be able to leverate infrastruture from a remote VM. For instance you can cross-build golang executable for ARM32v7 and transfer it to build an image on the remote PI. (used for Tiller docker image)\n\n Add Persistency Volume to PI Clusters  In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes\n\n Creating a Raspberry 3 B\u0026#43; Kubernetes Cluster  Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning, from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.\n\n docker.io versus docker-ce  Wondering why you have a strange error such as \u0026lsquo;from \u0026hellip;\u0026rsquo; when running docker build. The reason is linked to an older version of docker installed.\n\n Add Raspberry PI node to Kubernetes Cluster in 10 min  During some of the manipulation of the partition table of my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup. Moreover if your SD card is 32G, it takes around 30 minute to restore from backup. Hence the idea to come up with a way to build more resiliency in the cluster. Recreating a node from scratch should not take more than 10 mn. The propose procedure is still rather long because I did not push enough yet what the HypriotOS team, aka build a default SD image where cloud-init does 100% of the initialization work.\n\n "
 },
 {
 	"uri": "/lte_to_5g/lte_and_5g_ran_simulation/",
 	"title": "LTE, eLTE and 5G RAN",
 	"tags": [],
 	"description": "This is lte_to_5g/lte_and_5g_ran_simulation tutorial page",
-	"content": " LTE and 5G RAN This is a lte_to_5g/lte_and_5g_ran_simulation tutorial page\n"
+	"content": " LTE and 5G RAN  "
 },
 {
 	"uri": "/nfv/onap/",
 	"title": "ONAP",
 	"tags": [],
 	"description": "This is nfv/onap tutorial page",
-	"content": " ONAP This is a nfv/onap tutorial page\n"
+	"content": " ONAP  "
 },
 {
 	"uri": "/pi_cluster/",
 	"title": "RPI Cluster",
 	"tags": [],
 	"description": "This is pi_cluster tutorial page",
-	"content": " Rapsberry PI Cluster "
+	"content": " Rapsberry PI Cluster  Operating System  This is pi_cluster/os_installation tutorial page\n Kubernetes  This is pi_cluster/docker_kubernetes tutorial page\n Helm  This is pi_cluster/maintenance tutorial page\n MicroServices  This is pi_cluster/microservices tutorial page\n Advanced \u0026amp; WIP  Advanced tutorials and Work In Progress\n "
 },
 {
 	"uri": "/devops/hugo_githubpages/hugo/basics/requirements/",
@@ -109,14 +109,14 @@
 	"title": "Akraino",
 	"tags": [],
 	"description": "This is nfv/akraino tutorial page",
-	"content": " Akraino This is a nfv/akraino tutorial page\n"
+	"content": " Akraino  "
 },
 {
 	"uri": "/pi_cluster/maintenance/",
 	"title": "Helm",
 	"tags": [],
 	"description": "This is pi_cluster/maintenance tutorial page",
-	"content": " HELM This is a pi_cluster/maintenance tutorial page\n"
+	"content": " HELM and Maintenance  Upgrade RPI Kubernetes cluster to 1.12  The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12 using kubeadm 1.12\n\n Use github repo as helm chart repository  In order to be able use Helm charts the \u0026ldquo;normal\u0026rdquo; way, it is need to buid your own helm repository. The goal of this post is to transform a github repo into a helm repo.\n\n Compile and Test SONOBUOY  Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster\n\n "
 },
 {
 	"uri": "/devops/hugo_githubpages/",
@@ -137,14 +137,14 @@
 	"title": "LTE to 5G Simulations",
 	"tags": [],
 	"description": "This is lte_to_5g tutorial page",
-	"content": " LTE to 5G Transition This is a lte_to_5g tutorial page\n"
+	"content": " LTE to 5G Transition  EPC and 5GC  This is lte_to_5g/lte_and_5g_core_simulation tutorial page\n LTE, eLTE and 5G RAN  This is lte_to_5g/lte_and_5g_ran_simulation tutorial page\n Spectrum  This is lte_to_5g/rpi_wifi_bluetooth tutorial page\n NSA vs SA. Option 3  This is lte_to_5g/nsa_and_sa tutorial page\n Advanced \u0026amp; WIP  Advanced tutorials and Work In Progress\n "
 },
 {
 	"uri": "/lte_to_5g/rpi_wifi_bluetooth/",
 	"title": "Spectrum",
 	"tags": [],
 	"description": "This is lte_to_5g/rpi_wifi_bluetooth tutorial page",
-	"content": " WIFI AP and Bluetook PAN This is a lte_to_5g/rpi_wifi_bluetooth tutorial page\n"
+	"content": " WIFI AP and Bluetook PAN  "
 },
 {
 	"uri": "/devops/hugo_githubpages/hugo/basics/configuration/",
@@ -158,28 +158,28 @@
 	"title": "Kubedge SDK",
 	"tags": [],
 	"description": "This is devops/kubedgesdk tutorial page",
-	"content": " KUBEDGE SDK This is a devops/kubedgesdk tutorial page\n"
+	"content": " KUBEDGE SDK  Recompile Kubernetes components for Raspberry PI  During the installation of official Kubernetes 1.11.0 on RPI Cluster 1, encountered a bug on the controller manager preventing the controller-manager from starting. The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.\n\n Setup SingleNode Kubernetes Cluster using kubeadm  Setup simple kubernetes cluster for test purposes.\n\n "
 },
 {
 	"uri": "/pi_cluster/microservices/",
 	"title": "MicroServices",
 	"tags": [],
 	"description": "This is pi_cluster/microservices tutorial page",
-	"content": " Micro Services  Build and Deploy Kubernetes test-infra  test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is to fetch the code, compile and deploy it on a Kubernetes cluster.\n\n Creating simple Python server container  As we did for Go and Java, where is was possible to create an Dockerfile starting from \u0026ldquo;scratch\u0026rdquo;, the goal of this post is to create a python base server container with a minimum about of packages (debian and python) to reduce the security exposure of the container as well as the image size.\n\n Creating simple GO server container   Use SCRATCH has base image to keep size minimum Simple HelloWorld GO web server Create associated HELM chart for Kubernetes deployment Provide deployment for both amd64 and arm32v7  \n Creating simple Java 10 server container  Very often people associated Java to quite bulky and difficult to use in the microservice context, unless you have very large image containing the JRE. But since Java 9, Java did kind of catchup with golang on the subject. Where you can obtain a standalone executable when we running go build, java is now proposing jlink which always you to acheive a very similar result. The goal of this post is to build a container image as small as possible running Java.\n\n Setup your GOLANG environment  A lot of the opensource projects evolvoving around Kubernetes are written in go. It is very usefull to be able to rebuild so projects using go get or go build.\n\n \n"
+	"content": " Micro Services  Build and Deploy Kubernetes test-infra  test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is to fetch the code, compile and deploy it on a Kubernetes cluster.\n\n Creating simple Python server container  As we did for Go and Java, where is was possible to create an Dockerfile starting from \u0026ldquo;scratch\u0026rdquo;, the goal of this post is to create a python base server container with a minimum about of packages (debian and python) to reduce the security exposure of the container as well as the image size.\n\n Creating simple GO server container  GO is perfectly adapted to microservices since it can build standalone executable.\nKey Aspects  Use SCRATCH has base image to keep size minimum Simple HelloWorld GO web server Create associated HELM chart for Kubernetes deployment Provide deployment for both amd64 and arm32v7  \n Creating simple Java 10 server container  Very often people associated Java to quite bulky and difficult to use in the microservice context, unless you have very large image containing the JRE. But since Java 9, Java did kind of catchup with golang on the subject. Where you can obtain a standalone executable when we running go build, java is now proposing jlink which always you to acheive a very similar result. The goal of this post is to build a container image as small as possible running Java.\n\n Setup your GOLANG environment  A lot of the opensource projects evolvoving around Kubernetes are written in go. It is very usefull to be able to rebuild so projects using go get or go build.\n\n "
 },
 {
 	"uri": "/nfv/",
 	"title": "NFV/SDN/Network Slicing",
 	"tags": [],
 	"description": "This is nfv tutorial page",
-	"content": " Network Slicing "
+	"content": " Network Slicing  FD.io \u0026amp; OPNFV  This is nfv/fd_io_and_opnfv tutorial page\n ONAP  This is nfv/onap tutorial page\n Akraino  This is nfv/akraino tutorial page\n Advanced \u0026amp; WIP  Advanced tutorials and Work In Progress\n "
 },
 {
 	"uri": "/lte_to_5g/nsa_and_sa/",
 	"title": "NSA vs SA. Option 3",
 	"tags": [],
 	"description": "This is lte_to_5g/nsa_and_sa tutorial page",
-	"content": " NSA and SA This is a lte_to_5g/nsa_and_sa tutorial page\n"
+	"content": " NSA and SA  "
 },
 {
 	"uri": "/devops/hugo_githubpages/hugo/cont/menushortcuts/",
@@ -200,28 +200,28 @@
 	"title": "Advanced &amp; WIP",
 	"tags": [],
 	"description": "Advanced tutorials and Work In Progress",
-	"content": " Advanced This is a devops/advanced tutorial page\n"
+	"content": " Advanced  Rebuild Hyperkube images  This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.\n\n Update Kubernetes to 1.11 on Ubuntu  Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.\n\n Zuul  OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks. This post is the collection of notes and tips used during the couple of update I did to some openstack projects.\n\n "
 },
 {
 	"uri": "/lte_to_5g/advanced/",
 	"title": "Advanced &amp; WIP",
 	"tags": [],
 	"description": "Advanced tutorials and Work In Progress",
-	"content": " Advanced This is a lte_to_5g/advanced tutorial page\n"
+	"content": " Advanced  "
 },
 {
 	"uri": "/nfv/advanced/",
 	"title": "Advanced &amp; WIP",
 	"tags": [],
 	"description": "Advanced tutorials and Work In Progress",
-	"content": " Advanced This is a pi_cluster/advanced tutorial page\n"
+	"content": " Advanced  "
 },
 {
 	"uri": "/pi_cluster/advanced/",
 	"title": "Advanced &amp; WIP",
 	"tags": [],
 	"description": "Advanced tutorials and Work In Progress",
-	"content": " Advanced This is a devops/advanced tutorial page\n"
+	"content": " Advanced  Build and Deploy Kubernetes Hashicorp Vault  Vault is aiming at improving security of the containers by rotating token and credential much more often than usual. Looks like it is especially effectiv to help rotate passwords used to access internal databases.\n\n Build and Deploy Kubernetes Istio  Istio is aiming at improving security of the containers. One of the key aspects is the end to end encryption of the commnucation, the role of citadel to ensure the management of the certificates, the renewal of the certificates. As always, the goal of this post is to study that new tool and figure out I can leverage it in my day to day work.\n\n Build and Deploy Kubernetes Kustomize  kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster and still keeping the configuration file has plain yaml instead of the template like it is often the case with t\n\n Compile and Test Portieris  One of the biggest security risks related to Kubernetes are often linked to the fact that it is really hard to ensure that only \u0026ldquo;approved\u0026rdquo; images are deployed in your Kubernetes cluster. The goal here is to leverage Notary and the a project called \u0026ldquo;Portieris\u0026rdquo; created by IBM.\n\n "
 },
 {
 	"uri": "/devops/hugo_githubpages/hugo/cont/icons/",
@@ -403,7 +403,7 @@
 	"title": "Creating simple GO server container",
 	"tags": ["golang"],
 	"description": "",
-	"content": " Use SCRATCH has base image to keep size minimum Simple HelloWorld GO web server Create associated HELM chart for Kubernetes deployment Provide deployment for both amd64 and arm32v7  \nSimple GO Server compilation The gohttpserver repo showcases: - How to compile a GO process - How to leverage Travis to compile for amd64 and arm32v7. - Branch amd64 is for normal PC and HP server. - Branch arm32v7 produces software usable on Raspberry PI 3B+\nKubeplay Github repo The kubeplay repo describes: - How to compile a GO server and - How to create a Helm chart to easily deploy on - How to use Travis-CI to compile and publish the image on Docker.io with the proper tags. - The amd64 branch is kind of complete - The arm32v7 produces software deployable on Raspberry PI 3B+\nUsefull Links TBD\n"
+	"content": "GO is perfectly adapted to microservices since it can build standalone executable.\nKey Aspects  Use SCRATCH has base image to keep size minimum Simple HelloWorld GO web server Create associated HELM chart for Kubernetes deployment Provide deployment for both amd64 and arm32v7  \nSimple GO Server compilation The gohttpserver repo showcases: - How to compile a GO process - How to leverage Travis to compile for amd64 and arm32v7. - Branch amd64 is for normal PC and HP server. - Branch arm32v7 produces software usable on Raspberry PI 3B+\nKubeplay Github repo The kubeplay repo describes: - How to compile a GO server and - How to create a Helm chart to easily deploy on - How to use Travis-CI to compile and publish the image on Docker.io with the proper tags. - The amd64 branch is kind of complete - The arm32v7 produces software deployable on Raspberry PI 3B+\nUsefull Links TBD\n"
 },
 {
 	"uri": "/pi_cluster/microservices/children/2018-06-28-a/",
