@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>blinkt</title>
+      <link>/tags/blinkt/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/blinkt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>calico</title>
       <link>/tags/calico/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
@@ -31,9 +40,18 @@
     <item>
       <title>cni</title>
       <link>/tags/cni/</link>
-      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/cni/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dashboard</title>
+      <link>/tags/dashboard/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dashboard/</guid>
       <description></description>
     </item>
     
@@ -61,6 +79,15 @@
       <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>grafana</title>
+      <link>/tags/grafana/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/grafana/</guid>
       <description></description>
     </item>
     
@@ -101,9 +128,18 @@
     </item>
     
     <item>
+      <title>kubedge</title>
+      <link>/tags/kubedge/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/kubedge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>kubernetes</title>
       <link>/tags/kubernetes/</link>
-      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/kubernetes/</guid>
       <description></description>
@@ -139,7 +175,7 @@
     <item>
       <title>rpi</title>
       <link>/tags/rpi/</link>
-      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/rpi/</guid>
       <description></description>
@@ -157,7 +193,7 @@
     <item>
       <title>sonobuoy</title>
       <link>/tags/sonobuoy/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/sonobuoy/</guid>
       <description></description>
@@ -166,7 +202,7 @@
     <item>
       <title>test-infra</title>
       <link>/tags/test-infra/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/test-infra/</guid>
       <description></description>
@@ -175,7 +211,7 @@
     <item>
       <title>testing</title>
       <link>/tags/testing/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/testing/</guid>
       <description></description>

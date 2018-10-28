@@ -6,19 +6,30 @@
     <description>Recent content in Kubernetes on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 30 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/pi_cluster/docker_kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</guid>
-      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
-to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</guid>
+      <description>&lt;p&gt;Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning,
+from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add Persistency Volume to PI Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
+      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -37,12 +48,18 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
     </item>
     
     <item>
-      <title>Deply Helm and Tiller on PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</link>
-      <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Add Raspberry PI node to Kubernetes Cluster in 10 min</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</guid>
-      <description>&lt;p&gt;The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.&lt;/p&gt;
+      <guid>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</guid>
+      <description>&lt;p&gt;During some of the manipulation of the partition table of
+my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup.
+Moreover if your SD card is 32G, it takes around 30 minute to restore from backup.
+Hence the idea to come up with a way to build more resiliency in the cluster.
+Recreating a node from scratch should not take more than 10 mn. The propose procedure
+is still rather long because I did not push enough yet what the HypriotOS team, aka
+build a default SD image where cloud-init does 100% of the initialization work.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -56,58 +73,6 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
       <description>&lt;p&gt;In order to build image for Raspberry PI, it is sometimes usefull to be able to leverate infrastruture from a remote VM.
 For instance you can cross-build golang executable for ARM32v7 and transfer it to build an image on the remote PI.
 (used for Tiller docker image)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Add Persistency Volume to PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
-      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
-      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</guid>
-      <description>&lt;p&gt;Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning,
-from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>docker.io versus docker-ce</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-06-24-a/</link>
-      <pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-06-24-a/</guid>
-      <description>&lt;p&gt;Wondering why you have a strange error such as &amp;lsquo;from &amp;hellip;&amp;rsquo; when running docker build.
-The reason is linked to an older version of docker installed.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Add Raspberry PI node to Kubernetes Cluster in 10 min</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</link>
-      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</guid>
-      <description>&lt;p&gt;During some of the manipulation of the partition table of
-my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup.
-Moreover if your SD card is 32G, it takes around 30 minute to restore from backup.
-Hence the idea to come up with a way to build more resiliency in the cluster.
-Recreating a node from scratch should not take more than 10 mn. The propose procedure
-is still rather long because I did not push enough yet what the HypriotOS team, aka
-build a default SD image where cloud-init does 100% of the initialization work.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

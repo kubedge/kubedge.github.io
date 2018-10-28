@@ -13,10 +13,10 @@
     
     <item>
       <title>Deply Helm and Tiller on PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</link>
+      <link>/pi_cluster/maintenance/children/2018-07-13-a/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-13-a/</guid>
+      <guid>/pi_cluster/maintenance/children/2018-07-13-a/</guid>
       <description>&lt;p&gt;The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

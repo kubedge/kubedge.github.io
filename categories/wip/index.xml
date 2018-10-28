@@ -6,10 +6,43 @@
     <description>Recent content in wip on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/wip/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installing Grafana</title>
+      <link>/pi_cluster/applications/children/grafana/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/grafana/</guid>
+      <description>&lt;p&gt;Install Grafana on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubernetes Dashboard</title>
+      <link>/pi_cluster/applications/children/kubernetes_dashboard/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubernetes_dashboard/</guid>
+      <description>&lt;p&gt;Install Kubernetes Dashboard on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add Persistency Volume to PI Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
+      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Upgrade RPI Kubernetes cluster to 1.12</title>
@@ -19,6 +52,40 @@
       <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
       <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
 using kubeadm 1.12&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge Blinkt</title>
+      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
+      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge Kubeplay</title>
+      <link>/pi_cluster/applications/children/kubesim_kubeplay/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_kubeplay/</guid>
+      <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes test-infra</title>
+      <link>/pi_cluster/advanced/children/2018-07-30-a/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-30-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -47,18 +114,6 @@ is the end to end encryption of the commnucation, the role of citadel to ensure 
 management of the certificates, the renewal of the certificates.
 As always, the goal of this post is to study that new tool and figure out I can
 leverage it in my day to day work.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</guid>
-      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
-to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -109,17 +164,6 @@ The attempt here is to cross-compile the calico containers and use them on the P
       
       <guid>/devops/advanced/children/2018-07-16-a/</guid>
       <description>&lt;p&gt;This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Add Persistency Volume to PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
-      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

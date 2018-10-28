@@ -13,10 +13,10 @@
     
     <item>
       <title>Creating simple GO server container</title>
-      <link>/pi_cluster/microservices/children/2018-06-29-a/</link>
+      <link>/devops/microservices/children/2018-06-29-a/</link>
       <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/microservices/children/2018-06-29-a/</guid>
+      <guid>/devops/microservices/children/2018-06-29-a/</guid>
       <description>&lt;p&gt;GO is perfectly adapted to microservices since it can
 build standalone executable.&lt;/p&gt;
 
@@ -25,10 +25,10 @@ build standalone executable.&lt;/p&gt;
     
     <item>
       <title>Setup your GOLANG environment</title>
-      <link>/pi_cluster/microservices/children/2018-06-22-a/</link>
+      <link>/devops/microservices/children/2018-06-22-a/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/microservices/children/2018-06-22-a/</guid>
+      <guid>/devops/microservices/children/2018-06-22-a/</guid>
       <description>&lt;p&gt;A lot of the opensource projects evolvoving around Kubernetes are written in go.
 It is very usefull to be able to rebuild so projects using &lt;code&gt;go get&lt;/code&gt; or &lt;code&gt;go build&lt;/code&gt;.&lt;/p&gt;
 

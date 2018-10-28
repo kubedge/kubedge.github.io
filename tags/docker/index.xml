@@ -26,10 +26,10 @@ For instance you can cross-build golang executable for ARM32v7 and transfer it t
     
     <item>
       <title>docker.io versus docker-ce</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-06-24-a/</link>
+      <link>/devops/kubedgesdk/children/2018-06-24-a/</link>
       <pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-06-24-a/</guid>
+      <guid>/devops/kubedgesdk/children/2018-06-24-a/</guid>
       <description>&lt;p&gt;Wondering why you have a strange error such as &amp;lsquo;from &amp;hellip;&amp;rsquo; when running docker build.
 The reason is linked to an older version of docker installed.&lt;/p&gt;
 

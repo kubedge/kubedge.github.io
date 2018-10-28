@@ -6,109 +6,18 @@
     <description>Recent content in rpi on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 29 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/rpi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Upgrade RPI Kubernetes cluster to 1.12</title>
-      <link>/pi_cluster/maintenance/children/2018-09-28-a/</link>
-      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Installing Kubernetes Dashboard</title>
+      <link>/pi_cluster/applications/children/kubernetes_dashboard/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
-      <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
-using kubeadm 1.12&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
-      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
-      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
-much more often than usual. Looks like it is especially effectiv to help rotate passwords
-used to access internal databases.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy Kubernetes Istio</title>
-      <link>/pi_cluster/advanced/children/2018-07-31-a/</link>
-      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-07-31-a/</guid>
-      <description>&lt;p&gt;Istio is aiming at improving security of the containers. One of the key aspects
-is the end to end encryption of the commnucation, the role of citadel to ensure the
-management of the certificates, the renewal of the certificates.
-As always, the goal of this post is to study that new tool and figure out I can
-leverage it in my day to day work.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</link>
-      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-30-a/</guid>
-      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
-to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy Kubernetes Kustomize</title>
-      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
-      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
-and still keeping the configuration file has plain yaml instead of the template like it
-is often the case with t&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Recompile Kubernetes components for Raspberry PI</title>
-      <link>/devops/kubedgesdk/children/2018-07-15-a/</link>
-      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/kubedgesdk/children/2018-07-15-a/</guid>
-      <description>&lt;p&gt;During the installation of official Kubernetes 1.11.0 on RPI Cluster 1,
-encountered a bug on the controller manager preventing the controller-manager from starting.
-The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Deploy Flannel in PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
-      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</guid>
-      <description>&lt;p&gt;In order to get the nodes and pods interface with each other accross the cluster.
-This post describes how I deployed Flannel acounting with the fact that some of the
-nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Add Persistency Volume to PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
-      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
+      <guid>/pi_cluster/applications/children/kubernetes_dashboard/</guid>
+      <description>&lt;p&gt;Install Kubernetes Dashboard on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -120,6 +29,40 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
       
       <guid>/pi_cluster/os_installation/children/cluster_assembly/</guid>
       <description>&lt;p&gt;This page contains examples of harware to use in order to build a cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</guid>
+      <description>&lt;p&gt;Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning,
+from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Grafana</title>
+      <link>/pi_cluster/applications/children/grafana/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/grafana/</guid>
+      <description>&lt;p&gt;Install Grafana on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add Persistency Volume to PI Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
+      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -138,13 +81,37 @@ The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
-      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Deploy Flannel in PI Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
+      <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</guid>
-      <description>&lt;p&gt;Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning,
-from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.&lt;/p&gt;
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</guid>
+      <description>&lt;p&gt;In order to get the nodes and pods interface with each other accross the cluster.
+This post describes how I deployed Flannel acounting with the fact that some of the
+nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Upgrade RPI Kubernetes cluster to 1.12</title>
+      <link>/pi_cluster/maintenance/children/2018-09-28-a/</link>
+      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
+      <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
+using kubeadm 1.12&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge Kubeplay</title>
+      <link>/pi_cluster/applications/children/kubesim_kubeplay/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_kubeplay/</guid>
+      <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -178,6 +145,83 @@ Hence the idea to come up with a way to build more resiliency in the cluster.
 Recreating a node from scratch should not take more than 10 mn. The propose procedure
 is still rather long because I did not push enough yet what the HypriotOS team, aka
 build a default SD image where cloud-init does 100% of the initialization work.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge Blinkt</title>
+      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
+      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes test-infra</title>
+      <link>/pi_cluster/advanced/children/2018-07-30-a/</link>
+      <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-30-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
+      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
+      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
+much more often than usual. Looks like it is especially effectiv to help rotate passwords
+used to access internal databases.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Istio</title>
+      <link>/pi_cluster/advanced/children/2018-07-31-a/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-31-a/</guid>
+      <description>&lt;p&gt;Istio is aiming at improving security of the containers. One of the key aspects
+is the end to end encryption of the commnucation, the role of citadel to ensure the
+management of the certificates, the renewal of the certificates.
+As always, the goal of this post is to study that new tool and figure out I can
+leverage it in my day to day work.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Kustomize</title>
+      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
+      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
+and still keeping the configuration file has plain yaml instead of the template like it
+is often the case with t&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recompile Kubernetes components for Raspberry PI</title>
+      <link>/devops/kubedgesdk/children/2018-07-15-a/</link>
+      <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/devops/kubedgesdk/children/2018-07-15-a/</guid>
+      <description>&lt;p&gt;During the installation of official Kubernetes 1.11.0 on RPI Cluster 1,
+encountered a bug on the controller manager preventing the controller-manager from starting.
+The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
