@@ -36,6 +36,30 @@ The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Setting up WPA supplicant</title>
+      <link>/pi_cluster/os_installation/children/setup_wpa_applicant/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/setup_wpa_applicant/</guid>
+      <description>&lt;p&gt;This tutorial how to setup WIFI on the master pi to connect to different WLAN&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up DHCPD on master PI</title>
+      <link>/pi_cluster/os_installation/children/setup_dhcpd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/setup_dhcpd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the slave PI can access the
+internet through the NAT (ETH0-&amp;gt;WLAN0) running on Master PI. This tutorial
+also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Create a Rapsberry PI Rescue Dongle</title>
       <link>/pi_cluster/os_installation/children/dongle/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>

@@ -81,6 +81,39 @@ The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Setting up HOSTAPD on 5G NR node</title>
+      <link>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup WIFI AccessPoint on PI simulating 5G NR node&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up PAN</title>
+      <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</guid>
+      <description>&lt;p&gt;This tutorial how to setup PAN on the slave pi to simulator LTE and eLTE RAN.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up WPA supplicant</title>
+      <link>/pi_cluster/os_installation/children/setup_wpa_applicant/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/setup_wpa_applicant/</guid>
+      <description>&lt;p&gt;This tutorial how to setup WIFI on the master pi to connect to different WLAN&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Deploy Flannel in PI Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
@@ -117,17 +150,40 @@ using kubeadm 1.12&lt;/p&gt;
     </item>
     
     <item>
-      <title>Create a Rapsberry PI Rescue Dongle</title>
-      <link>/pi_cluster/os_installation/children/dongle/</link>
-      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      <title>Setting up DHCPD on 5G NR Node</title>
+      <link>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/dongle/</guid>
-      <description>&lt;p&gt;I encountered multiple issues trying to repartition my SD on my PI.
-Because the / directory is mounted, it never really worked safely for me
-to use fdisk. Morevoer some of the powerfull tools such as gparted need
-X11 installed, which I don&amp;rsquo;t have by default.&lt;/p&gt;
+      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
+internet through the AP &amp;amp; NAT running on 5G NR simulating PI. This tutorial
+also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
 
-&lt;p&gt;Hopefully the new PI3 B and B+ are able to boot from USB, hence the idea of creating a Rescue Dongle&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up DHCPD on LTE &amp; eLTE Node</title>
+      <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
+internet through the AP &amp;amp; NAT running on LTE &amp;amp; eLTE simulating PI. This tutorial
+also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up DHCPD on master PI</title>
+      <link>/pi_cluster/os_installation/children/setup_dhcpd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/setup_dhcpd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the slave PI can access the
+internet through the NAT (ETH0-&amp;gt;WLAN0) running on Master PI. This tutorial
+also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -156,6 +212,22 @@ build a default SD image where cloud-init does 100% of the initialization work.&
       
       <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
       <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Create a Rapsberry PI Rescue Dongle</title>
+      <link>/pi_cluster/os_installation/children/dongle/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/dongle/</guid>
+      <description>&lt;p&gt;I encountered multiple issues trying to repartition my SD on my PI.
+Because the / directory is mounted, it never really worked safely for me
+to use fdisk. Morevoer some of the powerfull tools such as gparted need
+X11 installed, which I don&amp;rsquo;t have by default.&lt;/p&gt;
+
+&lt;p&gt;Hopefully the new PI3 B and B+ are able to boot from USB, hence the idea of creating a Rescue Dongle&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

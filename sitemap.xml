@@ -17,6 +17,16 @@
   </url>
   
   <url>
+    <loc>/devops/cicd/children/setup_dockerhub/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/git_gerrit/children/setup_git/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/os_installation/children/cluster_assembly/</loc>
     <lastmod>2018-07-07T00:00:00+00:00</lastmod>
   </url>
@@ -31,16 +41,12 @@
   </url>
   
   <url>
-    <loc>/lte_to_5g/lte_and_5g_core_simulation/</loc>
-  </url>
-  
-  <url>
     <loc>/nfv/fd_io_and_opnfv/</loc>
   </url>
   
   <url>
     <loc>/devops/git_gerrit/</loc>
-    <lastmod>2018-06-25T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -49,7 +55,22 @@
   </url>
   
   <url>
+    <loc>/lte_to_5g/rpi_wifi_ap/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/applications/children/grafana/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/git_gerrit/children/setup_gerrit/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/devops/cicd/children/setup_travis-ci/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -74,16 +95,18 @@
   </url>
   
   <url>
+    <loc>/lte_to_5g/rpi_bluetooth_pan/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/devops/cicd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/pi_cluster/docker_kubernetes/</loc>
     <lastmod>2018-07-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/lte_to_5g/lte_and_5g_ran_simulation/</loc>
   </url>
   
   <url>
@@ -95,12 +118,31 @@
   </url>
   
   <url>
+    <loc>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/os_installation/children/setup_wpa_applicant/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</loc>
     <lastmod>2018-07-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/nfv/akraino/</loc>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/lte_and_5g_core_simulation/</loc>
   </url>
   
   <url>
@@ -117,10 +159,6 @@
   </url>
   
   <url>
-    <loc>/lte_to_5g/rpi_wifi_bluetooth/</loc>
-  </url>
-  
-  <url>
     <loc>/pi_cluster/maintenance/children/2018-09-28-a/</loc>
     <lastmod>2018-09-29T00:00:00+00:00</lastmod>
   </url>
@@ -131,8 +169,18 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/os_installation/children/dongle/</loc>
-    <lastmod>2018-06-20T00:00:00+00:00</lastmod>
+    <loc>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/os_installation/children/setup_dhcpd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -151,11 +199,11 @@
   </url>
   
   <url>
-    <loc>/nfv/</loc>
+    <loc>/lte_to_5g/lte_and_5g_ran_simulation/</loc>
   </url>
   
   <url>
-    <loc>/lte_to_5g/nsa_and_sa/</loc>
+    <loc>/nfv/</loc>
   </url>
   
   <url>
@@ -169,7 +217,8 @@
   </url>
   
   <url>
-    <loc>/lte_to_5g/advanced/</loc>
+    <loc>/pi_cluster/os_installation/children/dongle/</loc>
+    <lastmod>2018-06-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -188,6 +237,10 @@
   </url>
   
   <url>
+    <loc>/lte_to_5g/nsa_and_sa/</loc>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/advanced/children/2018-06-30-a/</loc>
     <lastmod>2018-06-30T00:00:00+00:00</lastmod>
   </url>
@@ -195,6 +248,10 @@
   <url>
     <loc>/devops/advanced/</loc>
     <lastmod>2018-07-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/advanced/</loc>
   </url>
   
   <url>
@@ -332,6 +389,18 @@
   </url>
   
   <url>
+    <loc>/tags/devops/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/dhcpd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/docker/</loc>
     <lastmod>2018-07-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -339,7 +408,7 @@
   
   <url>
     <loc>/tags/github/</loc>
-    <lastmod>2018-07-11T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -453,6 +522,12 @@
   
   <url>
     <loc>/categories/wip/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/wpa_supplicant/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
