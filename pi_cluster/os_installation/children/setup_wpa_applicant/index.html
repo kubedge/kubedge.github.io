@@ -9,22 +9,22 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Setting up WPA supplicant :: KUBEDGE&#39;s Blog</title>
+    <title>Setting up WPA supplicant on Master PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1540716220" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1540716220" rel="stylesheet">
-    <link href="/css/hybrid.css?1540716220" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1540716220" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1540716220" rel="stylesheet">
-    <link href="/css/auto-complete.css?1540716220" rel="stylesheet">
-    <link href="/css/theme.css?1540716220" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1540716220" rel="stylesheet">
+    <link href="/css/nucleus.css?1540758469" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1540758469" rel="stylesheet">
+    <link href="/css/hybrid.css?1540758469" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1540758469" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1540758469" rel="stylesheet">
+    <link href="/css/auto-complete.css?1540758469" rel="stylesheet">
+    <link href="/css/theme.css?1540758469" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1540758469" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1540716220" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1540758469" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1540716220"></script>
+    <script src="/js/jquery-2.x.min.js?1540758469"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1540716220"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1540716220"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1540758469"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1540758469"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1540716220"></script>
+<script type="text/javascript" src="/js/search.js?1540758469"></script>
 
     
   </div>
@@ -729,9 +729,9 @@
  
   
     
-      <li data-nav-id="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
-        <a href="/pi_cluster/os_installation/children/ansible/">
-        Ansible
+      <li data-nav-id="/pi_cluster/os_installation/children/master_pi/" title="OS Installation on Master PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/master_pi/">
+        OS on Master PI
         
         </a>
     </li>
@@ -748,7 +748,7 @@
  
   
     
-      <li data-nav-id="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant" class="dd-item active">
+      <li data-nav-id="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant on Master PI" class="dd-item active">
         <a href="/pi_cluster/os_installation/children/setup_wpa_applicant/">
         WPA supplicant
         
@@ -770,6 +770,44 @@
       <li data-nav-id="/pi_cluster/os_installation/children/setup_dhcpd/" title="Setting up DHCPD on master PI" class="dd-item ">
         <a href="/pi_cluster/os_installation/children/setup_dhcpd/">
         DHCPD &amp; NAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/worker_pi/" title="OS Installation on Worker PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/worker_pi/">
+        OS on Worker PI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/ansible/">
+        Ansible
         
         </a>
     </li>
@@ -1796,7 +1834,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/kubedge/blog/pi_cluster/os_installation/children/setup_wpa_applicant.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-03-a/#cluster-2-3-node-clusterspi_cluster/os_installation/children/setup_wpa_applicant.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -1829,7 +1867,7 @@
             
           
           
-            <a href='/'>Kubedge</a> > <a href='/pi_cluster/'>RPI Cluster</a> > <a href='/pi_cluster/os_installation/'>Operating System</a> > Setting up WPA supplicant
+            <a href='/'>Kubedge</a> > <a href='/pi_cluster/'>RPI Cluster</a> > <a href='/pi_cluster/os_installation/'>Operating System</a> > Setting up WPA supplicant on Master PI
           
          
           
@@ -1848,7 +1886,11 @@
 <li>
 <ul>
 <li><a href="#key-aspects">Key Aspects</a></li>
-<li><a href="#deploy">Deploy</a></li>
+<li><a href="#deploy">Deploy</a>
+<ul>
+<li><a href="#enable-wlan0">Enable WLAN0.</a></li>
+<li><a href="#examples-of-files">Examples of files</a></li>
+</ul></li>
 <li><a href="#conclusion">Conclusion</a></li>
 <li><a href="#reference-links">Reference Links</a></li>
 </ul></li>
@@ -1865,7 +1907,7 @@
         
         <div id="body-inner">
           
-            <h1>Setting up WPA supplicant</h1>
+            <h1>Setting up WPA supplicant on Master PI</h1>
           
 
         
@@ -1890,6 +1932,24 @@
 </div>
 
 
+<h3 id="enable-wlan0">Enable WLAN0.</h3>
+
+<p>Check the IP address. Depending on PI3B or PI3B+, the WLAN network may be different.
+Use the files in <strong>$HOME/proj/kubedge/kube-rpi/config/cluster1/hypriotos/</strong> as examples.</p>
+
+<pre><code>ip a
+iwconfig
+sudo ip link set wlan0 up
+sudo iwlist scan | grep ES
+sudo iwlist scan | grep ED
+wpa_passphrase &lt;sommessid&gt;
+sudo vi /etc/network/interfaces.d/wlan0
+sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
+sudo systemctl restart dhcpcd 
+</code></pre>
+
+<h3 id="examples-of-files">Examples of files</h3>
+
 <ul>
 <li><a href="https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/wpa_supplicant/wpa_supplicant.conf">wpa_supplicant</a></li>
 <li><a href="https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/network/interfaces.d/wlan0">wlan0</a></li>
@@ -1897,6 +1957,9 @@
 </ul>
 
 <h2 id="conclusion">Conclusion</h2>
+
+<p>At that point you should be able to unplug the eth0 cable, reboot the PI and check in your router for a <strong>kubemaster-pi</strong> and ssh into the node.
+It should allow you access the kubemaster-pi using WIFI.</p>
 
 <div class="notices note" ><p>WIP</p>
 </div>
@@ -2428,70 +2491,6 @@
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -2555,70 +2554,6 @@
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2764,6 +2699,166 @@
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -3101,7 +3196,7 @@
 
 
         
-            <a class="nav nav-prev" href="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/pi_cluster/os_installation/children/master_pi/" title="OS Installation on Master PI"> <i class="fas fa-chevron-left"></i></a>
         
         
             <a class="nav nav-next" href="/pi_cluster/os_installation/children/setup_dhcpd/" title="Setting up DHCPD on master PI" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
@@ -3113,20 +3208,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1540716220"></script>
-    <script src="/js/perfect-scrollbar.min.js?1540716220"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1540716220"></script>
-    <script src="/js/jquery.sticky.js?1540716220"></script>
-    <script src="/js/featherlight.min.js?1540716220"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1540716220"></script>
-    <script src="/js/highlight.pack.js?1540716220"></script>
+    <script src="/js/clipboard.min.js?1540758469"></script>
+    <script src="/js/perfect-scrollbar.min.js?1540758469"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1540758469"></script>
+    <script src="/js/jquery.sticky.js?1540758469"></script>
+    <script src="/js/featherlight.min.js?1540758469"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1540758469"></script>
+    <script src="/js/highlight.pack.js?1540758469"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1540716220"></script>
-    <script src="/js/learn.js?1540716220"></script>
-    <script src="/js/hugo-learn.js?1540716220"></script>
+    <script src="/js/modernizr.custom.71422.js?1540758469"></script>
+    <script src="/js/learn.js?1540758469"></script>
+    <script src="/js/hugo-learn.js?1540758469"></script>
 
-    <link href="/mermaid/mermaid.css?1540716220" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1540716220"></script>
+    <link href="/mermaid/mermaid.css?1540758469" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1540758469"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

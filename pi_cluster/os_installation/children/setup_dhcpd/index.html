@@ -12,19 +12,19 @@
     <title>Setting up DHCPD on master PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1540716220" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1540716220" rel="stylesheet">
-    <link href="/css/hybrid.css?1540716220" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1540716220" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1540716220" rel="stylesheet">
-    <link href="/css/auto-complete.css?1540716220" rel="stylesheet">
-    <link href="/css/theme.css?1540716220" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1540716220" rel="stylesheet">
+    <link href="/css/nucleus.css?1540758469" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1540758469" rel="stylesheet">
+    <link href="/css/hybrid.css?1540758469" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1540758469" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1540758469" rel="stylesheet">
+    <link href="/css/auto-complete.css?1540758469" rel="stylesheet">
+    <link href="/css/theme.css?1540758469" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1540758469" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1540716220" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1540758469" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1540716220"></script>
+    <script src="/js/jquery-2.x.min.js?1540758469"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1540716220"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1540716220"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1540758469"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1540758469"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1540716220"></script>
+<script type="text/javascript" src="/js/search.js?1540758469"></script>
 
     
   </div>
@@ -729,9 +729,9 @@
  
   
     
-      <li data-nav-id="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
-        <a href="/pi_cluster/os_installation/children/ansible/">
-        Ansible
+      <li data-nav-id="/pi_cluster/os_installation/children/master_pi/" title="OS Installation on Master PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/master_pi/">
+        OS on Master PI
         
         </a>
     </li>
@@ -748,7 +748,7 @@
  
   
     
-      <li data-nav-id="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant" class="dd-item ">
+      <li data-nav-id="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant on Master PI" class="dd-item ">
         <a href="/pi_cluster/os_installation/children/setup_wpa_applicant/">
         WPA supplicant
         
@@ -770,6 +770,44 @@
       <li data-nav-id="/pi_cluster/os_installation/children/setup_dhcpd/" title="Setting up DHCPD on master PI" class="dd-item active">
         <a href="/pi_cluster/os_installation/children/setup_dhcpd/">
         DHCPD &amp; NAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/worker_pi/" title="OS Installation on Worker PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/worker_pi/">
+        OS on Worker PI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/ansible/">
+        Ansible
         
         </a>
     </li>
@@ -1796,7 +1834,7 @@
                   
                   
                   <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/kubedge/blog/pi_cluster/os_installation/children/setup_dhcpd.md" target="blank">
+                    <a class="github-link" title='Edit this page' href="https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-03-a/#cluster-2-3-node-clusterspi_cluster/os_installation/children/setup_dhcpd.md" target="blank">
                       <i class="fas fa-code-branch"></i>
                       <span id="top-github-link-text">Edit this page</span>
                     </a>
@@ -1849,7 +1887,7 @@
 <ul>
 <li><a href="#key-aspects">Key Aspects</a></li>
 <li><a href="#deploy">Deploy</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#verification">Verification</a></li>
 <li><a href="#reference-links">Reference Links</a></li>
 </ul></li>
 </ul>
@@ -1899,11 +1937,33 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
 <li><a href="https://github.com/kubedge/kube-rpi/blob/master/config/cluster1/hypriotos/kubemaster-pi/etc/dhcpcd.conf">dhcpcd</a></li>
 </ul>
 
-<h2 id="conclusion">Conclusion</h2>
+<h2 id="verification">Verification</h2>
 
-<div class="notices note" ><p>WIP</p>
+<div class="notices note" ><p>This is where is important to have a 5 ports switch for a 3 nodes cluster , and a 8 ports switch for a 5 nodes cluster.</p>
 </div>
 
+
+<p>Plug your laptop onto the switch using an ethernet cable. If the master PI is configured properly (dhcpd, network/eth0..),
+the master PI will acts as a router. It will provide the laptop with an IP address in the <strong>192.168.2.0/255</strong> range.</p>
+
+<p><img src="/images/networks/eth0_pict1.png" alt="" /></p>
+
+<p>SSH to the node.</p>
+
+<pre><code class="language-bash">ssh 192.168.2.1 -l pirate
+</code></pre>
+
+<p>On your PC itself, open a command prompt or cygwin</p>
+
+<pre><code class="language-bash">ipconfig /all
+</code></pre>
+
+<p><img src="/images/networks/eth0_pict2.png" alt="" /></p>
+
+<p>If the previous test is successful, the Name Server list should contain the IP and your home router, and you should be able
+to surf the internet.</p>
+
+<p><img src="/images/networks/eth0_pict3.png" alt="" /></p>
 
 <h2 id="reference-links">Reference Links</h2>
 
@@ -2431,70 +2491,6 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
             
         
                     
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
             
             
@@ -2558,70 +2554,6 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
                     
             
         
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
                     
                         
             
@@ -2767,6 +2699,166 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
             
         
                     
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
             
             
@@ -3104,10 +3196,10 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
 
 
         
-            <a class="nav nav-prev" href="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant"> <i class="fas fa-chevron-left"></i></a>
+            <a class="nav nav-prev" href="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant on Master PI"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/pi_cluster/os_installation/children/dongle/" title="Create a Rapsberry PI Rescue Dongle" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/pi_cluster/os_installation/children/worker_pi/" title="OS Installation on Worker PI" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -3116,20 +3208,20 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1540716220"></script>
-    <script src="/js/perfect-scrollbar.min.js?1540716220"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1540716220"></script>
-    <script src="/js/jquery.sticky.js?1540716220"></script>
-    <script src="/js/featherlight.min.js?1540716220"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1540716220"></script>
-    <script src="/js/highlight.pack.js?1540716220"></script>
+    <script src="/js/clipboard.min.js?1540758469"></script>
+    <script src="/js/perfect-scrollbar.min.js?1540758469"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1540758469"></script>
+    <script src="/js/jquery.sticky.js?1540758469"></script>
+    <script src="/js/featherlight.min.js?1540758469"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1540758469"></script>
+    <script src="/js/highlight.pack.js?1540758469"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1540716220"></script>
-    <script src="/js/learn.js?1540716220"></script>
-    <script src="/js/hugo-learn.js?1540716220"></script>
+    <script src="/js/modernizr.custom.71422.js?1540758469"></script>
+    <script src="/js/learn.js?1540758469"></script>
+    <script src="/js/hugo-learn.js?1540758469"></script>
 
-    <link href="/mermaid/mermaid.css?1540716220" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1540716220"></script>
+    <link href="/mermaid/mermaid.css?1540758469" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1540758469"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
