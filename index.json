@@ -305,7 +305,7 @@
 	"title": "Installing Kubedge Blinkt",
 	"tags": ["kubernetes", "kubedge", "blinkt", "rpi"],
 	"description": "",
-	"content": "Install Kubedge Blinkt Application on the PI Cluster\n\nKey Aspects  Install Blinkt Test access to Blinkt  Deploy WIP\n Conclusion WIP\n Reference Links  Video1 Video2 "
+	"content": "Install Kubedge Blinkt Application on the PI Cluster\n\n  Key Aspects  Install Blinkt Test access to Blinkt  Deploy WIP\n Conclusion WIP\n Reference Links  Video1 Video2 "
 },
 {
 	"uri": "/pi_cluster/docker_kubernetes/children/2018-07-12-a/",
