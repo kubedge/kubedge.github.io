@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WIFI AP on KUBEDGE&#39;s Blog</title>
+    <link>/lte_to_5g/rpi_wifi_ap/</link>
+    <description>Recent content in WIFI AP on KUBEDGE&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/lte_to_5g/rpi_wifi_ap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Setting up HOSTAPD on 5G NR node</title>
+      <link>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup WIFI AccessPoint on PI simulating 5G NR node&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up DHCPD on 5G NR Node</title>
+      <link>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
+internet through the AP &amp;amp; NAT running on 5G NR simulating PI. This tutorial
+also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

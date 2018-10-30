@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on KUBEDGE&#39;s Blog</title>
+    <link>/tags/java/</link>
+    <description>Recent content in java on KUBEDGE&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Creating simple Java 10 server container</title>
+      <link>/devops/microservices/children/2018-06-28-a/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/devops/microservices/children/2018-06-28-a/</guid>
+      <description>&lt;p&gt;Very often people associated Java to quite bulky and difficult to use in the microservice context,
+unless you have very large image containing the JRE. But since Java 9, Java did kind of catchup with
+golang on the subject. Where you can obtain a standalone executable when we running &lt;code&gt;go build&lt;/code&gt;,
+java is now proposing &lt;code&gt;jlink&lt;/code&gt; which always you to acheive a very similar result. The goal
+of this post is to build a container image as small as possible running Java.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

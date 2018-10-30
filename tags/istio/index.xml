@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>istio on KUBEDGE&#39;s Blog</title>
+    <link>/tags/istio/</link>
+    <description>Recent content in istio on KUBEDGE&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/istio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Build and Deploy Kubernetes Istio</title>
+      <link>/pi_cluster/advanced/children/2018-07-31-a/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-31-a/</guid>
+      <description>&lt;p&gt;Istio is aiming at improving security of the containers. One of the key aspects
+is the end to end encryption of the commnucation, the role of citadel to ensure the
+management of the certificates, the renewal of the certificates.
+As always, the goal of this post is to study that new tool and figure out I can
+leverage it in my day to day work.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
