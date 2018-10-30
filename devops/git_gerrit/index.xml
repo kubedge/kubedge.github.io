@@ -33,28 +33,5 @@
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Setup github/gerrit behind a corporate http proxy</title>
-      <link>/devops/git_gerrit/children/2018-06-25-a/</link>
-      <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/git_gerrit/children/2018-06-25-a/</guid>
-      <description>&lt;p&gt;This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Setup multiple GitHub account on a single machine</title>
-      <link>/devops/git_gerrit/children/2018-06-23-a/</link>
-      <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/devops/git_gerrit/children/2018-06-23-a/</guid>
-      <description>&lt;p&gt;In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to
-be able to conigure your .ssh directory.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

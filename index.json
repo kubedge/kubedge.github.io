@@ -67,7 +67,7 @@
 	"title": "Git/Gerrit",
 	"tags": [],
 	"description": "This is devops/git_gerrit tutorial page",
-	"content": " GIT/GERRIT  Setting up GitHub  Create and maintain a github organisation\n\n Setting up GerritHub  This tutorial describes how to leverage GerritHub.io for proper code review\n\n Setup github/gerrit behind a corporate http proxy  This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.\n\n Setup multiple GitHub account on a single machine  In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to be able to conigure your .ssh directory.\n\n "
+	"content": " GIT/GERRIT  Setting up GitHub  Create and maintain a github organisation\n\n Setting up GerritHub  This tutorial describes how to leverage GerritHub.io for proper code review\n\n "
 },
 {
 	"uri": "/pi_cluster/os_installation/",
@@ -368,7 +368,7 @@
 	"title": "Advanced &amp; WIP",
 	"tags": [],
 	"description": "Advanced tutorials and Work In Progress",
-	"content": " Advanced  Rebuild Hyperkube images  This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.\n\n Zuul  OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks. This post is the collection of notes and tips used during the couple of update I did to some openstack projects.\n\n "
+	"content": " Advanced  Rebuild Hyperkube images  This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.\n\n Zuul  OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks. This post is the collection of notes and tips used during the couple of update I did to some openstack projects.\n\n Setup github/gerrit behind a corporate http proxy  This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.\n\n Setup multiple GitHub account on a single machine  In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to be able to conigure your .ssh directory.\n\n "
 },
 {
 	"uri": "/lte_to_5g/advanced/",
@@ -483,7 +483,7 @@
 	"content": "OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks. This post is the collection of notes and tips used during the couple of update I did to some openstack projects.\n\nUnderstanding Zuul  WIP  Usefull Links  WIP "
 },
 {
-	"uri": "/devops/git_gerrit/children/2018-06-25-a/",
+	"uri": "/devops/advanced/children/2018-06-25-a/",
 	"title": "Setup github/gerrit behind a corporate http proxy",
 	"tags": ["github"],
 	"description": "",
@@ -497,7 +497,7 @@
 	"content": "Wondering why you have a strange error such as \u0026lsquo;from \u0026hellip;\u0026rsquo; when running docker build. The reason is linked to an older version of docker installed.\n\nRemove the current docker.io You need to remove the current docker.io.\nsudo apt-cache policy docker.io curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - sudo add-apt-repository \u0026quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\u0026quot; sudo apt-get update sudo apt-cache policy docker-ce sudo apt-get remove docker docker-engine docker.io sudo apt-get install docker-ce  Forced to run \u0026ldquo;sudo docker\u0026rdquo; instead of docker Run the following command:\nsudo usermod -a -G docker \u0026lt;yourusername\u0026gt;  If you still have issue running docker instead of sudo docker, try to reboot. Worked for me.\nRelated documentation  Link1 Link2 "
 },
 {
-	"uri": "/devops/git_gerrit/children/2018-06-23-a/",
+	"uri": "/devops/advanced/children/2018-06-23-a/",
 	"title": "Setup multiple GitHub account on a single machine",
 	"tags": ["github"],
 	"description": "",
