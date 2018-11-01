@@ -27,6 +27,16 @@
   </url>
   
   <url>
+    <loc>/nfv/golang/children/golang/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/ovs/children/linux_bridging/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/os_installation/children/cluster_assembly/</loc>
     <lastmod>2018-07-07T00:00:00+00:00</lastmod>
   </url>
@@ -41,12 +51,13 @@
   </url>
   
   <url>
-    <loc>/nfv/fd_io_and_opnfv/</loc>
+    <loc>/devops/git_gerrit/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/devops/git_gerrit/</loc>
-    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <loc>/nfv/ovs/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -72,6 +83,21 @@
   <url>
     <loc>/devops/cicd/children/setup_travis-ci/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/golang/children/dpdk/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/ovs/children/ovs/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/ovs/children/odl/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -105,12 +131,13 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/docker_kubernetes/</loc>
-    <lastmod>2018-07-03T00:00:00+00:00</lastmod>
+    <loc>/nfv/golang/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/nfv/onap/</loc>
+    <loc>/pi_cluster/docker_kubernetes/</loc>
+    <lastmod>2018-07-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -130,6 +157,11 @@
   <url>
     <loc>/pi_cluster/os_installation/children/setup_wpa_applicant/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/nfv/golang/children/calico/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -207,6 +239,14 @@
   </url>
   
   <url>
+    <loc>/nfv/advanced/children/onap/</loc>
+  </url>
+  
+  <url>
+    <loc>/nfv/opnfv/</loc>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/applications/children/kubesim_blinkt/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -219,11 +259,6 @@
   <url>
     <loc>/pi_cluster/os_installation/children/worker_pi/</loc>
     <lastmod>2018-07-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/nfv/advanced/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -270,6 +305,10 @@
   </url>
   
   <url>
+    <loc>/nfv/advanced/</loc>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
   </url>
   
@@ -296,11 +335,6 @@
   <url>
     <loc>/pi_cluster/advanced/children/2018-07-18-a/</loc>
     <lastmod>2018-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/nfv/advanced/children/2018-07-17-a/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -364,7 +398,14 @@
   </url>
   
   <url>
+    <loc>/tags/odl/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -388,7 +429,7 @@
   
   <url>
     <loc>/tags/cni/</loc>
-    <lastmod>2018-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -424,7 +465,7 @@
   
   <url>
     <loc>/tags/golang/</loc>
-    <lastmod>2018-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -479,6 +520,12 @@
   <url>
     <loc>/tags/kustomize/</loc>
     <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/linux-bridging/</loc>
+    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

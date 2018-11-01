@@ -23,6 +23,31 @@
     </item>
     
     <item>
+      <title>GOLANG</title>
+      <link>/nfv/golang/children/golang/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/golang/children/golang/</guid>
+      <description>&lt;p&gt;GOLANG based Networking libraries usable in micro services in docker container to simulate VNF.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux Bridging</title>
+      <link>/nfv/ovs/children/linux_bridging/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/ovs/children/linux_bridging/</guid>
+      <description>&lt;p&gt;The first goal is to replace the NAT+DHCP on the worker nodes
+by Linux Bridging setup. All the devices connecting to the
+cluser (Wifi AP, Bluetooth or derectly through the internal
+switch would will be in the same IP network).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
       <link>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
       <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
@@ -41,6 +66,40 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
       
       <guid>/pi_cluster/applications/children/grafana/</guid>
       <description>&lt;p&gt;Install Grafana on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DPDK &amp; FD.io</title>
+      <link>/nfv/golang/children/dpdk/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/golang/children/dpdk/</guid>
+      <description>&lt;p&gt;DPDK and FD.io are providing some kind of support for ARM.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OVS</title>
+      <link>/nfv/ovs/children/ovs/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/ovs/children/ovs/</guid>
+      <description>&lt;p&gt;The second goal is to replace Linux Bridging with OVS.
+The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic from &amp;ldquo;tenant/5g traffic.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenDayLight</title>
+      <link>/nfv/ovs/children/odl/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/ovs/children/odl/</guid>
+      <description>&lt;p&gt;The third is to implement SDN/Network Slicing using ODL and controlling OVS&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -75,6 +134,20 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
       
       <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
       <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rebuild Calico for ARM32V7</title>
+      <link>/nfv/golang/children/calico/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/golang/children/calico/</guid>
+      <description>&lt;p&gt;Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI.
+The attempt here is to cross-compile the calico containers and use them on the PI cluster.
+Since calico&amp;rsquo;s role is mainly to setup ip table to get Kubernetes POD-POD communication established,
+the likelyhood of being able to reuse some of calico go for a VNF are really slim.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -228,18 +301,6 @@ is often the case with t&lt;/p&gt;
 the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
 deployed in your Kubernetes cluster. The goal here is to leverage Notary
 and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Rebuild Calico for AMD64 ad ARM32V7</title>
-      <link>/nfv/advanced/children/2018-07-17-a/</link>
-      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/nfv/advanced/children/2018-07-17-a/</guid>
-      <description>&lt;p&gt;Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI.
-The attempt here is to cross-compile the calico containers and use them on the PI cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
