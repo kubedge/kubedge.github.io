@@ -12,19 +12,19 @@
     <title>Installing Kubernetes Dashboard :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1541366704" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541366704" rel="stylesheet">
-    <link href="/css/hybrid.css?1541366704" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541366704" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541366704" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541366704" rel="stylesheet">
-    <link href="/css/theme.css?1541366704" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541366704" rel="stylesheet">
+    <link href="/css/nucleus.css?1541369176" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541369176" rel="stylesheet">
+    <link href="/css/hybrid.css?1541369176" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541369176" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541369176" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541369176" rel="stylesheet">
+    <link href="/css/theme.css?1541369176" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541369176" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1541366704" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1541369176" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541366704"></script>
+    <script src="/js/jquery-2.x.min.js?1541369176"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541366704"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541366704"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1541369176"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541369176"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541366704"></script>
+<script type="text/javascript" src="/js/search.js?1541369176"></script>
 
     
   </div>
@@ -1135,6 +1135,25 @@
  
   
     
+      <li data-nav-id="/pi_cluster/applications/children/prometheus/" title="Installing Prometheus" class="dd-item ">
+        <a href="/pi_cluster/applications/children/prometheus/">
+        Prometheus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
       <li data-nav-id="/pi_cluster/applications/children/grafana/" title="Installing Grafana" class="dd-item ">
         <a href="/pi_cluster/applications/children/grafana/">
         Grafana
@@ -2044,8 +2063,14 @@
 <li>
 <ul>
 <li><a href="#key-aspects">Key Aspects</a></li>
-<li><a href="#deploy">Deploy</a></li>
+<li><a href="#deploy-using-kubectl">Deploy Using kubectl</a></li>
+<li><a href="#deploy-using-helm">Deploy Using helm</a>
+<ul>
+<li><a href="#direct-installation-from-the-repo">Direct installation from the repo</a></li>
+<li><a href="#two-steps-installation-from-local">Two steps installation from local</a></li>
+</ul></li>
 <li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#source-code">Source Code</a></li>
 <li><a href="#reference-links">Reference Links</a></li>
 </ul></li>
 </ul>
@@ -2071,6 +2096,8 @@
 
 <p></p>
 
+<p><img src="/images/kubernetes/cluster2_overview.png" alt="" /></p>
+
 <h2 id="key-aspects">Key Aspects</h2>
 
 <ul>
@@ -2078,17 +2105,56 @@
 <li>Access the dashboard for a web browser</li>
 </ul>
 
-<h2 id="deploy">Deploy</h2>
+<h2 id="deploy-using-kubectl">Deploy Using kubectl</h2>
 
-<div class="notices note" ><p>WIP</p>
+<pre><code class="language-bash">cd $KUBE_RPI_GITREPO_LOCATION/kube-deployment/dashboard
+kubectl apply -f kubernetes-dashboard-arm.yaml
+</code></pre>
+
+<h2 id="deploy-using-helm">Deploy Using helm</h2>
+
+<div class="notices note" ><p>Helm Chart is still work in progress</p>
 </div>
 
+
+<pre><code class="language-bash">helm repo add kubedge2 &quot;https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge2&quot;
+helm repo update
+</code></pre>
+
+<h3 id="direct-installation-from-the-repo">Direct installation from the repo</h3>
+
+<p>If you fill lucky:</p>
+
+<pre><code class="language-bash">helm install kubedge2/kubernetes-dashboard-arm32v7 --name kubernetes-dashboard 
+</code></pre>
+
+<h3 id="two-steps-installation-from-local">Two steps installation from local</h3>
+
+<p>If you want to better understand the setup:</p>
+
+<pre><code class="language-bash">cd $MY_LOCAL_HELM_CHARTS
+helm fetch kubedge2/kubernetes-dashboard-arm32v7
+tar xvf kubernetes-dashboard-arm32v7-0.7.5.tgz
+cd kubernetes-dashboard-arm32v7/
+helm install . --name kubernetes-dashboard 
+
+</code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
 
-<div class="notices note" ><p>WIP</p>
+<div class="notices note" ><p>Still need to debug the Kubernetes Helm Chart.</p>
 </div>
 
+
+<p><img src="/images/kubernetes/cluster2_volumes.png" alt="" /></p>
+
+<h2 id="source-code">Source Code</h2>
+
+<p>The chart is available under:</p>
+
+<ul>
+<li><a href="https://github.com/kubedge/kube-rpi/tree/master/charts/kubernetes-dashboard-arm32v7">kubernetes-dashboard</a></li>
+</ul>
 
 <h2 id="reference-links">Reference Links</h2>
 
@@ -2904,6 +2970,22 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -3436,7 +3518,7 @@
             <a class="nav nav-prev" href="/pi_cluster/applications/" title="Applications"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/pi_cluster/applications/children/grafana/" title="Installing Grafana" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/pi_cluster/applications/children/prometheus/" title="Installing Prometheus" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -3445,20 +3527,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541366704"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541366704"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541366704"></script>
-    <script src="/js/jquery.sticky.js?1541366704"></script>
-    <script src="/js/featherlight.min.js?1541366704"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541366704"></script>
-    <script src="/js/highlight.pack.js?1541366704"></script>
+    <script src="/js/clipboard.min.js?1541369176"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541369176"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541369176"></script>
+    <script src="/js/jquery.sticky.js?1541369176"></script>
+    <script src="/js/featherlight.min.js?1541369176"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541369176"></script>
+    <script src="/js/highlight.pack.js?1541369176"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541366704"></script>
-    <script src="/js/learn.js?1541366704"></script>
-    <script src="/js/hugo-learn.js?1541366704"></script>
+    <script src="/js/modernizr.custom.71422.js?1541369176"></script>
+    <script src="/js/learn.js?1541369176"></script>
+    <script src="/js/hugo-learn.js?1541369176"></script>
 
-    <link href="/mermaid/mermaid.css?1541366704" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541366704"></script>
+    <link href="/mermaid/mermaid.css?1541369176" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541369176"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
