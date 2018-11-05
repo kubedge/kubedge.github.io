@@ -6,10 +6,19 @@
     <description>Recent content in Tags on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>5gc</title>
+      <link>/tags/5gc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/5gc/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ODL</title>
@@ -89,6 +98,24 @@
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elte</title>
+      <link>/tags/elte/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/elte/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>epc</title>
+      <link>/tags/epc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/epc/</guid>
       <description></description>
     </item>
     
@@ -206,6 +233,24 @@
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/linux-bridging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lte</title>
+      <link>/tags/lte/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/lte/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nr</title>
+      <link>/tags/nr/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/nr/</guid>
       <description></description>
     </item>
     

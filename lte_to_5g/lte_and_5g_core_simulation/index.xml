@@ -6,9 +6,32 @@
     <description>Recent content in EPC and 5GC on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/lte_to_5g/lte_and_5g_core_simulation/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Installing Kubedge EPC</title>
+      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</guid>
+      <description>&lt;p&gt;Install Kubedge EPC Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge 5GC</title>
+      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
+      <description>&lt;p&gt;Install Kubedge 5GC Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
   </channel>
 </rss>

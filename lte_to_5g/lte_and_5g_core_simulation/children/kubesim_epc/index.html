@@ -1,0 +1,3788 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.49" />
+    <meta name="description" content="KUBEDGE">
+<meta name="author" content="Kubedge Team">
+
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
+<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
+    <title>Installing Kubedge EPC :: KUBEDGE&#39;s Blog</title>
+
+    
+    <link href="/css/nucleus.css?1541389988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541389988" rel="stylesheet">
+    <link href="/css/hybrid.css?1541389988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541389988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541389988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541389988" rel="stylesheet">
+    <link href="/css/theme.css?1541389988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541389988" rel="stylesheet">
+    
+      <link href="/css/theme-kubedge.css?1541389988" rel="stylesheet">
+    
+
+    <script src="/js/jquery-2.x.min.js?1541389988"></script>
+
+    <style type="text/css">
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="">
+<svg id="grav-logo" width="100%" height="100%" viewBox="110 125 225 125" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" >
+<style type="text/css">
+	.st0{fill:#1B75BC;stroke:#1B75BC;stroke-width:4;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;stroke:#1B75BC;stroke-width:0.25;stroke-miterlimit:10;}
+</style>
+<g>
+	<path class="st1" d="M120.78,221.22c0,1.66-0.04,1.93,1.5,2.42c0.57,0.18,0.97,0.58,0.97,1.21c0,1.3-1.46,1.39-1.63,1.39h-12.5
+		c-0.18,0-1.63-0.09-1.63-1.39c0-0.63,0.4-1.03,0.97-1.21c1.55-0.49,1.5-0.76,1.5-2.42V197.7c0-1.66,0.04-1.93-1.5-2.42
+		c-0.57-0.18-0.97-0.58-0.97-1.21c0-1.3,1.46-1.39,1.63-1.39h12.5c0.18,0,1.63,0.09,1.63,1.39c0,0.63-0.4,1.03-0.97,1.21
+		c-1.55,0.49-1.5,0.76-1.5,2.42V221.22z M137.44,221.36c0.4,0.99,0.53,1.75,1.55,2.24c0.66,0.31,1.06,0.58,1.06,1.44
+		c0,1.3-1.46,1.21-2.34,1.21h-11.09c-1.02,0-2.34,0-2.34-1.39c0-1.48,1.81-1.21,1.81-2.2c0-0.36-0.22-1.03-0.35-1.35l-2.74-8.35
+		c-0.27-0.85-0.57-1.8-0.57-2.74s0.49-1.53,1.02-2.29l5.13-7.41c0.62-0.85,1.15-1.75,1.15-2.83c0-1.21-0.62-1.84-1.68-2.29
+		c-0.71-0.31-1.37-0.49-1.37-1.39c0-1.39,1.24-1.35,2.16-1.35h7.55c1.06,0,2.34,0.04,2.34,1.48c0,1.03-0.84,1.35-1.63,1.66
+		c-3.05,1.17-4.06,2.87-5.92,5.43l-0.84,1.17L137.44,221.36z"/>
+	<path class="st1" d="M159.53,226.92c-3.49,0-6.19-0.05-9.23-1.75c-3.98-2.24-4.51-3.95-4.51-6.2V197.7c0-1.66,0.04-1.93-1.5-2.42
+		c-0.57-0.18-0.97-0.58-0.97-1.21c0-1.3,1.46-1.39,1.63-1.39h12.5c0.18,0,1.63,0.09,1.63,1.39c0,0.63-0.4,1.03-0.97,1.21
+		c-1.55,0.49-1.5,0.76-1.5,2.42v21.59c0,0.45-0.4,4,2.92,4.98V226.92z M167.44,199.76c-0.71-5.61-3.53-3.86-3.53-5.79
+		c0-1.39,1.81-1.3,2.3-1.3h5.04c0.49,0,2.3-0.09,2.3,1.3c0,1.93-2.83,0.18-3.53,5.79v16.93c-0.35,7.41-5.61,10.1-8.48,10.15v-2.65
+		c4.06-1.26,5.66-3.59,5.92-7.59V199.76z"/>
+	<path class="st1" d="M189.7,226.25h-11.88c-0.31,0-1.41-0.09-1.41-1.39c0-0.63,0.4-1.03,0.97-1.21c1.55-0.49,1.5-0.76,1.5-2.42
+		V197.7c0-1.66,0.04-1.93-1.5-2.42c-0.57-0.18-0.97-0.58-0.97-1.21c0-1.3,1.1-1.39,1.41-1.39h11.88V226.25z M191.69,192.67h1.37
+		c2.78,0,5.61,0.04,8.17,1.3c2.74,1.39,4.33,3.73,4.33,6.91c0,4.94-4.06,7.23-8.35,7.9v0.09c4.9,0.81,8.79,3.01,8.79,8.62
+		c0,3.19-1.37,5.7-4.15,7.27c-2.83,1.62-5.61,1.48-8.75,1.48h-1.41v-2.6c2.96-0.14,3.31-1.84,3.31-3.46v-5.79
+		c0-2.07-0.49-4-3.31-4.22v-2.6c3.23-0.27,3.31-2.2,3.31-3.86v-4.49c0-1.89-0.66-3.68-3.31-3.95V192.67z"/>
+	<path class="st1" d="M211.4,192.67h11.66v33.58H211.4c-0.18,0-1.63-0.09-1.63-1.39c0-0.63,0.4-1.03,0.97-1.21
+		c1.55-0.49,1.5-0.76,1.5-2.42V197.7c0-1.66,0.04-1.93-1.5-2.42c-0.57-0.18-0.97-0.58-0.97-1.21
+		C209.76,192.76,211.22,192.67,211.4,192.67z M225.05,192.67h9.85v9.11c0,0.22-0.04,1.08-1.37,1.08c-0.75,0-0.97-0.45-1.19-1.12
+		c-1.15-3.64-3.4-5.84-7.29-6.46V192.67z M225.05,207.66c1.86-0.49,2.69-2.24,3.09-3.95c0.22-0.76,0.49-1.48,1.41-1.48
+		c1.37,0,1.15,1.62,1.15,1.98v9.7c0,0.36,0.22,1.98-1.15,1.98c-0.93,0-1.19-0.72-1.41-1.48c-0.4-1.71-1.24-3.46-3.09-3.95V207.66z
+		 M225.05,223.65c3.58-0.45,6.32-2.92,7.51-6.51c0.31-0.67,0.57-1.39,1.37-1.39c1.41,0,1.28,1.35,1.28,1.53v8.98h-10.16V223.65z"/>
+	<path class="st1" d="M251.65,226.25h-11.22c-0.97,0-2.08-0.09-2.08-1.39c0-0.63,0.4-1.03,0.97-1.21c1.55-0.49,1.5-0.76,1.5-2.42
+		V197.7c0-0.67,0.09-1.89-0.75-2.15c-0.88-0.31-1.72-0.45-1.72-1.57c0-1.17,1.1-1.3,1.99-1.3h11.31V226.25z M253.63,192.67
+		c7.51-0.09,13.78,5.21,14.31,16.79c0.49,10.55-6.98,16.79-14.31,16.79v-2.6c2.69-0.36,2.83-2.92,2.83-4.62V199.9
+		c0-1.71-0.13-4.26-2.83-4.62V192.67z"/>
+	<path class="st1" d="M281.78,220.19c0,1.62,0.35,3.5,2.12,4.13v2.6c-7.69-0.23-13.61-7.86-13.61-17.46
+		c0-9.65,5.92-17.28,13.61-17.46v2.6c-1.77,0.63-2.12,2.47-2.12,4.08V220.19z M285.89,224.32c1.94-0.58,2.03-2.11,2.03-2.87v-8.08
+		c0-0.99-0.04-1.21-1.81-1.53c-0.71-0.18-1.15-0.58-1.15-1.35c0-1.21,1.55-1.26,1.77-1.26h10.56c0.22,0,1.55-0.13,1.55,1.35
+		c0,0.76-0.4,1.08-0.8,1.35c-0.93,0.58-0.79,1.12-0.79,1.35v8.89c-3.09,2.83-7.16,4.67-11.35,4.76V224.32z M285.89,192
+		c4.64,0.4,7.02,1.66,7.51,1.66c1.33,0,1.19-1.66,2.61-1.66c1.33,0,1.24,1.21,1.24,1.44v10.01c0,0.22,0,1.62-1.37,1.62
+		c-1.15,0-1.46-0.85-1.68-1.8c-1.37-5.75-4.73-8.49-8.31-8.66V192z"/>
+	<path class="st1" d="M303.29,192.67h11.66v33.58h-11.66c-0.18,0-1.63-0.09-1.63-1.39c0-0.63,0.4-1.03,0.97-1.21
+		c1.55-0.49,1.5-0.76,1.5-2.42V197.7c0-1.66,0.04-1.93-1.5-2.42c-0.57-0.18-0.97-0.58-0.97-1.21
+		C301.66,192.76,303.12,192.67,303.29,192.67z M316.95,192.67h9.85v9.11c0,0.22-0.04,1.08-1.37,1.08c-0.75,0-0.97-0.45-1.19-1.12
+		c-1.15-3.64-3.4-5.84-7.29-6.46V192.67z M316.95,207.66c1.86-0.49,2.69-2.24,3.09-3.95c0.22-0.76,0.49-1.48,1.41-1.48
+		c1.37,0,1.15,1.62,1.15,1.98v9.7c0,0.36,0.22,1.98-1.15,1.98c-0.93,0-1.19-0.72-1.41-1.48c-0.4-1.71-1.24-3.46-3.09-3.95V207.66z
+		 M316.95,223.65c3.58-0.45,6.32-2.92,7.51-6.51c0.31-0.67,0.57-1.39,1.37-1.39c1.41,0,1.28,1.35,1.28,1.53v8.98h-10.16V223.65z"/>
+</g>
+</svg>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="text" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-close"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1541389988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541389988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1541389988"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/post/" title="Latest News" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/post/">
+          Latest News
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/" title="DevOps" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/">
+          <b>1. </b>DevOps
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/git_gerrit/" title="Git/Gerrit" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/git_gerrit/">
+          <b>1.1. </b>Git &amp; Gerrit
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/git_gerrit/children/setup_git/" title="Setting up GitHub" class="dd-item ">
+        <a href="/devops/git_gerrit/children/setup_git/">
+        GitHub
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/git_gerrit/children/setup_gerrit/" title="Setting up GerritHub" class="dd-item ">
+        <a href="/devops/git_gerrit/children/setup_gerrit/">
+        GerritHub
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/cicd/" title="CI/CD" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/cicd/">
+          <b>1.2. </b>CI/CD
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/cicd/children/setup_dockerhub/" title="Setting up DockerHub" class="dd-item ">
+        <a href="/devops/cicd/children/setup_dockerhub/">
+        DockerHub
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/cicd/children/setup_travis-ci/" title="Setting up Travis-CI" class="dd-item ">
+        <a href="/devops/cicd/children/setup_travis-ci/">
+        Travis-CI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/hugo_githubpages/" title="Hugo/GitHubPages" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/hugo_githubpages/">
+          <b>1.3. </b>Hugo &amp; GitHub pages
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/kubedgesdk/" title="Kubedge SDK" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/kubedgesdk/">
+          <b>1.4. </b>Kubedge SDK
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/kubedgesdk/children/2018-07-15-a/" title="Recompile Kubernetes components for Raspberry PI" class="dd-item ">
+        <a href="/devops/kubedgesdk/children/2018-07-15-a/">
+        Kubernetes cross-compilation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/kubedgesdk/children/2018-06-24-a/" title="docker.io versus docker-ce" class="dd-item ">
+        <a href="/devops/kubedgesdk/children/2018-06-24-a/">
+        Docker
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/kubedgesdk/children/2018-06-21-a/" title="Setup SingleNode Kubernetes Cluster using kubeadm" class="dd-item ">
+        <a href="/devops/kubedgesdk/children/2018-06-21-a/">
+        SingleNode Kubernetes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/microservices/" title="MicroServices" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/microservices/">
+          <b>1.5. </b>MicroServices
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/microservices/children/2018-07-01-a/" title="Python" class="dd-item ">
+        <a href="/devops/microservices/children/2018-07-01-a/">
+        Python
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/microservices/children/2018-06-29-a/" title="Creating simple GO server container" class="dd-item ">
+        <a href="/devops/microservices/children/2018-06-29-a/">
+        GO
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/microservices/children/2018-06-28-a/" title="Creating simple Java 10 server container" class="dd-item ">
+        <a href="/devops/microservices/children/2018-06-28-a/">
+        Java 10
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/microservices/children/2018-06-22-a/" title="Setup your GOLANG environment" class="dd-item ">
+        <a href="/devops/microservices/children/2018-06-22-a/">
+        GOLANG env
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/devops/advanced/" title="Advanced &amp; WIP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/devops/advanced/">
+          <b>1.6. </b>Advanced &amp; WIP
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/advanced/children/2018-07-16-a/" title="Rebuild Hyperkube images" class="dd-item ">
+        <a href="/devops/advanced/children/2018-07-16-a/">
+        Hyperkube images
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/advanced/children/2018-06-26-a/" title="Zuul" class="dd-item ">
+        <a href="/devops/advanced/children/2018-06-26-a/">
+        Zuul
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/advanced/children/2018-06-25-a/" title="Setup github/gerrit behind a corporate http proxy" class="dd-item ">
+        <a href="/devops/advanced/children/2018-06-25-a/">
+        Corporate Proxy
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/devops/advanced/children/2018-06-23-a/" title="Setup multiple GitHub account on a single machine" class="dd-item ">
+        <a href="/devops/advanced/children/2018-06-23-a/">
+        Multiple GitHub accounts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/pi_cluster/" title="RPI Cluster" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pi_cluster/">
+          <b>2. </b>RPI Cluster
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pi_cluster/os_installation/" title="Operating System" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pi_cluster/os_installation/">
+          <b>2.1. </b>Operating System
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/cluster_assembly/" title="Raspberry PI cluster Assembly" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/cluster_assembly/">
+        HW Assembly
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/master_pi/" title="OS Installation on Master PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/master_pi/">
+        OS on Master PI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/setup_wpa_applicant/" title="Setting up WPA supplicant on Master PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/setup_wpa_applicant/">
+        WPA supplicant
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/setup_dhcpd/" title="Setting up DHCPD on master PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/setup_dhcpd/">
+        DHCPD &amp; NAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/worker_pi/" title="OS Installation on Worker PI" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/worker_pi/">
+        OS on Worker PI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/ansible/" title="Using Ansible to manage Raspberry PI cluster" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/ansible/">
+        Ansible
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/os_installation/children/dongle/" title="Create a Rapsberry PI Rescue Dongle" class="dd-item ">
+        <a href="/pi_cluster/os_installation/children/dongle/">
+        Rescue Dongle
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pi_cluster/docker_kubernetes/" title="Kubernetes" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pi_cluster/docker_kubernetes/">
+          <b>2.2. </b>Kubernetes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/docker_kubernetes/children/2018-07-03-a/" title="Creating a Raspberry 3 B&#43; Kubernetes Cluster" class="dd-item ">
+        <a href="/pi_cluster/docker_kubernetes/children/2018-07-03-a/">
+        Installation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/docker_kubernetes/children/2018-07-08-a/" title="Add Persistency Volume to PI Cluster" class="dd-item ">
+        <a href="/pi_cluster/docker_kubernetes/children/2018-07-08-a/">
+        Persistency Volume
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/docker_kubernetes/children/2018-07-14-a/" title="Deploy Flannel in PI Cluster" class="dd-item ">
+        <a href="/pi_cluster/docker_kubernetes/children/2018-07-14-a/">
+        Flannel
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/docker_kubernetes/children/2018-06-19-a/" title="Add Raspberry PI node to Kubernetes Cluster in 10 min" class="dd-item ">
+        <a href="/pi_cluster/docker_kubernetes/children/2018-06-19-a/">
+        Add a node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/docker_kubernetes/children/2018-07-12-a/" title="Enable docker Remote API" class="dd-item ">
+        <a href="/pi_cluster/docker_kubernetes/children/2018-07-12-a/">
+        Docker Remote API
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pi_cluster/maintenance/" title="Helm &amp; Maintenance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pi_cluster/maintenance/">
+          <b>2.3. </b>Helm &amp; Maintenance
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/maintenance/children/2018-07-13-a/" title="Deply Helm and Tiller on PI Cluster" class="dd-item ">
+        <a href="/pi_cluster/maintenance/children/2018-07-13-a/">
+        Helm and Tiller
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/maintenance/children/2018-07-11-a/" title="Use github repo as helm chart repository" class="dd-item ">
+        <a href="/pi_cluster/maintenance/children/2018-07-11-a/">
+        Helm charts repo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/maintenance/children/2018-09-28-a/" title="Upgrade RPI Kubernetes cluster to 1.12" class="dd-item ">
+        <a href="/pi_cluster/maintenance/children/2018-09-28-a/">
+        Upgrade to K8s 1.12
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/maintenance/children/2018-07-02-a/" title="Compile and Test SONOBUOY" class="dd-item ">
+        <a href="/pi_cluster/maintenance/children/2018-07-02-a/">
+        Sonobuoy
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pi_cluster/applications/" title="Applications" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pi_cluster/applications/">
+          <b>2.4. </b>Applications
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/applications/children/kubeplay/" title="Installing Kubedge Kubeplay" class="dd-item ">
+        <a href="/pi_cluster/applications/children/kubeplay/">
+        Kubeplay
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/applications/children/kubernetes_dashboard/" title="Installing Kubernetes Dashboard" class="dd-item ">
+        <a href="/pi_cluster/applications/children/kubernetes_dashboard/">
+        Dashboard
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/applications/children/kubesim_blinkt/" title="Installing Kubedge Blinkt" class="dd-item ">
+        <a href="/pi_cluster/applications/children/kubesim_blinkt/">
+        Blinkt
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/applications/children/prometheus/" title="Installing Prometheus" class="dd-item ">
+        <a href="/pi_cluster/applications/children/prometheus/">
+        Prometheus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/applications/children/grafana/" title="Installing Grafana" class="dd-item ">
+        <a href="/pi_cluster/applications/children/grafana/">
+        Grafana
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/applications/children/kibana/" title="Installing Kibana" class="dd-item ">
+        <a href="/pi_cluster/applications/children/kibana/">
+        Kibana &amp; fluentd
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/pi_cluster/advanced/" title="Advanced &amp; WIP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/pi_cluster/advanced/">
+          <b>2.5. </b>Advanced &amp; WIP
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/advanced/children/2018-06-30-a/" title="Update Kubernetes to 1.11 on Ubuntu" class="dd-item ">
+        <a href="/pi_cluster/advanced/children/2018-06-30-a/">
+        Upgrade to K8s 1.11
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/advanced/children/2018-07-30-a/" title="Build and Deploy Kubernetes test-infra" class="dd-item ">
+        <a href="/pi_cluster/advanced/children/2018-07-30-a/">
+        Test-Infra
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/advanced/children/2018-08-01-a/" title="Build and Deploy Kubernetes Hashicorp Vault" class="dd-item ">
+        <a href="/pi_cluster/advanced/children/2018-08-01-a/">
+        Hashicorp Vault
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/advanced/children/2018-07-31-a/" title="Build and Deploy Kubernetes Istio" class="dd-item ">
+        <a href="/pi_cluster/advanced/children/2018-07-31-a/">
+        Istio
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/advanced/children/2018-07-29-a/" title="Build and Deploy Kubernetes Kustomize" class="dd-item ">
+        <a href="/pi_cluster/advanced/children/2018-07-29-a/">
+        Kustomize
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/pi_cluster/advanced/children/2018-07-18-a/" title="Compile and Test Portieris" class="dd-item ">
+        <a href="/pi_cluster/advanced/children/2018-07-18-a/">
+        Portieris
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/" title="LTE to 5G Simulations" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/lte_to_5g/">
+          <b>3. </b>LTE to 5G Simulations
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/rpi_wifi_ap/" title="WIFI AP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/lte_to_5g/rpi_wifi_ap/">
+          <b>3.1. </b>WIFI AP
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/" title="Setting up HOSTAPD on 5G NR node" class="dd-item ">
+        <a href="/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/">
+        HOSTAPD
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/" title="Setting up DHCPD on 5G NR Node" class="dd-item ">
+        <a href="/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/">
+        DHCPD &amp; NAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/rpi_bluetooth_pan/" title="Bluetooth PAN" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/lte_to_5g/rpi_bluetooth_pan/">
+          <b>3.2. </b>Bluetooth PAN
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/" title="Setting up PAN" class="dd-item ">
+        <a href="/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/">
+        PAN
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/" title="Setting up DHCPD on LTE &amp; eLTE Node" class="dd-item ">
+        <a href="/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/">
+        DHCPD &amp; NAT
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/lte_and_5g_core_simulation/" title="EPC and 5GC" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="/lte_to_5g/lte_and_5g_core_simulation/">
+          <b>3.3. </b>EPC and 5GC
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/" title="Installing Kubedge EPC" class="dd-item active">
+        <a href="/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/">
+        EPC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/" title="Installing Kubedge 5GC" class="dd-item ">
+        <a href="/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/">
+        5GC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/lte_and_5g_ran_simulation/" title="LTE, eLTE and 5G RAN" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/lte_to_5g/lte_and_5g_ran_simulation/">
+          <b>3.4. </b>LTE, eLTE and 5G RAN
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/" title="Installing Kubedge LTE" class="dd-item ">
+        <a href="/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/">
+        LTE
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/" title="Installing Kubedge eLTE" class="dd-item ">
+        <a href="/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/">
+        eLTE
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/" title="Installing Kubedge 5G NR" class="dd-item ">
+        <a href="/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/">
+        5G NR
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/nsa_and_sa/" title="NSA vs SA. Option 3" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/lte_to_5g/nsa_and_sa/">
+          <b>3.5. </b>NSA vs SA. Option 3
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/lte_to_5g/advanced/" title="Advanced &amp; WIP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/lte_to_5g/advanced/">
+          <b>3.6. </b>Advanced &amp; WIP
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/nfv/" title="NFV/SDN/Network Slicing" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nfv/">
+          <b>4. </b>NFV/SDN/Network Slicing
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/nfv/ovs/" title="OVS &amp; ODL" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nfv/ovs/">
+          <b>4.1. </b>OVS &amp; ODL
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/ovs/children/linux_bridging/" title="Linux Bridging" class="dd-item ">
+        <a href="/nfv/ovs/children/linux_bridging/">
+        Linux Bridging
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/ovs/children/ovs/" title="OVS" class="dd-item ">
+        <a href="/nfv/ovs/children/ovs/">
+        OVS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/ovs/children/odl/" title="OpenDayLight" class="dd-item ">
+        <a href="/nfv/ovs/children/odl/">
+        OpenDayLight
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/nfv/golang/" title="GO Networking" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nfv/golang/">
+          <b>4.2. </b>GO Networking
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/golang/children/golang/" title="GOLANG" class="dd-item ">
+        <a href="/nfv/golang/children/golang/">
+        GOLANG
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/golang/children/dpdk/" title="DPDK &amp; FD.io" class="dd-item ">
+        <a href="/nfv/golang/children/dpdk/">
+        DPDK &amp; FD.io
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/golang/children/calico/" title="Rebuild Calico for ARM32V7" class="dd-item ">
+        <a href="/nfv/golang/children/calico/">
+        Calico
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/nfv/akraino/" title="Akraino" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nfv/akraino/">
+          <b>4.3. </b>Akraino
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/nfv/opnfv/" title="OPNFV" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nfv/opnfv/">
+          <b>4.4. </b>OPNFV
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/nfv/advanced/" title="Advanced &amp; WIP" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/nfv/advanced/">
+          <b>4.6. </b>Advanced &amp; WIP
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/nfv/advanced/children/onap/" title="ONAP" class="dd-item ">
+        <a href="/nfv/advanced/children/onap/">
+        ONAP
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/about/" title="About KUBEDGE" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/about/">
+          About KUBEDGE
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/kubedge/blog/tree/master/content/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Kubedge</a> > <a href='/lte_to_5g/'>LTE to 5G Simulations</a> > <a href='/lte_to_5g/lte_and_5g_core_simulation/'>EPC and 5GC</a> > Installing Kubedge EPC
+          
+         
+          
+         
+          
+         
+          
+           
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#key-aspects">Key Aspects</a></li>
+<li><a href="#deploy-using-helm">Deploy Using helm</a></li>
+<li><a href="#apply-the-labels-to-the-nodes">Apply the labels to the nodes</a>
+<ul>
+<li><a href="#direct-installation-from-the-repo">Direct installation from the repo</a></li>
+<li><a href="#two-steps-installation-from-local">Two steps installation from local</a></li>
+</ul></li>
+<li><a href="#source-code">Source Code</a></li>
+<li><a href="#cleanup">Cleanup</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+<li><a href="#reference-links">Reference Links</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+
+        
+        <div id="body-inner">
+          
+            <h1>Installing Kubedge EPC</h1>
+          
+
+        
+
+
+<p>Install Kubedge EPC Application on the PI Cluster</p>
+
+<p></p>
+
+<h2 id="key-aspects">Key Aspects</h2>
+
+<ul>
+<li>Install EPC</li>
+<li>Test access to EPC</li>
+</ul>
+
+<h2 id="deploy-using-helm">Deploy Using helm</h2>
+
+<pre><code class="language-bash">helm repo add hack4easy &quot;https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/hack4easy&quot;
+helm repo update
+</code></pre>
+
+<h2 id="apply-the-labels-to-the-nodes">Apply the labels to the nodes</h2>
+
+<p>Ensure the right labels have been applied to the nodes where EPC is installed</p>
+
+<p>For instance:</p>
+
+<pre><code class="language-bash">kubectl label nodes kubemaster-pi kubedgeNodeType=lte-core 
+</code></pre>
+
+<h3 id="direct-installation-from-the-repo">Direct installation from the repo</h3>
+
+<p>If you feel lucky:</p>
+
+<pre><code class="language-bash">helm install hack4easy/kubesim-epc-arm32v7 --name sim-epc 
+</code></pre>
+
+<h3 id="two-steps-installation-from-local">Two steps installation from local</h3>
+
+<p>If you want to better understand the setup:</p>
+
+<pre><code class="language-bash">cd $MY_LOCAL_HELM_CHARTS
+helm fetch hack4easy/kubesim-epc-arm32v7
+tar xvf kubesim-epc-arm32v7-0.1.0.tgz
+cd kubesim-epc-arm32v7/
+helm install . --name sim-epc 
+</code></pre>
+
+<h2 id="source-code">Source Code</h2>
+
+<p>The images creation scripts are availble under:</p>
+
+<ul>
+<li><a href="https://github.com/kubedge/kubesim_epc">Repo</a></li>
+<li><a href="https://github.com/kubedge/kubesim_epc/tree/arm32v7/kubesim_epc">ApplicationCode</a></li>
+<li><a href="https://github.com/kubedge/kubesim_epc/tree/arm32v7/images/kubesim_epc">Dockerfile</a></li>
+<li><a href="https://github.com/kubedge/kubesim_epc/tree/arm32v7/charts/kubesim-epc-arm32v7">Chart</a></li>
+</ul>
+
+<h2 id="cleanup">Cleanup</h2>
+
+<pre><code class="language-bash">$ helm delete --purge sim-epc
+
+release &quot;epc&quot; deleted
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<div class="notices note" ><p>WIP</p>
+</div>
+
+
+<h2 id="reference-links">Reference Links</h2>
+
+<ul>
+<li><a href="https://youtu.be/ZyTLMnzehyU?t=1798">Video1</a></li>
+<li><a href="https://www.youtube.com/watch?v=a7MX6ED2zVM">Video2</a></li>
+</ul>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+        
+            <a class="nav nav-prev" href="/lte_to_5g/lte_and_5g_core_simulation/" title="EPC and 5GC"> <i class="fas fa-chevron-left"></i></a>
+        
+        
+            <a class="nav nav-next" href="/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/" title="Installing Kubedge 5GC" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+        
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1541389988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541389988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541389988"></script>
+    <script src="/js/jquery.sticky.js?1541389988"></script>
+    <script src="/js/featherlight.min.js?1541389988"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541389988"></script>
+    <script src="/js/highlight.pack.js?1541389988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom.71422.js?1541389988"></script>
+    <script src="/js/learn.js?1541389988"></script>
+    <script src="/js/hugo-learn.js?1541389988"></script>
+
+    <link href="/mermaid/mermaid.css?1541389988" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541389988"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

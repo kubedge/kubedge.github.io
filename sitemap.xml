@@ -71,6 +71,16 @@
   </url>
   
   <url>
+    <loc>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/applications/children/kubernetes_dashboard/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -145,7 +155,17 @@
   </url>
   
   <url>
+    <loc>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/applications/children/kubesim_blinkt/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -180,6 +200,7 @@
   
   <url>
     <loc>/lte_to_5g/lte_and_5g_core_simulation/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -198,6 +219,11 @@
   <url>
     <loc>/pi_cluster/maintenance/children/2018-09-28-a/</loc>
     <lastmod>2018-09-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -237,6 +263,7 @@
   
   <url>
     <loc>/lte_to_5g/lte_and_5g_ran_simulation/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -403,6 +430,12 @@
   </url>
   
   <url>
+    <loc>/tags/5gc/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
@@ -415,7 +448,7 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -464,6 +497,18 @@
   <url>
     <loc>/tags/docker/</loc>
     <lastmod>2018-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/elte/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/epc/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -542,6 +587,18 @@
   <url>
     <loc>/tags/linux-bridging/</loc>
     <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/lte/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/nr/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
