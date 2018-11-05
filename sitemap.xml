@@ -12,7 +12,7 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/applications/children/kubernetes_dashboard/</loc>
+    <loc>/pi_cluster/applications/children/kubeplay/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -71,12 +71,7 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/applications/children/prometheus/</loc>
-    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/pi_cluster/applications/children/grafana/</loc>
+    <loc>/pi_cluster/applications/children/kubernetes_dashboard/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -150,6 +145,11 @@
   </url>
   
   <url>
+    <loc>/pi_cluster/applications/children/kubesim_blinkt/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -201,7 +201,7 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/applications/children/kubesim_kubeplay/</loc>
+    <loc>/pi_cluster/applications/children/prometheus/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -252,7 +252,7 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/applications/children/kubesim_blinkt/</loc>
+    <loc>/pi_cluster/applications/children/grafana/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -278,6 +278,11 @@
   
   <url>
     <loc>/lte_to_5g/nsa_and_sa/</loc>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/applications/children/kibana/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -459,6 +464,12 @@
   <url>
     <loc>/tags/docker/</loc>
     <lastmod>2018-07-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/fluentd/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -12,12 +12,14 @@
     
     
     <item>
-      <title>Installing Kubernetes Dashboard</title>
-      <link>/pi_cluster/applications/children/kubernetes_dashboard/</link>
+      <title>Installing Kubedge Kubeplay</title>
+      <link>/pi_cluster/applications/children/kubeplay/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubernetes_dashboard/</guid>
-      <description>&lt;p&gt;Install Kubernetes Dashboard on the PI Cluster&lt;/p&gt;
+      <guid>/pi_cluster/applications/children/kubeplay/</guid>
+      <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster. It is a primitiv golang based server
+which get the user to go through the entire DevOps process (to build the docker image) and
+deploy it using Helm on Kubedge.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -75,29 +77,29 @@ switch would will be in the same IP network).&lt;/p&gt;
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/applications/children/grafana/</guid>
-      <description>&lt;p&gt;Install Grafana on the PI Cluster&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Install Grafana on the PI Cluster&lt;/strong&gt;. Grafana helps to plot the data in the system. It is an OSS like tools which helps to manage the kubedge cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Installing Kubedge Blinkt</title>
-      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <title>Installing Kibana</title>
+      <link>/pi_cluster/applications/children/kibana/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
-      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+      <guid>/pi_cluster/applications/children/kibana/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Install Kibana &amp;amp; fluentd on the PI Cluster.&lt;/strong&gt; Kibana is a good maintenance/OSS tools allowing traces and logs analysis.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Installing Prometheus</title>
-      <link>/pi_cluster/applications/children/prometheus/</link>
+      <title>Installing Kubernetes Dashboard</title>
+      <link>/pi_cluster/applications/children/kubernetes_dashboard/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/prometheus/</guid>
-      <description>&lt;p&gt;Install Prometheus on the PI Cluster&lt;/p&gt;
+      <guid>/pi_cluster/applications/children/kubernetes_dashboard/</guid>
+      <description>&lt;p&gt;Install Kubernetes Dashboard on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -170,6 +172,17 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
     </item>
     
     <item>
+      <title>Installing Kubedge Blinkt</title>
+      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
+      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Setting up DHCPD on LTE &amp; eLTE Node</title>
       <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
@@ -178,19 +191,6 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
       <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
 internet through the AP &amp;amp; NAT running on LTE &amp;amp; eLTE simulating PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Setting up DHCPD on master PI</title>
-      <link>/pi_cluster/os_installation/children/setup_dhcpd/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/os_installation/children/setup_dhcpd/</guid>
-      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the slave PI can access the
-internet through the NAT (ETH0-&amp;gt;WLAN0) running on Master PI. This tutorial
-also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -255,12 +255,12 @@ using kubeadm 1.12&lt;/p&gt;
     </item>
     
     <item>
-      <title>Installing Kubedge Kubeplay</title>
-      <link>/pi_cluster/applications/children/kubesim_kubeplay/</link>
+      <title>Installing Prometheus</title>
+      <link>/pi_cluster/applications/children/prometheus/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubesim_kubeplay/</guid>
-      <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster&lt;/p&gt;
+      <guid>/pi_cluster/applications/children/prometheus/</guid>
+      <description>&lt;p&gt;Install Prometheus on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -274,6 +274,19 @@ using kubeadm 1.12&lt;/p&gt;
       <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
 internet through the AP &amp;amp; NAT running on 5G NR simulating PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up DHCPD on master PI</title>
+      <link>/pi_cluster/os_installation/children/setup_dhcpd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/setup_dhcpd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the slave PI can access the
+internet through the NAT (ETH0-&amp;gt;WLAN0) running on Master PI. This tutorial
+also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

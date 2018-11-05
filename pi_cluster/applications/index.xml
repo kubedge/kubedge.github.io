@@ -12,12 +12,36 @@
     
     
     <item>
+      <title>Installing Kubedge Kubeplay</title>
+      <link>/pi_cluster/applications/children/kubeplay/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubeplay/</guid>
+      <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster. It is a primitiv golang based server
+which get the user to go through the entire DevOps process (to build the docker image) and
+deploy it using Helm on Kubedge.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Installing Kubernetes Dashboard</title>
       <link>/pi_cluster/applications/children/kubernetes_dashboard/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/applications/children/kubernetes_dashboard/</guid>
       <description>&lt;p&gt;Install Kubernetes Dashboard on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge Blinkt</title>
+      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
+      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -39,29 +63,18 @@
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/applications/children/grafana/</guid>
-      <description>&lt;p&gt;Install Grafana on the PI Cluster&lt;/p&gt;
+      <description>&lt;p&gt;&lt;strong&gt;Install Grafana on the PI Cluster&lt;/strong&gt;. Grafana helps to plot the data in the system. It is an OSS like tools which helps to manage the kubedge cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Installing Kubedge Kubeplay</title>
-      <link>/pi_cluster/applications/children/kubesim_kubeplay/</link>
+      <title>Installing Kibana</title>
+      <link>/pi_cluster/applications/children/kibana/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubesim_kubeplay/</guid>
-      <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing Kubedge Blinkt</title>
-      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
-      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+      <guid>/pi_cluster/applications/children/kibana/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Install Kibana &amp;amp; fluentd on the PI Cluster.&lt;/strong&gt; Kibana is a good maintenance/OSS tools allowing traces and logs analysis.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
