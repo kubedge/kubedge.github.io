@@ -12,45 +12,12 @@
     
     
     <item>
-      <title>Installing Kubedge 5G NR</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
-      <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing Kubedge 5GC</title>
-      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
-      <description>&lt;p&gt;Install Kubedge 5GC Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Installing Kubedge Blinkt</title>
       <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
       <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing Kubedge EPC</title>
-      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</guid>
-      <description>&lt;p&gt;Install Kubedge EPC Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -69,7 +36,40 @@ deploy it using Helm on Kubedge.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Installing Kubedge LTE</title>
+      <title>Kubedge 5G NR Simulation</title>
+      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
+      <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kubedge 5GC Simulation</title>
+      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
+      <description>&lt;p&gt;Install Kubedge 5GC Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kubedge EPC Simulation</title>
+      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</guid>
+      <description>&lt;p&gt;Install Kubedge EPC Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kubedge LTE Simulation</title>
       <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
@@ -80,7 +80,7 @@ deploy it using Helm on Kubedge.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Installing Kubedge eLTE</title>
+      <title>Kubedge eLTE Simulation</title>
       <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
