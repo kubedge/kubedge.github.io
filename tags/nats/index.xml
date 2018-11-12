@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nats on KUBEDGE&#39;s Blog</title>
+    <link>/tags/nats/</link>
+    <description>Recent content in nats on KUBEDGE&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 11 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/nats/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Installing NATS</title>
+      <link>/pi_cluster/applications/children/nats/</link>
+      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/nats/</guid>
+      <description>&lt;p&gt;Install NATS on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

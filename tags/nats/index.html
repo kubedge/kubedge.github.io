@@ -9,22 +9,22 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Setting up DockerHub :: KUBEDGE&#39;s Blog</title>
+    <title>nats :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1541984555" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1541984555" rel="stylesheet">
-    <link href="/css/hybrid.css?1541984555" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1541984555" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1541984555" rel="stylesheet">
-    <link href="/css/auto-complete.css?1541984555" rel="stylesheet">
-    <link href="/css/theme.css?1541984555" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1541984555" rel="stylesheet">
+    <link href="/css/nucleus.css?1541984558" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1541984558" rel="stylesheet">
+    <link href="/css/hybrid.css?1541984558" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1541984558" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1541984558" rel="stylesheet">
+    <link href="/css/auto-complete.css?1541984558" rel="stylesheet">
+    <link href="/css/theme.css?1541984558" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1541984558" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1541984555" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1541984558" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1541984555"></script>
+    <script src="/js/jquery-2.x.min.js?1541984558"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/devops/cicd/children/setup_dockerhub/">
+  <body class="" data-url="/tags/nats/">
     <nav id="sidebar" class="">
 
 
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1541984555"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1541984555"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1541984558"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1541984558"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1541984555"></script>
+<script type="text/javascript" src="/js/search.js?1541984558"></script>
 
     
   </div>
@@ -146,7 +146,7 @@
   
     
     <li data-nav-id="/devops/" title="DevOps" class="dd-item 
-        parent
+        
         
         
         ">
@@ -245,7 +245,7 @@
   
     
     <li data-nav-id="/devops/cicd/" title="CI/CD" class="dd-item 
-        parent
+        
         
         
         ">
@@ -269,7 +269,7 @@
  
   
     
-      <li data-nav-id="/devops/cicd/children/setup_dockerhub/" title="Setting up DockerHub" class="dd-item active">
+      <li data-nav-id="/devops/cicd/children/setup_dockerhub/" title="Setting up DockerHub" class="dd-item ">
         <a href="/devops/cicd/children/setup_dockerhub/">
         DockerHub
         
@@ -2160,17 +2160,6 @@
               <div>
                 <div id="top-bar">
                 
-                  
-                  
-                  
-                  <div id="top-github-link">
-                    <a class="github-link" title='Edit this page' href="https://github.com/kubedge/blog/tree/master/content/devops/cicd/children/setup_dockerhub.md" target="blank">
-                      <i class="fas fa-code-branch"></i>
-                      <span id="top-github-link-text">Edit this page</span>
-                    </a>
-                  </div>
-                  
-                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -2185,25 +2174,7 @@
                     
           
           
-            
-            
-          
-          
-            
-            
-          
-          
-            
-            
-          
-          
-            <a href='/'>Kubedge</a> > <a href='/devops/'>DevOps</a> > <a href='/devops/cicd/'>CI/CD</a> > Setting up DockerHub
-          
-         
-          
-         
-          
-         
+            nats
           
            
                   </span>
@@ -2211,17 +2182,7 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#key-aspects">Key Aspects</a></li>
-<li><a href="#deploy">Deploy</a></li>
-<li><a href="#conclusion">Conclusion</a></li>
-<li><a href="#reference-links">Reference Links</a></li>
-</ul></li>
-</ul>
-</nav>
+
     </div>
 </div>
 
@@ -2233,46 +2194,17 @@
         
         <div id="body-inner">
           
-            <h1>Setting up DockerHub</h1>
+            <h1>nats</h1>
           
 
         
 
 
-<p>This tutorial describes how to leverage DockerHub.com to save docker images for AMD64 and ARM32v7.</p>
 
-<p></p>
-
-<h2 id="key-aspects">Key Aspects</h2>
-
-<ul>
-<li>Create new repository in DockerHub</li>
-<li>Create new namespaces and teams in DockerHub.</li>
-</ul>
-
-<h2 id="deploy">Deploy</h2>
-
-<p><img src="/images/hack4easy/dockerhub.png" alt="" /></p>
-
-<div class="notices note" ><p>Also the Kubedge team went through the process, it has not been documented.</p>
-</div>
-
-
-<h2 id="conclusion">Conclusion</h2>
-
-<div class="notices note" ><p>WIP</p>
-</div>
-
-
-<h2 id="reference-links">Reference Links</h2>
-
-<div class="notices note" ><p>WIP</p>
-</div>
 
 <footer class=" footline" >
 	
 </footer>
-
 
         
         </div> 
@@ -2324,7 +2256,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2339,9 +2270,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2390,7 +2318,6 @@
             
             
                 
-                    
                     
                 
                 
@@ -2405,7 +2332,6 @@
             
                 
                     
-                    
                 
                 
 
@@ -2421,9 +2347,6 @@
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -3734,11 +3657,9 @@
         
 
 
-        
-            <a class="nav nav-prev" href="/devops/cicd/" title="CI/CD"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/devops/cicd/children/setup_travis-ci/" title="Setting up Travis-CI" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/post/" title="Latest News" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -3747,20 +3668,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1541984555"></script>
-    <script src="/js/perfect-scrollbar.min.js?1541984555"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1541984555"></script>
-    <script src="/js/jquery.sticky.js?1541984555"></script>
-    <script src="/js/featherlight.min.js?1541984555"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1541984555"></script>
-    <script src="/js/highlight.pack.js?1541984555"></script>
+    <script src="/js/clipboard.min.js?1541984558"></script>
+    <script src="/js/perfect-scrollbar.min.js?1541984558"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1541984558"></script>
+    <script src="/js/jquery.sticky.js?1541984558"></script>
+    <script src="/js/featherlight.min.js?1541984558"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1541984558"></script>
+    <script src="/js/highlight.pack.js?1541984558"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1541984555"></script>
-    <script src="/js/learn.js?1541984555"></script>
-    <script src="/js/hugo-learn.js?1541984555"></script>
+    <script src="/js/modernizr.custom.71422.js?1541984558"></script>
+    <script src="/js/learn.js?1541984558"></script>
+    <script src="/js/hugo-learn.js?1541984558"></script>
 
-    <link href="/mermaid/mermaid.css?1541984555" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1541984555"></script>
+    <link href="/mermaid/mermaid.css?1541984558" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1541984558"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -3768,4 +3689,3 @@
 
   </body>
 </html>
-

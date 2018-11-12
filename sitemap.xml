@@ -279,6 +279,11 @@
   </url>
   
   <url>
+    <loc>/pi_cluster/applications/children/nats/</loc>
+    <lastmod>2018-11-11T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/applications/children/grafana/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
   </url>
@@ -593,6 +598,12 @@
   <url>
     <loc>/tags/lte/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/nats/</loc>
+    <lastmod>2018-11-11T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
