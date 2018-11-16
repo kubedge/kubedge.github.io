@@ -95,6 +95,20 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     </item>
     
     <item>
+      <title>Compile and Test Portieris</title>
+      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
+      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
+the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
+deployed in your Kubernetes cluster. The goal here is to leverage Notary
+and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>DPDK &amp; FD.io</title>
       <link>/nfv/golang/children/dpdk/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
@@ -163,51 +177,14 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Kubedge 5G NR Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Installing Hypriot OS</title>
+      <link>/pi_cluster/advanced/children/os_64_bits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
-      <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Add Raspberry PI node to Kubernetes Cluster in 10 min</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</link>
-      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</guid>
-      <description>&lt;p&gt;During some of the manipulation of the partition table of
-my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup.
-Moreover if your SD card is 32G, it takes around 30 minute to restore from backup.
-Hence the idea to come up with a way to build more resiliency in the cluster.
-Recreating a node from scratch should not take more than 10 mn. The propose procedure
-is still rather long because I did not push enough yet what the HypriotOS team, aka
-build a default SD image where cloud-init does 100% of the initialization work.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing NATS</title>
-      <link>/pi_cluster/applications/children/nats/</link>
-      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/applications/children/nats/</guid>
-      <description>&lt;p&gt;Install NATS on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing Grafana</title>
-      <link>/pi_cluster/applications/children/grafana/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/applications/children/grafana/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Install Grafana on the PI Cluster&lt;/strong&gt;. Grafana helps to plot the data in the system. It is an OSS like tools which helps to manage the kubedge cluster.&lt;/p&gt;
+      <guid>/pi_cluster/advanced/children/os_64_bits/</guid>
+      <description>&lt;p&gt;Also ARM processor on the Raspberry PI 3B+ is a 64 bit processor,
+because the board is only equipped with 1G of RAM, a 64 bit operating system
+is not really needed except when&amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -219,6 +196,29 @@ build a default SD image where cloud-init does 100% of the initialization work.&
       
       <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
       <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Upgrade RPI Kubernetes cluster to 1.12</title>
+      <link>/pi_cluster/maintenance/children/2018-09-28-a/</link>
+      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
+      <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
+using kubeadm 1.12&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Prometheus</title>
+      <link>/pi_cluster/applications/children/prometheus/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/prometheus/</guid>
+      <description>&lt;p&gt;Install Prometheus on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -273,13 +273,51 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
     </item>
     
     <item>
-      <title>Upgrade RPI Kubernetes cluster to 1.12</title>
-      <link>/pi_cluster/maintenance/children/2018-09-28-a/</link>
-      <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Kubedge 5G NR Simulation</title>
+      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
-      <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
-using kubeadm 1.12&lt;/p&gt;
+      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
+      <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add Raspberry PI node to Kubernetes Cluster in 10 min</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</link>
+      <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</guid>
+      <description>&lt;p&gt;During some of the manipulation of the partition table of
+my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup.
+Moreover if your SD card is 32G, it takes around 30 minute to restore from backup.
+Hence the idea to come up with a way to build more resiliency in the cluster.
+Recreating a node from scratch should not take more than 10 mn. The propose procedure
+is still rather long because I did not push enough yet what the HypriotOS team, aka
+build a default SD image where cloud-init does 100% of the initialization work.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing NATS</title>
+      <link>/pi_cluster/applications/children/nats/</link>
+      <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/nats/</guid>
+      <description>&lt;p&gt;Install NATS on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Grafana</title>
+      <link>/pi_cluster/applications/children/grafana/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/grafana/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Install Grafana on the PI Cluster&lt;/strong&gt;. Grafana helps to plot the data in the system. It is an OSS like tools which helps to manage the kubedge cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -296,23 +334,25 @@ using kubeadm 1.12&lt;/p&gt;
     </item>
     
     <item>
-      <title>Installing Prometheus</title>
-      <link>/pi_cluster/applications/children/prometheus/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/applications/children/prometheus/</guid>
-      <description>&lt;p&gt;Install Prometheus on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Update Kubernetes to 1.11 on Ubuntu</title>
       <link>/pi_cluster/advanced/children/2018-06-30-a/</link>
       <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/advanced/children/2018-06-30-a/</guid>
       <description>&lt;p&gt;Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Build and Deploy Kubernetes Kustomize</title>
+      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
+      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
+and still keeping the configuration file has plain yaml instead of the template like it
+is often the case with t&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -341,19 +381,6 @@ to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
-      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
-      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
-much more often than usual. Looks like it is especially effectiv to help rotate passwords
-used to access internal databases.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Build and Deploy Kubernetes Istio</title>
       <link>/pi_cluster/advanced/children/2018-07-31-a/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
@@ -369,28 +396,14 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes Kustomize</title>
-      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
+      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
-      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
-and still keeping the configuration file has plain yaml instead of the template like it
-is often the case with t&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Compile and Test Portieris</title>
-      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
-      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
-      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
-the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
-deployed in your Kubernetes cluster. The goal here is to leverage Notary
-and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
+      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
+much more often than usual. Looks like it is especially effectiv to help rotate passwords
+used to access internal databases.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

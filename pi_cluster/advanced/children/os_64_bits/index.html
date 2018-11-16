@@ -9,22 +9,22 @@
 
     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
 <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>blinkt :: KUBEDGE&#39;s Blog</title>
+    <title>Installing Hypriot OS :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542343530" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542343530" rel="stylesheet">
-    <link href="/css/hybrid.css?1542343530" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542343530" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542343530" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542343530" rel="stylesheet">
-    <link href="/css/theme.css?1542343530" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542343530" rel="stylesheet">
+    <link href="/css/nucleus.css?1542343528" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542343528" rel="stylesheet">
+    <link href="/css/hybrid.css?1542343528" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542343528" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542343528" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542343528" rel="stylesheet">
+    <link href="/css/theme.css?1542343528" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542343528" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542343530" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542343528" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542343530"></script>
+    <script src="/js/jquery-2.x.min.js?1542343528"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -34,7 +34,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/tags/blinkt/">
+  <body class="" data-url="/pi_cluster/advanced/children/os_64_bits/">
     <nav id="sidebar" class="">
 
 
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542343530"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542343530"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542343528"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542343528"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542343530"></script>
+<script type="text/javascript" src="/js/search.js?1542343528"></script>
 
     
   </div>
@@ -659,7 +659,7 @@
   
     
     <li data-nav-id="/pi_cluster/" title="RPI Cluster" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1259,7 +1259,7 @@
   
     
     <li data-nav-id="/pi_cluster/advanced/" title="Advanced &amp; WIP" class="dd-item 
-        
+        parent
         
         
         ">
@@ -1302,7 +1302,7 @@
  
   
     
-      <li data-nav-id="/pi_cluster/advanced/children/os_64_bits/" title="Installing Hypriot OS" class="dd-item ">
+      <li data-nav-id="/pi_cluster/advanced/children/os_64_bits/" title="Installing Hypriot OS" class="dd-item active">
         <a href="/pi_cluster/advanced/children/os_64_bits/">
         Hypriot OS 64
         
@@ -2179,6 +2179,17 @@
               <div>
                 <div id="top-bar">
                 
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://github.com/kubedge/blog/tree/master/content/pi_cluster/advanced/children/os_64_bits.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
                 
                 <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
                     <span id="sidebar-toggle-span">
@@ -2193,7 +2204,25 @@
                     
           
           
-            blinkt
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>Kubedge</a> > <a href='/pi_cluster/'>RPI Cluster</a> > <a href='/pi_cluster/advanced/'>Advanced & WIP</a> > Installing Hypriot OS
+          
+         
+          
+         
+          
+         
           
            
                   </span>
@@ -2201,7 +2230,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-
+<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#key-aspects">Key Aspects</a></li>
+<li><a href="#the-os">The OS</a></li>
+<li><a href="#everything-else">Everything Else</a></li>
+<li><a href="#the-real-hard-stuff">The real hard stuff</a></li>
+<li><a href="#reference-links">Reference Links</a></li>
+</ul></li>
+</ul>
+</nav>
     </div>
 </div>
 
@@ -2213,17 +2253,63 @@
         
         <div id="body-inner">
           
-            <h1>blinkt</h1>
+            <h1>Installing Hypriot OS</h1>
           
 
         
 
 
+<p>Also ARM processor on the Raspberry PI 3B+ is a 64 bit processor,
+because the board is only equipped with 1G of RAM, a 64 bit operating system
+is not really needed except when&hellip;.</p>
 
+<p></p>
+
+<h2 id="key-aspects">Key Aspects</h2>
+
+<ul>
+<li>The goal is to deploy HypriotOS 64</li>
+<li>The key target applications are:
+
+<ul>
+<li>DPDK</li>
+<li>CEPH</li>
+<li>BlockChain</li>
+</ul></li>
+</ul>
+
+<h2 id="the-os">The OS</h2>
+
+<p>One version of HypriotOS seems to be available here.</p>
+
+<ul>
+<li><a href="https://github.com/DieterReuter/image-builder-rpi64/releases">64BitImage</a></li>
+</ul>
+
+<h2 id="everything-else">Everything Else</h2>
+
+<ul>
+<li>Upgrade all the Travis-CI and branches to support arm64v8</li>
+<li>Rebuild all the docker images for the new architecture.</li>
+</ul>
+
+<h2 id="the-real-hard-stuff">The real hard stuff</h2>
+
+<ul>
+<li>Get DPDK to work on ARM64.</li>
+<li>Get CEPH to work on ARM64.</li>
+</ul>
+
+<h2 id="reference-links">Reference Links</h2>
+
+<ul>
+<li><a href="https://github.com/dieterreuter/workshop-raspberrypi-64bit-os">GitHub</a></li>
+</ul>
 
 <footer class=" footline" >
 	
 </footer>
+
 
         
         </div> 
@@ -2629,6 +2715,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -2643,6 +2730,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3076,6 +3166,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -3088,6 +3179,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -3104,6 +3198,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -3121,6 +3216,9 @@
             
                 
                     
+                        
+                        
+                    
                 
                 
 
@@ -3692,9 +3790,11 @@
         
 
 
+        
+            <a class="nav nav-prev" href="/pi_cluster/advanced/children/2018-07-18-a/" title="Compile and Test Portieris"> <i class="fas fa-chevron-left"></i></a>
         
         
-            <a class="nav nav-next" href="/post/" title="Latest News" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
+            <a class="nav nav-next" href="/pi_cluster/advanced/children/2018-06-30-a/" title="Update Kubernetes to 1.11 on Ubuntu" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
         
     </div>
 
@@ -3703,20 +3803,20 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542343530"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542343530"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542343530"></script>
-    <script src="/js/jquery.sticky.js?1542343530"></script>
-    <script src="/js/featherlight.min.js?1542343530"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542343530"></script>
-    <script src="/js/highlight.pack.js?1542343530"></script>
+    <script src="/js/clipboard.min.js?1542343529"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542343529"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542343529"></script>
+    <script src="/js/jquery.sticky.js?1542343529"></script>
+    <script src="/js/featherlight.min.js?1542343529"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542343529"></script>
+    <script src="/js/highlight.pack.js?1542343529"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542343530"></script>
-    <script src="/js/learn.js?1542343530"></script>
-    <script src="/js/hugo-learn.js?1542343530"></script>
+    <script src="/js/modernizr.custom.71422.js?1542343529"></script>
+    <script src="/js/learn.js?1542343529"></script>
+    <script src="/js/hugo-learn.js?1542343529"></script>
 
-    <link href="/mermaid/mermaid.css?1542343530" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542343530"></script>
+    <link href="/mermaid/mermaid.css?1542343529" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542343529"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
@@ -3724,3 +3824,4 @@
 
   </body>
 </html>
+

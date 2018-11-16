@@ -96,6 +96,11 @@
   </url>
   
   <url>
+    <loc>/pi_cluster/advanced/children/2018-07-18-a/</loc>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/nfv/golang/children/dpdk/</loc>
     <lastmod>2018-07-17T00:00:00+00:00</lastmod>
   </url>
@@ -143,6 +148,10 @@
   <url>
     <loc>/nfv/golang/</loc>
     <lastmod>2018-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/pi_cluster/advanced/children/os_64_bits/</loc>
   </url>
   
   <url>
@@ -300,7 +309,7 @@
   
   <url>
     <loc>/pi_cluster/advanced/</loc>
-    <lastmod>2018-06-30T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -337,6 +346,11 @@
   </url>
   
   <url>
+    <loc>/pi_cluster/advanced/children/2018-07-29-a/</loc>
+    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/pi_cluster/maintenance/children/2018-07-02-a/</loc>
     <lastmod>2018-07-02T00:00:00+00:00</lastmod>
   </url>
@@ -360,23 +374,13 @@
   </url>
   
   <url>
-    <loc>/pi_cluster/advanced/children/2018-08-01-a/</loc>
-    <lastmod>2018-08-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/pi_cluster/advanced/children/2018-07-31-a/</loc>
     <lastmod>2018-07-31T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/pi_cluster/advanced/children/2018-07-29-a/</loc>
-    <lastmod>2018-07-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/pi_cluster/advanced/children/2018-07-18-a/</loc>
-    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
+    <loc>/pi_cluster/advanced/children/2018-08-01-a/</loc>
+    <lastmod>2018-08-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -437,6 +441,11 @@
   <url>
     <loc>/tags/5gc/</loc>
     <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/64/</loc>
     <priority>0</priority>
   </url>
   
@@ -639,7 +648,7 @@
   
   <url>
     <loc>/tags/security/</loc>
-    <lastmod>2018-08-01T00:00:00+00:00</lastmod>
+    <lastmod>2018-07-18T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

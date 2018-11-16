@@ -150,6 +150,20 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     </item>
     
     <item>
+      <title>Compile and Test Portieris</title>
+      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
+      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
+the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
+deployed in your Kubernetes cluster. The goal here is to leverage Notary
+and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>DPDK &amp; FD.io</title>
       <link>/nfv/golang/children/dpdk/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
@@ -224,6 +238,19 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
       
       <guid>/pi_cluster/os_installation/children/master_pi/</guid>
       <description>&lt;p&gt;This page describes simple steps to install the OS (HypriotOS) on the PIs.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Hypriot OS</title>
+      <link>/pi_cluster/advanced/children/os_64_bits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/os_64_bits/</guid>
+      <description>&lt;p&gt;Also ARM processor on the Raspberry PI 3B+ is a 64 bit processor,
+because the board is only equipped with 1G of RAM, a 64 bit operating system
+is not really needed except when&amp;hellip;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -502,6 +529,19 @@ The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Build and Deploy Kubernetes Kustomize</title>
+      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
+      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
+and still keeping the configuration file has plain yaml instead of the template like it
+is often the case with t&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Compile and Test SONOBUOY</title>
       <link>/pi_cluster/maintenance/children/2018-07-02-a/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
@@ -541,19 +581,6 @@ to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
-      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
-      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
-much more often than usual. Looks like it is especially effectiv to help rotate passwords
-used to access internal databases.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Build and Deploy Kubernetes Istio</title>
       <link>/pi_cluster/advanced/children/2018-07-31-a/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
@@ -569,28 +596,14 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes Kustomize</title>
-      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
+      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
-      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
-and still keeping the configuration file has plain yaml instead of the template like it
-is often the case with t&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Compile and Test Portieris</title>
-      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
-      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
-      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
-the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
-deployed in your Kubernetes cluster. The goal here is to leverage Notary
-and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
+      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
+much more often than usual. Looks like it is especially effectiv to help rotate passwords
+used to access internal databases.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

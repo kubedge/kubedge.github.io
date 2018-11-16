@@ -116,6 +116,155 @@ switch would will be in the same IP network).&lt;/p&gt;
     </item>
     
     <item>
+      <title>Setting up Travis-CI</title>
+      <link>/devops/cicd/children/setup_travis-ci/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/devops/cicd/children/setup_travis-ci/</guid>
+      <description>&lt;p&gt;Leverage Travis-CI for automatic build and integration&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Compile and Test Portieris</title>
+      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
+      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
+the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
+deployed in your Kubernetes cluster. The goal here is to leverage Notary
+and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>DPDK &amp; FD.io</title>
+      <link>/nfv/golang/children/dpdk/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/golang/children/dpdk/</guid>
+      <description>&lt;p&gt;DPDK and FD.io are providing some kind of support for ARM.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OVS</title>
+      <link>/nfv/ovs/children/ovs/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/ovs/children/ovs/</guid>
+      <description>&lt;p&gt;The second goal is to replace Linux Bridging with OVS.
+The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic from &amp;ldquo;tenant/5g traffic.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>OpenDayLight</title>
+      <link>/nfv/ovs/children/odl/</link>
+      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/nfv/ovs/children/odl/</guid>
+      <description>&lt;p&gt;The third is to implement SDN/Network Slicing using ODL and controlling OVS&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Add Persistency Volume to PI Cluster</title>
+      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
+      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
+      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Hypriot OS</title>
+      <link>/pi_cluster/advanced/children/os_64_bits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/advanced/children/os_64_bits/</guid>
+      <description>&lt;p&gt;Also ARM processor on the Raspberry PI 3B+ is a 64 bit processor,
+because the board is only equipped with 1G of RAM, a 64 bit operating system
+is not really needed except when&amp;hellip;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Installing Kubedge Blinkt</title>
+      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
+      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kubedge 5GC Simulation</title>
+      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
+      <description>&lt;p&gt;Install Kubedge 5GC Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Kubedge eLTE Simulation</title>
+      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</guid>
+      <description>&lt;p&gt;Install Kubedge eLTE Application on the PI Cluster&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up HOSTAPD on 5G NR node</title>
+      <link>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</guid>
+      <description>&lt;p&gt;This tutorial how to setup WIFI AccessPoint on PI simulating 5G NR node&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up PAN</title>
+      <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</guid>
+      <description>&lt;p&gt;This tutorial how to setup PAN on the slave pi to simulator LTE and eLTE RAN.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Setting up WPA supplicant on Master PI</title>
+      <link>/pi_cluster/os_installation/children/setup_wpa_applicant/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/pi_cluster/os_installation/children/setup_wpa_applicant/</guid>
+      <description>&lt;p&gt;This tutorial how to setup WIFI on the master pi to connect to different WLAN&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Rebuild Calico for ARM32V7</title>
       <link>/nfv/golang/children/calico/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
@@ -236,123 +385,14 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
     </item>
     
     <item>
-      <title>Setting up Travis-CI</title>
-      <link>/devops/cicd/children/setup_travis-ci/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      <title>Build and Deploy Kubernetes Kustomize</title>
+      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
+      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/cicd/children/setup_travis-ci/</guid>
-      <description>&lt;p&gt;Leverage Travis-CI for automatic build and integration&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>DPDK &amp; FD.io</title>
-      <link>/nfv/golang/children/dpdk/</link>
-      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/nfv/golang/children/dpdk/</guid>
-      <description>&lt;p&gt;DPDK and FD.io are providing some kind of support for ARM.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OVS</title>
-      <link>/nfv/ovs/children/ovs/</link>
-      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/nfv/ovs/children/ovs/</guid>
-      <description>&lt;p&gt;The second goal is to replace Linux Bridging with OVS.
-The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic from &amp;ldquo;tenant/5g traffic.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>OpenDayLight</title>
-      <link>/nfv/ovs/children/odl/</link>
-      <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/nfv/ovs/children/odl/</guid>
-      <description>&lt;p&gt;The third is to implement SDN/Network Slicing using ODL and controlling OVS&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Add Persistency Volume to PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
-      <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
-      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Installing Kubedge Blinkt</title>
-      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
-      <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kubedge 5GC Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
-      <description>&lt;p&gt;Install Kubedge 5GC Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kubedge eLTE Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</guid>
-      <description>&lt;p&gt;Install Kubedge eLTE Application on the PI Cluster&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Setting up HOSTAPD on 5G NR node</title>
-      <link>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</guid>
-      <description>&lt;p&gt;This tutorial how to setup WIFI AccessPoint on PI simulating 5G NR node&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Setting up PAN</title>
-      <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</guid>
-      <description>&lt;p&gt;This tutorial how to setup PAN on the slave pi to simulator LTE and eLTE RAN.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Setting up WPA supplicant on Master PI</title>
-      <link>/pi_cluster/os_installation/children/setup_wpa_applicant/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/os_installation/children/setup_wpa_applicant/</guid>
-      <description>&lt;p&gt;This tutorial how to setup WIFI on the master pi to connect to different WLAN&lt;/p&gt;
+      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
+      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
+and still keeping the configuration file has plain yaml instead of the template like it
+is often the case with t&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -365,19 +405,6 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
       <guid>/pi_cluster/advanced/children/2018-07-30-a/</guid>
       <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
 to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
-      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
-      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
-      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
-much more often than usual. Looks like it is especially effectiv to help rotate passwords
-used to access internal databases.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -398,28 +425,14 @@ leverage it in my day to day work.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Build and Deploy Kubernetes Kustomize</title>
-      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
-      <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
+      <title>Build and Deploy Kubernetes Hashicorp Vault</title>
+      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
-      <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
-and still keeping the configuration file has plain yaml instead of the template like it
-is often the case with t&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Compile and Test Portieris</title>
-      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
-      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
-      <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
-the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
-deployed in your Kubernetes cluster. The goal here is to leverage Notary
-and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&gt;
+      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
+      <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
+much more often than usual. Looks like it is especially effectiv to help rotate passwords
+used to access internal databases.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
