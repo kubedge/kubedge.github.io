@@ -12,19 +12,19 @@
     <title>OS Installation on Master PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542683068" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542683068" rel="stylesheet">
-    <link href="/css/hybrid.css?1542683068" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542683068" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542683068" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542683068" rel="stylesheet">
-    <link href="/css/theme.css?1542683068" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542683068" rel="stylesheet">
+    <link href="/css/nucleus.css?1542700946" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542700946" rel="stylesheet">
+    <link href="/css/hybrid.css?1542700946" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542700946" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542700946" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542700946" rel="stylesheet">
+    <link href="/css/theme.css?1542700946" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542700946" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542683068" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542700946" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542683068"></script>
+    <script src="/js/jquery-2.x.min.js?1542700946"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542683068"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542683068"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542700946"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542700946"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542683068"></script>
+<script type="text/javascript" src="/js/search.js?1542700946"></script>
 
     
   </div>
@@ -2278,8 +2278,9 @@ Removed cloud-init once the site was up.</p>
 
 
 <ul>
-<li>Download the operating system from <a href="https://github.com/hypriot/image-builder-rpi/releases" target="_blank">HypriotOS</a>.</li>
-<li>Flash all 3 or 5 SD cards using <strong>Win32DiskImager</strong> or similar.</li>
+<li>For simple arm32v7 OS, download the operating system from <a href="https://github.com/hypriot/image-builder-rpi/releases/download/v1.9.0/hypriotos-rpi-v1.9.0.img.zip" target="_blank">HypriotOS ARM32V7</a></li>
+<li>For more complex arm64 OS, download the operating system from <a href="https://github.com/DieterReuter/image-builder-rpi64/releases/download/v20180429-184538/hypriotos-rpi64-v20180429-184538.img.zip" target="_blank">HypriotOS ARM64V8</a></li>
+<li>Flash all 3 or 5 SD cards using <strong>Win32DiskImager</strong> or similar. It takes around 30 seconds per card.</li>
 </ul>
 
 <h2 id="os-on-master-on-master-pi">OS on master on master PI</h2>
@@ -2303,8 +2304,14 @@ The goal here is to get an IP address allocated by your home router to the maste
 is up, it can be challenging not to preserve the fine tuning done
 to the OS.</p>
 
-<pre><code>sudo apt-get remove --purge cloud-init
+<pre><code class="language-bash">sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
+</code></pre>
+
+<p>Let&rsquo;s update to the latest version</p>
+
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get upgrade
 </code></pre>
 
 <h3 id="update-master-pi-name">Update master PI name</h3>
@@ -2314,7 +2321,17 @@ sudo apt-get autoremove
 <pre><code class="language-bash">sudo -i
 
 vi /etc/hosts
-vi /etc/hostname
+</code></pre>
+
+<p>It seems on HypriotOS 64, you need to do</p>
+
+<pre><code class="language-bash">vi /etc/hostname
+sudo service hostname restart
+</code></pre>
+
+<p>It seems on HypriotOS 32, you need to do</p>
+
+<pre><code class="language-bash">sudo hostnamectl set-hostname kubemaster-pi
 </code></pre>
 
 <h3 id="configure-the-pirate-account">Configure the pirate account</h3>
@@ -3891,20 +3908,20 @@ done
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542683068"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542683068"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542683068"></script>
-    <script src="/js/jquery.sticky.js?1542683068"></script>
-    <script src="/js/featherlight.min.js?1542683068"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542683068"></script>
-    <script src="/js/highlight.pack.js?1542683068"></script>
+    <script src="/js/clipboard.min.js?1542700946"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542700946"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542700946"></script>
+    <script src="/js/jquery.sticky.js?1542700946"></script>
+    <script src="/js/featherlight.min.js?1542700946"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542700946"></script>
+    <script src="/js/highlight.pack.js?1542700946"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542683068"></script>
-    <script src="/js/learn.js?1542683068"></script>
-    <script src="/js/hugo-learn.js?1542683068"></script>
+    <script src="/js/modernizr.custom.71422.js?1542700946"></script>
+    <script src="/js/learn.js?1542700946"></script>
+    <script src="/js/hugo-learn.js?1542700946"></script>
 
-    <link href="/mermaid/mermaid.css?1542683068" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542683068"></script>
+    <link href="/mermaid/mermaid.css?1542700946" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542700946"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

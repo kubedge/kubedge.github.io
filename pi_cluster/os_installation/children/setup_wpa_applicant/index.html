@@ -12,19 +12,19 @@
     <title>Setting up WPA supplicant on Master PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542683068" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542683068" rel="stylesheet">
-    <link href="/css/hybrid.css?1542683068" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542683068" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542683068" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542683068" rel="stylesheet">
-    <link href="/css/theme.css?1542683068" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542683068" rel="stylesheet">
+    <link href="/css/nucleus.css?1542700946" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542700946" rel="stylesheet">
+    <link href="/css/hybrid.css?1542700946" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542700946" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542700946" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542700946" rel="stylesheet">
+    <link href="/css/theme.css?1542700946" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542700946" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542683068" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542700946" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542683068"></script>
+    <script src="/js/jquery-2.x.min.js?1542700946"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542683068"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542683068"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542700946"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542700946"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542683068"></script>
+<script type="text/javascript" src="/js/search.js?1542700946"></script>
 
     
   </div>
@@ -2237,6 +2237,8 @@
 <li><a href="#key-aspects">Key Aspects</a></li>
 <li><a href="#deploy">Deploy</a>
 <ul>
+<li><a href="#install-dhcpcd">Install DHCPCD</a></li>
+<li><a href="#prepare-lo-and-eth0">Prepare lo and eth0</a></li>
 <li><a href="#enable-wlan0">Enable WLAN0.</a></li>
 <li><a href="#examples-of-files">Examples of files</a></li>
 </ul></li>
@@ -2270,7 +2272,7 @@
 
 <ul>
 <li>Setup /etc/wpa_supplicant/wpa_supplicant.</li>
-<li>Setup /etc/network/interfaaces.d/wlan0.</li>
+<li>Setup /etc/network/interfaces.d/wlan0.</li>
 <li>Setup /etc/dhcpcd.conf</li>
 <li>Check /etc/resolv.conf</li>
 </ul>
@@ -2281,12 +2283,39 @@
 </div>
 
 
+<p>Install dhcpcd5. The dhcpcd service controls the start of the interfaces as well as the creation of the /etc/resolv.conf</p>
+
+<h3 id="install-dhcpcd">Install DHCPCD</h3>
+
+<pre><code class="language-bash">sudo apt-get install dhcpcd5
+</code></pre>
+
+<p>The /etc/dhcpcd.conf (not the /etc/dhcpd/dhcpd.conf) controls the startup of the interfaces. We want the eth0 to be kind of static, the wlan0 to be dynamic</p>
+
+<pre><code class="language-bash">diff dhcpcd.conf /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/dhcpcd.conf
+</code></pre>
+
+<h3 id="prepare-lo-and-eth0">Prepare lo and eth0</h3>
+
+<p>You can keep 3 files in the /etc/network/interfaces.d: l0, eth0 and wlan0.
+Note comment out the iptables line at first in the eth0 file. eth0 is static so that the internal IP of the master PI is always 192.168.2.1</p>
+
+<pre><code class="language-bash">diff lo /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/network/interfaces.d/lo
+diff eth0 /home/pirate/proj/kubedge/kube-rpi/config/cluster1/hypriotos/kubemaster-pi/etc/network/interfaces.d/eth0
+</code></pre>
+
 <h3 id="enable-wlan0">Enable WLAN0.</h3>
+
+<p>In wlan0 the list of the sssid you want to potentially connect to. Needs to match the id_str in the wpa_supplicant.conf</p>
+
+<pre><code class="language-bash">vi wlan0
+vi /etc/wpa_supplicant/wpa_supplicant.conf
+</code></pre>
 
 <p>Check the IP address. Depending on PI3B or PI3B+, the WLAN network may be different.
 Use the files in <strong>$HOME/proj/kubedge/kube-rpi/config/cluster1/hypriotos/</strong> as examples.</p>
 
-<pre><code>ip a
+<pre><code class="language-bash">ip a
 iwconfig
 sudo ip link set wlan0 up
 sudo iwlist scan | grep ES
@@ -2296,6 +2325,8 @@ sudo vi /etc/network/interfaces.d/wlan0
 sudo vi /etc/wpa_supplicant/wpa_supplicant.conf
 sudo systemctl restart dhcpcd 
 </code></pre>
+
+<p>At that point the wlan0 should come up and IP 192.168.2.1 should be assigned to the master-pi.</p>
 
 <h3 id="examples-of-files">Examples of files</h3>
 
@@ -3813,20 +3844,20 @@ It should allow you access the kubemaster-pi using WIFI.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542683068"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542683068"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542683068"></script>
-    <script src="/js/jquery.sticky.js?1542683068"></script>
-    <script src="/js/featherlight.min.js?1542683068"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542683068"></script>
-    <script src="/js/highlight.pack.js?1542683068"></script>
+    <script src="/js/clipboard.min.js?1542700946"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542700946"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542700946"></script>
+    <script src="/js/jquery.sticky.js?1542700946"></script>
+    <script src="/js/featherlight.min.js?1542700946"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542700946"></script>
+    <script src="/js/highlight.pack.js?1542700946"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542683068"></script>
-    <script src="/js/learn.js?1542683068"></script>
-    <script src="/js/hugo-learn.js?1542683068"></script>
+    <script src="/js/modernizr.custom.71422.js?1542700946"></script>
+    <script src="/js/learn.js?1542700946"></script>
+    <script src="/js/hugo-learn.js?1542700946"></script>
 
-    <link href="/mermaid/mermaid.css?1542683068" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542683068"></script>
+    <link href="/mermaid/mermaid.css?1542700946" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542700946"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
