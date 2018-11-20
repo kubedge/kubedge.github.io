@@ -12,19 +12,19 @@
     <title>Use github repo as helm chart repository :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542725453" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542725453" rel="stylesheet">
-    <link href="/css/hybrid.css?1542725453" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542725453" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542725453" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542725453" rel="stylesheet">
-    <link href="/css/theme.css?1542725453" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542725453" rel="stylesheet">
+    <link href="/css/nucleus.css?1542726700" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542726700" rel="stylesheet">
+    <link href="/css/hybrid.css?1542726700" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542726700" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542726700" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542726700" rel="stylesheet">
+    <link href="/css/theme.css?1542726700" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542726700" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542725453" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542726700" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542725453"></script>
+    <script src="/js/jquery-2.x.min.js?1542726700"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542725453"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542725453"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542726700"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542726700"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542725453"></script>
+<script type="text/javascript" src="/js/search.js?1542726700"></script>
 
     
   </div>
@@ -2236,7 +2236,12 @@
 <ul>
 <li><a href="#key-aspects">Key Aspects</a></li>
 <li><a href="#build-the-chart-and-upload-it-to-the-helm-repo">Build the chart and upload it to the helm repo</a></li>
-<li><a href="#use-helm-repo-and-chart">Use helm repo and chart</a></li>
+<li><a href="#use-helm-repo-and-chart">Use helm repo and chart</a>
+<ul>
+<li><a href="#on-the-arm32v7-kubedge-cluster">On the ARM32V7 KUBEDGE Cluster</a></li>
+<li><a href="#on-the-arm64v8-kubedge-cluster">On the ARM64V8 KUBEDGE Cluster</a></li>
+<li><a href="#on-the-kubedgesdk">On the KUBEDGESDK</a></li>
+</ul></li>
 <li><a href="#conclusion">Conclusion</a></li>
 <li><a href="#reference-links">Reference Links</a></li>
 </ul></li>
@@ -2288,23 +2293,81 @@ git push
 
 <h2 id="use-helm-repo-and-chart">Use helm repo and chart</h2>
 
-<p>Let&rsquo;s access the simple helm repo designed for</p>
+<h3 id="on-the-arm32v7-kubedge-cluster">On the ARM32V7 KUBEDGE Cluster</h3>
 
-<pre><code>helm repo add kubeplay 'https://raw.githubusercontent.com/jbrette/kubeplay/arm32v7/helmrepo/'
+<p>Let&rsquo;s access the simple helm repo designed for arm32v7</p>
+
+<pre><code class="language-bash">helm repo add kubedge1 &quot;https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge1&quot;
+helm repo add kubedge2 &quot;https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge2&quot;
+helm repo add kubedge3 &quot;https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge3&quot;
+helm repo add kubedge4 &quot;https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge4&quot;
+helm repo update
 </code></pre>
 
-<pre><code>helm repo list
+<pre><code class="language-bash">$ helm repo list
+
+NAME            URL
+incubator       https://kubernetes-charts-incubator.storage.googleapis.com/
+stable          https://kubernetes-charts.storage.googleapis.com/
+hack4easy       https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/hack4easy/
+kubedge1        https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge1/
+kubedge2        https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge2/
+kubedge3        https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge3/
+kubedge4        https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge4/
+</code></pre>
+
+<pre><code class="language-bash">helm search kubedge1
+
+NAME                                    CHART VERSION   APP VERSION     DESCRIPTION
+kubedge1/kubedge-arm32v7                0.1.0           0.1.0           A Helm chart for Kubernetes
+kubedge1/kubeplay-arm32v7               0.1.0           0.1.0           A Helm chart for Kubernetes
+kubedge1/kubesim-blinkt-arm32v7         0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+kubedge1/kubesim-linkio-arm32v7         0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+kubedge1/kubesim-nats-pub-arm32v7       0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+kubedge1/kubesim-nats-sub-arm32v7       0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+</code></pre>
+
+<h3 id="on-the-arm64v8-kubedge-cluster">On the ARM64V8 KUBEDGE Cluster</h3>
+
+<p>The Helm charts for ARM64V8 KUBEDGE Cluster contains arm64v8 in their paths and names</p>
+
+<pre><code class="language-bash">helm repo list
 
 NAME            URL
 stable          https://kubernetes-charts.storage.googleapis.com
 local           http://127.0.0.1:8879/charts
-kubeplay        https://raw.githubusercontent.com/jbrette/kubeplay/arm32v7/helmrepo/
+kubedge1        https://raw.githubusercontent.com/kubedge/helmrepos/arm64v8/kubedge1
+kubedge2        https://raw.githubusercontent.com/kubedge/helmrepos/arm64v8/kubedge2
+kubedge3        https://raw.githubusercontent.com/kubedge/helmrepos/arm64v8/kubedge3
+kubedge4        https://raw.githubusercontent.com/kubedge/helmrepos/arm64v8/kubedge4
+hack4easy       https://raw.githubusercontent.com/kubedge/helmrepos/arm64v8/hack4easy
 </code></pre>
 
-<pre><code>helm search kubeplay
+<pre><code class="language-bash">helm search kubedge1
 
-NAME                            CHART VERSION   APP VERSION     DESCRIPTION
-kubeplay/kubeplay-arm32v7       0.1.0           0.1.0           A Helm chart for Kubernetes
+NAME                                    CHART VERSION   APP VERSION     DESCRIPTION
+kubedge1/kubedge-arm64v8                0.1.0           0.1.0           A Helm chart for Kubernetes
+kubedge1/kubeplay-arm64v8               0.1.0           0.1.0           A Helm chart for Kubernetes
+kubedge1/kubesim-blinkt-arm64v8         0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+kubedge1/kubesim-linkio-arm64v8         0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+kubedge1/kubesim-nats-pub-arm64v8       0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+kubedge1/kubesim-nats-sub-arm64v8       0.1.0           0.1.0           A Helm chart for Kubedge Simulator
+</code></pre>
+
+<h3 id="on-the-kubedgesdk">On the KUBEDGESDK</h3>
+
+<p>The Helm charts for KUBEDGE AMD64 Cluster contains arm64v8 in their paths and names</p>
+
+<pre><code class="language-bash">helm repo list
+
+NAME            URL
+stable          https://kubernetes-charts.storage.googleapis.com
+local           http://127.0.0.1:8879/charts
+kubedge1        https://raw.githubusercontent.com/kubedge/helmrepos/amd64/kubedge1
+kubedge2        https://raw.githubusercontent.com/kubedge/helmrepos/amd64/kubedge2
+kubedge3        https://raw.githubusercontent.com/kubedge/helmrepos/amd64/kubedge3
+kubedge4        https://raw.githubusercontent.com/kubedge/helmrepos/amd64/kubedge4
+hack4easy       https://raw.githubusercontent.com/kubedge/helmrepos/amd64/hack4easy
 </code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
@@ -3816,20 +3879,20 @@ kubeplay/kubeplay-arm32v7       0.1.0           0.1.0           A Helm chart for
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542725454"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542725454"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542725454"></script>
-    <script src="/js/jquery.sticky.js?1542725454"></script>
-    <script src="/js/featherlight.min.js?1542725454"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542725454"></script>
-    <script src="/js/highlight.pack.js?1542725454"></script>
+    <script src="/js/clipboard.min.js?1542726700"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542726700"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542726700"></script>
+    <script src="/js/jquery.sticky.js?1542726700"></script>
+    <script src="/js/featherlight.min.js?1542726700"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542726700"></script>
+    <script src="/js/highlight.pack.js?1542726700"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542725454"></script>
-    <script src="/js/learn.js?1542725454"></script>
-    <script src="/js/hugo-learn.js?1542725454"></script>
+    <script src="/js/modernizr.custom.71422.js?1542726700"></script>
+    <script src="/js/learn.js?1542726700"></script>
+    <script src="/js/hugo-learn.js?1542726700"></script>
 
-    <link href="/mermaid/mermaid.css?1542725454" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542725454"></script>
+    <link href="/mermaid/mermaid.css?1542726700" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542726700"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
