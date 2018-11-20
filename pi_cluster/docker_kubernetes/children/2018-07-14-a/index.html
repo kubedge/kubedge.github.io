@@ -12,19 +12,19 @@
     <title>Deploy Flannel in PI Cluster :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542700946" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542700946" rel="stylesheet">
-    <link href="/css/hybrid.css?1542700946" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542700946" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542700946" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542700946" rel="stylesheet">
-    <link href="/css/theme.css?1542700946" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542700946" rel="stylesheet">
+    <link href="/css/nucleus.css?1542725406" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542725406" rel="stylesheet">
+    <link href="/css/hybrid.css?1542725406" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542725406" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542725406" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542725406" rel="stylesheet">
+    <link href="/css/theme.css?1542725406" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542725406" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542700946" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542725406" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542700946"></script>
+    <script src="/js/jquery-2.x.min.js?1542725406"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542700946"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542700946"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542725406"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542725406"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542700946"></script>
+<script type="text/javascript" src="/js/search.js?1542725406"></script>
 
     
   </div>
@@ -2291,7 +2291,7 @@ nodes have multiple interfaces (wlan0 and eth0).</p>
 <pre><code class="language-bash">$ mkdir -p $HOME/kube-deployments/flannel
 $ cd $HOME/kube-deployments/flannel
 $ curl -sSL https://rawgit.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml | sed &quot;s/amd64/arm/g&quot; &gt; flannel.yaml
-$ kubectl create -f flannel.yaml 
+$ kubectl create -f flannel.yaml
 </code></pre>
 
 <p>Note: realized that should be using flannel v0.10.0 instead of v0.9.1</p>
@@ -2333,7 +2333,7 @@ I0716 00:42:47.776400       1 main.go:234] Created subnet manager: Kubernetes Su
 I0716 00:42:47.776431       1 main.go:237] Installing signal handlers
 I0716 00:42:47.776697       1 main.go:352] Found network config - Backend type: vxlan
 I0716 00:42:47.776900       1 vxlan.go:119] VXLAN config: VNI=1 Port=0 GBP=false DirectRouting=false
-E0716 00:42:47.778884       1 main.go:279] Error registering network: failed to configure interface flannel.1: link has incompatible addresses. Remove additional addresses and try again.... 
+E0716 00:42:47.778884       1 main.go:279] Error registering network: failed to configure interface flannel.1: link has incompatible addresses. Remove additional addresses and try again....
 I0716 00:42:47.778991       1 main.go:332] Stopping shutdownHandler...
 </code></pre>
 
@@ -4001,20 +4001,20 @@ I0714 14:34:28.122424       1 iptables.go:124] Adding iptables rule: ! -s 10.244
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542700946"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542700946"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542700946"></script>
-    <script src="/js/jquery.sticky.js?1542700946"></script>
-    <script src="/js/featherlight.min.js?1542700946"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542700946"></script>
-    <script src="/js/highlight.pack.js?1542700946"></script>
+    <script src="/js/clipboard.min.js?1542725406"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542725406"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542725406"></script>
+    <script src="/js/jquery.sticky.js?1542725406"></script>
+    <script src="/js/featherlight.min.js?1542725406"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542725406"></script>
+    <script src="/js/highlight.pack.js?1542725406"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542700946"></script>
-    <script src="/js/learn.js?1542700946"></script>
-    <script src="/js/hugo-learn.js?1542700946"></script>
+    <script src="/js/modernizr.custom.71422.js?1542725406"></script>
+    <script src="/js/learn.js?1542725406"></script>
+    <script src="/js/hugo-learn.js?1542725406"></script>
 
-    <link href="/mermaid/mermaid.css?1542700946" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542700946"></script>
+    <link href="/mermaid/mermaid.css?1542725406" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542725406"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
