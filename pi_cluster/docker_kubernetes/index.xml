@@ -29,7 +29,7 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
-      <description>&lt;p&gt;In order to install OpenHAB, HomeAssistent or even promoteheus using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
+      <description>&lt;p&gt;In order to install Prometheus, NATS, Cassandra using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

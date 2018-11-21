@@ -12,19 +12,19 @@
     <title>Deply Helm and Tiller on PI Cluster :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542777267" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542777267" rel="stylesheet">
-    <link href="/css/hybrid.css?1542777267" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542777267" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542777267" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542777267" rel="stylesheet">
-    <link href="/css/theme.css?1542777267" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542777267" rel="stylesheet">
+    <link href="/css/nucleus.css?1542782517" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542782517" rel="stylesheet">
+    <link href="/css/hybrid.css?1542782517" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542782517" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542782517" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542782517" rel="stylesheet">
+    <link href="/css/theme.css?1542782517" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542782517" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542777267" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542782517" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542777267"></script>
+    <script src="/js/jquery-2.x.min.js?1542782517"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542777267"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542777267"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542782517"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542782517"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542777267"></script>
+<script type="text/javascript" src="/js/search.js?1542782517"></script>
 
     
   </div>
@@ -2248,7 +2248,6 @@
 </ul></li>
 <li><a href="#install-tiller-and-helm-on-rpi">Install Tiller and Helm on RPI</a>
 <ul>
-<li><a href="#install-helm-on-pi">Install helm on PI</a></li>
 <li><a href="#deploy-tiller-pod">Deploy Tiller POD</a></li>
 <li><a href="#init-the-helm-client-side">Init the Helm client side</a></li>
 </ul></li>
@@ -2487,128 +2486,22 @@ Successfully tagged jbrette/tiller-arm32v7:2.9
 
 <h2 id="install-tiller-and-helm-on-rpi">Install Tiller and Helm on RPI</h2>
 
-<h3 id="install-helm-on-pi">Install helm on PI</h3>
-
-<pre><code>ssh rpiuser@192.168.1.95
-sudo cp /home/rpiuser/helm_binaries/helm /usr/bin/helm
-</code></pre>
-
 <h3 id="deploy-tiller-pod">Deploy Tiller POD</h3>
 
-<p>First push the tiller docker image to the repo</p>
+<p>Let&rsquo;s install tiller first. Note that tiller Docker image also contains the helm binary</p>
 
-<pre><code>docker login
+<pre><code class="language-bash">cd $HOME
+cp -r proj/kubedge/kubedge_utils/kube-deployment/ .
+cd kube-deployment/tiller/
 
-docker push jbrette/tiller-arm32v7:2.9
-</code></pre>
 
-<p>Prepare the POD deployment files</p>
-
-<pre><code>mkdir -p ~/kube-deployments/tiller
-cd  ~/kube-deployments/tiller
-</code></pre>
-
-<p>Create the kubectl file for tiller service account</p>
-
-<pre><code class="language-sh">cat tiller-serviceaccount.yaml
-</code></pre>
-
-<pre><code class="language-yaml">---
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: tiller
-  namespace: kube-system
-...
----
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
-metadata:
-  name: tiller
-roleRef:
-  apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
-subjects:
-  - kind: ServiceAccount
-    name: tiller
-    namespace: kube-system
-...
-</code></pre>
-
-<p>Create the tiller service account</p>
-
-<pre><code>kubectl create -f tiller-serviceaccount.yaml
-
-serviceaccount/tiller created
-clusterrolebinding.rbac.authorization.k8s.io/tiller created
-</code></pre>
-
-<p>Create manually the tiller deployment file and leverage the tiller service account</p>
-
-<pre><code>helm init --service-account tiller --output yaml &gt; tiller.yaml
-</code></pre>
-
-<p>Edit the image and replace <code>gcr.io/kubernetes-helm/tiller:2.9</code> by <code>jbrette/tiller-arm32v7:2.9</code></p>
-
-<pre><code class="language-yaml">apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  creationTimestamp: null
-  labels:
-    app: helm
-    name: tiller
-  name: tiller-deploy
-  namespace: kube-system
-spec:
-  replicas: 1
-  strategy: {}
-  template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: helm
-        name: tiller
-    spec:
-      containers:
-      - env:
-        - name: TILLER_NAMESPACE
-          value: kube-system
-        - name: TILLER_HISTORY_MAX
-          value: &quot;0&quot;
-        image: gcr.io/kubernetes-helm/tiller:2.9
-        imagePullPolicy: IfNotPresent
-        livenessProbe:
-          httpGet:
-            path: /liveness
-            port: 44135
-          initialDelaySeconds: 1
-          timeoutSeconds: 1
-        name: tiller
-        ports:
-        - containerPort: 44134
-          name: tiller
-        - containerPort: 44135
-          name: http
-        readinessProbe:
-          httpGet:
-            path: /readiness
-            port: 44135
-          initialDelaySeconds: 1
-          timeoutSeconds: 1
-        resources: {}
-      serviceAccountName: tiller
-status: {}
-</code></pre>
-
-<p>Deploy tiller in the kubernetes cluster</p>
-
-<pre><code>kubectl create -f tiller.yaml
+kubectl create -f tiller-serviceaccount.yaml
+kubectl create -f tiller.yaml
 </code></pre>
 
 <p>Check the deployment state</p>
 
-<pre><code>kubectl get all -n kube-system
+<pre><code class="language-bash">kubectl get all -n kube-system
 
 NAME                                        READY     STATUS             RESTARTS   AGE
 pod/tiller-deploy-b59fcc885-66l7s           1/1       Running            0          5m
@@ -2622,7 +2515,7 @@ replicaset.apps/tiller-deploy-b59fcc885           1         1         1         
 
 <p>Check the logs</p>
 
-<pre><code>kubectl logs pod/tiller-deploy-b59fcc885-66l7s -n kube-system
+<pre><code class="language-bash">kubectl logs pod/tiller-deploy-b59fcc885-66l7s -n kube-system
 
 [main] 2018/07/15 18:08:10 Starting Tiller 2.9 (tls=false)
 [main] 2018/07/15 18:08:10 GRPC listening on :44134
@@ -2633,7 +2526,23 @@ replicaset.apps/tiller-deploy-b59fcc885           1         1         1         
 
 <h3 id="init-the-helm-client-side">Init the Helm client side</h3>
 
-<pre><code>helm init --client-only
+<p>locate the node running the tiller pod</p>
+
+<pre><code class="language-bash">ssh &lt;nodewithtillerip&gt;
+docker cp &lt;tillercontainerid&gt;:/helm .
+scp helm &lt;masterpid&gt;:/home/pirate/helm
+rm helm
+</code></pre>
+
+<p>Back on the master PI</p>
+
+<pre><code class="language-bash">chmod 755 helm
+mv helm /usr/bin/helm
+</code></pre>
+
+<p>Initialize client side of Helm</p>
+
+<pre><code class="language-bash">helm init --client-only
 
 Creating /home/rpiuser/.helm
 Creating /home/rpiuser/.helm/repository
@@ -2650,179 +2559,36 @@ Not installing Tiller due to 'client-only' flag having been set
 Happy Helming!
 </code></pre>
 
-<p>Check helm commands are working properly</p>
-
-<pre><code>helm ls
-helm search stable/nginx-ingress
-helm inspect stable/nginx-ingress
-</code></pre>
-
 <h2 id="use-helm-on-rpi">Use helm on RPI</h2>
 
 <p>Let&rsquo;s access the simple helm repo designed for</p>
 
-<pre><code>helm repo add kubeplay 'https://raw.githubusercontent.com/jbrette/kubeplay/arm32v7/helmrepo/'
+<pre><code class="language-bash">helm repo add kubedge1 'https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge1/'
+helm repo update
 </code></pre>
 
-<pre><code>helm repo list
+<pre><code class="language-bash">helm repo list
 
 NAME            URL
 stable          https://kubernetes-charts.storage.googleapis.com
 local           http://127.0.0.1:8879/charts
-kubeplay        https://raw.githubusercontent.com/jbrette/kubeplay/arm32v7/helmrepo/
+kubedge1        https://raw.githubusercontent.com/kubedge/helmrepos/arm32v7/kubedge1/
 </code></pre>
 
-<pre><code>helm search kubeplay
+<pre><code class="language-bash">helm search kubedge1
 
 NAME                            CHART VERSION   APP VERSION     DESCRIPTION
-kubeplay/kubeplay-arm32v7       0.1.0           0.1.0           A Helm chart for Kubernetes
+kubedge1/kubeplay-arm32v7       0.1.0           0.1.0           A Helm chart for Kubernetes
 </code></pre>
 
 <p>Install simple hello world helm chart from kubeplay</p>
 
-<pre><code>helm install kubeplay/kubeplay-arm32v7 --name helm-rpi
+<pre><code class="language-bash">helm install --name demo kubedge1/kubeplay-arm32v7
 
-NAME:   helm-rpi
-LAST DEPLOYED: Sun Jul 15 19:23:58 2018
-NAMESPACE: default
-STATUS: DEPLOYED
-
-RESOURCES:
-==&gt; v1/Service
-NAME                       TYPE      CLUSTER-IP     EXTERNAL-IP  PORT(S)         AGE
-helm-rpi-kubeplay-arm32v7  NodePort  10.96.168.184  &lt;none&gt;       8005:31439/TCP  2s
-
-==&gt; v1beta1/Deployment
-NAME                       DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
-helm-rpi-kubeplay-arm32v7  1        0        0           0          2s
+kubectl get all
 </code></pre>
 
-<p>Check the installation</p>
-
-<pre><code>helm ls
-
-NAME            REVISION        UPDATED                         STATUS          CHART                   NAMESPACE
-helm-rpi        1               Sun Jul 15 19:23:58 2018        DEPLOYED        kubeplay-arm32v7-0.1.0  default
-</code></pre>
-
-<p>Check with kubectl if the POD is ready</p>
-
-<pre><code>kubectl get all -n default
-
-NAME                                             READY     STATUS    RESTARTS   AGE
-pod/helm-rpi-kubeplay-arm32v7-58567c4756-fj968   0/1       Running   4          4m
-
-NAME                                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-service/helm-rpi-kubeplay-arm32v7   NodePort    10.96.168.184   &lt;none&gt;        8005:31439/TCP   4m
-service/kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP          9d
-
-NAME                                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/helm-rpi-kubeplay-arm32v7   1         1         1            0           4m
-
-NAME                                                   DESIRED   CURRENT   READY     AGE
-replicaset.apps/helm-rpi-kubeplay-arm32v7-58567c4756   1         1         0         4m
-</code></pre>
-
-<p>Helm chart is not really consistent. Current image hardcoded to listen on port 80
-Let&rsquo;s use helm upgrade to change the value</p>
-
-<pre><code>helm upgrade --set service.internalPort=80 helm-rpi kubeplay/kubeplay-arm32v7
-
-Release &quot;helm-rpi&quot; has been upgraded. Happy Helming!
-LAST DEPLOYED: Sun Jul 15 20:39:17 2018
-NAMESPACE: default
-STATUS: DEPLOYED
-
-RESOURCES:
-==&gt; v1beta1/Deployment
-NAME                       DESIRED  CURRENT  UP-TO-DATE  AVAILABLE  AGE
-helm-rpi-kubeplay-arm32v7  1        1        0           0          1h
-
-==&gt; v1/Pod(related)
-NAME                                        READY  STATUS       RESTARTS  AGE
-helm-rpi-kubeplay-arm32v7-58567c4756-fj968  0/1    Terminating  25        1h
-helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m  0/1    Pending      0         0s
-
-==&gt; v1/Service
-NAME                       TYPE      CLUSTER-IP     EXTERNAL-IP  PORT(S)         AGE
-helm-rpi-kubeplay-arm32v7  NodePort  10.96.168.184  &lt;none&gt;       8005:31439/TCP  1h
-</code></pre>
-
-<p>The pod seems to now be running properly.</p>
-
-<pre><code>kubectl get all -n default
-
-NAME                                             READY     STATUS    RESTARTS   AGE
-pod/helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m   1/1       Running   0          3m
-
-NAME                                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE
-service/helm-rpi-kubeplay-arm32v7   NodePort    10.96.168.184   &lt;none&gt;        8005:31439/TCP   1h
-service/kubernetes                  ClusterIP   10.96.0.1       &lt;none&gt;        443/TCP          9d
-
-NAME                                        DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
-deployment.apps/helm-rpi-kubeplay-arm32v7   1         1         1            1           1h
-
-NAME                                                   DESIRED   CURRENT   READY     AGE
-replicaset.apps/helm-rpi-kubeplay-arm32v7-58567c4756   0         0         0         1h
-replicaset.apps/helm-rpi-kubeplay-arm32v7-6cb66496c6   1         1         1         3m
-</code></pre>
-
-<p>Check the POD</p>
-
-<pre><code>$ kubectl describe pod/helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m
-Name:           helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m
-Namespace:      default
-Node:           nas-pi/192.168.1.93
-Start Time:     Sun, 15 Jul 2018 20:39:18 +0000
-Labels:         app=kubeplay-arm32v7
-                pod-template-hash=2762205272
-                release=helm-rpi
-Annotations:    &lt;none&gt;
-Status:         Running
-IP:             10.244.2.6
-Controlled By:  ReplicaSet/helm-rpi-kubeplay-arm32v7-6cb66496c6
-Containers:
-  kubeplay-arm32v7:
-    Container ID:   docker://737cd78bebb982c782dae2c07f4604ba71f45bc112e91aa20652e29b25bf5d63
-    Image:          jbrette/kubeplay-arm32v7:0.1.0
-    Image ID:       docker-pullable://jbrette/kubeplay-arm32v7@sha256:86441999035e35514fc647ff9af90bdfc152299636b48b9d3dba9107574f3957
-    Port:           80/TCP
-    Host Port:      0/TCP
-    State:          Running
-      Started:      Sun, 15 Jul 2018 20:39:23 +0000
-    Ready:          True
-    Restart Count:  0
-    Liveness:       http-get http://:80/ delay=0s timeout=1s period=10s #success=1 #failure=3
-    Readiness:      http-get http://:80/ delay=0s timeout=1s period=10s #success=1 #failure=3
-    Environment:    &lt;none&gt;
-    Mounts:
-      /var/run/secrets/kubernetes.io/serviceaccount from default-token-c5v7s (ro)
-Conditions:
-  Type              Status
-  Initialized       True
-  Ready             True
-  ContainersReady   True
-  PodScheduled      True
-Volumes:
-  default-token-c5v7s:
-    Type:        Secret (a volume populated by a Secret)
-    SecretName:  default-token-c5v7s
-    Optional:    false
-QoS Class:       BestEffort
-Node-Selectors:  &lt;none&gt;
-Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
-                 node.kubernetes.io/unreachable:NoExecute for 300s
-Events:
-  Type    Reason     Age   From               Message
-  ----    ------     ----  ----               -------
-  Normal  Scheduled  10m   default-scheduler  Successfully assigned default/helm-rpi-kubeplay-arm32v7-6cb66496c6-9w97m to nas-pi
-  Normal  Pulling    10m   kubelet, nas-pi    pulling image &quot;jbrette/kubeplay-arm32v7:0.1.0&quot;
-  Normal  Pulled     10m   kubelet, nas-pi    Successfully pulled image &quot;jbrette/kubeplay-arm32v7:0.1.0&quot;
-  Normal  Created    10m   kubelet, nas-pi    Created container
-  Normal  Started    10m   kubelet, nas-pi    Started container
-</code></pre>
-
-<p>Let&rsquo;s open a browser towards the URL:</p>
+<p>Let&rsquo;s open a browser towards the URL on <a href="http://192.168.2.1:kubeplay_NortPort:" target="_blank">http://192.168.2.1:kubeplay_NortPort:</a></p>
 
 <p><img src="/images/kubeplay/kubeplay_arm32v7.png" alt="" />
 <img src="/images/kubeplay/dashboard.png" alt="" /></p>
@@ -4334,20 +4100,20 @@ Events:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542777267"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542777267"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542777267"></script>
-    <script src="/js/jquery.sticky.js?1542777267"></script>
-    <script src="/js/featherlight.min.js?1542777267"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542777267"></script>
-    <script src="/js/highlight.pack.js?1542777267"></script>
+    <script src="/js/clipboard.min.js?1542782517"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542782517"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542782517"></script>
+    <script src="/js/jquery.sticky.js?1542782517"></script>
+    <script src="/js/featherlight.min.js?1542782517"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542782517"></script>
+    <script src="/js/highlight.pack.js?1542782517"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542777267"></script>
-    <script src="/js/learn.js?1542777267"></script>
-    <script src="/js/hugo-learn.js?1542777267"></script>
+    <script src="/js/modernizr.custom.71422.js?1542782517"></script>
+    <script src="/js/learn.js?1542782517"></script>
+    <script src="/js/hugo-learn.js?1542782517"></script>
 
-    <link href="/mermaid/mermaid.css?1542777267" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542777267"></script>
+    <link href="/mermaid/mermaid.css?1542782517" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542782517"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

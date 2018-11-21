@@ -12,19 +12,19 @@
     <title>Add Raspberry PI node to Kubernetes Cluster in 10 min :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542777268" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542777268" rel="stylesheet">
-    <link href="/css/hybrid.css?1542777268" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542777268" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542777268" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542777268" rel="stylesheet">
-    <link href="/css/theme.css?1542777268" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542777268" rel="stylesheet">
+    <link href="/css/nucleus.css?1542782517" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542782517" rel="stylesheet">
+    <link href="/css/hybrid.css?1542782517" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542782517" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542782517" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542782517" rel="stylesheet">
+    <link href="/css/theme.css?1542782517" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542782517" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542777268" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542782517" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542777268"></script>
+    <script src="/js/jquery-2.x.min.js?1542782517"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542777268"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542777268"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542782517"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542782517"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542777268"></script>
+<script type="text/javascript" src="/js/search.js?1542782517"></script>
 
     
   </div>
@@ -2234,12 +2234,18 @@
 <ul>
 <li>
 <ul>
-<li><a href="#base-os">Base OS</a></li>
-<li><a href="#connect-to-pi-through-lan">Connect to PI through LAN</a></li>
-<li><a href="#enable-lan-or-wlan">Enable LAN or WLAN.</a></li>
-<li><a href="#freeze-your-configuration">Freeze your configuration</a></li>
-<li><a href="#update-your-pi-name">Update your Pi name</a></li>
-<li><a href="#install-kubeadm">Install kubeadm</a></li>
+<li><a href="#base-os">Base OS</a>
+<ul>
+<li><a href="#os">OS</a></li>
+<li><a href="#freeze-the-new-node-ip">Freeze the new node IP</a></li>
+<li><a href="#ssh-to-the-new-node">Ssh to the new node</a></li>
+<li><a href="#basic-hostname">Basic hostname</a></li>
+</ul></li>
+<li><a href="#install-kubeadm">Install kubeadm</a>
+<ul>
+<li><a href="#on-master-pi">On Master PI</a></li>
+<li><a href="#on-new-slave-pi">On New Slave PI</a></li>
+</ul></li>
 <li><a href="#conclusion">Conclusion</a></li>
 </ul></li>
 </ul>
@@ -2275,74 +2281,70 @@ build a default SD image where cloud-init does 100% of the initialization work.<
 
 <p>Flash HypriotOS to SD and reboot Pi.</p>
 
+<h3 id="os">OS</h3>
+
 <pre><code>Flash the SD Card with HypriotOS
-Connect Pi through LAN (temporary).
-Look for black-perl machine in DHCP
+Connect Pi through to the cluster switch
 </code></pre>
 
-<h2 id="connect-to-pi-through-lan">Connect to PI through LAN</h2>
+<h3 id="freeze-the-new-node-ip">Freeze the new node IP</h3>
 
-<pre><code>ssh 192.168.1.xxx -l rpiuser
+<p>Access the Master PI, run <code>arp -a</code> and find the new IP.
+Freeze the new IP in the dhcpcd.conf</p>
 
-ls -lt
+<pre><code class="language-bash">ssh &lt;masterip&gt;
+arp -a
+vi /etc/dhcp/dhcpd.conf
+</code></pre>
+
+<h3 id="ssh-to-the-new-node">Ssh to the new node</h3>
+
+<p>Access the node from the Master PI:</p>
+
+<pre><code class="language-bash">ssh 192.168.2.xxx
 docker ps
 </code></pre>
 
-<h2 id="enable-lan-or-wlan">Enable LAN or WLAN.</h2>
+<h3 id="basic-hostname">Basic hostname</h3>
 
-<p>Check the IP address. Depending on PI3B or PI3B+, the WLAN network may be different.</p>
+<p>Freeze your configuration</p>
 
-<pre><code>ip a
-iwconfig
-sudo ip link set wlan0 up
-sudo iwlist scan | grep ES
-sudo iwlist scan | grep ED
-wpa_passphrase &lt;sommessid&gt;
-sudo vi sudo vi /etc/network/interfaces.d/wlan0
-sudo ifup wlan0
-</code></pre>
-
-<h2 id="freeze-your-configuration">Freeze your configuration</h2>
-
-<p>Cloud init is perfect for the first boot. Once the node
-is up, it can be challenging not to preserve the fine tuning done
-to the OS.</p>
-
-<pre><code>sudo apt-get remove --purge cloud-init
+<pre><code class="language-bash">sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
 </code></pre>
 
-<h2 id="update-your-pi-name">Update your Pi name</h2>
+<p>Set the host name</p>
 
-<p>as root</p>
-
-<pre><code>sudo -i
-
-vi /etc/hosts
-vi /etc/hostname
-</code></pre>
-
-<p>I useally don&rsquo;t touch the file. Domain most likely
-coming from your Internet router. I actually updated the settings
-on the router to have consistent naming on my PI networks.</p>
-
-<pre><code>vi /etc/resolv.conf
+<pre><code class="language-bash">sudo vi /etc/hosts
+sudo hostnamectl set-hostname &lt;xxx&gt;
 </code></pre>
 
 <h2 id="install-kubeadm">Install kubeadm</h2>
 
-<p>Firt access the kubemaster node and regenerate a token:</p>
+<h3 id="on-master-pi">On Master PI</h3>
 
-<pre><code>kubeadm token create
+<p>Firt access the kubemaster node and regenerate a token (if you did not use ttl=0 when using kubeadm init on the master):</p>
+
+<pre><code class="language-bash">kubeadm token create
 </code></pre>
 
-<p>Back on the new node, as root</p>
+<h3 id="on-new-slave-pi">On New Slave PI</h3>
 
-<pre><code>curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+<pre><code class="language-bash">sudo -i
+
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 echo &quot;deb http://apt.kubernetes.io/ kubernetes-xenial main&quot; &gt; /etc/apt/sources.list.d/kubernetes.list
-apt-get update
-apt-get install -y kubeadm
-kubeadm join 192.168.1.95:6443 --token yyyyyy.xxxxxxxxxxxxxxxx --discovery-token-ca-cert-hash sha256:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+apt-get update &amp;&amp; apt-get install -y kubeadm kubectl kubelet
+</code></pre>
+
+<p>To help during the initialization phase, get kubeadm to download the images onto docker</p>
+
+<pre><code class="language-bash">kubeadm config images pull
+</code></pre>
+
+<p>Get the node to join the cluster</p>
+
+<pre><code class="language-bash">kubeadm join 192.168.2.1:6443 --token yyyyyy.xxxx --discovery-token-ca-cert-hash sha256:zzzz
 </code></pre>
 
 <h2 id="conclusion">Conclusion</h2>
@@ -3849,20 +3851,20 @@ kubeadm join 192.168.1.95:6443 --token yyyyyy.xxxxxxxxxxxxxxxx --discovery-token
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542777268"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542777268"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542777268"></script>
-    <script src="/js/jquery.sticky.js?1542777268"></script>
-    <script src="/js/featherlight.min.js?1542777268"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542777268"></script>
-    <script src="/js/highlight.pack.js?1542777268"></script>
+    <script src="/js/clipboard.min.js?1542782517"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542782517"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542782517"></script>
+    <script src="/js/jquery.sticky.js?1542782517"></script>
+    <script src="/js/featherlight.min.js?1542782517"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542782517"></script>
+    <script src="/js/highlight.pack.js?1542782517"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542777268"></script>
-    <script src="/js/learn.js?1542777268"></script>
-    <script src="/js/hugo-learn.js?1542777268"></script>
+    <script src="/js/modernizr.custom.71422.js?1542782517"></script>
+    <script src="/js/learn.js?1542782517"></script>
+    <script src="/js/hugo-learn.js?1542782517"></script>
 
-    <link href="/mermaid/mermaid.css?1542777268" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542777268"></script>
+    <link href="/mermaid/mermaid.css?1542782517" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542782517"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
