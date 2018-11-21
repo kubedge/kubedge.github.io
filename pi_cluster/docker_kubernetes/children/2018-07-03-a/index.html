@@ -12,19 +12,19 @@
     <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542726700" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542726700" rel="stylesheet">
-    <link href="/css/hybrid.css?1542726700" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542726700" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542726700" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542726700" rel="stylesheet">
-    <link href="/css/theme.css?1542726700" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542726700" rel="stylesheet">
+    <link href="/css/nucleus.css?1542777267" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542777267" rel="stylesheet">
+    <link href="/css/hybrid.css?1542777267" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542777267" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542777267" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542777267" rel="stylesheet">
+    <link href="/css/theme.css?1542777267" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542777267" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542726700" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542777267" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542726700"></script>
+    <script src="/js/jquery-2.x.min.js?1542777267"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542726700"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542726700"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542777267"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542777267"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542726700"></script>
+<script type="text/javascript" src="/js/search.js?1542777267"></script>
 
     
   </div>
@@ -2235,36 +2235,31 @@
 <li>
 <ul>
 <li><a href="#key-aspects">Key Aspects</a></li>
-<li><a href="#hardware">Hardware</a>
+<li><a href="#kubernetes-for-arm32v7">Kubernetes for ARM32V7</a>
 <ul>
-<li><a href="#reference-links">Reference Links</a></li>
-<li><a href="#procedure">Procedure</a></li>
-<li><a href="#result">Result</a>
+<li>
 <ul>
-<li><a href="#cluster-1-5-nodes-cluster"><strong>Cluster 1</strong>: 5 nodes cluster</a></li>
-<li><a href="#cluster-2-3-nodes-cluster"><strong>Cluster 2</strong>: 3 nodes cluster</a></li>
+<li><a href="#on-master-and-slaves">On Master and Slaves</a></li>
+<li><a href="#initialize-the-kubernetes-master-node">Initialize the Kubernetes Master node</a></li>
+<li><a href="#initialize-kubectl-configuration">Initialize kubectl configuration</a></li>
+<li><a href="#on-the-slave-node">On the slave node</a></li>
+<li><a href="#setup-cni">Setup CNI</a></li>
 </ul></li>
 </ul></li>
-<li><a href="#os">OS</a>
+<li><a href="#kubernetes-for-arm64v8">Kubernetes for ARM64V8</a>
 <ul>
-<li><a href="#reference-links-1">Reference Links</a></li>
-<li><a href="#procedure-1">Procedure</a></li>
+<li>
+<ul>
+<li><a href="#on-master-and-slaves-1">On Master and Slaves</a></li>
+<li><a href="#initialize-the-kubernetes-master-node-1">Initialize the Kubernetes Master node</a></li>
 </ul></li>
 <li><a href="#kubernetes">Kubernetes</a>
-<ul>
-<li><a href="#reference-links-2">Reference Links</a></li>
-<li><a href="#procedure-for-cluster-2">Procedure for Cluster 2</a></li>
-<li><a href="#kubernetes-1">Kubernetes</a>
 <ul>
 <li><a href="#cluster-1-5-node-clusters"><strong>Cluster 1</strong>: 5 node clusters</a></li>
 <li><a href="#cluster-2-3-node-clusters"><strong>Cluster 2</strong>: 3 node clusters</a></li>
 </ul></li>
-<li><a href="#kubernetes-dashboard">Kubernetes Dashboard</a>
-<ul>
-<li><a href="#cluster-1-5-node-clusters-1"><strong>Cluster 1</strong>: 5 node clusters</a></li>
-<li><a href="#cluster-2-3-node-clusters-1"><strong>Cluster 2</strong>: 3 node clusters</a></li>
-</ul></li>
 <li><a href="#cleanup">Cleanup</a></li>
+<li><a href="#reference-links">Reference Links</a></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -2298,105 +2293,54 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
 <li>Deploy Kubernetes on that Cluster</li>
 </ul>
 
-<h2 id="hardware">Hardware</h2>
+<h2 id="kubernetes-for-arm32v7">Kubernetes for ARM32V7</h2>
 
-<h3 id="reference-links">Reference Links</h3>
+<p>The current version is Kubernetes 12.2.2</p>
 
-<ul>
-<li><a href="https://www.youtube.com/watch?v=KJKhRLKXr-Q" target="_blank">Video</a></li>
-</ul>
+<h4 id="on-master-and-slaves">On Master and Slaves</h4>
 
-<h3 id="procedure">Procedure</h3>
+<p>Kubedge team did not automate yet the installation of kubeadm on each node</p>
 
-<ul>
-<li>Kind of followed the video</li>
-<li>Used a premade rack instead.</li>
-<li>Adapt to Raspberry 3B+ (1Gb card instead of 100Mb card)</li>
-</ul>
+<pre><code class="language-bash">sudo -i
 
-<h3 id="result">Result</h3>
-
-<h4 id="cluster-1-5-nodes-cluster"><strong>Cluster 1</strong>: 5 nodes cluster</h4>
-
-<p><img src="/images/raspberrypi/IMG_0339.JPG" alt="" /></p>
-
-<h4 id="cluster-2-3-nodes-cluster"><strong>Cluster 2</strong>: 3 nodes cluster</h4>
-
-<p><img src="/images/raspberrypi/IMG_0344.JPG" alt="" /></p>
-
-<h2 id="os">OS</h2>
-
-<h3 id="reference-links-1">Reference Links</h3>
-
-<ul>
-<li><a href="https://www.youtube.com/watch?v=eZ5uX-JJbyY" target="_blank">Video</a></li>
-<li><a href="https://github.com/hypriot/image-builder-rpi/releases" target="_blank">HypriotOS</a></li>
-</ul>
-
-<h3 id="procedure-1">Procedure</h3>
-
-<ul>
-<li>Use HypriotOS because the quickest to set up. SSH and Docker supported by default</li>
-<li>Ubuntu Core was not ready for Raspberry 3B +</li>
-<li>Even if processor is 64bits, OS is still 32bits. (Memory is small anyway).</li>
-<li>Resion.io OS is not supporting docker anymore but balena instead. It would not work with Kubernetes.</li>
-<li>Video had a couple of typo in DHCP installation</li>
-<li>Removed cloud-init once the site was up.</li>
-<li>TBD</li>
-</ul>
-
-<h2 id="kubernetes">Kubernetes</h2>
-
-<h3 id="reference-links-2">Reference Links</h3>
-
-<ul>
-<li><a href="https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/" target="_blank">kubeadm1</a></li>
-<li><a href="https://kubecloud.io/setup-a-kubernetes-1-9-0-raspberry-pi-cluster-on-raspbian-using-kubeadm-f8b3b85bc2d1" target="_blank">kubeadm2</a></li>
-</ul>
-
-<h3 id="procedure-for-cluster-2">Procedure for Cluster 2</h3>
-
-<ul>
-<li>Issue at first with 10.04. Kubelet not starting. Downgraded with Kubernetes 1.9.8 (Cluster 1)</li>
-<li>Issue had been fixed with Kubernetes 1.11 (Cluster 2)</li>
-</ul>
-
-<pre><code>sudo -i
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 echo &quot;deb http://apt.kubernetes.io/ kubernetes-xenial main&quot; &gt; /etc/apt/sources.list.d/kubernetes.list
-apt-get update &amp;&amp; apt-get install -y kubeadm
+apt-get update &amp;&amp; apt-get install -y kubeadm kubectl kubelet
 </code></pre>
 
-<pre><code># kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 192.168.1.95
-I0706 00:35:34.429323   14024 feature_gate.go:230] feature gates: &amp;{map[]}
-[init] using Kubernetes version: v1.11.0
+<p>To help during the initialization phase, get kubeadm to download the images onto docker</p>
+
+<pre><code class="language-bash">kubeadm config images pull
+</code></pre>
+
+<h4 id="initialize-the-kubernetes-master-node">Initialize the Kubernetes Master node</h4>
+
+<pre><code class="language-bash">kubeadm init --pod-network-cidr 10.244.0.0/16 --apiserver-advertise-address 192.168.2.1
+
+[init] using Kubernetes version: v1.12.2
 [preflight] running pre-flight checks
-I0706 00:35:34.656171   14024 kernel_validator.go:81] Validating kernel version
-I0706 00:35:34.657051   14024 kernel_validator.go:96] Validating kernel config
-        [WARNING SystemVerification]: docker version is greater than the most recently validated version. Docker version: 18.05.0-ce. Max validated version: 17.03
+        [WARNING SystemVerification]: this Docker version is not on the list of validated versions: 18.04.0-ce. Latest validated version: 18.06
 [preflight/images] Pulling images required for setting up a Kubernetes cluster
 [preflight/images] This might take a minute or two, depending on the speed of your internet connection
 [preflight/images] You can also perform this action in beforehand using 'kubeadm config images pull'
-
-
 [kubelet] Writing kubelet environment file with flags to file &quot;/var/lib/kubelet/kubeadm-flags.env&quot;
 [kubelet] Writing kubelet configuration to file &quot;/var/lib/kubelet/config.yaml&quot;
 [preflight] Activating the kubelet service
 [certificates] Generated ca certificate and key.
-[certificates] Generated apiserver certificate and key.
-[certificates] apiserver serving cert is signed for DNS names [master-pi kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.1.95]
 [certificates] Generated apiserver-kubelet-client certificate and key.
-[certificates] Generated sa key and public key.
+[certificates] Generated apiserver certificate and key.
+[certificates] apiserver serving cert is signed for DNS names [kubemaster-pi kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local] and IPs [10.96.0.1 192.168.2.1]
 [certificates] Generated front-proxy-ca certificate and key.
 [certificates] Generated front-proxy-client certificate and key.
 [certificates] Generated etcd/ca certificate and key.
-[certificates] Generated etcd/server certificate and key.
-[certificates] etcd/server serving cert is signed for DNS names [master-pi localhost] and IPs [127.0.0.1 ::1]
 [certificates] Generated etcd/peer certificate and key.
-[certificates] etcd/peer serving cert is signed for DNS names [master-pi localhost] and IPs [192.168.1.95 127.0.0.1 ::1]
+[certificates] etcd/peer serving cert is signed for DNS names [kubemaster-pi localhost] and IPs [192.168.2.1 127.0.0.1 ::1]
+[certificates] Generated etcd/server certificate and key.
+[certificates] etcd/server serving cert is signed for DNS names [kubemaster-pi localhost] and IPs [127.0.0.1 ::1]
 [certificates] Generated etcd/healthcheck-client certificate and key.
 [certificates] Generated apiserver-etcd-client certificate and key.
 [certificates] valid certificates and keys now exist in &quot;/etc/kubernetes/pki&quot;
+[certificates] Generated sa key and public key.
 [kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/admin.conf&quot;
 [kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/kubelet.conf&quot;
 [kubeconfig] Wrote KubeConfig file to disk: &quot;/etc/kubernetes/controller-manager.conf&quot;
@@ -2405,15 +2349,15 @@ I0706 00:35:34.657051   14024 kernel_validator.go:96] Validating kernel config
 [controlplane] wrote Static Pod manifest for component kube-controller-manager to &quot;/etc/kubernetes/manifests/kube-controller-manager.yaml&quot;
 [controlplane] wrote Static Pod manifest for component kube-scheduler to &quot;/etc/kubernetes/manifests/kube-scheduler.yaml&quot;
 [etcd] Wrote Static Pod manifest for a local etcd instance to &quot;/etc/kubernetes/manifests/etcd.yaml&quot;
-[init] waiting for the kubelet to boot up the control plane as Static Pods from directory &quot;/etc/kubernetes/manifests&quot;
+[init] waiting for the kubelet to boot up the control plane as Static Pods from directory &quot;/etc/kubernetes/manifests&quot;              
 [init] this might take a minute or longer if the control plane images have to be pulled
-[apiclient] All control plane components are healthy after 77.506994 seconds
+[apiclient] All control plane components are healthy after 88.010108 seconds
 [uploadconfig] storing the configuration used in ConfigMap &quot;kubeadm-config&quot; in the &quot;kube-system&quot; Namespace
-[kubelet] Creating a ConfigMap &quot;kubelet-config-1.11&quot; in namespace kube-system with the configuration for the kubelets in the cluster
-[markmaster] Marking the node master-pi as master by adding the label &quot;node-role.kubernetes.io/master=''&quot;
-[markmaster] Marking the node master-pi as master by adding the taints [node-role.kubernetes.io/master:NoSchedule]
-[patchnode] Uploading the CRI Socket information &quot;/var/run/dockershim.sock&quot; to the Node API object &quot;master-pi&quot; as an annotation
-[bootstraptoken] using token: 120d6b.yyyyyyy
+[kubelet] Creating a ConfigMap &quot;kubelet-config-1.12&quot; in namespace kube-system with the configuration for the kubeletsin the cluster
+[markmaster] Marking the node kubemaster-pi as master by adding the label &quot;node-role.kubernetes.io/master=''&quot;
+[markmaster] Marking the node kubemaster-pi as master by adding the taints [node-role.kubernetes.io/master:NoSchedule]
+[patchnode] Uploading the CRI Socket information &quot;/var/run/dockershim.sock&quot; to the Node API object &quot;kubemaster-pi&quot; asan annotation
+[bootstraptoken] using token: vej1mx.6qf2xljr39rr1i14
 [bootstraptoken] configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
 [bootstraptoken] configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
 [bootstraptoken] configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
@@ -2436,31 +2380,88 @@ Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options liste
 You can now join any number of machines by running the following on each node
 as root:
 
-  kubeadm join 192.168.1.95:6443 --token 120d6b.yyyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
+  kubeadm join 192.168.2.1:6443 --token vej1mx.yyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
 </code></pre>
 
-<p>on master</p>
+<h4 id="initialize-kubectl-configuration">Initialize kubectl configuration</h4>
 
-<pre><code>mkdir -p $HOME/.kube
+<p>As normal user (not root)</p>
+
+<pre><code class="language-bash">mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubectl get nodes
 </code></pre>
 
-<pre><code>curl -sSL https://rawgit.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml | sed &quot;s/amd64/arm/g&quot; | kubectl create -f -
+<h4 id="on-the-slave-node">On the slave node</h4>
+
+<pre><code class="language-bash">kubeadm join 192.168.2.1:6443 --token vej1mx.yyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
 </code></pre>
 
-<p>on first node</p>
+<h4 id="setup-cni">Setup CNI</h4>
 
-<pre><code>kubeadm join 192.168.1.95:6443 --token 120d6b.yyyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
+<p>At that point, nodes are not in ready state yet and CoreDNS in pending state</p>
+
+<pre><code class="language-bash">kubectl get nodes
+kubectl get all -n kube-system
 </code></pre>
 
-<p>on second node</p>
+<p>The kubectl deployment file for flannel and adapted to kubedge is available here:
+Note: Be sure to have picked the right branch (arm32v7 or arm64v8) when pulling kube-deployment</p>
 
-<pre><code>kubeadm join 192.168.1.95:6443 --token 120d6b.yyyyyyy --discovery-token-ca-cert-hash sha256:xxxxxx
+<pre><code class="language-bash">cd $HOME
+cp -r proj/kubedge/kubedge_utils/kube-deployment/ .
+
+cd kube-deployment/flannel/
+kubectl apply -f flannel.yaml 
 </code></pre>
 
-<h3 id="kubernetes-1">Kubernetes</h3>
+<p>The nodes should turn ready and CoreDNS should start</p>
+
+<pre><code class="language-bash">kubectl get nodes
+kubectl get all -n kube-system 
+</code></pre>
+
+<h2 id="kubernetes-for-arm64v8">Kubernetes for ARM64V8</h2>
+
+<p>Need to installed version 1.13.1-beta1 compiled with go 1.11 (required)</p>
+
+<h4 id="on-master-and-slaves-1">On Master and Slaves</h4>
+
+<p>Kubedge team did not automate yet the installation of kubeadm on each node</p>
+
+<p>Install only the kubelet on each node. At the time, 12.2.2 is installed since it is the stable version</p>
+
+<pre><code class="language-bash">sudo -i
+
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo &quot;deb http://apt.kubernetes.io/ kubernetes-xenial main&quot; &gt; /etc/apt/sources.list.d/kubernetes.list
+apt-get update &amp;&amp; apt-get install -y kubelet
+</code></pre>
+
+<pre><code class="language-bash">sudo systemctl stop kubelet
+
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0-beta.1/bin/linux/arm64/kubectl
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0-beta.1/bin/linux/arm64/kubeadm
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.0-beta.1/bin/linux/arm64/kubelet
+
+chmod 755 kubectl
+chmod 755 kubeadm
+chmod 755 kubelet
+
+mv kubectl /usr/bin/kubectl
+mv kubeadm /usr/bin/kubeadm
+mv kubelet /usr/bin/kubelet
+</code></pre>
+
+<p>To help during the initialization phase, get kubeadm to download the images onto docker</p>
+
+<pre><code class="language-bash">kubeadm config images pull
+</code></pre>
+
+<h4 id="initialize-the-kubernetes-master-node-1">Initialize the Kubernetes Master node</h4>
+
+<h3 id="kubernetes">Kubernetes</h3>
 
 <h4 id="cluster-1-5-node-clusters"><strong>Cluster 1</strong>: 5 node clusters</h4>
 
@@ -2573,37 +2574,21 @@ NAMESPACE     NAME                                 DESIRED   CURRENT   READY    
 kube-system   replicaset.apps/coredns-78fcdf6894   2         2         2         1h
 </code></pre>
 
-<h3 id="kubernetes-dashboard">Kubernetes Dashboard</h3>
-
-<h4 id="cluster-1-5-node-clusters-1"><strong>Cluster 1</strong>: 5 node clusters</h4>
-
-<p>List of the nodes in Cluster 1</p>
-
-<p><img src="/images/kubernetes/cluster1_nodes.png" alt="" /></p>
-
-<p>Kubernetes kube-system overview of Cluster 1</p>
-
-<p><img src="/images/kubernetes/cluster1_overview.png" alt="" /></p>
-
-<h4 id="cluster-2-3-node-clusters-1"><strong>Cluster 2</strong>: 3 node clusters</h4>
-
-<p>List of the nodes in Cluster 2</p>
-
-<p><img src="/images/kubernetes/cluster2_nodes.png" alt="" /></p>
-
-<p>Kubernetes kube-system overview of Cluster 2</p>
-
-<p><img src="/images/kubernetes/cluster2_overview.png" alt="" /></p>
-
 <h3 id="cleanup">Cleanup</h3>
 
 <p>cleanup</p>
 
-<pre><code>sudo kubeadm reset
+<pre><code class="language-bash">sudo kubeadm reset
 sudo docker rm $(sudo docker ps -qa)
 sudo docker image rm $(sudo docker image list -qa)
-sudo apt-get upgrade
 </code></pre>
+
+<h3 id="reference-links">Reference Links</h3>
+
+<ul>
+<li><a href="https://blog.hypriot.com/post/setup-kubernetes-raspberry-pi-cluster/" target="_blank">kubeadm1</a></li>
+<li><a href="https://kubecloud.io/setup-a-kubernetes-1-9-0-raspberry-pi-cluster-on-raspbian-using-kubeadm-f8b3b85bc2d1" target="_blank">kubeadm2</a></li>
+</ul>
 
 <footer class=" footline" >
 	
@@ -4099,20 +4084,20 @@ sudo apt-get upgrade
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542726700"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542726700"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542726700"></script>
-    <script src="/js/jquery.sticky.js?1542726700"></script>
-    <script src="/js/featherlight.min.js?1542726700"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542726700"></script>
-    <script src="/js/highlight.pack.js?1542726700"></script>
+    <script src="/js/clipboard.min.js?1542777267"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542777267"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542777267"></script>
+    <script src="/js/jquery.sticky.js?1542777267"></script>
+    <script src="/js/featherlight.min.js?1542777267"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542777267"></script>
+    <script src="/js/highlight.pack.js?1542777267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542726700"></script>
-    <script src="/js/learn.js?1542726700"></script>
-    <script src="/js/hugo-learn.js?1542726700"></script>
+    <script src="/js/modernizr.custom.71422.js?1542777267"></script>
+    <script src="/js/learn.js?1542777267"></script>
+    <script src="/js/hugo-learn.js?1542777267"></script>
 
-    <link href="/mermaid/mermaid.css?1542726700" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542726700"></script>
+    <link href="/mermaid/mermaid.css?1542777267" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542777267"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

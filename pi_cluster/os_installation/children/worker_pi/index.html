@@ -12,19 +12,19 @@
     <title>OS Installation on Worker PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542726700" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542726700" rel="stylesheet">
-    <link href="/css/hybrid.css?1542726700" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542726700" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542726700" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542726700" rel="stylesheet">
-    <link href="/css/theme.css?1542726700" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542726700" rel="stylesheet">
+    <link href="/css/nucleus.css?1542777268" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542777268" rel="stylesheet">
+    <link href="/css/hybrid.css?1542777268" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542777268" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542777268" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542777268" rel="stylesheet">
+    <link href="/css/theme.css?1542777268" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542777268" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542726700" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542777268" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542726700"></script>
+    <script src="/js/jquery-2.x.min.js?1542777268"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542726700"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542726700"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542777268"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542777268"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542726700"></script>
+<script type="text/javascript" src="/js/search.js?1542777268"></script>
 
     
   </div>
@@ -2239,6 +2239,7 @@
 <ul>
 <li><a href="#access-the-node">Access the node</a></li>
 <li><a href="#freeze-your-configuration">Freeze your configuration</a></li>
+<li><a href="#update-os">Update OS</a></li>
 <li><a href="#update-worker-pi-name">Update worker PI name</a></li>
 <li><a href="#update-the-static-ip-on-the-master-pi">Update the static IP on the master PI</a></li>
 </ul></li>
@@ -2292,13 +2293,34 @@ plug them to the ethernet switch and enable the power.</p>
 is up, it can be challenging not to preserve the fine tuning done
 to the OS.</p>
 
-<div class="notices warning" ><p>The /etc/resolv.conf on the new node should contain the IP address of your home router if dhcpd is setup properly
-on your master node.</p>
-</div>
-
-
-<pre><code>sudo apt-get remove --purge cloud-init
+<pre><code class="language-bash">sudo apt-get remove --purge cloud-init
 sudo apt-get autoremove
+</code></pre>
+
+<h3 id="update-os">Update OS</h3>
+
+<p>Let&rsquo;s update to the latest version</p>
+
+<pre><code class="language-bash">sudo apt-get update
+sudo apt-get upgrade
+</code></pre>
+
+<p>Gain access to latest docker-ce</p>
+
+<pre><code class="language-bash">sudo -i
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+usermod -aG docker pirate
+</code></pre>
+
+<p>At the time this article is written 18.09 is not supported yet.</p>
+
+<pre><code class="language-bash">sudo apt-cache policy docker-ce
+sudo apt-get remove --purge docker-ce
+sudo apt-get autoremove
+
+sudo apt-get install docker-ce=18.06.1~ce~3-0~debian
 </code></pre>
 
 <h3 id="update-worker-pi-name">Update worker PI name</h3>
@@ -2308,8 +2330,17 @@ sudo apt-get autoremove
 <pre><code class="language-bash">sudo -i
 
 vi /etc/hosts
-vi /etc/hostname
 </code></pre>
+
+<p>It seems on HypriotOS 64, you need to do</p>
+
+<pre><code class="language-bash">sudo hostnamectl set-hostname kubemaster-pi
+</code></pre>
+
+<div class="notices warning" ><p>The /etc/resolv.conf on the new node should contain the IP address of your home router if dhcpd is setup properly
+on your master node.</p>
+</div>
+
 
 <h3 id="update-the-static-ip-on-the-master-pi">Update the static IP on the master PI</h3>
 
@@ -2319,7 +2350,7 @@ corrupt the configuration file.</p>
 
 <pre><code class="language-bash">arp -a
 
-sudo i /etc/dhcpd/dhcpd.conf
+sudo vi /etc/dhcpd/dhcpd.conf
 
 sudo service isc-dhcp-server restart
 </code></pre>
@@ -3824,20 +3855,20 @@ sudo service isc-dhcp-server restart
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542726700"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542726700"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542726700"></script>
-    <script src="/js/jquery.sticky.js?1542726700"></script>
-    <script src="/js/featherlight.min.js?1542726700"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542726700"></script>
-    <script src="/js/highlight.pack.js?1542726700"></script>
+    <script src="/js/clipboard.min.js?1542777268"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542777268"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542777268"></script>
+    <script src="/js/jquery.sticky.js?1542777268"></script>
+    <script src="/js/featherlight.min.js?1542777268"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542777268"></script>
+    <script src="/js/highlight.pack.js?1542777268"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542726700"></script>
-    <script src="/js/learn.js?1542726700"></script>
-    <script src="/js/hugo-learn.js?1542726700"></script>
+    <script src="/js/modernizr.custom.71422.js?1542777268"></script>
+    <script src="/js/learn.js?1542777268"></script>
+    <script src="/js/hugo-learn.js?1542777268"></script>
 
-    <link href="/mermaid/mermaid.css?1542726700" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542726700"></script>
+    <link href="/mermaid/mermaid.css?1542777268" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542777268"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

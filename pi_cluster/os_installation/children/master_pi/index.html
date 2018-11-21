@@ -12,19 +12,19 @@
     <title>OS Installation on Master PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="/css/nucleus.css?1542726700" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1542726700" rel="stylesheet">
-    <link href="/css/hybrid.css?1542726700" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1542726700" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1542726700" rel="stylesheet">
-    <link href="/css/auto-complete.css?1542726700" rel="stylesheet">
-    <link href="/css/theme.css?1542726700" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1542726700" rel="stylesheet">
+    <link href="/css/nucleus.css?1542777267" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1542777267" rel="stylesheet">
+    <link href="/css/hybrid.css?1542777267" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1542777267" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1542777267" rel="stylesheet">
+    <link href="/css/auto-complete.css?1542777267" rel="stylesheet">
+    <link href="/css/theme.css?1542777267" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1542777267" rel="stylesheet">
     
-      <link href="/css/theme-kubedge.css?1542726700" rel="stylesheet">
+      <link href="/css/theme-kubedge.css?1542777267" rel="stylesheet">
     
 
-    <script src="/js/jquery-2.x.min.js?1542726700"></script>
+    <script src="/js/jquery-2.x.min.js?1542777267"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1542726700"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1542726700"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1542777267"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1542777267"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1542726700"></script>
+<script type="text/javascript" src="/js/search.js?1542777267"></script>
 
     
   </div>
@@ -2239,6 +2239,7 @@
 <ul>
 <li><a href="#access-the-node">Access the node</a></li>
 <li><a href="#freeze-your-configuration">Freeze your configuration</a></li>
+<li><a href="#update-os">Update OS</a></li>
 <li><a href="#update-master-pi-name">Update master PI name</a></li>
 <li><a href="#configure-the-pirate-account">Configure the pirate account</a></li>
 <li><a href="#install-git">Install GIT</a></li>
@@ -2308,10 +2309,30 @@ to the OS.</p>
 sudo apt-get autoremove
 </code></pre>
 
+<h3 id="update-os">Update OS</h3>
+
 <p>Let&rsquo;s update to the latest version</p>
 
 <pre><code class="language-bash">sudo apt-get update
 sudo apt-get upgrade
+</code></pre>
+
+<p>Gain access to latest docker-ce</p>
+
+<pre><code class="language-bash">sudo -i
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+usermod -aG docker pirate
+</code></pre>
+
+<p>At the time this article is written 18.09 is not supported yet.</p>
+
+<pre><code class="language-bash">sudo apt-cache policy docker-ce
+sudo apt-get remove --purge docker-ce
+sudo apt-get autoremove
+
+sudo apt-get install docker-ce=18.06.1~ce~3-0~debian
 </code></pre>
 
 <h3 id="update-master-pi-name">Update master PI name</h3>
@@ -2324,12 +2345,6 @@ vi /etc/hosts
 </code></pre>
 
 <p>It seems on HypriotOS 64, you need to do</p>
-
-<pre><code class="language-bash">vi /etc/hostname
-sudo service hostname restart
-</code></pre>
-
-<p>It seems on HypriotOS 32, you need to do</p>
 
 <pre><code class="language-bash">sudo hostnamectl set-hostname kubemaster-pi
 </code></pre>
@@ -2344,7 +2359,8 @@ EDITOR=vi
 </code></pre>
 
 <p>Then you need to set up the ssh keys
-Either create a new ssh key (id_rsa, id_rsa.pub) and copy in id_rsa.pub into <a href="https://github.com/settings/keys" target="_blank">GitHub</a></p>
+Either create a new ssh key (id_rsa, id_rsa.pub) and copy in id_rsa.pub into <a href="https://github.com/settings/keys" target="_blank">GitHub</a>
+You also need to add those keys in <a href="https://review.gerrithub.io/#/settings/ssh-key" target="_blank">GerritHub</a></p>
 
 <pre><code class="language-bash">ssh-keygen
 </code></pre>
@@ -2362,42 +2378,49 @@ scp id_rsa.pub pirate@&lt;PI&gt;:/home/pirate/.ssh/id_rsa.pub
 <pre><code class="language-bash">sudo apt-get update
 sudo apt-get install git
 sudo apt-get install git-review
-</code></pre>
 
-<pre><code class="language-bash">$ mkdir -p $HOME/proj/kubedge
+
+```bash
+$ mkdir -p $HOME/proj/kubedge
 $ cd $HOME/proj/kubedge
 </code></pre>
 
-<p>create a cloneit1.sh file and run it</p>
+<p>create a cloneit1.sh file, edit it and run it</p>
+
+<div class="notices info" ><p>If you deployed on ARM64, be sure to replace <strong>arm32v7</strong> by <strong>arm64v8</strong></p>
+</div>
+
 
 <pre><code class="language-bash">#!/bin/bash
 GOODPATH=`pwd`
 USERID=yourgithubaccount
-for i in helmrepos kubeplay kubesim_5gc kubesim_base kubesim_elte kubesim_epc kubesim_lte kubesim_nr kubesim_blinkt
+for i in helmrepos kubeplay kubesim_5gc kubesim_base kubesim_elte kubesim_epc kubesim_lte kubesim_nr kubesim_blinkt kubesim_nats kubesim_linkio kubedge_utils
 do
 echo &quot;======================================================&quot;
 echo $i
 echo &quot;======================================================&quot;
 # If you want to contribute
 # git clone -b arm32v7 ssh://$USERID@review.gerrithub.io:29418/kubedge/$i &amp;&amp; scp -p -P 29418 $USERID@review.gerrithub.io:hooks/commit-msg $i/.git/hooks/
-git clone -b arm32v7 git@github.com:kubedge/$i.git
+# If you want to just pull the code
+# git clone -b arm32v7 git@github.com:kubedge/$i.git
 cd $GOODPATH
 done
 </code></pre>
 
-<p>create a cloneit2.sh file and run it</p>
+<p>create a cloneit2.sh file, edit it and run it</p>
 
 <pre><code class="language-bash">#!/bin/bash
 GOODPATH=`pwd`
 USERID=yourgithubaccount
-for i in kube-rpi ansible-kube-rpi kubedge
+for i in kube-rpi ansible-kube-rpi
 do
 echo &quot;======================================================&quot;
 echo $i
 echo &quot;======================================================&quot;
 # If you want to contribute
 # git clone ssh://$USERID@review.gerrithub.io:29418/kubedge/$i &amp;&amp; scp -p -P 29418 $USERID@review.gerrithub.io:hooks/commit-msg $i/.git/hooks/
-git clone git@github.com:kubedge/$i.git
+# If you want to just pull the code
+# git clone git@github.com:kubedge/$i.git
 cd $GOODPATH
 done
 </code></pre>
@@ -3908,20 +3931,20 @@ done
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1542726700"></script>
-    <script src="/js/perfect-scrollbar.min.js?1542726700"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1542726700"></script>
-    <script src="/js/jquery.sticky.js?1542726700"></script>
-    <script src="/js/featherlight.min.js?1542726700"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1542726700"></script>
-    <script src="/js/highlight.pack.js?1542726700"></script>
+    <script src="/js/clipboard.min.js?1542777267"></script>
+    <script src="/js/perfect-scrollbar.min.js?1542777267"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1542777267"></script>
+    <script src="/js/jquery.sticky.js?1542777267"></script>
+    <script src="/js/featherlight.min.js?1542777267"></script>
+    <script src="/js/html5shiv-printshiv.min.js?1542777267"></script>
+    <script src="/js/highlight.pack.js?1542777267"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1542726700"></script>
-    <script src="/js/learn.js?1542726700"></script>
-    <script src="/js/hugo-learn.js?1542726700"></script>
+    <script src="/js/modernizr.custom.71422.js?1542777267"></script>
+    <script src="/js/learn.js?1542777267"></script>
+    <script src="/js/hugo-learn.js?1542777267"></script>
 
-    <link href="/mermaid/mermaid.css?1542726700" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1542726700"></script>
+    <link href="/mermaid/mermaid.css?1542777267" type="text/css" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1542777267"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
