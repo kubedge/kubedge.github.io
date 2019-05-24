@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Advanced &amp; WIP on KUBEDGE&#39;s Blog</title>
-    <link>/nfv/advanced/</link>
+    <link>https://kubedge.cloud/nfv/advanced/</link>
     <description>Recent content in Advanced &amp; WIP on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/nfv/advanced/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/nfv/advanced/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ONAP</title>
-      <link>/nfv/advanced/children/onap/</link>
+      <link>https://kubedge.cloud/nfv/advanced/children/onap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/advanced/children/onap/</guid>
+      <guid>https://kubedge.cloud/nfv/advanced/children/onap/</guid>
       <description> ONAP </description>
     </item>
     

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NSA vs SA. Option 3 on KUBEDGE&#39;s Blog</title>
-    <link>/lte_to_5g/nsa_and_sa/</link>
+    <link>https://kubedge.cloud/lte_to_5g/nsa_and_sa/</link>
     <description>Recent content in NSA vs SA. Option 3 on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/lte_to_5g/nsa_and_sa/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/lte_to_5g/nsa_and_sa/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Advanced &amp; WIP on KUBEDGE&#39;s Blog</title>
-    <link>/devops/advanced/</link>
+    <link>https://kubedge.cloud/devops/advanced/</link>
     <description>Recent content in Advanced &amp; WIP on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/devops/advanced/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/devops/advanced/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Rebuild Hyperkube images</title>
-      <link>/devops/advanced/children/2018-07-16-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-07-16-a/</link>
       <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-07-16-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-07-16-a/</guid>
       <description>&lt;p&gt;This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Zuul</title>
-      <link>/devops/advanced/children/2018-06-26-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-06-26-a/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-26-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-06-26-a/</guid>
       <description>&lt;p&gt;OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks.
 This post is the collection of notes and tips used during the couple of update I did to some openstack projects.&lt;/p&gt;
 
@@ -36,10 +36,10 @@ This post is the collection of notes and tips used during the couple of update I
     
     <item>
       <title>Setup github/gerrit behind a corporate http proxy</title>
-      <link>/devops/advanced/children/2018-06-25-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-06-25-a/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-25-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-06-25-a/</guid>
       <description>&lt;p&gt;This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -47,10 +47,10 @@ This post is the collection of notes and tips used during the couple of update I
     
     <item>
       <title>Setup multiple GitHub account on a single machine</title>
-      <link>/devops/advanced/children/2018-06-23-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-06-23-a/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-23-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-06-23-a/</guid>
       <description>&lt;p&gt;In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to
 be able to conigure your .ssh directory.&lt;/p&gt;
 

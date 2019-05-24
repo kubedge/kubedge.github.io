@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kubeadm on KUBEDGE&#39;s Blog</title>
-    <link>/tags/kubeadm/</link>
+    <link>https://kubedge.cloud/tags/kubeadm/</link>
     <description>Recent content in kubeadm on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/kubeadm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/tags/kubeadm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setup SingleNode Kubernetes Cluster using kubeadm</title>
-      <link>/devops/kubedgesdk/children/2018-06-21-a/</link>
+      <link>https://kubedge.cloud/devops/kubedgesdk/children/2018-06-21-a/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/kubedgesdk/children/2018-06-21-a/</guid>
+      <guid>https://kubedge.cloud/devops/kubedgesdk/children/2018-06-21-a/</guid>
       <description>&lt;p&gt;Setup simple kubernetes cluster for test purposes.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

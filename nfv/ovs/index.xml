@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OVS &amp; ODL on KUBEDGE&#39;s Blog</title>
-    <link>/nfv/ovs/</link>
+    <link>https://kubedge.cloud/nfv/ovs/</link>
     <description>Recent content in OVS &amp; ODL on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 17 Jul 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/nfv/ovs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/nfv/ovs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux Bridging</title>
-      <link>/nfv/ovs/children/linux_bridging/</link>
+      <link>https://kubedge.cloud/nfv/ovs/children/linux_bridging/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/ovs/children/linux_bridging/</guid>
+      <guid>https://kubedge.cloud/nfv/ovs/children/linux_bridging/</guid>
       <description>&lt;p&gt;The first goal is to replace the NAT+DHCP on the worker nodes
 by Linux Bridging setup. All the devices connecting to the
 cluser (Wifi AP, Bluetooth or derectly through the internal
@@ -27,10 +27,10 @@ switch would will be in the same IP network).&lt;/p&gt;
     
     <item>
       <title>OVS</title>
-      <link>/nfv/ovs/children/ovs/</link>
+      <link>https://kubedge.cloud/nfv/ovs/children/ovs/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/ovs/children/ovs/</guid>
+      <guid>https://kubedge.cloud/nfv/ovs/children/ovs/</guid>
       <description>&lt;p&gt;The second goal is to replace Linux Bridging with OVS.
 The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic from &amp;ldquo;tenant/5g traffic.&lt;/p&gt;
 
@@ -39,10 +39,10 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
     
     <item>
       <title>OpenDayLight</title>
-      <link>/nfv/ovs/children/odl/</link>
+      <link>https://kubedge.cloud/nfv/ovs/children/odl/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/ovs/children/odl/</guid>
+      <guid>https://kubedge.cloud/nfv/ovs/children/odl/</guid>
       <description>&lt;p&gt;The third is to implement SDN/Network Slicing using ODL and controlling OVS&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

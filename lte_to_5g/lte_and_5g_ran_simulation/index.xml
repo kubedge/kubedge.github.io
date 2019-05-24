@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>LTE, eLTE and 5G RAN on KUBEDGE&#39;s Blog</title>
-    <link>/lte_to_5g/lte_and_5g_ran_simulation/</link>
+    <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/</link>
     <description>Recent content in LTE, eLTE and 5G RAN on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/lte_to_5g/lte_and_5g_ran_simulation/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kubedge LTE Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</guid>
       <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Kubedge eLTE Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</guid>
       <description>&lt;p&gt;Install Kubedge eLTE Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>Kubedge 5G NR Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
       <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

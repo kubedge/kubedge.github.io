@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps on KUBEDGE&#39;s Blog</title>
-    <link>/devops/</link>
+    <link>https://kubedge.cloud/devops/</link>
     <description>Recent content in DevOps on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/devops/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/devops/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

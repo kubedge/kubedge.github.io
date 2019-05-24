@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubedge on KUBEDGE&#39;s Blog</title>
-    <link>/</link>
+    <link>https://kubedge.cloud/</link>
     <description>Recent content in Kubedge on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Installing Kubedge Kubeplay</title>
-      <link>/pi_cluster/applications/children/kubeplay/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/kubeplay/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubeplay/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/kubeplay/</guid>
       <description>&lt;p&gt;Install simplistic Kubeplay Application on the PI Cluster. It is a primitiv golang based server
 which get the user to go through the entire DevOps process (to build the docker image) and
 deploy it using Helm on Kubedge.&lt;/p&gt;
@@ -26,10 +26,10 @@ deploy it using Helm on Kubedge.&lt;/p&gt;
     
     <item>
       <title>Setting up DockerHub</title>
-      <link>/devops/cicd/children/setup_dockerhub/</link>
+      <link>https://kubedge.cloud/devops/cicd/children/setup_dockerhub/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/cicd/children/setup_dockerhub/</guid>
+      <guid>https://kubedge.cloud/devops/cicd/children/setup_dockerhub/</guid>
       <description>&lt;p&gt;This tutorial describes how to leverage DockerHub.com to save docker images for AMD64 and ARM32v7.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -37,10 +37,10 @@ deploy it using Helm on Kubedge.&lt;/p&gt;
     
     <item>
       <title>Setting up GitHub</title>
-      <link>/devops/git_gerrit/children/setup_git/</link>
+      <link>https://kubedge.cloud/devops/git_gerrit/children/setup_git/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/git_gerrit/children/setup_git/</guid>
+      <guid>https://kubedge.cloud/devops/git_gerrit/children/setup_git/</guid>
       <description>&lt;p&gt;Create and maintain a github organisation&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -48,10 +48,10 @@ deploy it using Helm on Kubedge.&lt;/p&gt;
     
     <item>
       <title>GOLANG</title>
-      <link>/nfv/golang/children/golang/</link>
+      <link>https://kubedge.cloud/nfv/golang/children/golang/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/golang/children/golang/</guid>
+      <guid>https://kubedge.cloud/nfv/golang/children/golang/</guid>
       <description>&lt;p&gt;GOLANG based Networking libraries usable in micro services in docker container to simulate VNF.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -59,10 +59,10 @@ deploy it using Helm on Kubedge.&lt;/p&gt;
     
     <item>
       <title>Linux Bridging</title>
-      <link>/nfv/ovs/children/linux_bridging/</link>
+      <link>https://kubedge.cloud/nfv/ovs/children/linux_bridging/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/ovs/children/linux_bridging/</guid>
+      <guid>https://kubedge.cloud/nfv/ovs/children/linux_bridging/</guid>
       <description>&lt;p&gt;The first goal is to replace the NAT+DHCP on the worker nodes
 by Linux Bridging setup. All the devices connecting to the
 cluser (Wifi AP, Bluetooth or derectly through the internal
@@ -73,10 +73,10 @@ switch would will be in the same IP network).&lt;/p&gt;
     
     <item>
       <title>Raspberry PI cluster Assembly</title>
-      <link>/pi_cluster/os_installation/children/cluster_assembly/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/cluster_assembly/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/cluster_assembly/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/cluster_assembly/</guid>
       <description>&lt;p&gt;This page contains examples of harware to use in order to build a cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -84,10 +84,10 @@ switch would will be in the same IP network).&lt;/p&gt;
     
     <item>
       <title>Creating a Raspberry 3 B&#43; Kubernetes Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-03-a/</link>
       <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-03-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-03-a/</guid>
       <description>&lt;p&gt;Also GCE is perfect to learn Kubernetes, building Kubernetes on top of PI Cluster brings another dimension to the learning,
 from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the ARM32V7.&lt;/p&gt;
 
@@ -96,10 +96,10 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     
     <item>
       <title>Installing Kubernetes Dashboard</title>
-      <link>/pi_cluster/applications/children/kubernetes_dashboard/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/kubernetes_dashboard/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubernetes_dashboard/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/kubernetes_dashboard/</guid>
       <description>&lt;p&gt;Install Kubernetes Dashboard on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -107,10 +107,10 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     
     <item>
       <title>Kubedge EPC Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_epc/</guid>
       <description>&lt;p&gt;Install Kubedge EPC Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -118,10 +118,10 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     
     <item>
       <title>Kubedge LTE Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_lte/</guid>
       <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -129,10 +129,10 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     
     <item>
       <title>Setting up GerritHub</title>
-      <link>/devops/git_gerrit/children/setup_gerrit/</link>
+      <link>https://kubedge.cloud/devops/git_gerrit/children/setup_gerrit/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/git_gerrit/children/setup_gerrit/</guid>
+      <guid>https://kubedge.cloud/devops/git_gerrit/children/setup_gerrit/</guid>
       <description>&lt;p&gt;This tutorial describes how to leverage GerritHub.io for proper code review&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -140,10 +140,10 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     
     <item>
       <title>Setting up Travis-CI</title>
-      <link>/devops/cicd/children/setup_travis-ci/</link>
+      <link>https://kubedge.cloud/devops/cicd/children/setup_travis-ci/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/cicd/children/setup_travis-ci/</guid>
+      <guid>https://kubedge.cloud/devops/cicd/children/setup_travis-ci/</guid>
       <description>&lt;p&gt;Leverage Travis-CI for automatic build and integration&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -151,10 +151,10 @@ from setting up the OS, partitionning the OS, DHCP, NAT, cross compiling for the
     
     <item>
       <title>Compile and Test Portieris</title>
-      <link>/pi_cluster/advanced/children/2018-07-18-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-18-a/</link>
       <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-18-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-18-a/</guid>
       <description>&lt;p&gt;One of the biggest security risks related to Kubernetes are often linked to
 the fact that it is really hard to ensure that only &amp;ldquo;approved&amp;rdquo; images are
 deployed in your Kubernetes cluster. The goal here is to leverage Notary
@@ -165,10 +165,10 @@ and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&g
     
     <item>
       <title>DPDK &amp; FD.io</title>
-      <link>/nfv/golang/children/dpdk/</link>
+      <link>https://kubedge.cloud/nfv/golang/children/dpdk/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/golang/children/dpdk/</guid>
+      <guid>https://kubedge.cloud/nfv/golang/children/dpdk/</guid>
       <description>&lt;p&gt;DPDK and FD.io are providing some kind of support for ARM.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -176,10 +176,10 @@ and the a project called &amp;ldquo;Portieris&amp;rdquo; created by IBM.&lt;/p&g
     
     <item>
       <title>OVS</title>
-      <link>/nfv/ovs/children/ovs/</link>
+      <link>https://kubedge.cloud/nfv/ovs/children/ovs/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/ovs/children/ovs/</guid>
+      <guid>https://kubedge.cloud/nfv/ovs/children/ovs/</guid>
       <description>&lt;p&gt;The second goal is to replace Linux Bridging with OVS.
 The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic from &amp;ldquo;tenant/5g traffic.&lt;/p&gt;
 
@@ -188,10 +188,10 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
     
     <item>
       <title>OpenDayLight</title>
-      <link>/nfv/ovs/children/odl/</link>
+      <link>https://kubedge.cloud/nfv/ovs/children/odl/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/ovs/children/odl/</guid>
+      <guid>https://kubedge.cloud/nfv/ovs/children/odl/</guid>
       <description>&lt;p&gt;The third is to implement SDN/Network Slicing using ODL and controlling OVS&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -199,10 +199,10 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
     
     <item>
       <title>Deply Helm and Tiller on PI Cluster</title>
-      <link>/pi_cluster/maintenance/children/2018-07-13-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/maintenance/children/2018-07-13-a/</link>
       <pubDate>Fri, 13 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/maintenance/children/2018-07-13-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/maintenance/children/2018-07-13-a/</guid>
       <description>&lt;p&gt;The main purpose of this exercise is to be able to use Helm on the Rapsberry PI Cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -210,10 +210,10 @@ The setup will also use VLAN tagging on eth0 to seggrate kubernetes/pod traffic 
     
     <item>
       <title>Use github repo as helm chart repository</title>
-      <link>/pi_cluster/maintenance/children/2018-07-11-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/maintenance/children/2018-07-11-a/</link>
       <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/maintenance/children/2018-07-11-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/maintenance/children/2018-07-11-a/</guid>
       <description>&lt;p&gt;In order to be able use Helm charts the &amp;ldquo;normal&amp;rdquo; way, it is need to buid your own helm repository.
 The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
 
@@ -222,10 +222,10 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
     
     <item>
       <title>Add Persistency Volume to PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-08-a/</link>
       <pubDate>Sun, 08 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-08-a/</guid>
       <description>&lt;p&gt;In order to install Prometheus, NATS, Cassandra using Kubernetes, we need to first create Persistency Volumes&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -233,10 +233,10 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
     
     <item>
       <title>OS Installation on Master PI</title>
-      <link>/pi_cluster/os_installation/children/master_pi/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/master_pi/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/master_pi/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/master_pi/</guid>
       <description>&lt;p&gt;This page describes simple steps to install the OS (HypriotOS) on the PIs.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -244,10 +244,10 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
     
     <item>
       <title>Installing Hypriot OS</title>
-      <link>/pi_cluster/advanced/children/os_64_bits/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/os_64_bits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/os_64_bits/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/os_64_bits/</guid>
       <description>&lt;p&gt;Also ARM processor on the Raspberry PI 3B+ is a 64 bit processor,
 because the board is only equipped with 1G of RAM, a 64 bit operating system
 is not really needed except when&amp;hellip;.&lt;/p&gt;
@@ -257,10 +257,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Installing Kubedge Blinkt</title>
-      <link>/pi_cluster/applications/children/kubesim_blinkt/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/kubesim_blinkt/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kubesim_blinkt/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/kubesim_blinkt/</guid>
       <description>&lt;p&gt;Install Kubedge Blinkt Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -268,10 +268,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Kubedge 5GC Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_core_simulation/children/kubesim_5gc/</guid>
       <description>&lt;p&gt;Install Kubedge 5GC Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -279,10 +279,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Kubedge eLTE Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_elte/</guid>
       <description>&lt;p&gt;Install Kubedge eLTE Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -290,10 +290,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Setting up HOSTAPD on 5G NR node</title>
-      <link>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</link>
+      <link>https://kubedge.cloud/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/rpi_wifi_ap/children/setup_hostapd/</guid>
       <description>&lt;p&gt;This tutorial how to setup WIFI AccessPoint on PI simulating 5G NR node&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -301,10 +301,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Setting up PAN</title>
-      <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</link>
+      <link>https://kubedge.cloud/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/rpi_bluetooth_pan/children/setup_pan/</guid>
       <description>&lt;p&gt;This tutorial how to setup PAN on the slave pi to simulator LTE and eLTE RAN.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -312,10 +312,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Setting up WPA supplicant on Master PI</title>
-      <link>/pi_cluster/os_installation/children/setup_wpa_applicant/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/setup_wpa_applicant/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/setup_wpa_applicant/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/setup_wpa_applicant/</guid>
       <description>&lt;p&gt;This tutorial how to setup WIFI on the master pi to connect to different WLAN&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -323,10 +323,10 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     
     <item>
       <title>Rebuild Calico for ARM32V7</title>
-      <link>/nfv/golang/children/calico/</link>
+      <link>https://kubedge.cloud/nfv/golang/children/calico/</link>
       <pubDate>Tue, 17 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/golang/children/calico/</guid>
+      <guid>https://kubedge.cloud/nfv/golang/children/calico/</guid>
       <description>&lt;p&gt;Neither calico nor canal seems to be available for usage yet on ARM32V7 for PI.
 The attempt here is to cross-compile the calico containers and use them on the PI cluster.
 Since calico&amp;rsquo;s role is mainly to setup ip table to get Kubernetes POD-POD communication established,
@@ -337,10 +337,10 @@ the likelyhood of being able to reuse some of calico go for a VNF are really sli
     
     <item>
       <title>Deploy Flannel in PI Cluster</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-14-a/</link>
       <pubDate>Sat, 14 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-14-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-14-a/</guid>
       <description>&lt;p&gt;In order to get the nodes and pods interface with each other accross the cluster.
 This post describes how I deployed Flannel acounting with the fact that some of the
 nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
@@ -350,10 +350,10 @@ nodes have multiple interfaces (wlan0 and eth0).&lt;/p&gt;
     
     <item>
       <title>Upgrade RPI Kubernetes cluster to 1.12</title>
-      <link>/pi_cluster/maintenance/children/2018-09-28-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/maintenance/children/2018-09-28-a/</link>
       <pubDate>Sat, 29 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/maintenance/children/2018-09-28-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/maintenance/children/2018-09-28-a/</guid>
       <description>&lt;p&gt;The new Kubernetes 1.12 is out. THe goal is to update my two clusters to 1.12
 using kubeadm 1.12&lt;/p&gt;
 
@@ -362,10 +362,10 @@ using kubeadm 1.12&lt;/p&gt;
     
     <item>
       <title>Installing Prometheus</title>
-      <link>/pi_cluster/applications/children/prometheus/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/prometheus/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/prometheus/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/prometheus/</guid>
       <description>&lt;p&gt;Install Prometheus on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -373,10 +373,10 @@ using kubeadm 1.12&lt;/p&gt;
     
     <item>
       <title>Kubedge 5G NR Simulation</title>
-      <link>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
+      <link>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/lte_and_5g_ran_simulation/children/kubesim_nr/</guid>
       <description>&lt;p&gt;Install Kubedge LTE Application on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -384,10 +384,10 @@ using kubeadm 1.12&lt;/p&gt;
     
     <item>
       <title>Setting up DHCPD on 5G NR Node</title>
-      <link>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</link>
+      <link>https://kubedge.cloud/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/rpi_wifi_ap/children/setup_dhcpd/</guid>
       <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
 internet through the AP &amp;amp; NAT running on 5G NR simulating PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
@@ -397,10 +397,10 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
     
     <item>
       <title>Setting up DHCPD on LTE &amp; eLTE Node</title>
-      <link>/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</link>
+      <link>https://kubedge.cloud/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</guid>
+      <guid>https://kubedge.cloud/lte_to_5g/rpi_bluetooth_pan/children/setup_dhcpd/</guid>
       <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the UE can access the
 internet through the AP &amp;amp; NAT running on LTE &amp;amp; eLTE simulating PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs.&lt;/p&gt;
@@ -410,10 +410,10 @@ also describe how to setup the DHCPD to automatically allocated IPs to UE or PCs
     
     <item>
       <title>Setting up DHCPD on master PI</title>
-      <link>/pi_cluster/os_installation/children/setup_dhcpd/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/setup_dhcpd/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/setup_dhcpd/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/setup_dhcpd/</guid>
       <description>&lt;p&gt;This tutorial how to setup DHCPD and NAT so that the slave PI can access the
 internet through the NAT (ETH0-&amp;gt;WLAN0) running on Master PI. This tutorial
 also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs.&lt;/p&gt;
@@ -423,10 +423,10 @@ also describe how to setup the DHCPD to automatically allocated IPs to PI or PCs
     
     <item>
       <title>Add Raspberry PI node to Kubernetes Cluster in 10 min</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-06-19-a/</link>
       <pubDate>Tue, 19 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-06-19-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-06-19-a/</guid>
       <description>&lt;p&gt;During some of the manipulation of the partition table of
 my SD card, I ended up screwing up both my SD card and my backup Win32DiskImage backup.
 Moreover if your SD card is 32G, it takes around 30 minute to restore from backup.
@@ -440,19 +440,19 @@ build a default SD image where cloud-init does 100% of the initialization work.&
     
     <item>
       <title>ONAP</title>
-      <link>/nfv/advanced/children/onap/</link>
+      <link>https://kubedge.cloud/nfv/advanced/children/onap/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/nfv/advanced/children/onap/</guid>
+      <guid>https://kubedge.cloud/nfv/advanced/children/onap/</guid>
       <description> ONAP </description>
     </item>
     
     <item>
       <title>Installing NATS</title>
-      <link>/pi_cluster/applications/children/nats/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/nats/</link>
       <pubDate>Sun, 11 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/nats/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/nats/</guid>
       <description>&lt;p&gt;Install NATS on the PI Cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -460,10 +460,10 @@ build a default SD image where cloud-init does 100% of the initialization work.&
     
     <item>
       <title>Installing Grafana</title>
-      <link>/pi_cluster/applications/children/grafana/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/grafana/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/grafana/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/grafana/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Install Grafana on the PI Cluster&lt;/strong&gt;. Grafana helps to plot the data in the system. It is an OSS like tools which helps to manage the kubedge cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -471,10 +471,10 @@ build a default SD image where cloud-init does 100% of the initialization work.&
     
     <item>
       <title>Enable docker Remote API</title>
-      <link>/pi_cluster/docker_kubernetes/children/2018-07-12-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-12-a/</link>
       <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/docker_kubernetes/children/2018-07-12-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/docker_kubernetes/children/2018-07-12-a/</guid>
       <description>&lt;p&gt;In order to build image for Raspberry PI, it is sometimes usefull to be able to leverate infrastruture from a remote VM.
 For instance you can cross-build golang executable for ARM32v7 and transfer it to build an image on the remote PI.
 (used for Tiller docker image)&lt;/p&gt;
@@ -484,10 +484,10 @@ For instance you can cross-build golang executable for ARM32v7 and transfer it t
     
     <item>
       <title>OS Installation on Worker PI</title>
-      <link>/pi_cluster/os_installation/children/worker_pi/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/worker_pi/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/worker_pi/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/worker_pi/</guid>
       <description>&lt;p&gt;This page describes simple steps to install the OS (HypriotOS) on the PIs.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -495,10 +495,10 @@ For instance you can cross-build golang executable for ARM32v7 and transfer it t
     
     <item>
       <title>Installing Kibana</title>
-      <link>/pi_cluster/applications/children/kibana/</link>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/kibana/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/applications/children/kibana/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/kibana/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Install Kibana &amp;amp; fluentd on the PI Cluster.&lt;/strong&gt; Kibana is a good maintenance/OSS tools allowing traces and logs analysis.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -506,10 +506,10 @@ For instance you can cross-build golang executable for ARM32v7 and transfer it t
     
     <item>
       <title>Using Ansible to manage Raspberry PI cluster</title>
-      <link>/pi_cluster/os_installation/children/ansible/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/ansible/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/ansible/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/ansible/</guid>
       <description>&lt;p&gt;Even if the ultimate goal is to manage completly the cluster using Kubernetes,
 the ability to use Ansible during debug process is very usefull.
 The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
@@ -519,10 +519,10 @@ The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
     
     <item>
       <title>Update Kubernetes to 1.11 on Ubuntu</title>
-      <link>/pi_cluster/advanced/children/2018-06-30-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/2018-06-30-a/</link>
       <pubDate>Sat, 30 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-06-30-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/2018-06-30-a/</guid>
       <description>&lt;p&gt;Kubeadm is coming with an upgrade option. The goal of this study is to leverage the option.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -530,10 +530,10 @@ The goal here is to setup ansible inventory, basic playbooks.&lt;/p&gt;
     
     <item>
       <title>Build and Deploy Kubernetes Kustomize</title>
-      <link>/pi_cluster/advanced/children/2018-07-29-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-29-a/</link>
       <pubDate>Sun, 29 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-29-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-29-a/</guid>
       <description>&lt;p&gt;kustomize seems to help the setup of multiple clusters by removing copy paste accross cluster
 and still keeping the configuration file has plain yaml instead of the template like it
 is often the case with t&lt;/p&gt;
@@ -543,10 +543,10 @@ is often the case with t&lt;/p&gt;
     
     <item>
       <title>Compile and Test SONOBUOY</title>
-      <link>/pi_cluster/maintenance/children/2018-07-02-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/maintenance/children/2018-07-02-a/</link>
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/maintenance/children/2018-07-02-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/maintenance/children/2018-07-02-a/</guid>
       <description>&lt;p&gt;Sonobouy, deploys in a Kubernetes cluster and helps to assesse the compliance of that cluster&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -554,10 +554,10 @@ is often the case with t&lt;/p&gt;
     
     <item>
       <title>Create a Rapsberry PI Rescue Dongle</title>
-      <link>/pi_cluster/os_installation/children/dongle/</link>
+      <link>https://kubedge.cloud/pi_cluster/os_installation/children/dongle/</link>
       <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/os_installation/children/dongle/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/os_installation/children/dongle/</guid>
       <description>&lt;p&gt;I encountered multiple issues trying to repartition my SD on my PI.
 Because the / directory is mounted, it never really worked safely for me
 to use fdisk. Morevoer some of the powerfull tools such as gparted need
@@ -570,10 +570,10 @@ X11 installed, which I don&amp;rsquo;t have by default.&lt;/p&gt;
     
     <item>
       <title>Build and Deploy Kubernetes test-infra</title>
-      <link>/pi_cluster/advanced/children/2018-07-30-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-30-a/</link>
       <pubDate>Mon, 30 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-30-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-30-a/</guid>
       <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
 to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
@@ -582,10 +582,10 @@ to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
     
     <item>
       <title>Build and Deploy Kubernetes Istio</title>
-      <link>/pi_cluster/advanced/children/2018-07-31-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-31-a/</link>
       <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-07-31-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/2018-07-31-a/</guid>
       <description>&lt;p&gt;Istio is aiming at improving security of the containers. One of the key aspects
 is the end to end encryption of the commnucation, the role of citadel to ensure the
 management of the certificates, the renewal of the certificates.
@@ -597,10 +597,10 @@ leverage it in my day to day work.&lt;/p&gt;
     
     <item>
       <title>Build and Deploy Kubernetes Hashicorp Vault</title>
-      <link>/pi_cluster/advanced/children/2018-08-01-a/</link>
+      <link>https://kubedge.cloud/pi_cluster/advanced/children/2018-08-01-a/</link>
       <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/pi_cluster/advanced/children/2018-08-01-a/</guid>
+      <guid>https://kubedge.cloud/pi_cluster/advanced/children/2018-08-01-a/</guid>
       <description>&lt;p&gt;Vault is aiming at improving security of the containers by rotating token and credential
 much more often than usual. Looks like it is especially effectiv to help rotate passwords
 used to access internal databases.&lt;/p&gt;
@@ -610,10 +610,10 @@ used to access internal databases.&lt;/p&gt;
     
     <item>
       <title>Rebuild Hyperkube images</title>
-      <link>/devops/advanced/children/2018-07-16-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-07-16-a/</link>
       <pubDate>Mon, 16 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-07-16-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-07-16-a/</guid>
       <description>&lt;p&gt;This post is to validate that it would be possible if urgency dictates it to rebuild the hyperkube Kubernetes image.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -621,10 +621,10 @@ used to access internal databases.&lt;/p&gt;
     
     <item>
       <title>Recompile Kubernetes components for Raspberry PI</title>
-      <link>/devops/kubedgesdk/children/2018-07-15-a/</link>
+      <link>https://kubedge.cloud/devops/kubedgesdk/children/2018-07-15-a/</link>
       <pubDate>Sun, 15 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/kubedgesdk/children/2018-07-15-a/</guid>
+      <guid>https://kubedge.cloud/devops/kubedgesdk/children/2018-07-15-a/</guid>
       <description>&lt;p&gt;During the installation of official Kubernetes 1.11.0 on RPI Cluster 1,
 encountered a bug on the controller manager preventing the controller-manager from starting.
 The problem here was to be able to cross compiled the latest version of Kubernetes 1.11.1 before the code was officially released and of course rebuild the images.&lt;/p&gt;
@@ -634,10 +634,10 @@ The problem here was to be able to cross compiled the latest version of Kubernet
     
     <item>
       <title>Python</title>
-      <link>/devops/microservices/children/2018-07-01-a/</link>
+      <link>https://kubedge.cloud/devops/microservices/children/2018-07-01-a/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/microservices/children/2018-07-01-a/</guid>
+      <guid>https://kubedge.cloud/devops/microservices/children/2018-07-01-a/</guid>
       <description>&lt;p&gt;As we did for Go and Java, where is was possible to create an Dockerfile starting from &amp;ldquo;scratch&amp;rdquo;,
 the goal of this post is to create a python base server container with a minimum about of packages
 (debian and python) to reduce the security exposure of the container as well as the image size.&lt;/p&gt;
@@ -647,10 +647,10 @@ the goal of this post is to create a python base server container with a minimum
     
     <item>
       <title>Creating simple GO server container</title>
-      <link>/devops/microservices/children/2018-06-29-a/</link>
+      <link>https://kubedge.cloud/devops/microservices/children/2018-06-29-a/</link>
       <pubDate>Fri, 29 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/microservices/children/2018-06-29-a/</guid>
+      <guid>https://kubedge.cloud/devops/microservices/children/2018-06-29-a/</guid>
       <description>&lt;p&gt;GO is perfectly adapted to microservices since it can
 build standalone executable.&lt;/p&gt;
 
@@ -659,10 +659,10 @@ build standalone executable.&lt;/p&gt;
     
     <item>
       <title>Creating simple Java 10 server container</title>
-      <link>/devops/microservices/children/2018-06-28-a/</link>
+      <link>https://kubedge.cloud/devops/microservices/children/2018-06-28-a/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/microservices/children/2018-06-28-a/</guid>
+      <guid>https://kubedge.cloud/devops/microservices/children/2018-06-28-a/</guid>
       <description>&lt;p&gt;Very often people associated Java to quite bulky and difficult to use in the microservice context,
 unless you have very large image containing the JRE. But since Java 9, Java did kind of catchup with
 golang on the subject. Where you can obtain a standalone executable when we running &lt;code&gt;go build&lt;/code&gt;,
@@ -674,10 +674,10 @@ of this post is to build a container image as small as possible running Java.&lt
     
     <item>
       <title>Zuul</title>
-      <link>/devops/advanced/children/2018-06-26-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-06-26-a/</link>
       <pubDate>Tue, 26 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-26-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-06-26-a/</guid>
       <description>&lt;p&gt;OpenStack project are using Zuul for CI/CD process. Zuul itself is based on Ansible to perform the tasks.
 This post is the collection of notes and tips used during the couple of update I did to some openstack projects.&lt;/p&gt;
 
@@ -686,10 +686,10 @@ This post is the collection of notes and tips used during the couple of update I
     
     <item>
       <title>Setup github/gerrit behind a corporate http proxy</title>
-      <link>/devops/advanced/children/2018-06-25-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-06-25-a/</link>
       <pubDate>Mon, 25 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-25-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-06-25-a/</guid>
       <description>&lt;p&gt;This is a post of the small set of notes taken to setup gerrit review behind corporate proxy.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -697,10 +697,10 @@ This post is the collection of notes and tips used during the couple of update I
     
     <item>
       <title>docker.io versus docker-ce</title>
-      <link>/devops/kubedgesdk/children/2018-06-24-a/</link>
+      <link>https://kubedge.cloud/devops/kubedgesdk/children/2018-06-24-a/</link>
       <pubDate>Sun, 24 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/kubedgesdk/children/2018-06-24-a/</guid>
+      <guid>https://kubedge.cloud/devops/kubedgesdk/children/2018-06-24-a/</guid>
       <description>&lt;p&gt;Wondering why you have a strange error such as &amp;lsquo;from &amp;hellip;&amp;rsquo; when running docker build.
 The reason is linked to an older version of docker installed.&lt;/p&gt;
 
@@ -709,10 +709,10 @@ The reason is linked to an older version of docker installed.&lt;/p&gt;
     
     <item>
       <title>Setup multiple GitHub account on a single machine</title>
-      <link>/devops/advanced/children/2018-06-23-a/</link>
+      <link>https://kubedge.cloud/devops/advanced/children/2018-06-23-a/</link>
       <pubDate>Sat, 23 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/advanced/children/2018-06-23-a/</guid>
+      <guid>https://kubedge.cloud/devops/advanced/children/2018-06-23-a/</guid>
       <description>&lt;p&gt;In orderer to manage your personal GitHub projects or an your compagny projects, it is usefull to
 be able to conigure your .ssh directory.&lt;/p&gt;
 
@@ -721,10 +721,10 @@ be able to conigure your .ssh directory.&lt;/p&gt;
     
     <item>
       <title>Setup your GOLANG environment</title>
-      <link>/devops/microservices/children/2018-06-22-a/</link>
+      <link>https://kubedge.cloud/devops/microservices/children/2018-06-22-a/</link>
       <pubDate>Fri, 22 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/microservices/children/2018-06-22-a/</guid>
+      <guid>https://kubedge.cloud/devops/microservices/children/2018-06-22-a/</guid>
       <description>&lt;p&gt;A lot of the opensource projects evolvoving around Kubernetes are written in go.
 It is very usefull to be able to rebuild so projects using &lt;code&gt;go get&lt;/code&gt; or &lt;code&gt;go build&lt;/code&gt;.&lt;/p&gt;
 
@@ -733,10 +733,10 @@ It is very usefull to be able to rebuild so projects using &lt;code&gt;go get&lt
     
     <item>
       <title>Setup SingleNode Kubernetes Cluster using kubeadm</title>
-      <link>/devops/kubedgesdk/children/2018-06-21-a/</link>
+      <link>https://kubedge.cloud/devops/kubedgesdk/children/2018-06-21-a/</link>
       <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/kubedgesdk/children/2018-06-21-a/</guid>
+      <guid>https://kubedge.cloud/devops/kubedgesdk/children/2018-06-21-a/</guid>
       <description>&lt;p&gt;Setup simple kubernetes cluster for test purposes.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

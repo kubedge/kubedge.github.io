@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CI/CD on KUBEDGE&#39;s Blog</title>
-    <link>/devops/cicd/</link>
+    <link>https://kubedge.cloud/devops/cicd/</link>
     <description>Recent content in CI/CD on KUBEDGE&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 01 Sep 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/devops/cicd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://kubedge.cloud/devops/cicd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Setting up DockerHub</title>
-      <link>/devops/cicd/children/setup_dockerhub/</link>
+      <link>https://kubedge.cloud/devops/cicd/children/setup_dockerhub/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/cicd/children/setup_dockerhub/</guid>
+      <guid>https://kubedge.cloud/devops/cicd/children/setup_dockerhub/</guid>
       <description>&lt;p&gt;This tutorial describes how to leverage DockerHub.com to save docker images for AMD64 and ARM32v7.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Setting up Travis-CI</title>
-      <link>/devops/cicd/children/setup_travis-ci/</link>
+      <link>https://kubedge.cloud/devops/cicd/children/setup_travis-ci/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
       
-      <guid>/devops/cicd/children/setup_travis-ci/</guid>
+      <guid>https://kubedge.cloud/devops/cicd/children/setup_travis-ci/</guid>
       <description>&lt;p&gt;Leverage Travis-CI for automatic build and integration&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
