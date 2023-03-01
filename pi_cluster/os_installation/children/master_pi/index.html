@@ -12,19 +12,19 @@
     <title>OS Installation on Master PI :: KUBEDGE&#39;s Blog</title>
 
     
-    <link href="https://kubedge.cloud/css/nucleus.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/fontawesome-all.min.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/hybrid.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/featherlight.min.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/perfect-scrollbar.min.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/auto-complete.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/theme.css?1677635309" rel="stylesheet">
-    <link href="https://kubedge.cloud/css/hugo-theme.css?1677635309" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/nucleus.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/fontawesome-all.min.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/hybrid.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/featherlight.min.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/perfect-scrollbar.min.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/auto-complete.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/theme.css?1677635975" rel="stylesheet">
+    <link href="https://kubedge.cloud/css/hugo-theme.css?1677635975" rel="stylesheet">
     
-      <link href="https://kubedge.cloud/css/theme-kubedge.css?1677635309" rel="stylesheet">
+      <link href="https://kubedge.cloud/css/theme-kubedge.css?1677635975" rel="stylesheet">
     
 
-    <script src="https://kubedge.cloud/js/jquery-2.x.min.js?1677635309"></script>
+    <script src="https://kubedge.cloud/js/jquery-2.x.min.js?1677635975"></script>
 
     <style type="text/css">
       :root #header + #content > #left > #rlblock_left{
@@ -100,14 +100,14 @@
     <span data-search-clear=""><i class="fas fa-close"></i></span>
 </div>
 
-<script type="text/javascript" src="https://kubedge.cloud/js/lunr.min.js?1677635309"></script>
-<script type="text/javascript" src="https://kubedge.cloud/js/auto-complete.js?1677635309"></script>
+<script type="text/javascript" src="https://kubedge.cloud/js/lunr.min.js?1677635975"></script>
+<script type="text/javascript" src="https://kubedge.cloud/js/auto-complete.js?1677635975"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/kubedge.cloud\/";
     
 </script>
-<script type="text/javascript" src="https://kubedge.cloud/js/search.js?1677635309"></script>
+<script type="text/javascript" src="https://kubedge.cloud/js/search.js?1677635975"></script>
 
     
   </div>
@@ -2368,7 +2368,7 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>Kubedge uses HypriotOS because the quickest to set up. SSH and Docker supported by default</p>
+<p>Kubedge uses Ubuntu 64 because the quickest to set up. SSH is enabled by default when using the imager. You don&rsquo;t need to plug a screen or a keyboard to the PI.</p>
 
 <div class="notices note" ><p>Raspberry Pi OS is now available in 32 and 64 bits. Ubuntu 22.04 LTS is also available.
 Even so the Raspberry PI 3B have only 1G of RAM, picking the 64 bits architecture provide wider choice of software.</p>
@@ -2378,19 +2378,17 @@ Even so the Raspberry PI 3B have only 1G of RAM, picking the 64 bits architectur
 <ul>
 <li><p>The 2018 procedure called for deploying <a href="https://github.com/hypriot/image-builder-rpi/releases/download/v1.9.0/hypriotos-rpi-v1.9.0.img.zip" target="_blank">HypriotOS ARM32V7</a> and <a href="https://github.com/DieterReuter/image-builder-rpi64/releases/download/v20180429-184538/hypriotos-rpi64-v20180429-184538.img.zip" target="_blank">HypriotOS ARM64V8</a>. Flashing all 3 or 5 SD cards used to be done <strong>Win32DiskImager</strong> or similar. It takes around 30 seconds per card.</p></li>
 
-<li><p>Install the Rapsberry Pi Imager v1.7.3</p></li>
-
-<li><p>Install Ubuntu Server 22.04.02 LTS (64 BIT)</p></li>
+<li><p>The updated procedure is based on Rapsberry Pi Imager v1.7.3 and the Ubuntu Server 22.04.02 LTS (64 BIT)</p></li>
 </ul>
 
-<p><img src="https://kubedge.cloud/images/ubuntu64/Screenshot_2023-02-26_104252.jpg" alt="" /></p>
+<p><img src="https://kubedge.cloud/images/ubuntu64/Screenshot_2023-02-26_103134.jpg" alt="" /> <img src="https://kubedge.cloud/images/ubuntu64/Screenshot_2023-02-26_104230.jpg" alt="" /> <img src="https://kubedge.cloud/images/ubuntu64/Screenshot_2023-02-26_104252.jpg" alt="" /></p>
 
 <ol>
 <li>Set Hostname to <code>master-pi</code></li>
 <li>Enable SSH
 
 <ul>
-<li>Use password authentication</li>
+<li>Use password authentication (will update the procedure to use key later)</li>
 </ul></li>
 <li>Set username and password
 
@@ -2446,22 +2444,15 @@ sudo apt-get autoremove
 sudo apt-get upgrade
 </code></pre>
 
-<p>Gain access to latest docker-ce</p>
+<p>Also the latest version of kubernetes is not rely on docker, there is a need to installed containerd.
+The version of containerd provided at this time with ubuntu does not seem to work properly.
+There is a need in install containerd.io</p>
 
 <pre><code class="language-bash">sudo -i
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sh get-docker.sh
 usermod -aG docker pirate
-</code></pre>
-
-<p>At the time this article is written 18.09 is not supported yet.</p>
-
-<pre><code class="language-bash">sudo apt-cache policy docker-ce
-sudo apt-get remove --purge docker-ce
-sudo apt-get autoremove
-
-sudo apt-get install docker-ce=18.06.1~ce~3-0~debian
 </code></pre>
 
 <h3 id="update-master-pi-name">Update master PI name</h3>
@@ -4149,20 +4140,20 @@ done
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://kubedge.cloud/js/clipboard.min.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/perfect-scrollbar.min.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/perfect-scrollbar.jquery.min.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/jquery.sticky.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/featherlight.min.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/html5shiv-printshiv.min.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/highlight.pack.js?1677635309"></script>
+    <script src="https://kubedge.cloud/js/clipboard.min.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/perfect-scrollbar.min.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/perfect-scrollbar.jquery.min.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/jquery.sticky.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/featherlight.min.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/html5shiv-printshiv.min.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/highlight.pack.js?1677635975"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://kubedge.cloud/js/modernizr.custom.71422.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/learn.js?1677635309"></script>
-    <script src="https://kubedge.cloud/js/hugo-learn.js?1677635309"></script>
+    <script src="https://kubedge.cloud/js/modernizr.custom.71422.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/learn.js?1677635975"></script>
+    <script src="https://kubedge.cloud/js/hugo-learn.js?1677635975"></script>
 
-    <link href="https://kubedge.cloud/mermaid/mermaid.css?1677635309" type="text/css" rel="stylesheet" />
-    <script src="https://kubedge.cloud/mermaid/mermaid.js?1677635309"></script>
+    <link href="https://kubedge.cloud/mermaid/mermaid.css?1677635975" type="text/css" rel="stylesheet" />
+    <script src="https://kubedge.cloud/mermaid/mermaid.js?1677635975"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
