@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Misc on KUBEDGE&#39;s Blog</title>
+    <link>https://kubedge.cloud/misc/</link>
+    <description>Recent content in Misc on KUBEDGE&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 Feb 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://kubedge.cloud/misc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Update Kubedge SDK VM</title>
+      <link>https://kubedge.cloud/misc/2023-02-26-a/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/misc/2023-02-26-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New PI Imaging Tool</title>
+      <link>https://kubedge.cloud/misc/2023-02-25-a/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/misc/2023-02-25-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New PI Imaging Tool</title>
+      <link>https://kubedge.cloud/misc/2023-02-27-a/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/misc/2023-02-27-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

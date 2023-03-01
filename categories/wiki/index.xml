@@ -237,7 +237,7 @@ The goal of this post is to transform a github repo into a helm repo.&lt;/p&gt;
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>https://kubedge.cloud/pi_cluster/os_installation/children/master_pi/</guid>
-      <description>&lt;p&gt;This page describes simple steps to install the OS (HypriotOS) on the PIs.&lt;/p&gt;
+      <description>&lt;p&gt;This page has been updated to use Ubuntu Server 22.04.02 LTS 64 bits. The instruction used be based on hypriotos&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
