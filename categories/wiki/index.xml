@@ -256,6 +256,17 @@ is not really needed except when&amp;hellip;.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Installing Kibana</title>
+      <link>https://kubedge.cloud/pi_cluster/applications/children/kibana/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/pi_cluster/applications/children/kibana/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Install Kibana &amp;amp; fluentd on the PI Cluster.&lt;/strong&gt; Kibana is a good maintenance/OSS tools allowing traces and logs analysis.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Installing Kubedge Blinkt</title>
       <link>https://kubedge.cloud/pi_cluster/applications/children/kubesim_blinkt/</link>
       <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
@@ -485,17 +496,6 @@ For instance you can cross-build golang executable for ARM32v7 and transfer it t
     </item>
     
     <item>
-      <title>Installing Kibana</title>
-      <link>https://kubedge.cloud/pi_cluster/applications/children/kibana/</link>
-      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kubedge.cloud/pi_cluster/applications/children/kibana/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;Install Kibana &amp;amp; fluentd on the PI Cluster.&lt;/strong&gt; Kibana is a good maintenance/OSS tools allowing traces and logs analysis.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Using Ansible to manage Raspberry PI cluster</title>
       <link>https://kubedge.cloud/pi_cluster/os_installation/children/ansible/</link>
       <pubDate>Sat, 07 Jul 2018 00:00:00 +0000</pubDate>
@@ -555,6 +555,42 @@ to use fdisk. Morevoer some of the powerfull tools such as gparted need
 X11 installed, which I don&amp;rsquo;t have by default.&lt;/p&gt;
 
 &lt;p&gt;Hopefully the new PI3 B and B+ are able to boot from USB, hence the idea of creating a Rescue Dongle&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Update Kubedge SDK VM</title>
+      <link>https://kubedge.cloud/misc/2023-02-26-a/</link>
+      <pubDate>Sun, 26 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/misc/2023-02-26-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New PI Imaging Tool</title>
+      <link>https://kubedge.cloud/misc/2023-02-25-a/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/misc/2023-02-25-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>New PI Imaging Tool</title>
+      <link>https://kubedge.cloud/misc/2023-02-27-a/</link>
+      <pubDate>Sat, 25 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://kubedge.cloud/misc/2023-02-27-a/</guid>
+      <description>&lt;p&gt;test-infra seems to somewhat overlap with sonobuoy features. The purpose of this post is
+to fetch the code, compile and deploy it on a Kubernetes cluster.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
